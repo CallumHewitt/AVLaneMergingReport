@@ -1,0 +1,127 @@
+% Encoding: UTF-8
+
+@Book{Cheng2011,
+  title     = {Autonomous Intelligent Vehicles},
+  publisher = {Springer},
+  year      = {2011},
+  author    = {Hong Cheng},
+  volume    = {29},
+  series    = {Advances in Computer Vision and Pattern Recognition},
+  date      = {2011-11-15},
+  ean       = {9781447122807},
+  isbn      = {978-1-4471-2280-7},
+  pagetotal = {x154},
+  url       = {http://www.ebook.de/de/product/19145624/hong_cheng_autonomous_intelligent_vehicles.html},
+}
+
+@InProceedings{Zhu2015,
+  author    = {Ming Zhu and Ruimin Shen and Wei Shu and Min-You Wu},
+  title     = {Traffic efficiency improvement and passengers comfort in ridesharing systems in {VANETs}},
+  booktitle = {2015 International Conference on Connected Vehicles and Expo ({ICCVE})},
+  year      = {2015},
+  month     = {oct},
+  publisher = {Institute of Electrical and Electronics Engineers ({IEEE})},
+  doi       = {10.1109/iccve.2015.71},
+  url       = {http://dx.doi.org/10.1109/ICCVE.2015.71},
+}
+
+@Electronic{GoogleCars,
+  month        = {October},
+  year         = {2016},
+  title        = {Google Self-Driving Car Project},
+  language     = {English},
+  organization = {Google},
+  url          = {https://www.google.com/selfdrivingcar/where/},
+}
+
+@Electronic{TeslaUnderInvestigation,
+  author       = {Dave Lee},
+  month        = {June},
+  year         = {2016},
+  title        = {US opens investigation into Tesla after fatal crash},
+  language     = {English},
+  howpublished = {Website},
+  organization = {BBC},
+  url          = {http://www.bbc.co.uk/news/technology-36680043},
+}
+
+@Electronic{TeslaHospital,
+  month        = {August},
+  year         = {2016},
+  title        = {Tesla car drives owner to hospital after he suffers pulmonary embolism},
+  language     = {English},
+  howpublished = {Website},
+  organization = {BBC},
+  url          = {http://www.bbc.co.uk/newsbeat/article/37009696/tesla-car-drives-owner-to-hospital-after-he-suffers-pulmonary-embolism},
+}
+
+@Electronic{StoppingDistances,
+  month        = {October},
+  year         = {2016},
+  title        = {General rules, techniques and advice for all drivers and riders (103 to 158)},
+  language     = {English},
+  howpublished = {Website},
+  organization = {Her Majesty's Government},
+  note         = {Rule 126},
+  url          = {https://www.gov.uk/guidance/the-highway-code/general-rules-techniques-and-advice-for-all-drivers-and-riders-103-to-158},
+}
+
+@Article{Mersky2016,
+  author    = {Avi Chaim Mersky and Constantine Samaras},
+  title     = {Fuel economy testing of autonomous vehicles},
+  journal   = {Transportation Research Part C: Emerging Technologies},
+  year      = {2016},
+  volume    = {65},
+  pages     = {31--48},
+  month     = {apr},
+  doi       = {10.1016/j.trc.2016.01.001},
+  publisher = {Elsevier {BV}},
+  url       = {http://dx.doi.org/10.1016/j.trc.2016.01.001},
+}
+
+@Electronic{TeslaCriticised,
+  month        = {September},
+  year         = {2016},
+  title        = {Tesla criticised over Autopilot safety},
+  language     = {English},
+  howpublished = {Website},
+  organization = {BBC},
+  url          = {http://www.bbc.co.uk/news/technology-37372933},
+}
+
+@Article{Bonnefon2016,
+  author    = {J.-F. Bonnefon and A. Shariff and I. Rahwan},
+  title     = {The social dilemma of autonomous vehicles},
+  journal   = {Science},
+  year      = {2016},
+  volume    = {352},
+  number    = {6293},
+  pages     = {1573--1576},
+  month     = {jun},
+  doi       = {10.1126/science.aaf2654},
+  publisher = {American Association for the Advancement of Science ({AAAS})},
+  url       = {http://dx.doi.org/10.1126/science.aaf2654},
+}
+
+@Electronic{AIMProject,
+  month        = {October},
+  year         = {2016},
+  title        = {AIM Homepage},
+  language     = {English},
+  howpublished = {Website},
+  organization = {The University of Texas},
+  url          = {http://www.cs.utexas.edu/~aim/},
+}
+
+@InProceedings{Quinlan2010,
+  author    = {M Quinlan and Tsz-Chiu Au and J Zhu and N Stiurca and P Stone},
+  title     = {Bringing simulation to life: A mixed reality autonomous intersection},
+  booktitle = {2010 {IEEE}/{RSJ} International Conference on Intelligent Robots and Systems},
+  year      = {2010},
+  month     = {oct},
+  publisher = {Institute of Electrical and Electronics Engineers ({IEEE})},
+  doi       = {10.1109/iros.2010.5651993},
+  url       = {http://dx.doi.org/10.1109/iros.2010.5651993},
+}
+
+@Comment{jabref-meta: databaseType:bibtex;}
