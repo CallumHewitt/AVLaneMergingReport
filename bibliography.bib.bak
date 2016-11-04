@@ -124,4 +124,56 @@
   url       = {http://dx.doi.org/10.1109/iros.2010.5651993},
 }
 
+@Electronic{Schrank2015,
+  author       = {David Schrank, Bill Eisele, Tim Lomax, Jim Bak},
+  month        = {August},
+  year         = {2015},
+  title        = {2015 Urban Mobility Scorecard},
+  language     = {English},
+  howpublished = {Website},
+  organization = {Texas A\&M Transportation Institute \& INRIX},
+  url          = {http://d2dtl5nnlpfr0r.cloudfront.net/tti.tamu.edu/documents/mobility-scorecard-2015-wappx.pdf},
+}
+
+@InProceedings{Dresner2004,
+  author    = {Kurt Dresner, Peter Stone},
+  title     = {Multiagent Traffic Management: A Reservation-Based Intersection Control Mechanism},
+  booktitle = {Third International Joint Conference on Autonomous Agents and Multiagent Systems (AAMAS 04)},
+  year      = {2004},
+  volume    = {2},
+  pages     = {530-537},
+  month     = jul,
+}
+
+@Article{Laval2006,
+  author  = {Jorge A. Laval, Carlos F. Daganzo},
+  title   = {Lane-changing in traffic streams},
+  journal = {Transportation Research Part B: Methodological},
+  year    = {2006},
+  volume  = {40},
+  number  = {3},
+  pages   = {251-264},
+  month   = {March},
+}
+
+@Article{Gipps1986,
+  author  = {P.G. Gipps},
+  title   = {A model for the structure of lane-changing decisions},
+  journal = {Transportation Research Part B: Methodological},
+  year    = {1986},
+  volume  = {20},
+  number  = {5},
+  pages   = {403-414},
+  month   = {October},
+}
+
+@Article{Kesting2007,
+  author  = {Arne Kesting, Martin Treiber, Dirk Helbing},
+  title   = {General Lane-Changing Model MOBIL for Car-Following Models},
+  journal = {Transportation Research Record: Journal of the Transportation Research Board},
+  year    = {2007},
+  volume  = {1999},
+  pages   = {86-94},
+}
+
 @Comment{jabref-meta: databaseType:bibtex;}
