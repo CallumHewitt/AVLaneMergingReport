@@ -17,6 +17,8 @@ Not completed
 \usepackage{graphicx}
 \usepackage{xcolor}
 \usepackage{usebib}
+\usepackage{tikz}
+
 \bibinput{bibliography}
 
 \newcommand\todo[1]{\emph{{\textcolor{red}{TODO: #1}}}}
@@ -24,6 +26,18 @@ Not completed
 \newcommand\citetitle[1]{\usebibentry{#1}{title}}
 
 \graphicspath{{images/}}
+
+\usetikzlibrary{shapes,arrows,positioning}
+\tikzset{
+  font={\fontsize{6pt}{6}\selectfont}
+  }
+\tikzstyle{startstop} = [rectangle, rounded corners, text centered, draw=black, fill=red!15,text width=2cm]
+\tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=110, text centered, draw=black, fill=blue!15,text width=2cm]
+\tikzstyle{process} = [rectangle, text centered, draw=black, fill=orange!15,text width=3cm]
+\tikzstyle{decision} = [diamond, aspect=2, text centered, draw=black, fill=green!15,text width=2cm]
+\tikzstyle{bigdecision} = [regular polygon, regular polygon sides=6, xscale=3, text centered, draw=black, fill=green!15, text width=5cm]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+
 
 \begin{document}
 \maketitle

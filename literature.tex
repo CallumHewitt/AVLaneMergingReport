@@ -1,65 +1,121 @@
 \chapter{Literature Review}
 \label{cha:Literature Review}
-
+\newtext{This section. ALL NEW TEXT}
 \section{\citetitle{Dresner2004}}
 \label{sec:Dresner2004}
+The AIM protocol defined in this paper is a framework designed for managing autonomous vehicles at intersections. Ensuring that vehicles pass through the intersection safely, and efficiently. The paper assumes a world in which all vehicles are fully autonomous, under similar conditions laid out in \autoref{cha:Introduction}.
 
-\begin{itemize}
-\item Introduction
-\begin{itemize}
-\item Motivated by traffic light problems -> My work is motivated by lane change problems evidenced in \citet{Laval2006}
-\item Set in a world of fully autonomous vehicles.
-\item Overpass is optimal solution, what is optimal for my work?
-\end{itemize}
-\item The Model
-\begin{itemize}
-\item Using a simplified model of real-world intersection traffic -> No turning, roughly same speed. Worth considering my model to start with. How can that model be adapted?
-\item How do we measure success? 1) Safety is critical. No collisions allowed! 2) Efficiency
-\item Throughput: How much traffic can be handled. Difficult to measure, qualitative claims only made.
-\item Delay: Effect on overall journey of the vehicle. No vehicle's travel time sacrificed for another dramatically. Consider both average delay and maximum delay!
-\end{itemize}
-\item Overpass, Traffic Light Theory
-\begin{itemize}
-\item Simplifications due to car interactions and acceleration to calculate lower bound traffic light delays.
-\end{itemize}
-\item The Simulator
-\begin{itemize}
-\item Useful sizing stats in this section.
-\item Spawning characteristics, driver properties, three actions the driver can take, relevant decision logic.
-\item Testing simulator with no big changes. Constructing current system
-\end{itemize}
-\begin{itemize}
-\item Simplification from earlier no longer applies to light model.
-\item "Call ahead" system -> Could be applied to a centralised model for lane changing.
-\item Intersection divided into reservation tiles -> could be applied to lane changing too.
-\end{itemize}
-\item Empirical Results
-\begin{itemize}
-\item Measuring overloaded systems vs light traffic
-\item Increasing granularity tests -> At least as high as the number of lanes
-\end{itemize}
-\end{itemize}
+To test the AIM protocol the researchers created a simulator. This simulator compares the effectiveness of the AIM protocol against traffic lights, stop signs and overpasses. It also provide{}s controls over spawning characteristics, driver properties and provides useful statistics. \autoref{cha:Implementation} describes how this simulator was modified such that it could be expanded into simulating other autonomous vehicle related solutions.
 
-\section{\citetitle{Laval2006}}
-\label{sec:Laval2006}
+The AIM protocol (as it stands in this original paper) is based on a simplified model of real-world intersection traffic. All vehicles are travelling at roughly the same speed and none of them are trying to turn. This principle is something I'd like to adopt in my work, starting from very simple traffic models, before expanding to something more complex.
 
-\begin{itemize}
-\item Introduction
-\begin{itemize}
-\item Attempt to create a qualitative understanding of lane changing impacts on traffic flow.
-\item Lane change triggers disruption -> triggers other changes
-\item Considers freeway as a series of interacting streams linked by lane changes
-\item Combination of multiple stream models
-\end{itemize}
-\item The Model
-\begin{itemize}
-\item Based on the Kinematic Wave model: \url{https://en.wikipedia.org/wiki/Kinematic_wave}
-\item Not really sure of the maths here. More research required.
-\end{itemize}
-\end{itemize}
+The AIM protocol uses a centrally managed system to organise cars, with vehicles performing a 'call-ahead' to the system, creating reservations for the vehicle. During the reservation a vehicle must be in the intersection, which is divided into reservation tiles. This centralised system works almost as well as an overpass as vehicles are almost continuously flowing through the grid. 
+
+The paper defined a number of ways of measuring the success of a system. The primary concern of course is safety, no collisions can be permitted by these systems. The second measure of success should be efficiency, which breaks down into two areas. Throughput, which is the amount of traffic that can be handled by the system and Delay, which is the effect on the overall travel time of the vehicle. Throughput can be quite a qualitative measure; does a system successfully handle traffic if it adds another hour to the travel time of the vehicles? Delay is more quantitative. Both average delay and maximum delay must be considered. We should not dramatically increase one vehicle's journey time for the slight reduction of another.
+
+Centralised systems have a number of advantages, primarily that the autonomous vehicles don't have to do any messy V2V (vehicle-to-vehicle) communication with each other at the intersection, their path through was booked well before the vehicles reached the intersection. However, using a centralised system means that there is a single point of failure. If the reservation system is down and cars are coming towards it, there could be quite serious consequences.
+
+Decentralised systems are more fault tolerant, as vehicles can react to each other dynamically, rather than placing faith in a reservation within single system. This means that when unexpected events happen, such as crashes, lane closures and contraflows, vehicles can be more self-reliant and deal with these unforeseen circumstances.
+
+\section{\citetitle{Gipps1986}}
+\label{sec:Gipps1986}
+This paper models driver behaviour in real world circumstances, creating a structure characterising the decisions a driver has to make before determining whether to change lanes. The argument the paper makes is that modelling driver behaviour makes it easier to deal with bottlenecks such as roadworks and accidents. In other words, it supports the idea of using decentralised drivers as opposed to a controlling system.
+
+This paper is designed to be used with the car-following model citep[Gipps1981] which limits a driver's braking rate in order to calculate a safe speed relative to the preceding vehicle.
+
+\todo{Add maths}
+
+The model itself is constructed as a flowchart, in which each node is a decision the driver must make.
+
+\begin{enumerate}
+\item \textit{The selection of lanes}
+There are three lane types to consider here. The first is the present lane, where the driver is currently driving. The second is the preferred lane, which is adjacent to the present lane on the side the driver eventually wishes to turn. The target lane is the lane in which the driver is considering moving into.
+
+\todo{Add maths}
+
+\item \textit{The feasibility of changing lanes} 
+This depends on a number of factors. The lane must not have any physical obstructions or other vehicles in the way. The group also defined a maximum deceleration before a lane change became unfeasible.
+
+\todo{Add maths}
+
+\item \textit{Driver behaviour close to the intended turn}
+If the driver is close to their intended turn then they will always attempt to change into their preferred lane. Only if blocked will they consider moving into another lane. `Close' varies depending on regional differences and the level of traffic, but in the model, 10 seconds travel of the turn at the driver's desired speed was used.
+\item \textit{Urgency of changing lanes}
+The urgency of changing lanes increases as the driver gets closer to their turn. The willingness of the driver to brake harder and accept smaller gaps increases as the driver gets closer to their intended turn.
+
+\todo{Add maths}
+
+\item \textit{Transit vehicles and lanes}
+Transit lanes are lanes dedicated solely for public transport and other high occupancy vehicles. These include vehicles such as buses, taxis and carpool cars. These vehicles are known in the model as `transit vehicles'.
+\item \textit{Entry of nontransit vehicles into transit lanes}
+If there is an obstruction in the present lane, it is often considered to be a valid reason for a non-transit vehicle to enter a transit lane. 
+\item \textit{Departure of nontransit vehicles from a transit lane}
+Once the obstruction has been cleared, nontransit vehicle must move back into a valid lane. This forced departure does not affect vehicles that are close to their intended turn.
+\item \textit{Driver behaviour in the middle distance} 
+A driver is considered `remote' if they are far from their intended turn. In this instance, the turn has no effect on the behaviour of the driver. However, when the driver is neither remote nor close, the effect of the turn starts to change the behaviour of the driver, removing some lane changes from consideration. The distance at which this happens, again, varies from region to region and on traffic conditions. 
+
+\todo{Add maths}
+
+\item \textit{Relative advantages of present and target lanes}
+If the driver has not yet been forced to change lanes by any other factors, then they can look at the relative advantages of the present and target lanes, considering obstructions and then determining which lanes obstructions will have the least effect on their safe speed.
+\item \textit{The effect of heavy vehicles} 
+If obstructions are level with each other or beyond the range a driver considers, then the driver considers the next heavy vehicle in each lane, as if it were the leading vehicle in an ordinary car following situation. The driver then selects the lane which will give them the higher speed.
+\item \textit{The effect of the preceding vehicle}
+If there are then no heavy vehicles, the driver considers the speed possible in each lane and then changes if they gain a `sufficient' speed advantage. This is again, subjective, depending on the present lane, target lane and the type of vehicle.
+
+\todo{Add maths}
+
+\item \textit{Safety}
+After the driver makes their considerations they must then check that they can change safely. This is left until last because the level of safety required by a driver is likely to vary based on their urgency and reasons for changing lanes.
+\item \textit{Changing the target lane}
+If the driver has decided not to change to the preferred lane, then the model considers a lane change in the opposite direction and adjusts the target lane accordingly.
+
+\end{enumerate}
+
+This extensive model features a very useful collection of equations for determining whether a lane change should be made, and in which direction, many of which will be included during the simulation. 
+
+\todo{Add criticism}
+
+\begin{figure}[p!]
+\centering
+\begin{tikzpicture}[node distance= 0.5cm, auto]
+\node (start) [startstop] {Start};
+\node (setPreferredLane) [process, below = of start] {(1) Set the preferred lane and the target lane};
+\node (changeTargetLane) [process, right = of setPreferredLane] {(13) Change the target lane};
+\node (changeFeasible) [decision, below = of setPreferredLane] {(2) Is a lane change feasible?};
+\node (intendedClose) [decision, below = of changeFeasible] {(3) Is the intended turn close?};
+\node (targetLanePreferred1) [decision, right = of intendedClose] {Is the target lane preferred?};
+\node (preferredLaneBlockedBeforeTurn) [decision, right = of targetLanePreferred1] {Is the preferred lane blocked before turn?};
+\node (targetLaneBlockedBeforeTurn) [decision, below = of targetLanePreferred1] {Is the target lane blocked before turn?};
+\node (presentLaneBlockedBeforeTurn) [decision, below = of preferredLaneBlockedBeforeTurn] {Is the present lane blocked before turn?};
+\node (targetTransitLane) [decision, below = of targetLaneBlockedBeforeTurn] {Is the target a transit lane?};
+\node (transitVehicle) [decision, left = of targetTransitLane] {(5) Is the subject a transit vehicle?};
+\node (adjustBraking1) [process, left = of transitVehicle] {(4) Adjust braking for urgency of change};
+\node (presentTransitLane) [decision, below = of targetTransitLane] {(7) Is the present lane a transit lane?};
+\node (presentLaneBlocked) [decision, below right = of presentLaneBlockedBeforeTurn] {(6) Is the present lane blocked?};
+\node (targetLaneBlocked) [decision, below = of presentTransitLane] {Is the target lane blocked?};
+\node (intendedTurnRemote) [decision, below left = of targetLaneBlocked ] {(8) Is the intended turn remote?};
+\node (targetLaneAcceptable) [decision, below = of intendedTurnRemote] {Is the target lane acceptable?};
+\node (adjustBraking2) [process, below = of targetLaneAcceptable] {Adjust braking for urgency of change};
+\node (adjustBraking3) [process, below = of adjustBraking2] {Adjust braking for urgency of change};
+\node (big1) [bigdecision, right = of adjustBraking2] {(9) Do obstructions in the present lane limit speed more than, the same as, or less than those in the target lane?};
+\node (big2) [bigdecision, below = of big1] {(10) Do heavy vehicle in the present lane limit speed more than, the same as, or less than those in the target lane?};
+\node (big3) [bigdecision, below = of big2] {(11) Does the driver gain a sufficient speed advantage in the target lane compared to the present lane?};
+\node (safeToChange) [decision, below left = of adjustBraking3] {(12) Is it safe to change lanes?};
+\node (changeToTarget) [io, below = of safeToChange] {(13) Change to target lane};
+\node (targetLanePreferred2) [decision, below right = of big3] {Is the target lane preferred?};
+\node (remainInPresentLane) [io, below = of targetLanePreferred2] {Remain in present lane.};
+
+
+\end{tikzpicture}
+\caption{Diagram showing the flowchart created in \citep{Gipps1986}}
+\end{figure}
+
+
 
 \section{\citetitle{Kesting2007}}
 \label{sec:Kesting2007}
+\todo{This section}.
 
 \begin{itemize}
 \item Introduction
@@ -82,42 +138,3 @@
 \item Maximum politeness = Maximum throughput on both lanes. As density of traffic starts to get over 20/km/lane lane changes decrease as fewer suitable gaps start to appear.
 \end{itemize}
 \end{itemize}
-
-\section{\citetitle{Gipps1986}}
-\label{sec:Gipps1986}
-\begin{itemize}
-\item Introduction
-\begin{itemize}
-\item Modelling individual driver behaviour makes it easier to deal with bottlenecks such as road works or accidents. This behaviour is easier to simulate at a driver level. Modelling only driver behaviour instead of systems for dealing with the overall system (centralised).
-\item Drivers need to reconcile short and long term aims.
-\item This paper refers to how the decision to change lanes is made, as opposed to the mechanics of changing lanes.
-\end{itemize}
-\item Concerning Driver Behaviour
-\begin{itemize}
-\item Three questions:
-\begin{enumerate}
-\item Is it possible to change lanes?
-\item Is it necessary to change lanes?
-\item Is it desirable to change lanes?
-\end{enumerate}
-\item Assumptions include: Drivers has a goal to travel from X to Y in safety within a given time. This is translated to a number of specific quantitative objectives.
-\item Factors influencing driver changing lanes decision
-\begin{enumerate}
-\item Physically possible and safe to change lanes
-\item Location of permanent obstructions
-\item The presence of transit lanes
-\item Driver's intended turning movement
-\item Presence of heavy vehicles
-\item Speed
-\end{enumerate}
-\end{itemize}
-\item The Model
-\begin{itemize}
-\item The model covers the entire motorway experience. Entering -> Travelling -> Exiting
-\item Behaviour changes based on proximity to driver's exit.
-\item Fits in with car following model. Same as that adapted in \citet{Kesting2007}
-\item Flowchart summarising decision process as well as mathematical decision process in paper.
-\end{itemize}
-\end{itemize}
-
-
