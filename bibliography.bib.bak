@@ -25,13 +25,13 @@
   url       = {http://dx.doi.org/10.1109/ICCVE.2015.71},
 }
 
-@Electronic{GoogleCars,
-  month        = {October},
+@Electronic{Waymo2016,
+  month        = dec,
   year         = {2016},
-  title        = {Google Self-Driving Car Project},
+  title        = {WAYMO},
   language     = {English},
-  organization = {Google},
-  url          = {https://www.google.com/selfdrivingcar/where/},
+  organization = {Alphabet},
+  url          = {https://waymo.com/ontheroad/},
 }
 
 @Electronic{TeslaUnderInvestigation,
@@ -190,10 +190,10 @@
   url       = {http://dx.doi.org/10.1016/0191-2615(81)90037-0},
 }
 
-@Article{Atagoziyev_2016,
+@Article{Atagoziyev2016,
   author    = {Maksat Atagoziyev and Klaus W. Schmidt and Ece G. Schmidt},
-  title     = {Lane Change Scheduling for Autonomous Vehicles{\ast}{\ast}This work was supported by the Scientific and Technological Research Council of {Turkey} ({TUBITAK}) [Award 115E372].},
-  journal   = {{IFAC}-{PapersOnLine}},
+  title     = {Lane Change Scheduling for Autonomous Vehicles},
+  journal   = {IFAC-PapersOnLine},
   year      = {2016},
   volume    = {49},
   number    = {3},
@@ -215,7 +215,7 @@
   url       = {http://arxiv.org/abs/1602.01718},
 }
 
-@Article{Treiber_2000,
+@Article{Treiber2000,
   author    = {Martin Treiber and Ansgar Hennecke and Dirk Helbing},
   title     = {Congested traffic states in empirical observations and microscopic simulations},
   journal   = {Physical Review E},
@@ -227,6 +227,32 @@
   doi       = {10.1103/physreve.62.1805},
   publisher = {American Physical Society ({APS})},
   url       = {http://dx.doi.org/10.1103/physreve.62.1805},
+}
+
+@Article{Asimov1953,
+  author  = {Isaac Asimov},
+  title   = {Sally},
+  journal = {Fantastic},
+  year    = {1953},
+  volume  = {2},
+  number  = {3},
+  month   = may,
+}
+
+@Misc{Kitt1982,
+  author       = {Glen A. Larson},
+  title        = {Knight Rider},
+  howpublished = {Television},
+  month        = sep,
+  year         = {1982},
+}
+
+@Misc{Paris2016,
+  author = {The United Nations},
+  title  = {The Paris Agreement},
+  month  = oct,
+  year   = {2016},
+  url    = {http://unfccc.int/files/essential_background/convention/application/pdf/english_paris_agreement.pdf},
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}
