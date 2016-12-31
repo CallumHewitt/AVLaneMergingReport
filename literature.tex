@@ -86,7 +86,7 @@ This model isn't very strict, acting as more of a set of requirements than a tru
 \label{sec:Centralised Systems}
 We can generally divide approaches to autonomous vehicles into centralised solutions and decentralised solutions. Centralised solutions rely on an external agent to manage vehicles. Vehicles use vehicle-to-infrastructure (V2I) communication channels to send information and receive instructions from the external agent. Decentralised solutions use vehicle-to-vehicle (V2V) communication to let other vehicles know their state, their intentions and to arrange any complex actions that might affect surrounding vehicles.
 
-The Autonomous Vehicle Intersection management system (AIM) described in \citep{Dresner2004} is an example of a centralised V2I system. The system works by dividing the intersection into a grid of $n \times n$ reservation tiles. Drivers 'call ahead' to the intersection sending information about
+The Autonomous Vehicle Intersection management system (AIM) described in \citep{Dresner2004} is an example of a centralised V2I system. The system works by dividing the intersection into a grid of $n \times n$ reservation tiles. Drivers 'call ahead' to the intersection sending information packets containing
 
 \begin{enumerate}
 \item The time the vehicle will arrive.
@@ -97,7 +97,7 @@ The Autonomous Vehicle Intersection management system (AIM) described in \citep{
 \item The vehicle's length and width
 \end{enumerate}
 
-The intersection infrastructure simulates the journey of the vehicle through the intersection, noting the tiles occupied by the vehicle at each time interval. If any cell is reserved at the same time step the intersection rejects the request. The driver will start decelerating and continue making requests until it obtains a reservation. It will not enter the intersection without a reservation, even if that means decelerating to a stop.
+The intersection infrastructure simulates the journey of the vehicle through the intersection, noting the tiles occupied by the vehicle at each time interval. If any cell is reserved at the same time step the intersection rejects the request. The driver will start decelerating and continue making requests until it obtains a reservation. It will not enter the intersection without a reservation, even if that means coming to a stop at the intersection.
 
 \begin{figure}[htb]
 \includegraphics[width=\textwidth]{AIMOriginal.JPG}
