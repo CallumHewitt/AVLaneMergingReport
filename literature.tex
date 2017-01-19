@@ -84,7 +84,7 @@ This model isn't very strict, acting as more of a set of requirements than a tru
 
 \section{Centralised and Decentralised}
 \label{sec:Centralised Systems}
-We can generally divide approaches to autonomous vehicles into centralised solutions and decentralised solutions. Centralised solutions rely on an external agent to manage vehicles. Vehicles use vehicle-to-infrastructure (V2I) communication channels to send information and receive instructions from the external agent. Decentralised solutions use vehicle-to-vehicle (V2V) communication to let other vehicles know their state, their intentions and to arrange any complex actions that might affect surrounding vehicles.
+We can divide approaches to autonomous vehicles into centralised solutions and decentralised solutions. Centralised solutions rely on an external agent to manage vehicles. Vehicles use vehicle-to-infrastructure (V2I) communication channels to send information and receive instructions from the external agent. Decentralised solutions use vehicle-to-vehicle (V2V) communication to let other vehicles know their state, their intentions and to arrange any complex actions that might affect surrounding vehicles.
 
 The Autonomous Vehicle Intersection management system (AIM) described in \citep{Dresner2004} is an example of a centralised V2I system. The system works by dividing the intersection into a grid of $n \times n$ reservation tiles. Drivers 'call ahead' to the intersection sending information packets containing
 
@@ -161,57 +161,9 @@ b_n = \Biggl[2 - V_n\frac{(D_n - x_n(t))}{10}\Biggr]b_n^*
 
 This driver decision model is useful, and a good example of a decentralised system. Each driver's decisions are made without a global view of all other drivers. The driver simply adjusts their behaviour as they approach their turn. This provides a fault tolerant solution to the problem, where one vehicle can compensate for the failings of another. However, this does leave the system open to failures due to poor organisation between vehicles. 
 
-Atagoziyev et al. method forces vehicles to work together to manage lane changes before the critical point. The notation for the Atagoziyev model is
+\todo{Section below still needs reviewing. Plan to remove excessive notation and summarise and evaluate Atagoziyev. Add a copy of the Gipps 1986 flowchart. Evaluate and Compare Kesting's model.}
 
-\begin{itemize}
-\item Vehicles and Points
-\begin{itemize}
-\item[CP] is the critical point
-\item[SV] is the subject vehicle. The vehicle making a lane change.
-\item[CL] is the vehicle in front of the SV in the SV's current lane.
-\item[TL] is the vehicle in front of the SV in the target lane.
-\item[LV] is the lag vehicle behind SV in the target lane.
-\end{itemize}
-\item Positions
-\begin{itemize}
-\item[$x$] is the unknown position of SV
-\item[$x_l$] is the unknown position of LV
-\item[$x_{cl}$] is the trajectory of CL
-\item[$x_{tl}$] is the trajectory of TL
-\item[$x(t)$] is the position of SV at time $t$
-\item[$x_{cl}(t)$] is the position of CL at time $t$
-\item[$x_{tl}(t)$] is the position of TL at time $t$
-\item[$x_l(t)$] is the position of LV at time $t$
-\item[$x_{clb}$] is the CL bound. SV must be located behind this bound during the lane change.
-\item[$x_{tlb}$] is the TL bound. SV must be located behind this bound during the lane change.
-\item[$x_{lb}$] is the LV bound. SV must be located in front of this bound during the lane change.
-\item[$x_{min}(t)$] is the minimum of $x_{tlb}$ and $x_{clb}$ at time $t$
-\end{itemize}
-\item Times
-\begin{itemize}
-\item[$t_{end}$] is the available time until the 'string leader' reaches the critical point. The string is the set of cars involved in changing lanes.
-\item[$0,t_{end}$] is the time interval available for the lane change manoeuvre.
-\item[$\hat{t}$] is the earliest possible time a lane change of SV can be performed.
-\item[$\Delta_{LC}$] is the time taken to change lanes.
-\item[$W$] is the set of time windows where the leader vehicles enabled a lane change. It is given as 
-\begin{equation}
-W = {[t_1,t_2]|t_2 \ge t_1 + \Delta_{LC} \land v_{cl}(t) = v_{tl}(t) = v_{nom} \forall t \in [t_1,t_2]}
-\end{equation}
-\end{itemize}
-\item Velocities
-\begin{itemize}
-\item[$v_{nom}$] is the nominal speed of the vehicles.
-\item[$v_{up}$] is faster than average velocity.
-\item[$v_{dn}$] is slow than average velocity.
-\item[$v_{cl}$] is the CL velocity.
-\item[$v_{tl}$] is the TL velocity.
-\item[$v_{min}(t)$] is the minimum of $v_{tlb}$ and $v_{clb}$ at time $t$
-\end{itemize}
-\end{itemize}
-
-The Atagoziyev model performs a number of lane changes in order to rearrange the vehicles into the right lanes. To do this it loops through all of the vehicles that aren't in the right lane.
-
-\todo{Explain all of the Atagoziyev model? It seems excessive.}
+\todo{Explain the Atagoziyev model}
 
 \subsection{Lane Changing to improve overall velocity}
 \label{subsec:Lane Changing to improve overall velocity}
