@@ -7,7 +7,7 @@ Vehicles may have to merge into another lane for a number of reasons. In this pa
 
 \subsection{Single-to-Single Merge}
 \label{subsec:Single-to-Single Merge}
-A single-to-single merge (S2S merge) describes a situation where a vehicle moves from a single lane road into another single lane road, as seen in Figure \ref{fig:S2SMerge}. In this situation we label the lane that vehicles are moving from the 'current lane', and we label the lane that vehicles move to the 'target lane'. We describe the vehicles that start on the current lane as 'merging vehicles' and the vehicles that start on the target lane as 'target vehicles'. We have one critical position where the current lane meets the target lane.
+A single-to-single merge (S2S merge) describes a situation where a vehicle moves from a single lane road into another single lane road, as seen in Figure \ref{fig:S2SMerge}. In this situation we label the lane that vehicles are moving from the 'current lane' (CL), and we label the lane that vehicles move to the 'target lane' (TL). We describe the vehicles that start on the CL as 'merging vehicles' (MV) and the vehicles that start on the TL as 'target vehicles' (TV). We have our critical position where the CL and TL connect.
 
 \begin{figure}[htb]
 \includegraphics[width=\textwidth]{lane_diagrams/s2s.png}
@@ -17,18 +17,11 @@ A single-to-single merge (S2S merge) describes a situation where a vehicle moves
 
 \newtext{New text below}
 
-The main issue with an S2S merge stems from the limited options available to vehicles arriving at the critical position. Target vehicles do not have the opportunity to move laterally out of the way of merging vehicles, and vehicles on both lanes could struggle to reduce their velocity without affecting their successors. A solution to an S2S merge would have to satisfy the following conditions:
-
-\begin{enumerate}
-\item \textit{No collisions}
-This means avoiding collisions at the critical position between merging vehicles and target vehicles, as well as avoiding collisions between vehicles on the same lane.
-\item \textit{Minimise delays to both lanes}
-
-
-\end{enumerate}
+The main issue with an S2S merge stems from the limited options available to vehicles arriving at the critical position. Target vehicles do not have the opportunity to move laterally out of the way of merging vehicles, and vehicles on both lanes could struggle to reduce their velocity without affecting their successors.
 
 \subsection{Single-to-Double Merge}
 \label{subsec:Single-to-Double Merge}
+A single-to-double merge (S2D merge) describes a situation where a vehicle moves from a single lane road into a double lane road, as seen in Figure \ref{fig:S2DMerge}. In this situation we have two target lanes. The upper lane which directly links to the merging lane is called 'target lane 1' (TL1) and the lower lane is called 'target lane 2' (TL2). We still have only one critical position where the merging lane meets TL1.
 
 \begin{figure}[htb]
 \includegraphics[width=\textwidth]{lane_diagrams/s2d.png}
@@ -36,9 +29,11 @@ This means avoiding collisions at the critical position between merging vehicles
 \label{fig:S2DMerge}
 \end{figure}
 
+An S2D merge provides more options for vehicles on the targets lanes at the critical position. Target vehicles now have the opportunity to move laterally to avoid merging vehicles. Two lanes also allows for more vehicles on the target lane which should give vehicles greater freedom to adjust their velocity without affecting their successors.
 
 \subsection{Double-to-Double Merge}
 \label{subsec:Double-to-Double Merge}
+A double-to-double merge (D2D merge) describes a situation where a vehicle moves from a double lane road into another double lane road, as seen in Figure \ref{fig:D2DMerge}. We now have two merging lanes. The upper lane, 'merging lane 1' (ML1) merges into TL1 and the lower lane, 'merging lane 2' (ML2) merges into TL2.
 
 \begin{figure}[htb]
 \includegraphics[width=\textwidth]{lane_diagrams/d2d.png}
@@ -46,8 +41,11 @@ This means avoiding collisions at the critical position between merging vehicles
 \label{fig:D2DMerge}
 \end{figure}
 
+With a D2D merge we now have to consider the effect of merging vehicles from ML2 driving across TL1. In addition, target vehicles can no longer laterally move out of the way of merging vehicles as they did before. Combining these factors with the wider range of options available to MVs, we can see that a D2D merge is far more complex than an S2D merge.
+
 \subsection{Lane Obstruction Merge}
 \label{subsec:Lane Obstruction Merge}
+A lane obstruction merge is where a vehicle needs to change lanes to avoid an obstacle in their way, as seen in Figure \ref{fig:LaneObstruction}. It is essentially an S2S merge although the vehicle will tend to move laterally to avoid the obstacle. In this situation the critical position is the obstruction on the CL. 
 
 \begin{figure}[htb]
 \includegraphics[width=\textwidth]{lane_diagrams/lane_blocker.png}
@@ -55,21 +53,59 @@ This means avoiding collisions at the critical position between merging vehicles
 \label{fig:LaneObstruction}
 \end{figure}
 
+The obstacle could be a broken down vehicle or some debris on the road. Because of the unexpected nature of the obstacle it may sometimes be difficult to have a centralised approach to the problem. Although, if the obstacle was a broken down vehicle, the vehicle might be able to act as the centralised system managing approaching vehicles. 
+
 \section{Measuring Success}
 \label{sec:Measuring Success}
-In order to evaluate the effectiveness of solutions to the problems we need to define measurements of success. Above we defined conditions that must be satisfied for a solution to be acceptable. Here we discuss how to measure how well a solution meets these conditions.
+In order to evaluate the effectiveness of solutions to the problems we need to define measurements of success. 
 
-\subsection{Throughput}
-\label{subsec:Throughput}
+Solutions to the merging problems above have to satisfy the following conditions:
+
+\begin{enumerate}
+\item \textit{No collisions}
+This means avoiding collisions at the critical position between merging vehicles and target vehicles, as well as avoiding collisions between vehicles on the same lane.
+\item \textit{Minimise delays to both lanes}
+Vehicles should not suffer large delays to travel time due to the merge.
+\item \textit{Maximise throughput}
+By minimising delays and velocity loss we aim to maximise the throughput of the critical position.
+\end{enumerate}
+
+We need to measure how well solutions meet these conditions. 
+
+\subsection{Collisions}
+\label{subsec:Collisions}
+Preventing collisions is a basic safety requirement for any autonomous vehicle system. We can measure this by comparing the positions of vehicles in the system, and ensuring that there is no overlap.
+
+Any collisions that do happen should be reported immediately. The system should automatically be considered a failure.
 
 \subsection{Delay}
 \label{subsec:Delay}
+Delay measures the effect that the critical position had on the overall journey of the vehicle. It is the primary metric considered in Dresner et al.'s 2004 paper \citep{Dresner2004} on AIM. We will measure delay in a similar manner, calculating both average delay and maximum delay.
 
 \subsubsection{Average Delay}
 \label{subsubsec:Average Delay}
+Dresner et al. provide the following equation for measuring average delay.
 
-\subsubsection{Worst Delay}
+\begin{equation}
+\frac{1}{|C|}\sum_{v_i\in{C}}t(i) - t_0(i)
+\end{equation}
+
+$C$ is the set of vehicles that pass through a critical position within a set time frame. Assuming no other vehicles on the road, a vehicle $v_i$ would complete it's trip in time $t_0(i)$, otherwise $v_i$ would complete it's trip in time $t(i)$. We can represent this trip for vehicles in the simulator as the time difference between the vehicle spawning in and the vehicle being removed from the simulator.
+
+\subsubsection{Maximum Delay}
 \label{subsubsec:Average Delay}
+Dresner et al. also provide the following equation for measuring maximum worst case delay:
 
-\subsection{Traffic Density}
-\label{subsec:Traffic Density}
+\begin{equation}
+\max_{v_i\in{C}}{t(i)} - t_0(i)
+\end{equation}
+
+\subsection{Throughput}
+\label{subsec:Throughput}
+By minimising delay we should also maximise throughput; the two are closely related. However we should also collect direct metrics.
+
+\begin{equation}
+\text{Vehicle throughput} = \frac{|C|}{t}
+\end{equation}
+
+Here $t$ is the time it took for all of the vehicles in $C$ to pass through the critical position. If we want to measure the rate at which merging vehicles and target vehicles pass through the intersection separately we can change the definition of $C$ to reflect that.
