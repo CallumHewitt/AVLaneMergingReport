@@ -156,7 +156,7 @@ Another reason a driver might change lanes is in order to increase velocity, wit
 \label{subsec:Lane Changing to hit a target lane}
 In 1986 Gipps' modelled driver behaviour in real world circumstances, characterising the decisions a driver has to make in order to determine whether to change lanes \citep{Gipps1986}. The paper was designed to be used with the Gipps' 1981 car-following model \citep{Gipps1981}, explained in \ref{sec:Car Following Models}.
 
-The model itself is constructed as a flow chart, in which the decision nodes are the choices a driver must make. \newtext{You can see the flowchart in Figure \ref{fig:Gipps1986Flowchart}}.
+The model itself is constructed as a flow chart, in which the decision nodes are the choices a driver must make.You can see the flowchart in Figure \ref{fig:Gipps1986Flowchart}.
 
 \begin{figure}[htb]
 \includegraphics[width=\textwidth]{Gipps1986Flowchart.png}
@@ -195,11 +195,11 @@ b_n = \Biggl[2 - V_n\frac{(D_n - x_n(t))}{10}\Biggr]b_n^*
 
 Similarly to Gipps 1981 car-following model, this driver decision model is based on human driver behaviour and as such falls into similar pitfalls. There could be more optimal driver behaviours which would ensure that a driver is in the correct lane well before the critical position. However, because Gipps 1986 model is designed to model human driving behaviour we can expect it to perform less than optimally.
 
-\newtext{Atagoziyev's model is designed around autonomous vehicles, which allows it to take advantage of vehicle-to-vehicle communication}. The model manages a set of vehicles over two lanes, organising their movements into their preferred lanes before they reach a critical position.
+Atagoziyev's model is designed around autonomous vehicles, which allows it to take advantage of vehicle-to-vehicle communication. The model manages a set of vehicles over two lanes, organising their movements into their preferred lanes before they reach a critical position.
 
 To do this the model keeps track of the gaps between vehicles and their relative speeds using roadside infrastructure. Then, a series of equations, each describing a different situation, are used to determine the behaviour of the vehicle.
 
-In the paper SV (subject vehicle) refers to the vehicle that wants to change lanes. CL (current lane) is the vehicle in front of the SV. TL (target lane) is the vehicle the SV wants to be behind in its target lane. LV (lag vehicle) is the vehicle that will be behind SV once it moves to its target  lane. \newtext{Atagoziyev defines seven equations for manipulating vehicles between lanes. They are used in different contexts, each based on the relative positions of the surrounding vehicles. The contexts for each equation are given below, along with the behaviour from the equation during that context.}
+In the paper SV (subject vehicle) refers to the vehicle that wants to change lanes. CL (current lane) is the vehicle in front of the SV. TL (target lane) is the vehicle the SV wants to be behind in its target lane. LV (lag vehicle) is the vehicle that will be behind SV once it moves to its target  lane. Atagoziyev defines seven equations for manipulating vehicles between lanes. They are used in different contexts, each based on the relative positions of the surrounding vehicles. The contexts for each equation are given below, along with the behaviour from the equation during that context.
 
 \begin{enumerate}
 \item[Case 1] \textit{SV too close to CL in its current lane or TL if it changed lanes.}
@@ -225,7 +225,7 @@ SV maintains the minimum gap, waiting for CL/TL to travel at nominal speed again
 SV performs the lane change, maintaining nominal speed.
 \end{enumerate}
 
-These equations are the building blocks that lead to a lane change. \newtext{The flowchart in Figure \ref{fig:AtogoziyevFlowchart} shows how they work together to enact a single lane change.}
+These equations are the building blocks that lead to a lane change. The flowchart in Figure \ref{fig:AtogoziyevFlowchart} shows how they work together to enact a single lane change.
 
 \begin{figure}[htb]
 \includegraphics[width=\textwidth]{AtagoziyevFlowchart.JPG}
@@ -237,7 +237,7 @@ Using this algorithm, we can move multiple vehicles into their correct lanes. LV
 
 \subsection{Lane Changing to improve overall velocity}
 \label{subsec:Lane Changing to improve overall velocity}
-Gipps' driver decisions model also considered situations where the driver does not have to be in any particular lane. The model considers the effects of transit lanes, heavy vehicles and the effect of the preceding vehicle on the driver's vehicle. \newtext{These are shown in nodes 5 to 7 and 9 to 11 of Gipps' flowchart in Figure \ref{fig:Gipps1986Flowchart}}.
+Gipps' driver decisions model also considered situations where the driver does not have to be in any particular lane. The model considers the effects of transit lanes, heavy vehicles and the effect of the preceding vehicle on the driver's vehicle. These are shown in nodes 5 to 7 and 9 to 11 of Gipps' flowchart in Figure \ref{fig:Gipps1986Flowchart}.
 
 \begin{enumerate}
 \item[5] \textit{Transit vehicles and lanes}
@@ -254,13 +254,11 @@ If obstructions are level with each other or beyond the range a driver considers
 If there are then no heavy vehicles, the driver considers the speed possible in each lane and then changes if they gain a 'sufficient' speed advantage. This is again, subjective, depending on the present lane, target lane and the type of vehicle.
 \end{enumerate}
 
-Again, Gipps' 1986 model was built with human drivers in mind, and as such it fails to take advantage of the benefits of autonomous vehicles \newtext{such as platooning and vehicle-to-vehicle communications.}
+Again, Gipps' 1986 model was built with human drivers in mind, and as such it fails to take advantage of the benefits of autonomous vehicles such as platooning and vehicle-to-vehicle communications.
 
-Work by Kesting et al. in 2007 \citep{Kesting2007} describes a decentralised model of lane changing that lets vehicles change lanes to increase velocity whilst still ensuring that the overall traffic flow is not disrupted. This helps to avoid traffic shocks and maintains smooth traffic flow. \newtext{In order to do this, Kesting introduces the MOBIL or 'Minimising Overall Braking Induced by Lane Changes' model. The model uses two criterion that the vehicle must satisfy.}
+Work by Kesting et al. in 2007 \citep{Kesting2007} describes a decentralised model of lane changing that lets vehicles change lanes to increase velocity whilst still ensuring that the overall traffic flow is not disrupted. This helps to avoid traffic shocks and maintains smooth traffic flow. In order to do this, Kesting introduces the MOBIL or 'Minimising Overall Braking Induced by Lane Changes' model. The model uses two criterion that the vehicle must satisfy.
 
-\newtext{
 The first criterion deals with safety, ensuring that the deceleration of a successor vehicle $\tilde{a}_n$ in the target lane doesn't exceed a safety limit $b_{safe}$.
-}
 
 \begin{equation}
 \tilde{a}_n \geq -b_{safe}
@@ -270,9 +268,7 @@ This criterion effectively puts a limit on the level of braking a vehicle changi
 
 The second criterion is the 'incentive criterion' which is what motivates a driver to change lanes. This criterion introduces a 'politeness factor' $p$ which expresses the extent to which nearby vehicles affect a driver's lane changing decision. 
 
-\newtext{
 The paper discusses the differences between symmetric ('US') lane changing rules and asymmetric ('European') passing rules, however in this paper we only use US lane changing rules. This gives the incentive criterion:
-}
 
 \begin{equation}
 \underbrace{\tilde{a}_c - a_c}_\text{driver} + p(\underbrace{\tilde{a}_n  - a_n}_\text{new follower} + \underbrace{\tilde{a}_o - a_o}_\text{old follower}) > \Delta a_{th}
@@ -286,10 +282,6 @@ The idea of a MOBIL model means that drivers will only change when it increases 
 \tilde{a}_c + \tilde{a}_n + \tilde{a}_o > a_c + a_n + a_o 
 \end{equation}
 
-\newtext{
 Kesting found that the most important parameter affecting the rate of lane changing was $p$. With a $p$ value of 1 the maximum lane changing rate was almost halved. Kesting also discovered that 'altruistic' lane changing behaviour increased the mean speed of both lanes involved in the simulation, improving overall traffic performance.
-}
 
-\newtext{
 Comparing this to Gipps' 1986 approach we can see that MOBIL is far more considerate of other drivers and as such the overall speed of the vehicles on the road could be higher. MOBIL is also designed for autonomous vehicles, which allows it to enforce 'altruistic' behaviour from vehicles on the road. The model could also be extended to include V2V communications. Transmitting accurate braking profiles to other vehicles would make it easier to determine the effect a lane change would have on the overall system.
-}
