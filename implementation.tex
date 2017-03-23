@@ -23,7 +23,7 @@ Figure \ref{fig:driverBefore} is a class diagram indicating the structure of Dri
 \label{fig:driverAfter}
 \end{figure}
 
-The first major change was renaming 'DriverSimView', 'AutoDriverPilotView', and 'AutoDriverCoordinatorView' to end in 'Model' instead of 'View'. These interfaces are used to limit the methods that other classes can access from Driver and AutoDriver, thus changing their 'view' of that class. We didn't want to continue using 'View' as it could cause confusion with the GUI elements of the simulator. \revisit{We chose to refer to these interfaces as 'Models', because the accessors are effectively given a model of Driver and AutoDriver (beyond which they care very little) that they can use to access the methods they want.}
+The first major change was renaming \emph{DriverSimView}, \emph{AutoDriverPilotView}, and \emph{AutoDriverCoordinatorView} to end in \emph{Model} instead of \emph{View}. These interfaces are used to limit the methods that other classes can access in Driver and AutoDriver, thus changing their 'view' of that class. We didn't want to continue using \emph{View} as it could cause confusion with the GUI elements of the simulator. \revisit{We chose to refer to these interfaces as \emph{Models}, because the accessors are effectively given a model of Driver and AutoDriver (beyond which they care very little) that they can use to access the methods they want.}
 
 The next change was separating out all of the AIM specific code into its own classes and interfaces. You can see how this was done in Figure \ref{fig:driverAfter} with AIMDriverSimModel and AIMDriver. By extracting AIM specific behaviour, we created general classes that could be extended, reducing code duplication. The merge specific code found in MergeDriverSimModel, MergeDriver and MergeAutoDriver is structured in a very similar manner to its AIM counterpart, taking advantage of the generalised code. However, as a consequence of breaking out the code like this, a number of additional changes had to be made. 
 
@@ -31,7 +31,7 @@ The next change was separating out all of the AIM specific code into its own cla
 
 \subsection{aim4.gui}
 \label{subsec:aim4.gui}
-From a user perspective the only noticeable GUI change is the introduction of tabs to change between simulators. In order to allow for this we had to break out Viewer into more generalised components. In the original simulator, shown in Figure \ref{fig:originalAIMSetupLabeled} we 
+In the original simulator, shown in Figure \ref{fig:originalAIMSetupLabeled} Viewer.mainPanel displays the simulator setup and canvas using a CardLayout. In the new GUI, shown in Figure \ref{fig:newAIMSetupLabeled} we replaced mainPanel with tabbedPane, a JTabbedPane object that allows users to switch between different simulators. On each tab we added a SimViewer object, shown in Figure \ref{fig:simViewer}, which behaves in the same way that mainPanel did in the original code. Each SimViewer has two panels, a SimSetupPanel and a SimScreen, which it can switch between using CardLayout. Functionality from SimSetupPanel was extracted out into separate AIM specific and general classes. It is used to create and modify SimSetup objects. SimScreen is a new interface which Canvas inherits from. It is used to allow SimViewers to display objects other than Canvas instances, such as MergeStatScreen, when the simulation is run. You can see how SimSetupPanel and SimScreen are structured in Figures \ref{fig:simSetupPanel} and \ref{fig:simScreen}.
 
 \begin{figure}[htb]
 \includegraphics[width=\textwidth]{screenshots/originalAIMSetupLabeled.png}
@@ -45,6 +45,38 @@ From a user perspective the only noticeable GUI change is the introduction of ta
 \label{fig:newAIMSetupLabeled}
 \end{figure}
 
-Changed behaviour of reset
+\begin{figure}[htb]
+\includegraphics[width=\textwidth]{class_diagrams/simViewer.png}
+\caption{The class diagram for SimViewer}
+\label{fig:simViewer}
+\end{figure}
+
+\begin{figure}[htb]
+\includegraphics[width=\textwidth]{class_diagrams/simSetupPanel.png}
+\caption{The class diagram for SimSetupPanel}
+\label{fig:simSetupPanel}
+\end{figure}
+
+\begin{figure}[htb]
+\includegraphics[width=\textwidth]{class_diagrams/simScreen.png}
+\caption{The class diagram for SimScreen}
+\label{fig:simScreen}
+\end{figure}
+
+We also made a small adjustment to the behaviour of the reset option in the menu. The simulator must be paused in order for the reset button not be greyed out.
+
+\subsection{aim4.map}
+\label{subsec:aim4.map}
 
 
+\begin{figure}[htb]
+\includegraphics[width=\textwidth]{class_diagrams/mapBefore.png}
+\caption{The original class structure for BasicMap and SpawnPoint.}
+\label{fig:mapBefore}
+\end{figure}
+
+\begin{figure}[htb]
+\includegraphics[width=\textwidth]{class_diagrams/mapAfter.png}
+\caption{The new class structure for BasicMap and SpawnPoint.}
+\label{fig:mapAfter}
+\end{figure}
