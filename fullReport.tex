@@ -20,11 +20,12 @@ Not completed
 \usepackage{tikz}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{color,soul}
 
 \bibinput{bibliography}
-{}
 \newcommand\todo[1]{\emph{{\textcolor{red}{TODO: #1}}}}
 \newcommand\newtext[1]{\emph{{\textcolor{blue}{#1}}}}
+\newcommand\revisit[1]{\hl{#1}}
 \newcommand\citetitle[1]{\usebibentry{#1}{title}}
 
 \graphicspath{{images/}}
@@ -39,7 +40,6 @@ Not completed
 \tikzstyle{decision} = [diamond, aspect=2, text centered, draw=black, fill=green!15,text width=2cm]
 \tikzstyle{bigdecision} = [regular polygon, regular polygon sides=6, xscale=3, text centered, draw=black, fill=green!15, text width=5cm]
 \tikzstyle{arrow} = [thick,->,>=stealth]
-
 
 \begin{document}
 \maketitle
