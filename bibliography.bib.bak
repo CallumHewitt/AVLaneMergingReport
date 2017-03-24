@@ -106,7 +106,7 @@
 @Electronic{AIMProject,
   month        = {October},
   year         = {2016},
-  title        = {AIM Homepage},
+  title        = {A.I.M. Homepage},
   language     = {English},
   howpublished = {Website},
   organization = {The University of Texas},
@@ -253,6 +253,39 @@
   month  = oct,
   year   = {2016},
   url    = {http://unfccc.int/files/essential_background/convention/application/pdf/english_paris_agreement.pdf},
+}
+
+@Article{Daganzo1994,
+  author    = {Carlos F. Daganzo},
+  title     = {The cell transmission model: A dynamic representation of highway traffic consistent with the hydrodynamic theory},
+  journal   = {Transportation Research Part B: Methodological},
+  year      = {1994},
+  volume    = {28},
+  number    = {4},
+  pages     = {269--287},
+  month     = {aug},
+  doi       = {10.1016/0191-2615(94)90002-7},
+  publisher = {Elsevier {BV}},
+  url       = {http://dx.doi.org/10.1016/0191-2615(94)90002-7},
+}
+
+@InProceedings{VanMiddlesworth2008,
+  title     = {Replacing the Stop Sign: Unmanaged Intersection Control for Autonomous Vehicles},
+  author    = {Mark VanMiddlesworth and Kurt Dresner and Peter Stone},
+  booktitle = {AAMAS Workshop on Agents in Traffic and Transportation},
+  month     = {May},
+  address   = {Estoril, Portugal},
+  pages     = {94-101},
+  url       = {"http://www.cs.utexas.edu/users/ai-lab/?ATT08-vanmiddlesworth"},
+  year      = {2008}
+}
+
+@Electronic{AIMWebsite,
+  author       = {Peter Stone and Guni Sharon and Michael Albert and Josiah Hanna},
+  year         = {2017},
+  title        = {AIM Project Homepage},
+  organization = {University of Texas},
+  url          = {http://www.cs.utexas.edu/~aim/},
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}
