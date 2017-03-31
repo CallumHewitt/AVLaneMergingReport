@@ -5,35 +5,6 @@
 \label{sec:S2S}
 The S2S merge is the simplest of those described in Chapter \ref{cha:Problem Analysis}. Any merging system must perform well in the S2S merge before being developed further to tackle more complex merge problems.
 
-\subsection{User controls}
-\label{subsec:User controls}
-Users of the simulator should be able to adjust simulation features in order to test how different factors affect the performance of the system.
-
-\begin{itemize}
-\item \textit{Traffic Level}
-Dictates the rate at which vehicles spawn. The higher the traffic level, the greater the spawn rate of each lane.
-\item \textit{Target lane speed limit}
-The maximum speed that vehicles on the target lane can travel.
-\item \textit{Merge lane speed limit}
-The maximum speed that vehicles on the merge lane can travel.
-\item \textit{Target lane lead in distance}
-The distance between the target vehicle spawn point and the point at which the target lane and merge lane end.
-\item \textit{Target lane lead out distance}
-The distance between where a target vehicle leaves the map and the end of the area where the target lane and merge lane meet.
-\item \textit{Merge lane lead in distance}
-The distance between where a merge vehicle spawns and where the target lane meets the merge lane.
-\item \textit{Merging Angle}
-The interior angle $\theta$ at the point where the merging lane meets the target lane.
-\end{itemize}
-
-Figure \ref{fig:s2sMarked} illustrates some of the user controllable parameters.
-
-\begin{figure}[htb]
-\includegraphics[width=\textwidth]{designNotes/s2sMarked.png}
-\caption{An S2S diagram marked with some of the user controllable parameters.}
-\label{fig:s2sMarked}
-\end{figure}
-
 \subsection{Map}
 \label{subsec:Map}
 In order to build the map using the user's parameters we will need to calculate the relative positions of the lane entrances and exits as well as the locations of the data collection lines and spawn points.
