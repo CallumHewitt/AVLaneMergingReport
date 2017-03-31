@@ -153,4 +153,25 @@ The first change made to \emph{aim4.vehicle} was to rename all of the files endi
 
 In terms of classes we made \emph{BasicAutoVehicle} abstract and extracted out AIM specific behaviour to \emph{AIMBasicAutoVehicle}. \emph{BasicAutoVehicle} had to be abstract because we wanted to force \emph{getDriver()} to be overridden in subclasses to retrieve the simulator specific \emph{AutoDriver} for that vehicle (for example \emph{AIMAutoDriver} in AIM simulators). 
 
+\section{Maps}
+\label{sec:Maps}
+All maps testing Merge functionality implement \emph{BasicMap}. I created a generalised implementation called \emph{MergeMap} which satisfies the basic functionality of BasicMap as well as some protected accessors. All maps used during simulations extend \emph{MergeMap}.
+
+\subsection{MergeMapUtil}
+\label{sec:MergeMapUtil}
+Similar to AIM's \emph{GridMapUtil}, \emph{MergeMapUtil} provides useful functions to \emph{MergeMap}, including \emph{SpawnPoint} \emph{VehicleSpec} generators.
+
+\section{Drivers}
+\label{sec:Drivers}
+
+
+\section{Testing}
+\label{sec:Testing}
+
+\subsection{Unit Testing}
+\label{subsec:Unit Testing}
+Unit tests were mostly used to ensure getter and setter methods worked as expected. However, some unit tests were used to verify the behaviour of classes. To do this I used Mockito \citep{MockitoWebsite} to mock the behaviour of objects used by the test class so that I could prompt the test class into producing the expected results.
+
+\subsection{Integration Tests}
+\label{subsec:Integration Tests}
 
