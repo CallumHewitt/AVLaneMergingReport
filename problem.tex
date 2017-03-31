@@ -1,9 +1,12 @@
 \chapter{Problem Analysis}
 \label{cha:Problem Analysis}
+\newtext{
+Before attempting to create lane merging strategies, it is important to establish the expectations made of different merging scenarios. On the roads today we have a variety of lane merging types, with differences in the number of lanes on the merging road, differences in the number of lanes on the road being merged into and sometimes a merge might use slip-roads (\ref{sec:Merge Types}). We should also consider the different factors which change how behaviour might be affected at a particular merge when conditions change, such as a road's speed limit or traffic density (\ref{sec:Merge Variance Factors}).
+}
 
-\section{Lane Merging Problems}
-\label{sec:Lane Merging Problems}
-Vehicles may have to merge into another lane for a number of reasons. In this paper we focus on merges made at 'critical positions' such as junctions. This analysis could later be applied to merges made at non-critical points, though centralised approaches may struggle here.
+\section{Merge Types}
+\label{sec:Merge Types}
+In this paper we focus on merges made at 'critical positions' such as junctions. This remains constant in all merge types. However, beyond this, there are many different kinds of merge scenarios that a vehicle might encounter.
 
 \subsection{Single-to-Single Merge}
 \label{subsec:Single-to-Single Merge}
@@ -18,8 +21,8 @@ A single-to-single merge (S2S merge) describes a situation where a vehicle moves
 The main issue with an S2S merge stems from the limited options available to vehicles arriving at the critical position. Target vehicles do not have the opportunity to move laterally out of the way of merging vehicles, and vehicles on both lanes could struggle to reduce their velocity without affecting their successors.
 
 \subsection{Single-to-Single Merge with slip-road}
-\label{subsec:Single-to-Single Merge with slip-road}{}{}
-\newtext{Many S2S merges are performed with an attached slip-road, as seen in Figure \ref{fig:S2SMergeExtended}.}
+\label{subsec:Single-to-Single Merge with slip-road}
+Many S2S merges are performed with an attached slip-road, as seen in Figure \ref{fig:S2SMergeExtended}.
 
 \begin{figure}[htb]{}
 \includegraphics[width=\textwidth]{laneDiagrams/s2sExtended.png}
@@ -27,7 +30,7 @@ The main issue with an S2S merge stems from the limited options available to veh
 \label{fig:S2SMergeExtended}
 \end{figure}
 
-\newtext{The slip-road gives merging vehicles time to travel parallel to the target lane before merging. This makes the merge easier for both MVs and TVs as MVs don't slow down in front of TVs in order to make the turn into the TL. The effectiveness of slip-roads should change with length: the longer the slip-road, the more time MVs have to merge. This should improve the effectiveness of the merge position. We can vary the length of the slip-road to see how the performance of the merge changes.}
+The slip-road gives merging vehicles time to travel parallel to the target lane before merging. This makes the merge easier for both MVs and TVs as MVs don't slow down in front of TVs in order to make the turn into the TL. The effectiveness of slip-roads should change with length: the longer the slip-road, the more time MVs have to merge. This should improve the effectiveness of the merge position. We can vary the length of the slip-road to see how the performance of the merge changes.
 
 \subsection{Single-to-Double Merge}
 \label{subsec:Single-to-Double Merge}
@@ -44,12 +47,18 @@ An S2D merge provides more options for vehicles on the targets lanes at the crit
 \subsection{Single-to-Double Merge with slip-road}
 \label{subsec:Single-to-Double Merge with slip-road}
 
-\newtext{S2D merges can also take advantage of a slip-road, as seen in Figure \ref{fig:S2DMergeExtended}}
+S2D merges can also take advantage of a slip-road, as seen in Figure \ref{fig:S2DMergeExtended}. Figure \ref{fig:realLaneMerge} shows a real world single to triple lane merge with a slip-road.
 
 \begin{figure}[htb]
 \includegraphics[width=\textwidth]{laneDiagrams/s2dExtended.png}
-\caption{A road with a single-to-double lane merge and slip-lane (S2D)}
+\caption{A road with a single-to{}-double lane merge and slip-lane (S2D)}
 \label{fig:S2DMergeExtended}
+\end{figure}
+
+\begin{figure}[htb]
+\includegraphics[width=\textwidth]{images/laneDiagrams/realLaneMerge.jpg}
+\caption{A real world single to triple lane merge with a slip-road. Image Copyright Nigel Cox. This work is licensed under the Creative Commons Attribution-Share Alike 2.0 Generic Licence. http://creativecommons.org/licenses/by-sa/2.0/ \todo{Lilian, does this mean that I have to share my essay under Creative Commons? If so should I choose a different image?}\citep{realLaneMerge}}
+\label{fig:realLaneMerge}
 \end{figure}
 
 \subsection{Double-to-Double Merge}
@@ -62,20 +71,20 @@ A double-to-double merge (D2D merge) describes a situation where a vehicle moves
 \label{fig:D2DMerge}
 \end{figure}
 
-\newtext{With a D2D merge we now have to consider the effect of merging vehicles from ML2 driving across TL1. In addition, target vehicles can no longer laterally move out of the way of merging vehicles as they did before. Combining these factors with the wider range of options available to MVs, we can see that a D2D merge is far more complex than an S2D merge.}
+With a D2D merge we now have to consider the effect of merging vehicles from ML2 driving across TL1. In addition, target vehicles can no longer laterally move out of the way of merging vehicles as they did before. Combining these factors with the wider range of options available to MVs, we can see that a D2D merge is far more complex than an S2D merge.
 
 \subsection{Double-to-Double Merge with slip-road}
 \label{subsec:Double-to-Double Merge with slip-road}
 
-\newtext{D2D merges can also take advantage of a slip-road, as seen in Figure \ref{fig:D2DMergeExtended}}
+D2D merges can also take advantage of a slip-road, as seen in Figure \ref{fig:D2DMergeExtended}.
 
 \begin{figure}[htb]
-\includegraphics[width=\textwidth]{laneDiagrams/s2dExtended.png}
+\includegraphics[width=\textwidth]{laneDiagrams/d2dExtended.png}
 \caption{A road with a single-to-double lane merge and slip-lane (S2D)}
 \label{fig:D2DMergeExtended}
 \end{figure}
 
-\newtext{D2D merges with a slip-road work differently to other slip-road schemes. In this instance vehicles on ML1 and ML2 will both merge into TL1. However, ML2 merges into TL1 as vehicles on an S2D merge would. ML1 vehicles merge into TL1 as vehicles on an S2D merge would when there is a slip-road in play.}
+D2D merges with a slip-road work differently to other slip-road schemes. In this instance vehicles on ML1 and ML2 will both merge into TL1. However, ML2 merges into TL1 as vehicles on an S2D merge would. ML1 vehicles merge into TL1 as vehicles on an S2D merge would when there is a slip-road in play.
 
 \subsection{Lane Obstruction Merge}
 \label{subsec:Lane Obstruction Merge}
@@ -99,11 +108,11 @@ Solutions to the merging problems above have to satisfy the following conditions
 \item \textit{No collisions}
 This means avoiding collisions at the critical position between merging vehicles and target vehicles, as well as avoiding collisions between vehicles on the same lane.
 \item \textit{Minimise delays to both lanes}
-Vehicles should not suffer large delays to travel time due to the merge. \newtext{This means measuring both average delay and maximum delay. We do not want vehicles on one lane starving (not moving) for the benefit of vehicles on the other lane.}
+Vehicles should not suffer large delays to travel time due to the merge. This means measuring both average delay and maximum delay. We do not want vehicles on one lane starving (not moving) for the benefit of vehicles on the other lane.
 \item \textit{Maximise throughput}
 By minimising delays and velocity loss we aim to maximise the throughput of the critical position.
 \item \textit{Minimise changes in velocity}
-\newtext{Though not necessary, we should aim to minimises changes in vehicle velocity, for both passenger comfort and vehicle efficiency.}
+Though not necessary, we should aim to minimises changes in vehicle velocity, for both passenger comfort and vehicle efficiency.
 \end{enumerate}
 
 We need to measure how well solutions meet these conditions. 
@@ -112,7 +121,7 @@ We need to measure how well solutions meet these conditions.
 \label{subsec:Collisions}
 Preventing collisions is a basic safety requirement for any autonomous vehicle system. We can measure this by comparing the positions of vehicles in the system, and ensuring that there is no overlap.
 
-\newtext{We should also consider measuring near misses. We can define a minimum spacing between vehicles, perhaps equal to the minimum braking distance of the vehicle plus an additional comfort distance. This would mimic the IDM model \citep{Treiber2000}.}
+We should also consider measuring near misses. We can define a minimum spacing between vehicles, perhaps equal to the minimum braking distance of the vehicle plus an additional comfort distance. This would mimic the IDM model \citep{Treiber2000}.
 
 Any collisions that do happen should be reported immediately. The system should automatically be considered a failure.
 
@@ -134,7 +143,7 @@ Dresner et al. also provide the following equation for measuring maximum worst c
 \max_{v_i\in{C}}\bigl({t(i)} - t_0(i)\bigr)
 \end{equation}
 
-\newtext{Measuring maximum delay (and minimising it) is important, as we do not want to have a solution where some vehicles have extremely large delay times and others have very low delay times. This should help avoid a 'starvation' situation where some vehicles never get to complete their trips.}
+Measuring maximum delay (and minimising it) is important, as we do not want to have a solution where some vehicles have extremely large delay times and others have very low delay times. This should help avoid a 'starvation' situation where some vehicles never get to complete their trips.
 
 \subsection{Throughput}
 \label{subsec:Throughput}
@@ -148,14 +157,18 @@ Here $t$ is the time it took for all of the vehicles in $C$ to pass through the 
 
 \subsection{Velocity Changes}
 \label{subsec:Velocity Changes}
-\newtext{We want to reduce velocity changes as much as possible, aiming especially to eliminate rapid changes. Ideally autonomous vehicles should have very smooth acceleration and braking profiles. This both increases passenger comfort and improves fuel efficiency.}
+Vehicles should aim want to reduce velocity changes as much as possible, aiming especially to eliminate rapid changes. Ideally autonomous vehicles should have very smooth acceleration and braking profiles. This both increases passenger comfort and improves fuel efficiency.
 
-\todo{Ask Lilian for ideas on best measurements.}
+To measure maximum acceleration and deceleration we can assume a constant acceleration/deceleration between the point at which a vehicle decides to start changing velocity and the point at which the vehicle has either reached it's target speed or made a new decision. We can use the time gap between those two points, and the change in the vehicle's velocity, to calculate it's acceleration or deceleration. We then take the maximum values of the acceleration of the vehicle and the deceleration of the vehicle.
 
-Current thoughts on measurement:
+\section{Merge Variance Factors}
+\label{sec:Merge Variance Factors}
 
-Maximum decleration: How to measure? Sample each second to see changes? More frequently than that? How large a sample is too big or too small?
+\section{Requirements}
+\label{sec:Requirements}
 
-Similar questions for maximum acceleration.
+\subsection{Functional}
+\label{subsec:Functional}
 
-Should we also measure net velocity change over the whole critical position?
+\subsection{Non-functional}
+\label{subsec:Non-functional}
