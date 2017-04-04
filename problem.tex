@@ -211,7 +211,8 @@ By using the problem analysis above we can define requirements for our final sys
 The functional requirements describe the functionality required within the simulator. They are broken into two sets of requirements. User requirements and system requirements. User requirements describe the behaviour expected from the simulator from a user perspective. System requirements are all associated with a user requirement. They describe the functionality required by the system in order to satisfy the user requirement. Table \ref{tab:functionalRequirements} shows all of the functional requirements.
 
 \begin{longtable}{|p{0.1\linewidth}|p{0.4\linewidth}|p{0.1\linewidth}|p{0.4\linewidth}|}
-%Headings and Footers%
+% Headings and Footers %
+\caption{Functional requirements table.}\label{tab:functionalRequirements}\\
 \hline
 \multicolumn{2}{|l|}{User Requirements} & \multicolumn{2}{l|}{System Requirements} \\
 \hline
@@ -228,70 +229,101 @@ The functional requirements describe the functionality required within the simul
 \hline
 \endlastfoot
 
-%Data%
-\multirow{3}{*}{U.1} & \multirow{3}{*}{\parbox{\linewidth}{Users can run merge simulations.}} 
- & S.11 & The system has controls for starting merge simulations \\
- &  & S.12 & The system can create merge simulations \\
- &  & S.13 & The system can run merge simulations \\
+% Data %
+\multirow{3}{*}{FU.1} & \multirow{3}{*}{\parbox{\linewidth}{Users can run merge simulations.}} 
+ & FS.11 & The system has controls for starting merge simulations \\
+ &  & FS.12 & The system can create merge simulations \\
+ &  & FS.13 & The system can run merge simulations \\
 \hline
-\multirow{2}{*}{U.2} & \multirow{2}{*}{\parbox{\linewidth}{User can manipulate the running speed of a simulation.}}
- & S.21 & The system has controls changing the speed of running simulations. \\
- &  & S.22 & Merge simulations can have their run speed changed. \\ 
+\multirow{2}{*}{FU.2} & \multirow{2}{*}{\parbox{\linewidth}{User can manipulate the running speed of a simulation.}}
+ & FS.21 & The system has controls changing the speed of running simulations. \\
+ &  & FS.22 & Merge simulations can have their run speed changed. \\ 
 \hline
-\multirow{2}{*}{U.3} & \multirow{2}{*}{\parbox{\linewidth}{User can pause simulations.}}
- & S.31 & The system has controls allowing running simulations to pause. \\
- &  & S.32 & Merge simulations can be paused \\ 
+\multirow{2}{*}{FU.3} & \multirow{2}{*}{\parbox{\linewidth}{User can pause simulations.}}
+ & FS.31 & The system has controls allowing running simulations to pause. \\
+ &  & FS.32 & Merge simulations can be paused \\ 
 \hline
-\multirow{2}{*}{U.4} & \multirow{2}{*}{\parbox{\linewidth}{User can end a simulation.}}
- & S.41 & The system has controls ending simulations. \\
- &  & S.42 & Merge simulations can be ended. \\ 
+\multirow{2}{*}{FU.4} & \multirow{2}{*}{\parbox{\linewidth}{User can end a simulation.}}
+ & FS.41 & The system has controls ending simulations. \\
+ &  & FS.42 & Merge simulations can be ended. \\ 
 \hline
-U.5 & User can view the activities of a simulation. & S.51 & The system displays the current status of a simulation as it runs. \\
+FU.5 & User can view the activities of a simulation. & FS.51 & The system displays the current status of a simulation as it runs. \\
 \hline
-\multirow{9}{*}{U.6} & \multirow{9}{*}{\parbox{\linewidth}{Users can export the results of a merge simulation.}}
- & S.61 & The system can produce a file containing results data from the simulation. \\
- &  & S.62 & The results file contains the total throughput of the simulation. \\
- &  & S.63 & The results file contains the maximum delay of the simulation. \\
- &  & S.64 & The results file contains the average delay of the simulation. \\
- &  & S.65 & The results file contains the maximum acceleration of the simulation. \\
- &  & S.66 & The results file contains the maximum deceleration of the simulation. \\
- &  & S.67 & The results file contains the delay for each vehicle in the simulation. \\
- &  & S.64 & The results file contains the maximum acceleration for each vehicle in the simulation. \\
- &  & S.65 & The results file contains the maximum deceleration for each vehicle in the simulation. \\ 
+\multirow{9}{*}{FU.6} & \multirow{9}{*}{\parbox{\linewidth}{Users can export the results of a merge simulation.}}
+ & FS.61 & The system can produce a file containing results data from the simulation. \\
+ &  & FS.62 & The results file contains the total throughput of the simulation. \\
+ &  & FS.63 & The results file contains the maximum delay of the simulation. \\
+ &  & FS.64 & The results file contains the average delay of the simulation. \\
+ &  & FS.65 & The results file contains the maximum acceleration of the simulation. \\
+ &  & FS.66 & The results file contains the maximum deceleration of the simulation. \\
+ &  & FS.67 & The results file contains the delay for each vehicle in the simulation. \\
+ &  & FS.64 & The results file contains the maximum acceleration for each vehicle in the simulation. \\
+ &  & FS.65 & The results file contains the maximum deceleration for each vehicle in the simulation. \\ 
 \hline
-\multirow{3}{*}{U.7} & \multirow{3}{*}{\parbox{\linewidth}{Users can select and run an S2S merge simulation.}}
- & S.71 & The system can produce S2S simulations. \\
- &  & S.72 & The system has controls allowing S2S simulations to be selected. \\
- &  & S.73 & The system can run S2S simulations \\ 
+\multirow{3}{*}{FU.7} & \multirow{3}{*}{\parbox{\linewidth}{Users can select and run an S2S merge simulation.}}
+ & FS.71 & The system can produce S2S simulations. \\
+ &  & FS.72 & The system has controls allowing S2S simulations to be selected. \\
+ &  & FS.73 & The system can run S2S simulations \\ 
 \hline
-\multirow{2}{*}{U.8} & \multirow{2}{*}{\parbox{\linewidth}{Users can select a centralised merging scheme with S2S merge simulations.}}
- & S.81 & The system can use an AIM-like merge management system for the merging zone in an S2S simulation. \\
- &  & S.82 & The system has controls allowing users to select the merge scheme indicated in S.71. \\ 
+\multirow{2}{*}{FU.8} & \multirow{2}{*}{\parbox{\linewidth}{Users can select a centralised merging scheme with S2S merge simulations.}}
+ & FS.81 & The system can use an AIM-like merge management system for the merging zone in an S2S simulation. \\
+ &  & FS.82 & The system has controls allowing users to select the merge scheme indicated in FS.71. \\ 
 \hline
-\multirow{2}{*}{U.9} & \multirow{2}{*}{\parbox{\linewidth}{Users can select a decentralised merging scheme with S2S merge simulations.}}
- & S.91 & The system can use an merge management scheme similar to that described in \citep{VanMiddlesworth2008}. \\
- &  & S.92 & The system has controls allowing users to select the merge scheme indicated in S.81. \\ 
+\multirow{2}{*}{FU.9} & \multirow{2}{*}{\parbox{\linewidth}{Users can select a decentralised merging scheme with S2S merge simulations.}}
+ & FS.91 & The system can use an merge management scheme similar to that described in \citep{VanMiddlesworth2008}. \\
+ &  & FS.92 & The system has controls allowing users to select the merge scheme indicated in FS.81. \\ 
 \hline
-U.10 & Users can control the traffic level of an S2S simulation. & S.101 & The system has controls for adjusting the traffic for an S2S simulation. \\ 
+FU.10 & Users can control the traffic level of an S2S simulation. & FS.101 & The system has controls for adjusting the traffic for an S2S simulation. \\ 
 \hline
-U.11 & Users can control the target lane speed limit of an S2S simulation. & S.111 & The system has controls for adjusting the target lane speed limit for an S2S simulation. \\ 
+FU.11 & Users can control the target lane speed limit of an S2S simulation. & FS.111 & The system has controls for adjusting the target lane speed limit for an S2S simulation. \\ 
 \hline
-U.12 & Users can control the merge lane speed limit of an S2S simulation. & S.121 & The system has controls for adjusting the merge lane speed limit for an S2S simulation. \\ 
+FU.12 & Users can control the merge lane speed limit of an S2S simulation. & FS.121 & The system has controls for adjusting the merge lane speed limit for an S2S simulation. \\ 
 \hline
-U.13 & Users can control the target lane lead in distance of an S2S simulation. & S.131 & The system has controls for adjusting the target lane lead in distance for an S2S simulation. \\ 
+FU.13 & Users can control the target lane lead in distance of an S2S simulation. & FS.131 & The system has controls for adjusting the target lane lead in distance for an S2S simulation. \\ 
 \hline
-U.14 & Users can control the target lane lead out distance of an S2S simulation. & S.141 & The system has controls for adjusting the target lane lead out distance for an S2S simulation. \\ 
+FU.14 & Users can control the target lane lead out distance of an S2S simulation. & FS.141 & The system has controls for adjusting the target lane lead out distance for an S2S simulation. \\ 
 \hline
-U.15 & Users can control the merge lane lead in distance of an S2S simulation. & S.151 & The system has controls for adjusting the merge lane lead in distance for an S2S simulation. \\ 
+FU.15 & Users can control the merge lane lead in distance of an S2S simulation. & FS.151 & The system has controls for adjusting the merge lane lead in distance for an S2S simulation. \\ 
 \hline
-U.16 & Users can control the merge angle of an S2S simulation. & S.161 & The system has controls for adjusting the merge angle for an S2S simulation. \\ 
+FU.16 & Users can control the merge angle of an S2S simulation. & FS.161 & The system has controls for adjusting the merge angle for an S2S simulation. \\ 
 \hline
-\multirow{2}{*}{U.17} & \multirow{2}{*}{\parbox{\linewidth}{Users should be alerted of any collisions during a simulation.}}
- & S.171 & The system should be able to alert the user if a collision occurs. \\
- &  & S.172 & The simulation should detect collisions. \\ 
-\hline
+\multirow{2}{*}{FU.17} & \multirow{2}{*}{\parbox{\linewidth}{Users should be alerted of any collisions during a simulation.}}
+ & FS.171 & The system should be able to alert the user if a collision occurs. \\
+ &  & FS.172 & The simulation should detect collisions. \\ 
 \end{longtable}
 
 \subsection{Non-functional}
 \label{subsec:Non-functional}
-The non-functional requirements describe the . They are broken into two sets of requirements. User requirements and system requirements. User requirements describe the behaviour expected from the simulator from a user perspective. System requirements are all associated with a user requirement. They describe the functionality required by the system in order to satisfy the user requirement. Table \ref{tab:functionalRequirements} shows all of the functional requirements.
+The non-functional requirements describe the expectations of the simulator that are not actions the simulator will perform. Table \ref{tab:nonFunctionalRequirements} shows the non-functional requirements for the simulator.
+
+\begin{longtable}{|p{0.1\linewidth}|p{0.9\linewidth}|}
+% Headings and footers %
+\caption{Non-functional requirements table.}\label{tab:nonFunctionalRequirements}\\
+\hline
+ID & Description \\
+\hline
+\endfirsthead
+
+\hline
+ID & Description \\
+\hline
+\endhead
+
+\hline
+\endfoot
+
+\hline
+\endlastfoot
+
+% Data %
+NS.1 & All system controls come from standard JComponents. \\
+NS.2 & All controls are clearly labeled. \\
+NS.3 & Simulation creation should take no longer than 3 seconds. \\
+NS.4 & Simulations should be able to run faster than real-time. \\
+NS.5 & Simulations should update the GUI frequently. \\
+NS.6 & All data displayed to the user should be accurate. \\
+NS.7 & All data in the results file should be accurate. \\
+NS.8 & Created simulators should accurately represent their merge scenario with the provided modifier factors. \\
+NS.9 & Code should be written to allow for easy expansion. \\
+NS.10 & Code should be well documented. \\
+\end{longtable}
