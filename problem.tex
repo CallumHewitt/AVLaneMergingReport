@@ -1,8 +1,7 @@
 \chapter{Problem Analysis}
 \label{cha:Problem Analysis}
 \newtext{
-Before attempting to create lane merging strategies, it is important to establish the expectations made of different merging scenarios. On the roads today we have a variety of lane merging types, with differences in the number of lanes on the merging road, differences in the number of lanes on the road being merged into and sometimes a merge might use slip-roads (\ref{sec:Merge Types}). We should also consider the different factors which change how behaviour might be affected at a particular merge when conditions change, such as a road's speed limit or traffic density (\ref{sec:Merge Variance Factors}).
-}
+Lane merging is not a straightforward problem with a single solution. There are many different types of lane merging scenarios as well as a number of factors which add even more variance. Analysing the different merging scenarios helps to better define the problem and better create solutions for the scenario (\ref{sec:Merge Types}). The factors that could alter the behaviour of a merge scenario should also be defined. This makes it easier to introduce controls in the final simulator which manipulate these factors (\ref{sec:Merge Variance Factors}).
 
 \section{Merge Types}
 \label{sec:Merge Types}
@@ -22,7 +21,7 @@ The main issue with an S2S merge stems from the limited options available to veh
 
 \subsection{Single-to-Single Merge with slip-road}
 \label{subsec:Single-to-Single Merge with slip-road}
-Many S2S merges are performed with an attached slip-road, as seen in Figure \ref{fig:S2SMergeExtended}.
+Many S2S merges are performed with an attached slip-road, as seen in Figure \ref{fig:S2SMergeExtended}. Figure \ref{fig:realLaneMerge} shows a real world single to triple lane merge with a slip-road.
 
 \begin{figure}[htb]{}
 \includegraphics[width=\textwidth]{laneDiagrams/s2sExtended.png}
@@ -30,7 +29,13 @@ Many S2S merges are performed with an attached slip-road, as seen in Figure \ref
 \label{fig:S2SMergeExtended}
 \end{figure}
 
-The slip-road gives merging vehicles time to travel parallel to the target lane before merging. This makes the merge easier for both MVs and TVs as MVs don't slow down in front of TVs in order to make the turn into the TL. The effectiveness of slip-roads should change with length: the longer the slip-road, the more time MVs have to merge. This should improve the effectiveness of the merge position. We can vary the length of the slip-road to see how the performance of the merge changes.
+\begin{figure}[htb]
+\includegraphics[width=\textwidth]{images/laneDiagrams/realLaneMerge.jpg}
+\caption{A real world single to triple lane merge with a slip-road. Image Copyright Nigel Cox. This work is licensed under the Creative Commons Attribution-Share Alike 2.0 Generic Licence. http://creativecommons.org/licenses/by-sa/2.0/ \todo{Lilian, does this mean that I have to share my essay under Creative Commons? If so should I choose a different image?}\citep{realLaneMerge}}
+\label{fig:realLaneMerge}
+\end{figure}
+
+The slip-road gives merging vehicles more time to travel parallel to the target lane before merging. This makes the merge easier for both MVs and TVs as MVs don't slow down in front of TVs in order to make the turn into the TL. The effectiveness of slip-roads should change with length: the longer the slip-road, the more time MVs have to merge. This should improve the effectiveness of the merge position.
 
 \subsection{Single-to-Double Merge}
 \label{subsec:Single-to-Double Merge}
@@ -42,23 +47,17 @@ A single-to-double merge (S2D merge) describes a situation where a vehicle moves
 \label{fig:S2DMerge}
 \end{figure}
 
-An S2D merge provides more options for vehicles on the targets lanes at the critical position. Target vehicles now have the opportunity to move laterally to avoid merging vehicles. Two lanes also allows for more vehicles on the target lane which should give vehicles greater freedom to adjust their velocity without affecting their successors.
+An S2D merge provides more options for vehicles on the targets lanes at the critical position. Target vehicles now have the opportunity to move laterally to avoid merging vehicles. Two lanes also allows for more vehicles on the target lane which should give vehicles greater freedom to adjust their velocity without affecting their successors, at least when compared to the same number of vehicles on a single lane.
 
 \subsection{Single-to-Double Merge with slip-road}
 \label{subsec:Single-to-Double Merge with slip-road}
 
-S2D merges can also take advantage of a slip-road, as seen in Figure \ref{fig:S2DMergeExtended}. Figure \ref{fig:realLaneMerge} shows a real world single to triple lane merge with a slip-road.
+S2D merges can also take advantage of a slip-road, as seen in Figure \ref{fig:S2DMergeExtended}.
 
 \begin{figure}[htb]
 \includegraphics[width=\textwidth]{laneDiagrams/s2dExtended.png}
 \caption{A road with a single-to{}-double lane merge and slip-lane (S2D)}
 \label{fig:S2DMergeExtended}
-\end{figure}
-
-\begin{figure}[htb]
-\includegraphics[width=\textwidth]{images/laneDiagrams/realLaneMerge.jpg}
-\caption{A real world single to triple lane merge with a slip-road. Image Copyright Nigel Cox. This work is licensed under the Creative Commons Attribution-Share Alike 2.0 Generic Licence. http://creativecommons.org/licenses/by-sa/2.0/ \todo{Lilian, does this mean that I have to share my essay under Creative Commons? If so should I choose a different image?}\citep{realLaneMerge}}
-\label{fig:realLaneMerge}
 \end{figure}
 
 \subsection{Double-to-Double Merge}
@@ -88,7 +87,7 @@ D2D merges with a slip-road work differently to other slip-road schemes. In this
 
 \subsection{Lane Obstruction Merge}
 \label{subsec:Lane Obstruction Merge}
-A lane obstruction merge is where a vehicle needs to change lanes to avoid an obstacle in their way, as seen in Figure \ref{fig:LaneObstruction}. It is essentially an S2S merge although the vehicle will tend to move laterally to avoid the obstacle. In this situation the critical position is the obstruction on the CL. 
+A lane obstruction merge is where a vehicle needs to change lanes to avoid an obstacle in their way, as seen in Figure \ref{fig:LaneObstruction}. It is essentially an S2S merge although the vehicle will tend to move laterally to avoid the obstacle. In this situation the critical position is a point shortly before the obstruction on the CL. 
 
 \begin{figure}[htb]
 \includegraphics[width=\textwidth]{laneDiagrams/lane_blocker.png}
@@ -163,7 +162,11 @@ To measure maximum acceleration and deceleration we can assume a constant accele
 
 \section{Merge Variance Factors}
 \label{sec:Merge Variance Factors}
+In each of the scenarios in section \ref{sec:Merge Types} the road layout is fixed. More variance can be introduced to the scenarios by altering other factors.
 
+\begin{itemize}
+\item \textit{Traffic Level} The traffic level changes the number of vehciles which use 
+\end{itemize}
 
 \section{Requirements}
 \label{sec:Requirements}
