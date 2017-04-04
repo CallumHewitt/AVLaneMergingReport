@@ -2,6 +2,7 @@
 \label{cha:Problem Analysis}
 \newtext{
 Lane merging is not a straightforward problem with a single solution. There are many different types of lane merging scenarios as well as a number of factors which add even more variance. Analysing the different merging scenarios helps to better define the problem and better create solutions for the scenario (\ref{sec:Merge Types}). The factors that could alter the behaviour of a merge scenario should also be defined. This makes it easier to introduce controls in the final simulator which manipulate these factors (\ref{sec:Merge Variance Factors}).
+}
 
 \section{Merge Types}
 \label{sec:Merge Types}
@@ -9,7 +10,7 @@ In this paper we focus on merges made at 'critical positions' such as junctions.
 
 \subsection{Single-to-Single Merge}
 \label{subsec:Single-to-Single Merge}
-A single-to-single merge (S2S merge) describes a situation where a vehicle moves from a single lane road into another single lane road, as seen in Figure \ref{fig:S2SMerge}. In this situation we label the lane that vehicles are moving from the 'current lane' (CL), and we label the lane that vehicles move to the 'target lane' (TL). We describe the vehicles that start on the CL as 'merging vehicles' (MV) and the vehicles that start on the TL as 'target vehicles' (TV). We have our critical position where the CL and TL connect.
+A single-to-single merge (S2S merge) describes a situation where a vehicle moves from a single lane road into another single lane road, as seen in Figure \ref{fig:S2SMerge}. In this situation we label the lane that vehicles are moving from the 'current lane' (CL), and we label the lane that vehicles move to the 'target lane' (TL). We describe the vehicles that start on the CL as 'merging vehicles' (MV) and the vehicles that start on the TL as 'target vehicles' (TV). We have our critical position where the CL and TL connect. We call the area in which the vehicles in the two lanes merge together our 'merge zone'.
 
 \begin{figure}[htb]
 \includegraphics[width=\textwidth]{laneDiagrams/s2s.png}
@@ -162,17 +163,135 @@ To measure maximum acceleration and deceleration we can assume a constant accele
 
 \section{Merge Variance Factors}
 \label{sec:Merge Variance Factors}
-In each of the scenarios in section \ref{sec:Merge Types} the road layout is fixed. More variance can be introduced to the scenarios by altering other factors.
+\newtext{ALL NEW TEXT BELOW}
+
+In each of the scenarios in section \ref{sec:Merge Types} the road layout is fixed. More variance can be introduced to the scenarios by altering other factors. Not all of the factors below will be applicable in every merge scenario. Figure \ref{fig:s2sMarked} shows some of the factors below, applied to an S2S merge.
 
 \begin{itemize}
-\item \textit{Traffic Level} The traffic level changes the number of vehciles which use 
+\item \textit{Traffic Level} 
+The traffic level changes the number of vehicles on the road at any one time. Effectively, it is used to measure traffic density.
+\item \textit{Target lane speed limit}
+The maximum speed that vehicles on the target lane can travel.
+\item \textit{Merge lane speed limit}
+The maximum speed that vehicles on the merge lane can travel.
+\item \textit{Target lane lead in distance}
+The distance between the point at which target vehicles start being able to make decisions regarding the merge, and the point at which the target vehicles reach the merge zone.
+\item \textit{Target lane lead out distance}
+The distance between the end of the merge zone and the end of the target lane (at least the end in the simulator).
+\item \textit{Merge lane lead in distance}
+The distance between the point at which merging vehicles start being able to make decisions regarding the merge, and the point at which the merging vehicles reach the merge zone.
+\item \textit{Merging angle}
+The interior angle $\theta$ at the point where the merging lane meets the target lane.
+\item \textit{Slip-road length}
+The length of the slip-road in a merge that uses a slip-road.
 \end{itemize}
+
+\begin{figure}[htb]
+\includegraphics[width=\textwidth]{laneDiagrams/s2sMarked.png}
+\caption{An S2S merge marked with some of the variable factors}
+\label{fig:s2sMarked}
+\end{figure}
+
+Traffic level has a fairly obvious effect on performance in a particular merge scenario. The more vehicles that try to merge together the more difficult it will be for the merge to happen. It will likely require vehicles to be moving much more slowly. Increased traffic density also increases the likelihood of traffic shocks, and vehicle manoeuvrability is impacted.
+
+Altering speed limits also affects performance. Higher speed limits allow vehicles to travel more quickly through the critical position and could improve performance. However, larger speed limits could also lead to larger deceleration and acceleration values. Problems could also arise if there are big differences between the speed limits of the merging lane and target lane. If the target lane speed limit is larger, merging vehicles will slow down target lane vehicles as they merge in. If the merging lane speed limit is larger then merging vehicles may have to declerate quickly to allow target vehicles to move through the merging zone.
+
+Lead in distances change the amount of deliberation time vehicles have before they reach the junction. It also changes the distance they have to change their velocity in. This means that shorter distances could lead to larger acceleration and deceleration values as well as sub-optimal solutions to the merge.
+
+The lead out distance will mostly affect the result collected as the vehicle leaves the simulator. Longer lead out distances allow vehicles to return to their preferred speed. This should give more accurate results for a vehicle's maximum acceleration and deceleration. 
+
+The merging angle changes the length of the merge zone. Shallower angles will lead to longer merge zones due to the width of the merging lane. Shallower merging angles also reduce the turning angle for merging vehicles. This could lead to faster merges as merging vehicles have to make smaller changes to their heading.
 
 \section{Requirements}
 \label{sec:Requirements}
+By using the problem analysis above we can define requirements for our final system. This system will not deal with every merge scenario described but will instead set the groundwork for further research.
 
 \subsection{Functional}
 \label{subsec:Functional}
+The functional requirements describe the functionality required within the simulator. They are broken into two sets of requirements. User requirements and system requirements. User requirements describe the behaviour expected from the simulator from a user perspective. System requirements are all associated with a user requirement. They describe the functionality required by the system in order to satisfy the user requirement. Table \ref{tab:functionalRequirements} shows all of the functional requirements.
+
+\begin{longtable}{|p{0.1\linewidth}|p{0.4\linewidth}|p{0.1\linewidth}|p{0.4\linewidth}|}
+%Headings and Footers%
+\hline
+\multicolumn{2}{|l|}{User Requirements} & \multicolumn{2}{l|}{System Requirements} \\
+\hline
+\endfirsthead
+
+\hline
+\multicolumn{2}{|l|}{User Requirements} & \multicolumn{2}{l|}{System Requirements} \\
+\hline
+\endhead
+
+\hline
+\endfoot
+
+\hline
+\endlastfoot
+
+%Data%
+\multirow{3}{*}{U.1} & \multirow{3}{*}{\parbox{\linewidth}{Users can run merge simulations.}} 
+ & S.11 & The system has controls for starting merge simulations \\
+ &  & S.12 & The system can create merge simulations \\
+ &  & S.13 & The system can run merge simulations \\
+\hline
+\multirow{2}{*}{U.2} & \multirow{2}{*}{\parbox{\linewidth}{User can manipulate the running speed of a simulation.}}
+ & S.21 & The system has controls changing the speed of running simulations. \\
+ &  & S.22 & Merge simulations can have their run speed changed. \\ 
+\hline
+\multirow{2}{*}{U.3} & \multirow{2}{*}{\parbox{\linewidth}{User can pause simulations.}}
+ & S.31 & The system has controls allowing running simulations to pause. \\
+ &  & S.32 & Merge simulations can be paused \\ 
+\hline
+\multirow{2}{*}{U.4} & \multirow{2}{*}{\parbox{\linewidth}{User can end a simulation.}}
+ & S.41 & The system has controls ending simulations. \\
+ &  & S.42 & Merge simulations can be ended. \\ 
+\hline
+U.5 & User can view the activities of a simulation. & S.51 & The system displays the current status of a simulation as it runs. \\
+\hline
+\multirow{9}{*}{U.6} & \multirow{9}{*}{\parbox{\linewidth}{Users can export the results of a merge simulation.}}
+ & S.61 & The system can produce a file containing results data from the simulation. \\
+ &  & S.62 & The results file contains the total throughput of the simulation. \\
+ &  & S.63 & The results file contains the maximum delay of the simulation. \\
+ &  & S.64 & The results file contains the average delay of the simulation. \\
+ &  & S.65 & The results file contains the maximum acceleration of the simulation. \\
+ &  & S.66 & The results file contains the maximum deceleration of the simulation. \\
+ &  & S.67 & The results file contains the delay for each vehicle in the simulation. \\
+ &  & S.64 & The results file contains the maximum acceleration for each vehicle in the simulation. \\
+ &  & S.65 & The results file contains the maximum deceleration for each vehicle in the simulation. \\ 
+\hline
+\multirow{3}{*}{U.7} & \multirow{3}{*}{\parbox{\linewidth}{Users can select and run an S2S merge simulation.}}
+ & S.71 & The system can produce S2S simulations. \\
+ &  & S.72 & The system has controls allowing S2S simulations to be selected. \\
+ &  & S.73 & The system can run S2S simulations \\ 
+\hline
+\multirow{2}{*}{U.8} & \multirow{2}{*}{\parbox{\linewidth}{Users can select a centralised merging scheme with S2S merge simulations.}}
+ & S.81 & The system can use an AIM-like merge management system for the merging zone in an S2S simulation. \\
+ &  & S.82 & The system has controls allowing users to select the merge scheme indicated in S.71. \\ 
+\hline
+\multirow{2}{*}{U.9} & \multirow{2}{*}{\parbox{\linewidth}{Users can select a decentralised merging scheme with S2S merge simulations.}}
+ & S.91 & The system can use an merge management scheme similar to that described in \citep{VanMiddlesworth2008}. \\
+ &  & S.92 & The system has controls allowing users to select the merge scheme indicated in S.81. \\ 
+\hline
+U.10 & Users can control the traffic level of an S2S simulation. & S.101 & The system has controls for adjusting the traffic for an S2S simulation. \\ 
+\hline
+U.11 & Users can control the target lane speed limit of an S2S simulation. & S.111 & The system has controls for adjusting the target lane speed limit for an S2S simulation. \\ 
+\hline
+U.12 & Users can control the merge lane speed limit of an S2S simulation. & S.121 & The system has controls for adjusting the merge lane speed limit for an S2S simulation. \\ 
+\hline
+U.13 & Users can control the target lane lead in distance of an S2S simulation. & S.131 & The system has controls for adjusting the target lane lead in distance for an S2S simulation. \\ 
+\hline
+U.14 & Users can control the target lane lead out distance of an S2S simulation. & S.141 & The system has controls for adjusting the target lane lead out distance for an S2S simulation. \\ 
+\hline
+U.15 & Users can control the merge lane lead in distance of an S2S simulation. & S.151 & The system has controls for adjusting the merge lane lead in distance for an S2S simulation. \\ 
+\hline
+U.16 & Users can control the merge angle of an S2S simulation. & S.161 & The system has controls for adjusting the merge angle for an S2S simulation. \\ 
+\hline
+\multirow{2}{*}{U.17} & \multirow{2}{*}{\parbox{\linewidth}{Users should be alerted of any collisions during a simulation.}}
+ & S.171 & The system should be able to alert the user if a collision occurs. \\
+ &  & S.172 & The simulation should detect collisions. \\ 
+\hline
+\end{longtable}
 
 \subsection{Non-functional}
 \label{subsec:Non-functional}
+The non-functional requirements describe the . They are broken into two sets of requirements. User requirements and system requirements. User requirements describe the behaviour expected from the simulator from a user perspective. System requirements are all associated with a user requirement. They describe the functionality required by the system in order to satisfy the user requirement. Table \ref{tab:functionalRequirements} shows all of the functional requirements.
