@@ -1,77 +1,90 @@
 \chapter{Design}
 \label{cha:Design}
+\newtext{All new text}
+For the initial development of the simulator I focused on creating a working prototype for S2S merges. The S2S merge is one of the most simple merge scenarios that an autonomous vehicle might encounter. The designs here can then be expanded at a later date to include some of the other scenarios in \ref{sec:Merge Types}.
 
-\section{S2S}
-\label{sec:S2S}
-The S2S merge is the simplest of those described in Chapter \ref{cha:Problem Analysis}. Any merging system must perform well in the S2S merge before being developed further to tackle more complex merge problems.
+\section{Map}
+\label{sec:Map}
+In order to build the map using the user's parameters we will need to calculate the relative positions of the lane entrances and exits as well as the locations of the data collection lines and spawn points. A more detailed analysis of the mathematics used to calculate these positions can be found in Appendix \ref{sec:S2SMapCalculations}.
 
-\subsection{Map}
-\label{subsec:Map}
-In order to build the map using the user's parameters we will need to calculate the relative positions of the lane entrances and exits as well as the locations of the data collection lines and spawn points.
-
-To start with, we need to calculate the dimensions of the merging zone. The height of the merging zone will be the same as lane width of the target lane. The length can be calculated using the right-angled triangle in Figure \ref{fig:mergingZoneTriangle}. Using this triangle and some trigonometry we can calculate the length of the merge zone ($h$ in Fig. \ref{fig:mergingZoneTriangle}) using equation \ref{hSin}.
-
-\begin{figure}[htb]
-\includegraphics[width=\textwidth]{designNotes/mergingZoneTriangle.png}
-\caption{A right-angled triangle used to calculate the size of the merging zone.}
-\label{fig:mergingZoneTriangle}
-\end{figure}
-
-\begin{equation}\label{hSin}
-h = o / \sin(\theta)
-\end{equation}
-
-We also need to know whether the horizontal width of the merge lane on the map, or it's 'base width' is longer than the target lane's lead in distance, plus the merge zone length. This will determine the width of the overall map, as if the merge lane's base length is longer then the target lane will not start with co-ordinate $x=0$ as it would if the target lane determined the width of the map.
-
-Firstly we need to calculate the X and Y adjustments at the merge lane entrance. Because the vehicles drive in the centre of the lane and the merge lead in distance is defined by the middle line of the lane we still need to calculate how far the lane extends in the x and y directions due to it's width. To do this we can use the right-angled triangles shown in Figure \ref{fig:mergeEntranceTriangles}
+\subsection{Target Lane Coordinates}
+\label{subsec:Target Lane Coordinates}
+The target lane entrance will have a Y-coordinate equal to half of the lane width. In fact, every coordinate that target vehicles travel on will have a Y-coordinate equal to half the lane width. The entrance's X-coordinate will depend on whether the target lane, plus the merge zone length, is longer than the base width of the merging lane, that is, the horizontal distance the merging lane covers. You can see this distance indicated in Figure \ref{fig:baseWidth}.
 
 \begin{figure}[htb]
-\includegraphics[width=\textwidth]{designNotes/mergeEntranceTriangles.png}
-\caption{Two right-angled triangles used to calculate the x and y adjustments for the merge entrance.}
-\label{fig:mergeEntranceTriangles}
+\includegraphics[width=\textwidth]{designNotes/baseWidth.png}
+\caption{A diagram indicating the base width of the merging lane.}
+\label{fig:baseWidth}
 \end{figure}
 
-These triangles have the same dimensions and have an interior angle of 90 - $\theta$ due to the 'alternate angle' or 'z-angle' rule. Each triangle has a hypotenuse with a length equal to half the width of the lane. 
+If the target lane is longer then the entrance X-coordinate will be $0$. If not then we have to do further calculations. The total width of the simulation is given by equation \ref{targetLongerWidth} if the target lane has $x=0$ and equation \ref{mergeLongerWidth} if not.
 
-The x-adjustment for the merge entrance is the length of the adjacent side of one of the lower triangle and the y-adjustment for the merge entrance is the length of the opposite side of the upper triangle (though both triangles do have the same dimensions). We can use equation \ref{aCos90} to calculate the X-adjustment and equation \ref{oSin90} to calculate the Y-adjustment.
+\begin{multline}\label{targetLongerWidth}
+width = \\
+targetLeadInDistance + mergeZoneWidth + targetLeadOutDistance
+\end{multline}
 
-\begin{equation}\label{aCos90}
-a = h \cos(90 - \theta)
-\end{equation}{}
+\begin{multline}\label{mergeLongerWidth}
+width = mergeBaseWidth + targetLeadOutDistance
+\end{multline}
 
-\begin{equation}\label{oSin90}
-o = h \sin(90 - \theta)
-\end{equation}
+So we can use equation \ref{targetLongerWidth} to calculate the target lane's entrance X-coordinate.
 
-To calculate the 'base width' of the merge lane we will also need to calculate the adjacent side of the triangle in Figure \ref{fig:baseWidthTriangle}. In this triangle the hypotenuse has a length equal to the merge lead in distance. Therefore, we can use equation \ref{aCos} to calculate the length of the adjacent side. After obtaining the length of this side we simply add the merge entrance X-adjustment and half the length of the merge zone to find the merge base width.
+\begin{multline}\label{targetLaneStartX}
+targetLaneStartX = width - \\
+(targetLeadInDistance + mergeZoneWidth + targetLeadOutDistance)
+\end{multline}
+
+The target lane exit coordinates can be calculated similarly. The X-coordinate will be equal to the width of the simulator. With these coordinates calculated the simulator can place data collection lines and create spawn points for the target vehicles.
+
+Finally the X-coordinate indicating the entrance to the merge zone for target vehicles is given by equation \ref{targetLaneZoneEntranceX}. The exit X-coordinate is given by equation \ref{targetLaneZoneExitX}.
+
+\begin{multline}\label{targetLaneZoneEntranceX}
+targetLaneZoneEntranceX = width - \\
+(mergeZoneWidth + targetLeadOutDistance)
+\end{multline}
+
+\begin{multline}\label{targetLaneZoneExitX}
+targetLaneZoneExitX = width - targetLeadOutDistance
+\end{multline}
+
+\subsection{Merging Lane Coordinates}
+\label{subsec:Merging Lane Coordinates}
+The merging lane entrance coordinates are more difficult to calculate. To get the X-coordinate we can calculate an x-adjustment from the far edge of the lane to the centre, as shown in Figure \ref{fig:adjustments}.
 
 \begin{figure}[htb]
-\includegraphics[width=\textwidth]{designNotes/baseWidthTriangle.png}
-\caption{A right-angled triangle used to help calculate the base width of the merge lane, along with the X-adjustment and merge-zone length.}
-\label{fig:baseWidthTriangle}
+\includegraphics[width=\textwidth]{designNotes/adjustments.png}
+\caption{A diagram indicating the x and y adjustments for the merging lane.}
+\label{fig:adjustments}
 \end{figure}
 
-\begin{equation}\label{aCos}
-a = h \cos(\theta)
-\end{equation}
+To get the Y-coordinate we can calculate the distance the coordinate is above the target lane, and then add the width of the target lane to that. We can also use this length to calculate the height of the whole simulator. However, to do that we will also need to add a y-adjustment, also shown in Figure \ref{fig:adjustments}.
 
-We also need to find the point at which the merging lane's centre line crosses the target lane's centre line in the merge zone. We know the Y-coordinate for this point as it will be the same as the Y-coordinate of the target lane centre line. We also know the X-coordinate of the point at which the merge lane's centre line meets the target lane. We can use these two co-ordinates to create the triangle shown in Figure \ref{fig:toCentreTriangle}. We can then use equation \ref{aTan} to find the X-adjustment from the merge zone centre to the point where the two centre lines cross.
+Merge vehicles will exit the merge zone in the same place as target vehicles (equation \ref{targetLaneZoneExitX}), however, they will enter the merge zone at the top. The Y-coordinate of this point is equal to the width of the target lane. The X-coordinate is given by equation \ref{mergeLaneZoneEntranceX}.
+
+\begin{multline}\label{mergeLaneZoneEntranceX}
+mergeLaneZoneEntranceX = width - \\
+targetLeadOutDistance - \frac{mergeZoneWidth}{2}
+\end{multline}
+
+After the merge vehicles enter the merge zone they will deviate from the lane, however the merge lane centre does continue until it reaches the centre of the target lane. We know this centre has a Y-coordinate equal to half of the lane width. The X-coordinate is more difficult to calculate. We need to find another X-adjustment, denoted as centreXAdjustment, along the target lane centre line. We can then use equation \ref{connectionPointX} to find the X-coordinate. Figure 
+
+\begin{multline}\label{connectionPointX}
+connectionPointX = width - \\
+targetLeadOutDistance - \frac{mergeZoneWidth}{2} + centreXAdjustment
+\end{multline}
 
 \begin{figure}[htb]
-\includegraphics[width=\textwidth]{designNotes/toCentreTriangle.png}
-\caption{A right-angled triangle used to calculate where the two centre lines meet. The centre lines are indicated in pink.}
-\label{fig:toCentreTriangle}
-\end{figure}
+\includegraphics[width=\textwidth]{designNotes/centreXAdjustment.png}
+\caption{A diagram indicating the X-adjustment used to find the point at which the two lanes connect.}
+\label{fig:centreXAdjustment}
+\end{figure}.
 
-\begin{equation}\label{aTan}
-a = o / \tan(\theta)
-\end{equation}
-
-\subsection{Intersection Management System}
+\section{Intersection Management System}
 \label{subsec:Intersection Management System}
 
-\subsection{Decentralised Communication System}
+\section{Decentralised Communication System}
 \label{subsec:Decentralised Communication System}
 
-\subsection{Measuring Success}
+\section{Measuring Success}
 \label{subsec:Measuring Success}
