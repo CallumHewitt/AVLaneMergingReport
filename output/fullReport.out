@@ -1,0 +1,30 @@
+\BOOKMARK [0][-]{chapter.1}{Introduction}{}% 1
+\BOOKMARK [0][-]{chapter.2}{Literature Review}{}% 2
+\BOOKMARK [1][-]{section.2.1}{Car Following Models}{chapter.2}% 3
+\BOOKMARK [1][-]{section.2.2}{Centralised and Decentralised}{chapter.2}% 4
+\BOOKMARK [2][-]{subsection.2.2.1}{Centralised Systems}{section.2.2}% 5
+\BOOKMARK [2][-]{subsection.2.2.2}{Decentralised Systems}{section.2.2}% 6
+\BOOKMARK [1][-]{section.2.3}{Making lane changing decisions}{chapter.2}% 7
+\BOOKMARK [2][-]{subsection.2.3.1}{Lane Changing to hit a target lane}{section.2.3}% 8
+\BOOKMARK [2][-]{subsection.2.3.2}{Lane Changing to improve overall velocity}{section.2.3}% 9
+\BOOKMARK [0][-]{chapter.3}{Problem Analysis}{}% 10
+\BOOKMARK [0][-]{chapter.4}{Design}{}% 11
+\BOOKMARK [1][-]{section.4.1}{S2S}{chapter.4}% 12
+\BOOKMARK [2][-]{subsection.4.1.1}{Map}{section.4.1}% 13
+\BOOKMARK [2][-]{subsection.4.1.2}{Intersection Management System}{section.4.1}% 14
+\BOOKMARK [2][-]{subsection.4.1.3}{Decentralised Communication System}{section.4.1}% 15
+\BOOKMARK [2][-]{subsection.4.1.4}{Measuring Success}{section.4.1}% 16
+\BOOKMARK [0][-]{chapter.5}{Implementation}{}% 17
+\BOOKMARK [1][-]{section.5.1}{Generalising the Codebase}{chapter.5}% 18
+\BOOKMARK [2][-]{subsection.5.1.1}{aim4.driver}{section.5.1}% 19
+\BOOKMARK [2][-]{subsection.5.1.2}{aim4.gui}{section.5.1}% 20
+\BOOKMARK [2][-]{subsection.5.1.3}{aim4.map}{section.5.1}% 21
+\BOOKMARK [2][-]{subsection.5.1.4}{aim4.sim}{section.5.1}% 22
+\BOOKMARK [2][-]{subsection.5.1.5}{aim4.vehicle}{section.5.1}% 23
+\BOOKMARK [1][-]{section.5.2}{Maps}{chapter.5}% 24
+\BOOKMARK [2][-]{subsection.5.2.1}{MergeMapUtil}{section.5.2}% 25
+\BOOKMARK [1][-]{section.5.3}{Drivers}{chapter.5}% 26
+\BOOKMARK [1][-]{section.5.4}{Testing}{chapter.5}% 27
+\BOOKMARK [2][-]{subsection.5.4.1}{Unit Testing}{section.5.4}% 28
+\BOOKMARK [2][-]{subsection.5.4.2}{Integration Tests}{section.5.4}% 29
+\BOOKMARK [0][-]{chapter.6}{Results}{}% 30

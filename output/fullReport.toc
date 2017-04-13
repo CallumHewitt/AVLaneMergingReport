@@ -1,0 +1,31 @@
+\select@language {british}
+\contentsline {chapter}{\numberline {1}Introduction}{11}{chapter.1}
+\contentsline {chapter}{\numberline {2}Literature Review}{14}{chapter.2}
+\contentsline {section}{\numberline {2.1}Car Following Models}{14}{section.2.1}
+\contentsline {section}{\numberline {2.2}Centralised and Decentralised}{17}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Centralised Systems}{18}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Decentralised Systems}{19}{subsection.2.2.2}
+\contentsline {section}{\numberline {2.3}Making lane changing decisions}{22}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Lane Changing to hit a target lane}{22}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Lane Changing to improve overall velocity}{25}{subsection.2.3.2}
+\contentsline {chapter}{\numberline {3}Problem Analysis}{31}{chapter.3}
+\contentsline {chapter}{\numberline {4}Design}{32}{chapter.4}
+\contentsline {section}{\numberline {4.1}S2S}{32}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Map}{32}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Intersection Management System}{35}{subsection.4.1.2}
+\contentsline {subsection}{\numberline {4.1.3}Decentralised Communication System}{35}{subsection.4.1.3}
+\contentsline {subsection}{\numberline {4.1.4}Measuring Success}{35}{subsection.4.1.4}
+\contentsline {chapter}{\numberline {5}Implementation}{37}{chapter.5}
+\contentsline {section}{\numberline {5.1}Generalising the Codebase}{37}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}aim4.driver}{37}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}aim4.gui}{39}{subsection.5.1.2}
+\contentsline {subsection}{\numberline {5.1.3}aim4.map}{40}{subsection.5.1.3}
+\contentsline {subsection}{\numberline {5.1.4}aim4.sim}{40}{subsection.5.1.4}
+\contentsline {subsection}{\numberline {5.1.5}aim4.vehicle}{41}{subsection.5.1.5}
+\contentsline {section}{\numberline {5.2}Maps}{41}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}MergeMapUtil}{42}{subsection.5.2.1}
+\contentsline {section}{\numberline {5.3}Drivers}{42}{section.5.3}
+\contentsline {section}{\numberline {5.4}Testing}{42}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}Unit Testing}{42}{subsection.5.4.1}
+\contentsline {subsection}{\numberline {5.4.2}Integration Tests}{42}{subsection.5.4.2}
+\contentsline {chapter}{\numberline {6}Results}{54}{chapter.6}
