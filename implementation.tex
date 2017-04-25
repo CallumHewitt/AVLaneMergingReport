@@ -1,9 +1,12 @@
 \chapter{Implementation}
 \label{cha:Implementation}
 
+
 \section{Generalising the Codebase}
 \label{sec:Generalising the Codebase}
-The simulators created for this project were created partly using the AIM simulator codebase \citep{AIMWebsite}. We wanted to expand the simulator so that it could run AV simulations in situations other than 4-way intersections. To do this we needed to generalise the AIM codebase so that new developers could add simulators with very little effort, however, we also needed to ensure that these changes would not affect the functionality of the AIM simulator. \newtext{Compatibility between different simulations was one of the main project constraints. As such, I worked with Rebecca Milligan, who is also working on AV simulations in her car park management project, to ensure that we had a strong general codebase to develop from.}
+The simulator for this project was created using the AIM simulator codebase \citep{AIMWebsite}, adapted so that new simulations can be run with the GUI without affecting the existing work. This was a project restriction imposed for research purposes. By working with the AIM simulator codebase we can determine whether it will be a good codebase to continue expanding upon for future AV projects. The project: 'A self-organising approach to autonomous vehicle car park management using a message-based protocol' \todo{Add reference}, also uses simulators built using AIM. Each simulator work alongside both the AIM and Merge simulations whilst being completely independent; removing their code would not affect the running of the other simulators. To enable this I worked closely with their project lead to generalise the codebase, breaking out useful shared features so that they can be accessed by all simulator types.
+
+
 
 To generalise the codebase we refactored key classes into separate general and AIM specific classes. The general classes can be expanded to create other simulator specific classes, whilst the AIM specific classes maintain the functionality of the original simulator. This helps to reduce code duplication when developing new simulators.
 
@@ -19,9 +22,20 @@ All class diagrams were created using IntelliJ IDEA 15.0.3 internal diagram tool
 
 \todo{Describe this change}.
 
-\section{Drivers}
-\label{sec:Drivers}
+\section{GUI}
+\label{sec:GUI}
 
+\section{Map}
+\label{sec:Map}
+
+\section{Simulation}
+\label{sec:Simulation}
+
+\section{Merge Schemes}
+\label{sec:Merge Schemes}
+
+\section{Results Production}
+\label{sec:Results Production}
 
 \section{Testing}
 \label{sec:Testing}
