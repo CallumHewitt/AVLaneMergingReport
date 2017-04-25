@@ -1,16 +1,19 @@
 \chapter{Implementation}
 \label{cha:Implementation}
-
+The final implementation was done in Java, an was built on top of the AIM simulator codebase. All class diagrams were created using IntelliJ IDEA 15.0.3 internal diagram tool. Figure \ref{fig:classDiagramKey} provides a key for understanding these diagrams.
 
 \section{Generalising the Codebase}
 \label{sec:Generalising the Codebase}
-The simulator for this project was created using the AIM simulator codebase \citep{AIMWebsite}, adapted so that new simulations can be run with the GUI without affecting the existing work. This was a project restriction imposed for research purposes. By working with the AIM simulator codebase we can determine whether it will be a good codebase to continue expanding upon for future AV projects. The project: 'A self-organising approach to autonomous vehicle car park management using a message-based protocol' \todo{Add reference}, also uses simulators built using AIM. Each simulator work alongside both the AIM and Merge simulations whilst being completely independent; removing their code would not affect the running of the other simulators. To enable this I worked closely with their project lead to generalise the codebase, breaking out useful shared features so that they can be accessed by all simulator types.
+\begin{tabular}{|c|c|c|}
+\hline
+Requirement Code & Acheived? \\
+\hline
+NS.11 & \cellcolor{green} \checkmark \\
+NS.12 & \cellcolor{green} \checkmark \\
+\hline
+\end{tabular}
 
-
-
-To generalise the codebase we refactored key classes into separate general and AIM specific classes. The general classes can be expanded to create other simulator specific classes, whilst the AIM specific classes maintain the functionality of the original simulator. This helps to reduce code duplication when developing new simulators.
-
-All class diagrams were created using IntelliJ IDEA 15.0.3 internal diagram tool. Figure \ref{fig:classDiagramKey} provides a key for understanding these diagrams.
+The use of the AIM codebase was a project restriction imposed for research purposes. By working with the AIM simulator codebase I could learn how easy it is to work with, and analyse whether or not it will be a good codebase to continue expanding upon for future AV projects. Each simulator built for this project works alongside the AIM simulators, whilst being completely independent. The project: 'A self-organising approach to autonomous vehicle car park management using a message-based protocol' \citep{Milligan2017}, also uses simulators built using AIM. To make sure that code coupling was reduced as much as possible, I worked closely with their project lead to generalise the codebase, breaking out useful shared features so that they could be accessed by all simulator types.
 
 \begin{figure}[htb]
 \includegraphics[width=\textwidth]{classDiagrams/classDiagramKey.png}
@@ -18,12 +21,35 @@ All class diagrams were created using IntelliJ IDEA 15.0.3 internal diagram tool
 \label{fig:classDiagramKey}
 \end{figure}
 
-\newtext{Refactoring the AIM codebase was more difficult that originally expected and many changes were made. For brevity, I have only described one of the key parts of the refactor, changing the class structure for classes in \emph{aim4.vehicle}. Appendix \ref{sec:Generalising the Codebase Appendix} provides detailed coverage of both this change, and changes made to some of the other areas of the AIM codebase.}
-
-\todo{Describe this change}.
+\todo{Decide what to put here} Appendix \ref{sec:Generalising the Codebase Appendix} provides detailed coverage of both this change, and changes made to some of the other areas of the AIM codebase.
 
 \section{GUI}
 \label{sec:GUI}
+\begin{tabular}{|c|c|c|}
+\hline
+Requirement Code & Acheived? \\
+\hline
+FS.11 & \cellcolor{green} \cmark \\
+FS.21 & \cellcolor{green} \cmark \\
+FS.31 & \cellcolor{green} \cmark \\
+FS.41 & \cellcolor{green} \cmark \\
+FS.51 & \cellcolor{green} \cmark \\
+FS.61 & \cellcolor{green} \cmark \\
+FS.72 & \cellcolor{green} \cmark \\
+FS.82 & \cellcolor{red} \xmark \\
+FS.92 & \cellcolor{red} \xmark \\
+FS.101 & \cellcolor{green} \cmark \\
+FS.111 & \cellcolor{green} \cmark \\
+FS.121 & \cellcolor{green} \cmark \\
+FS.131 & \cellcolor{green} \cmark \\
+FS.141 & \cellcolor{green} \cmark \\
+FS.151 & \cellcolor{green} \cmark \\
+FS.161 & \cellcolor{green} \cmark \\
+FS.171 & \cellcolor{red} \xmark \\
+\hline
+\end{tabular}
+
+The GUI for the project was built using 
 
 \section{Map}
 \label{sec:Map}

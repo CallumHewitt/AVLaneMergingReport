@@ -307,11 +307,4 @@
   url          = {http://www.geograph.org.uk/photo/390942},
 }
 
-@Unpublished{Milligan2017,
-  author = {Rebecca Milligan},
-  title  = {A self-organising approach to autonomous vehicle car park management using a message-based protocol},
-  month  = apr,
-  year   = {2017},
-}
-
 @Comment{jabref-meta: databaseType:bibtex;}
