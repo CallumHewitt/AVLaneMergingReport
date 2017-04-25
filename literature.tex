@@ -3,7 +3,7 @@
 
 \section{Car Following Models}
 \label{sec:Car Following Models}
-Most lane changing models stem from 'car-following models', which define actions for a vehicle based on the behaviour of its predecessors (the vehicles in front of it). One early car-following model was defined in 1981 by P.G. Gipps \citep{Gipps1981}. It was designed to mimic real-world driver behaviour, calculating a safe travel speed for a vehicle based on the speed of its predecessor. A safe travel speed is defined as a speed at which the driver can safely stop if the preceding driver stops.
+Any autonomous-vehicle system will be based on a 'car-following model', which defines actions for a vehicle based on the behaviour of its predecessors (the vehicles in front of it). One early car-following model was defined in 1981 by P.G. Gipps \citep{Gipps1981}. It was designed to mimic real-world driver behaviour, calculating a safe traveling speed for a vehicle based on the speed of its predecessor. A safe travel speed is defined as a speed at which the driver can safely stop if the preceding driver stops.
 
 Gipps' paper defines two equations, which provide constraints on the speed of vehicle $n$ at time $t + \tau$. $t$ is the current time and $\tau$ is the apparent reaction time, a constant for all vehicles. The first equation defines the acceleration constraint of the vehicle. It was obtained using measurements from an instrumented car.
 
@@ -11,7 +11,7 @@ Gipps' paper defines two equations, which provide constraints on the speed of ve
 v_n(t+\tau) \leqslant v_n(t) + 2.5a_n\tau\Biggl(\frac{1 - v_n(t)}{V_n}\Biggr)\Biggl(\frac{0.025 + v_n(t)}{V_n}\Biggr)^{1/2}
 \end{equation}
 
-$v_n(t)$ is the speed of vehicle $n$ at time $t$. $a_n$ is the maximum acceleration the driver of vehicle $n$ wishes to undertake. $V_n$ is the target speed for vehicle $n$. The equation shows that the driver accelerates until close to their target speed. They then reduce their acceleration until it reaches zero. At this point the vehicle should be travelling at it's target speed.
+$v_n(t)$ is the speed of vehicle $n$ at time $t$. $a_n$ is the maximum acceleration the driver of vehicle $n$ wishes to undertake. $V_n$ is the target speed for vehicle $n$. The equation shows that the driver accelerates until close to their target speed. Then, they reduce their acceleration until it reaches zero. At this point the vehicle should be travelling at it's target speed.
 
 The second constraint is the braking profile of the vehicle. This is given as
 
@@ -24,15 +24,15 @@ The second constraint is the braking profile of the vehicle. This is given as
 
 $b_n$ is the most severe braking the driver of vehicle $n$ wishes to undertake. It is always a negative value, and should be considered negative acceleration. $\hat{b}$ is the driver of vehicle $n$'s best guess at $b_{n-1}$ where $n-1$ is $n$'s predecessor. $x_n(t)$ is the location of the front of vehicle $n$ at time $t$. $s_n$ is the effective size of vehicle $n$. This is equal to the physical length of $n$, plus a margin $n$'s successor is not willing to enter, even when $n$ is at rest.
 
-Therefore, at time $t + \tau$, assuming the driver travels as fast as is safe, and within the limitations of the vehicle, the speed is given by the minimum of these two equations.
+Therefore, at time $t + \tau$, assuming the driver travels as fast as is safe, and within the limitations of the vehicle, their speed is given by the minimum of these two equations.
 
 \begin{equation}
 v_n(t) = \min{(\eqref{Gipps1981Accel},\eqref{Gipps1981Brake})}
 \end{equation}
 
-This model works well at describing the behaviour of traffic. However, translating this work to autonomous vehicles poses a number of problems. Firstly, the work is based on the behaviour of real-world drivers in instrumented vehicles. This introduces human driver variables into the equations. An autonomous vehicle with perfect sensors would have an almost negligible $\tau$, as the vehicles would have a very minimal reaction time. $s_n$ would also need to be adjusted. The margin added can be much less, as autonomous vehicles would be more precise than human drivers, driving closer to their predecessors. 
+This model works well at describing the behaviour of traffic. However, translating this work to autonomous vehicles poses a number of problems. Firstly, the work is based on the behaviour of real-world drivers in instrumented vehicles. This introduces human driver variables into the equations. An autonomous vehicle with perfect sensors would have an almost negligible $\tau$, as the vehicles would have a very minimal reaction time. $s_n$ would also need to be adjusted. The margin added can be much less, as autonomous vehicles are more precise than human drivers and can drive closer to their predecessors. 
 
-The model also ignores inter-vehicle communication. Autonomous vehicles could communicate their intentions to nearby vehicles, allowing them to act before they do. This could greatly reduce the following distance of successor vehicles, it would also allow vehicles to accelerate and move as a unit, or a 'platoon'. It would also allow autonomous vehicles to gain accurate value for $\hat{b}$.
+The model also ignores inter-vehicle communication. Autonomous vehicles could communicate their intentions to nearby vehicles, allowing them to act before they do. This could greatly reduce the following distance of successor vehicles, it would also allow vehicles to accelerate and move as a unit, or a 'platoon'. It would also allow autonomous vehicles to gain accurate values for $\hat{b}$.
 
 In 2000 Treiber et al. suggested the 'Intelligent Driver Model' (IDM) \citep{Treiber2000}. In the IDM, the acceleration of vehicle $\alpha$, $\dot{v_\alpha}$, is defined using a continuous function of its velocity, $v_\alpha$; the distance to the rear of its predecessor, $s_\alpha$; and the velocity difference of $\alpha$ and it's predecessor, also known as the approaching rate $\Delta v_\alpha$. The vehicle interactions are solely based on $\alpha$'s relative acceleration to its predecessor. The model only provides position information for a vehicle in relation to its predecessor, and it does not provide its velocity at a given time, as Gipps' model does. 
 
