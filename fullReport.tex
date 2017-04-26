@@ -20,20 +20,22 @@ Not completed
 \usepackage{tikz}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{gensymb}
 \usepackage{color,soul}
 \usepackage{multirow}
 \usepackage{longtable}
 \usepackage{appendix}
 \usepackage{amssymb}
 \usepackage{pifont}
-\newcommand{\cmark}{\ding{51}}
-\newcommand{\xmark}{\ding{55}}
 
 \bibinput{bibliography}
+
 \newcommand\todo[1]{\emph{{\textcolor{red}{TODO: #1}}}}
 \newcommand\newtext[1]{\emph{{\textcolor{blue}{#1}}}}
 \newcommand\revisit[1]{\hl{#1}}
-\newcommand\citetitle[1]{\usebibentry{#1}{title}}
+\newcommand\citetitle[1]{``\usebibentry{#1}{title}''}
+\newcommand{\cmark}{\ding{51}}
+\newcommand{\xmark}{\ding{55}}
 
 \graphicspath{{images/}}
 
