@@ -8,8 +8,8 @@ The final implementation was done in Java, an was built on top of the AIM simula
 \hline
 Requirement Code & Acheived? \\
 \hline
-NS.11 & \cellcolor{green} \checkmark \\
-NS.12 & \cellcolor{green} \checkmark \\
+NS.11 & \cellcolor{green} \cmark \\
+NS.12 & \cellcolor{green} \cmark \\ 
 \hline
 \end{tabular}
 
@@ -22,6 +22,110 @@ The use of the AIM codebase was a project restriction imposed for research purpo
 \end{figure}
 
 \todo{Decide what to put here} Appendix \ref{sec:Generalising the Codebase Appendix} provides detailed coverage of both this change, and changes made to some of the other areas of the AIM codebase.
+
+\section{Merge Schemes}
+\label{sec:Merge Schemes}
+\begin{tabular}{|c|c|c|}
+\hline
+Requirement Code & Acheived? \\
+\hline
+FS.81 & \cellcolor{red} \xmark \\
+FS.91 & \cellcolor{red} \xmark \\
+\hline
+\end{tabular}
+The original plan was to implement two merge schemes, an AIM based centralised protocol and a dentralised approach based on \citetitle{VanMiddlesworth2008} \citep{VanMiddlesworth2008}. However, implementation proved to be very difficult. 
+
+The AIM protocol implementation was developed by examining the original AIM code and creating a modified version applicable to merges. Because the two systems are so similar, much of the code was duplicated. This could be refactored out a later date, but during development having full control over the actions taken by a vehicle without having to compromise to allow AIM to work correctly was very useful. In the end, despite this approach there were significant issues with the system. Despite using very similar approaches to AIM, almost identical in areas, vehicles would continue to arrive early to their reserved times and vehicles would also collide consistently at intersections.
+
+The system also suffered from some more fundamental problems. Reservations for merges are only taken by the lead vehicle in each lane, as vehicles behind them shouldn't be able to reserve ahead of the lead vehicle. This leads to slow downs at the merge zone as secondary vehicles won't be able to make reservations until the lead vehicle has entered the merge. If secondary vehicles also have to compete with vehicles on the other lane then it is likely that at least one of them will have to stop at the merge. This is fine for four-way stops, but for a merge where maintaining vehicle flow is the primary aim, this system will be far less effective.
+
+The AIM protocol also fails to ensure that one lane does not suffer for the benefit of the other. Reservations are granted on a first-come-first-serve basis (though this could be changed by implementing a different reservation policy) and this can lead to long periods of time where one lane fails to make reservations whilst the other passes vehicles through quickly. Again, this fails to maintain traffic flow, one of the key aims of a merging protocol.
+
+- Queue
+As a response to AIM, I developed an alternative centralised approach to the merge problem. Described in 
+
+-- Response to AIM's failings
+-- Describe how it was implemented
+
+- Decentralised
+-- Never implemented due to time constraints.
+
+\section{Simulation}
+\label{sec:Simulation}
+\begin{tabular}{|c|c|c|}
+\hline
+Requirement Code & Acheived? \\
+\hline
+FS.12 & \cellcolor{green} \cmark \\
+FS.13 & \cellcolor{green} \cmark \\
+FS.22 & \cellcolor{green} \cmark \\
+FS.32 & \cellcolor{green} \cmark \\
+FS.42 & \cellcolor{green} \cmark \\
+FS.71 & \cellcolor{green} \cmark \\
+FS.73 & \cellcolor{green} \cmark \\
+FS.172 & \cellcolor{red} \xmark \\
+NS.3 & \cellcolor{green} \cmark \\
+NS.4 & \cellcolor{green} \cmark \\
+NS.8 & \cellcolor{green} \cmark \\
+\hline
+\end{tabular}
+
+Each simulation consists of multiple interacting agents, which makes it a difficult problem to implement. Using some of the generalised AIM classes helped to reduce the amount of time it took to implement these components. However, using AIM did introduce some complications and parts of the code had to be rewritten to adjust for this.
+
+\subsection{Drivers}
+\label{subsec:Drivers}
+Driver agents are responsible for manipulating the vehicles in the simulation. They make requests to centralised merge managers and act upon the responses they are given. Each driver acts as a finite state machine, performing specific sets of actions for each state. Vehicles and Drivers both extend from generalised Vehicle and Driver classes containing useful functions for following lanes, turning and determining distances. However, some of these methods proved to be flawed.
+
+One of the main issues was the assumption that lanes and roads will always meet at 90\degree. This caused a number of small issues throughout development, but one key problem was turning. A turn through an intersection in the AIM simulator is done by forcing the vehicle to point to a coordinate further down the lane the vehicle is following. This point is always exactly the same distance away from the vehicle, such that when the vehicle reaches a corner, and the lane it's following changes, the vehicle will turn towards that point gradually. This distance proved too much for some merges, and resulted in the vehicle making turns too gradually. This was fixed by setting the turn distance to always be the distance from the point at which the vehicle enters the merge zone, to the merge zone exit. The target point would also always lie in the centre of the target lane. This caused merging vehicles to turn more tightly, freeing up the lane for more vehicles. Figure \ref{fig:turning} shows how these turns work.
+
+\begin{figure}[htb]
+\includegraphics[width=\textwidth]{implementationDiagrams/turning.png}
+\caption{Key for the class diagrams in this report.}
+\label{fig:turning}
+\end{figure}
+
+Another problem came about due to collisions. AIM had provided a method called \emph{dontHitCarInFront} which calculates the distance from the vehicle to the vehicle in front and then takes action to avoid a collision, slowing down if necessary. This method turns out to not be completely effective. Even within the AIM simulations vehicles are colliding. Due to time constraints collision detection was removed from the project as I did not have time to go hunting for the error causing collisions. Overall it does not matter too much as the cars only collide momentarily before separating, but it does make it difficult to detect collision errors caused by merging algorithms. As far as I can tell, no collisions take place with the algorithm implemented, as it should be almost imposible, but without having a check in place this cannot be said for certain.
+
+\subsection{Merge Managers}
+\label{subsec:Merge Managers}
+The role of a merge manager is to take requests from drivers and provide responses, controlling the flow of traffic through the merge zone. They were heavily influenced by the approaches taken by AIM. The AIM based merge manager replicated much of the intersection manager code introduced by AIM. At a later date this could be refactored to reduce duplication, but this would most likely also require changes to Driver and Vehicle, as each type of merge manager deals with different types of vehicles and drivers.
+
+The final implementation of a merge manager, the QueueV2IManager, is designed similarly to AIM's V2IIntersectionManager, however much of the technical code is original and far simpler. This merge manager effectively just manages a queue and alerts vehicles when they are at the front of said queue. The AIM system is more complex, requiring the merge manager to monitor reservations and time the arrival of vehicles as they arrive. The AIM system relies very heavily on each vehicle arriving at their stated time and fails to handle vehicles well if they don't.
+
+\subsection{Map}
+\label{subsec:Map}
+The simulation map stores all of the spawn points, lanes and merge managers for the simulation. The calcualtions for lane positions and spawn points were created using the designs in \ref{sec:Map}. 
+
+By using some of the generalised components for calculating distances, creating the map was relatively straightforward, however, there were some components that failed to work as intended. The original AIM system assumes that every road meets at 90\degree and as such some methods were inappropriate for when lanes meet at other angles. One example of this is the no vehicle zone at the beginning of each lane. This zone stops multiple vehicles from spawning on top of each other. The original implementation calculated a Rectangle at the beginning of each lane, which works fine when lanes are at 90\degree. For my no vehicle zones, I had to draw a path around the start of each merge lane and create a shape from that. This more complicated approach was necessary due to the angles at which the merge lane can meet the target lane. 
+
+The map also controls the spawn points creating the vehicles. Most spawning behaviours were based on the AIM spawn points. However, to enable consistent testing we wanted to be able to repeat the experiment with the same vehicles over and over again. To do this I created a new vehicle spawn type that uses a JSON file to spawn vehicles. The file contains a vehicle specification and a time. The spawner reads this data in and spawns a vehicle with the given specification at the indicated time. I also implemented this type of spawner into the AIM system. This means that comparisons between the performance of AIM and the Queue protocol are now possible.
+
+\subsection{Simulation Control}
+\label{subsec:Simulation Control}
+The simulator itself is reponsible for triggering and monitoring the actions of each component of the simulation. It delivers messages between merge managers and vehicles and moves vehicles through the simulation according to their specified velocities and headings.
+
+\section{Results Production}
+\label{sec:Results Production}
+\begin{tabular}{|c|c|c|}
+\hline
+Requirement Code & Acheived? \\
+\hline
+FS.62 & \cellcolor{green} \cmark \\
+FS.63 & \cellcolor{green} \cmark \\
+FS.64 & \cellcolor{green} \cmark \\
+FS.65 & \cellcolor{green} \cmark \\
+FS.66 & \cellcolor{red} \xmark \\
+FS.67 & \cellcolor{red} \xmark \\
+FS.68 & \cellcolor{green} \cmark \\
+FS.69 & \cellcolor{red} \xmark \\
+FS.6a & \cellcolor{red} \xmark \\
+NS.7 & \cellcolor{green} \cmark \\
+\hline
+\end{tabular}
+- Results generation to CSV file
+- Drivers, spawners and simulations adapted to provide the relevant export information
+- Setup in AIM as well
+- Whay wasn't max accell stored?
 
 \section{GUI}
 \label{sec:GUI}
@@ -46,25 +150,35 @@ FS.141 & \cellcolor{green} \cmark \\
 FS.151 & \cellcolor{green} \cmark \\
 FS.161 & \cellcolor{green} \cmark \\
 FS.171 & \cellcolor{red} \xmark \\
+NS.1 & \cellcolor{green} \cmark \\
+NS.2 & \cellcolor{green} \cmark \\
+NS.5 & \cellcolor{green} \cmark \\
+NS.6 & \cellcolor{green} \cmark \\
 \hline
 \end{tabular}
 
-The GUI for the project was built using 
+The GUI for the project was built using Java Swing, extending the existing AIM GUI. New simulator types are given a separate tab in the application with their own simulator setup and a display screen. The display screen can be modified for each simulation type, showing the relevant information for that simulation. We moved away from the AIM full illustrated canvas implementation to a 'StatScreen' implementation which shows information in text format instead. The S2S simulations display the current simulation time, number of completed vehicles and throughput. They also display two tables, one containing information about the vehicles currently in the simulation, and another for vehicles that have left the simulation. Figure \ref{fig:s2sSimScreen} shows the simulation screen for S2S merges.
 
-\section{Map}
-\label{sec:Map}
+-- Consistent testing upload 
 
-\section{Simulation}
-\label{sec:Simulation}
+\begin{figure}[htb]
+\includegraphics[width=\textwidth]{screenshots/s2sSimulationScreen.png}
+\caption{The simulation screen for the S2S merge screen}
+\label{fig:s2sSimScreen}
+\end{figure}
 
-\section{Merge Schemes}
-\label{sec:Merge Schemes}
+Functional requirements \emph{FS.82} and \emph{FS.92} were not fully implemented as the AIM-like simulations and Decentralised simulations were never implemented in a fully working form. \emph{FS.171} was also never implemented due to the removal of collision detection from simulations. All other GUI requirements were completed.
 
-\section{Results Production}
-\label{sec:Results Production}
-
-\section{Testing}
+\section{Maintainability and Testing}
 \label{sec:Testing}
+\begin{tabular}{|c|c|c|}
+\hline
+Requirement Code & Acheived? \\
+\hline
+NS.9 & \cellcolor{green} \cmark \\
+NS.10 & \cellcolor{green} \cmark \\
+\hline
+\end{tabular}
 
 \subsection{Unit Testing}
 \label{subsec:Unit Testing}

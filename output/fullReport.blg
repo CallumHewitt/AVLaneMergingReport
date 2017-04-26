@@ -8,7 +8,8 @@ A level-1 auxiliary file: problem.aux
 A level-1 auxiliary file: design.aux
 A level-1 auxiliary file: implementation.aux
 A level-1 auxiliary file: results.aux
-A level-1 auxiliary file: appendixA.aux
+A level-1 auxiliary file: conclusion.aux
+A level-1 auxiliary file: appendix.aux
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
@@ -28,47 +29,48 @@ Too many commas in name 1 of "David Schrank, Bill Eisele, Tim Lomax, Jim Bak" fo
 while executing---line 2729 of file IEEEtranN.bst
 Too many commas in name 1 of "David Schrank, Bill Eisele, Tim Lomax, Jim Bak" for entry Schrank2015
 while executing---line 2729 of file IEEEtranN.bst
+Warning--empty note in Milligan2017
 
 Done.
-You've used 23 entries,
+You've used 24 entries,
             4855 wiz_defined-function locations,
-            1113 strings with 12462 characters,
-and the built_in function-call counts, 17227 in all, are:
-= -- 1640
-> -- 366
-< -- 99
-+ -- 202
-- -- 82
-* -- 956
-:= -- 2834
-add.period$ -- 58
-call.type$ -- 23
-change.case$ -- 47
-chr.to.int$ -- 211
-cite$ -- 23
-duplicate$ -- 1147
-empty$ -- 1264
-format.name$ -- 110
-if$ -- 3824
+            1120 strings with 12604 characters,
+and the built_in function-call counts, 17491 in all, are:
+= -- 1682
+> -- 350
+< -- 101
++ -- 197
+- -- 78
+* -- 955
+:= -- 2903
+add.period$ -- 61
+call.type$ -- 24
+change.case$ -- 49
+chr.to.int$ -- 212
+cite$ -- 25
+duplicate$ -- 1167
+empty$ -- 1286
+format.name$ -- 106
+if$ -- 3879
 int.to.chr$ -- 2
-int.to.str$ -- 24
-missing$ -- 191
-newline$ -- 129
-num.names$ -- 54
-pop$ -- 478
+int.to.str$ -- 25
+missing$ -- 192
+newline$ -- 132
+num.names$ -- 57
+pop$ -- 474
 preamble$ -- 1
-purify$ -- 23
+purify$ -- 24
 quote$ -- 2
-skip$ -- 1283
+skip$ -- 1310
 stack$ -- 0
-substring$ -- 508
-swap$ -- 852
+substring$ -- 511
+swap$ -- 863
 text.length$ -- 25
 text.prefix$ -- 5
 top$ -- 6
-type$ -- 357
-warning$ -- 0
-while$ -- 68
+type$ -- 373
+warning$ -- 1
+while$ -- 70
 width$ -- 0
-write$ -- 333
+write$ -- 343
 (There were 3 error messages)

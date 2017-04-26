@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2017.4.4)  26 APR 2017 18:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2017.4.4)  26 APR 2017 18:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -879,13 +879,18 @@ LaTeX Font Info:    Try loading font information for U+psy on input line 64.
 (c:/texlive/2016/texmf-dist/tex/latex/psnfss/upsy.fd
 File: upsy.fd 2001/06/04 font definitions for U/psy.
 )) (./bibliography.bib)
-(output/fullReport.aux (output/introduction.aux) (output/literature.aux)
-(output/problem.aux) (output/design.aux) (output/implementation.aux)
-(output/results.aux) (output/conclusion.aux
+(C:Users\callu\Documents\GitHub\AVLaneMergingReport\output/fullReport.aux
+(C:Users\callu\Documents\GitHub\AVLaneMergingReport\output/introduction.aux)
+(C:Users\callu\Documents\GitHub\AVLaneMergingReport\output/literature.aux)
+(C:Users\callu\Documents\GitHub\AVLaneMergingReport\output/problem.aux)
+(C:Users\callu\Documents\GitHub\AVLaneMergingReport\output/design.aux)
+(C:Users\callu\Documents\GitHub\AVLaneMergingReport\output/implementation.aux)
+(C:Users\callu\Documents\GitHub\AVLaneMergingReport\output/results.aux)
+(C:Users\callu\Documents\GitHub\AVLaneMergingReport\output/conclusion.aux
 
 LaTeX Warning: Label `cha:Results' multiply defined.
 
-) (output/appendix.aux))
+) (C:Users\callu\Documents\GitHub\AVLaneMergingReport\output/appendix.aux))
 \openout1 = `fullReport.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 42.
@@ -902,7 +907,8 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 42.
 LaTeX Font Info:    ... okay on input line 42.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 42.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 42.
- (c:/texlive/2016/texmf-dist/tex/latex/base/ts1cmr.fd
+
+(c:/texlive/2016/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 42.
@@ -937,7 +943,8 @@ LaTeX Info: Redefining \ref on input line 42.
 LaTeX Info: Redefining \pageref on input line 42.
 LaTeX Info: Redefining \nameref on input line 42.
 
-(output/fullReport.out) (output/fullReport.out)
+(C:Users\callu\Documents\GitHub\AVLaneMergingReport\output/fullReport.out)
+(C:Users\callu\Documents\GitHub\AVLaneMergingReport\output/fullReport.out)
 \@outlinefile=\write4
 \openout4 = `fullReport.out'.
 
@@ -1088,7 +1095,7 @@ LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 Package tocbasic Info: character protrusion at toc deactivated on input line 43
 .
 
-(output/fullReport.toc
+(C:Users\callu\Documents\GitHub\AVLaneMergingReport\output/fullReport.toc
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
 (Font)              scaled to size 11.40997pt on input line 4.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
@@ -1097,7 +1104,8 @@ LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 11.40997pt on input line 4.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 6.25204pt on input line 4.
- [7
+
+[7
 
 ])
 \tf@toc=\write5
@@ -1108,7 +1116,21 @@ LaTeX Font Info:    Font shape `T1/pplj/m/sl' in size <10.95> not available
  [8]
 Package tocbasic Info: character protrusion at lof deactivated on input line 44
 .
- (output/fullReport.lof [9
+
+(C:Users\callu\Documents\GitHub\AVLaneMergingReport\output/fullReport.lof
+
+Package natbib Warning: Citation `StoppingDistances' on page 9 undefined on inp
+ut line 3.
+
+
+Package natbib Warning: Citation `Gipps1986' on page 9 undefined on input line 
+6.
+
+
+Package natbib Warning: Citation `realLaneMerge' on page 9 undefined on input l
+ine 11.
+
+[9
 
 ])
 \tf@lof=\write6
@@ -1118,11 +1140,12 @@ Package tocbasic Info: character protrusion at lof deactivated on input line 44
 Package tocbasic Info: character protrusion at lot deactivated on input line 45
 .
 
-(output/fullReport.lot)
+(C:Users\callu\Documents\GitHub\AVLaneMergingReport\output/fullReport.lot)
 \tf@lot=\write7
 \openout7 = `fullReport.lot'.
 
- [11
+
+[11
 
 ]
 \openout2 = `introduction.aux'.
@@ -1144,17 +1167,75 @@ Class scrreprt Warning: \float@addtolists detected!
 (scrreprt)              a package that still implements the
 (scrreprt)              deprecated \float@addtolist interface .
 
-<images/introduction/stoppingDistances.jpg, id=467, 845.0772pt x 287.3937pt>
+
+Package natbib Warning: Citation `Asimov1953' on page 12 undefined on input lin
+e 4.
+
+
+Package natbib Warning: Citation `Kitt1982' on page 12 undefined on input line 
+4.
+
+
+Package natbib Warning: Citation `Waymo2016' on page 12 undefined on input line
+ 4.
+
+
+Package natbib Warning: Citation `TeslaHospital' on page 12 undefined on input 
+line 4.
+
+
+Package natbib Warning: Citation `TeslaUnderInvestigation' on page 12 undefined
+ on input line 4.
+
+<images/introduction/stoppingDistances.jpg, id=456, 845.0772pt x 287.3937pt>
 File: images/introduction/stoppingDistances.jpg Graphic file (type jpg)
 
 <use images/introduction/stoppingDistances.jpg>
 Package pdftex.def Info: images/introduction/stoppingDistances.jpg used on inpu
 t line 11.
 (pdftex.def)             Requested size: 350.32463pt x 119.13898pt.
- [12
 
 
- <./images/introduction/stoppingDistances.jpg>] [13]) [14]
+Package natbib Warning: Citation `StoppingDistances' on page 12 undefined on in
+put line 12.
+
+
+Package natbib Warning: Citation `StoppingDistances' on page 12 undefined on in
+put line 12.
+
+
+Package natbib Warning: Citation `Mersky2016' on page 12 undefined on input lin
+e 16.
+
+
+Package natbib Warning: Citation `Paris2016' on page 12 undefined on input line
+ 16.
+
+[12
+
+
+ <./images/introduction/stoppingDistances.jpg>]
+
+Package natbib Warning: Citation `Schrank2015' on page 13 undefined on input li
+ne 18.
+
+
+Package natbib Warning: Citation `Daganzo1994' on page 13 undefined on input li
+ne 18.
+
+
+Package natbib Warning: Citation `TeslaCriticised' on page 13 undefined on inpu
+t line 22.
+
+
+Package natbib Warning: Citation `AIMProject' on page 13 undefined on input lin
+e 24.
+
+
+Package natbib Warning: Citation `Quinlan2010' on page 13 undefined on input li
+ne 24.
+
+[13]) [14]
 \openout2 = `literature.aux'.
 
  (./literature.tex
@@ -1163,32 +1244,85 @@ LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <14.4> not available
 (Font)              Font shape `T1/phv/b/n' tried instead on input line 4.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 12.9599pt on input line 4.
+
+Package natbib Warning: Citation `Gipps1981' on page 15 undefined on input line
+ 6.
+
 [15
 
 
 
 ]
+
+Package natbib Warning: Citation `Treiber2000' on page 16 undefined on input li
+ne 37.
+
+
 Underfull \vbox (badness 5622) has occurred while \output is active []
 
  [16]
-[17] [18]
+
+Package natbib Warning: Citation `Kesting2007' on page 17 undefined on input li
+ne 69.
+
+
+Package natbib Warning: Citation `Kamali2016' on page 17 undefined on input lin
+e 71.
+
+[17]
+
+Package natbib Warning: Citation `Daganzo1994' on page 18 undefined on input li
+ne 79.
+
+[18]
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <12> not available
 (Font)              Font shape `T1/phv/b/n' tried instead on input line 86.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 10.79993pt on input line 86.
 
-<images/litReview/aimOriginal.JPG, id=551, 499.11469pt x 688.82344pt>
+
+Package natbib Warning: Citation `Dresner2004' on page 19 undefined on input li
+ne 88.
+
+<images/litReview/aimOriginal.JPG, id=509, 499.11469pt x 688.82344pt>
 File: images/litReview/aimOriginal.JPG Graphic file (type jpg)
 
 <use images/litReview/aimOriginal.JPG>
 Package pdftex.def Info: images/litReview/aimOriginal.JPG used on input line 10
 2.
 (pdftex.def)             Requested size: 350.32463pt x 483.49745pt.
- [19] [20] [21]
+
+
+Package natbib Warning: Citation `Atagoziyev2016' on page 19 undefined on input
+ line 109.
+
+[19]
+
+Package natbib Warning: Citation `VanMiddlesworth2008' on page 20 undefined on 
+input line 119.
+
+[20] [21]
+
+Package natbib Warning: Citation `Gipps1986' on page 22 undefined on input line
+ 147.
+
+
+Package natbib Warning: Citation `Kesting2007' on page 22 undefined on input li
+ne 147.
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [22]
-<images/litReview/gipps1986Flowchart.png, id=594, 697.10437pt x 1300.1072pt>
+
+Package natbib Warning: Citation `Gipps1986' on page 23 undefined on input line
+ 157.
+
+
+Package natbib Warning: Citation `Gipps1981' on page 23 undefined on input line
+ 157.
+
+<images/litReview/gipps1986Flowchart.png, id=543, 697.10437pt x 1300.1072pt>
 File: images/litReview/gipps1986Flowchart.png Graphic file (type png)
 
 <use images/litReview/gipps1986Flowchart.png>
@@ -1197,10 +1331,18 @@ line 162.
 (pdftex.def)             Requested size: 350.32463pt x 653.36494pt.
 
 
+Package natbib Warning: Citation `Gipps1986' on page 23 undefined on input line
+ 163.
+
+
+Package natbib Warning: Citation `Gipps1986' on page 23 undefined on input line
+ 163.
+
+
 LaTeX Warning: Float too large for page by 139.64474pt on input line 165.
 
 [23] [24]
-<images/litReview/atagoziyevFlowchart.JPG, id=607, 752.8125pt x 444.15938pt>
+<images/litReview/atagoziyevFlowchart.JPG, id=554, 752.8125pt x 444.15938pt>
 File: images/litReview/atagoziyevFlowchart.JPG Graphic file (type jpg)
 
 <use images/litReview/atagoziyevFlowchart.JPG>
@@ -1213,14 +1355,19 @@ Underfull \hbox (badness 1558) in paragraph at lines 232--232
 odel
  []
 
-[25] [26] [27]) [28] [29 <./images/litReview/aimOriginal.JPG>] [30 <./images/li
-tReview/gipps1986Flowchart.png>] [31 <./images/litReview/atagoziyevFlowchart.JP
-G>]
+[25] [26]
+
+Package natbib Warning: Citation `Kesting2007' on page 27 undefined on input li
+ne 259.
+
+[27]) [28] [29 <./images/litReview/aimOriginal.JPG>] [30 <./images/litReview/gi
+pps1986Flowchart.png>] [31 <./images/litReview/atagoziyevFlowchart.JPG>]
 \openout2 = `problem.aux'.
 
- (./problem.tex
+
+(./problem.tex
 chapter 3.
-<images/laneDiagrams/s2s.png, id=649, 1284.8pt x 722.7pt>
+<images/laneDiagrams/s2s.png, id=594, 1284.8pt x 722.7pt>
 File: images/laneDiagrams/s2s.png Graphic file (type png)
 
 <use images/laneDiagrams/s2s.png>
@@ -1231,7 +1378,7 @@ Package pdftex.def Info: images/laneDiagrams/s2s.png used on input line 16.
 
 
 ]
-<images/laneDiagrams/s2sExtended.png, id=657, 1284.8pt x 722.7pt>
+<images/laneDiagrams/s2sExtended.png, id=602, 1284.8pt x 722.7pt>
 File: images/laneDiagrams/s2sExtended.png Graphic file (type png)
 
 <use images/laneDiagrams/s2sExtended.png>
@@ -1239,7 +1386,7 @@ Package pdftex.def Info: images/laneDiagrams/s2sExtended.png used on input line
  28.
 (pdftex.def)             Requested size: 350.32463pt x 197.05038pt.
 
-<images/laneDiagrams/realLaneMerge.jpg, id=658, 256.96pt x 192.72pt>
+<images/laneDiagrams/realLaneMerge.jpg, id=603, 256.96pt x 192.72pt>
 File: images/laneDiagrams/realLaneMerge.jpg Graphic file (type jpg)
 
 <use images/laneDiagrams/realLaneMerge.jpg>
@@ -1247,14 +1394,22 @@ Package pdftex.def Info: images/laneDiagrams/realLaneMerge.jpg used on input li
 ne 34.
 (pdftex.def)             Requested size: 350.32463pt x 262.76324pt.
 
-<images/laneDiagrams/s2d.png, id=662, 1284.8pt x 722.7pt>
+
+Package natbib Warning: Citation `realLaneMerge' on page 33 undefined on input 
+line 35.
+
+
+Package natbib Warning: Citation `realLaneMerge' on page 33 undefined on input 
+line 35.
+
+<images/laneDiagrams/s2d.png, id=605, 1284.8pt x 722.7pt>
 File: images/laneDiagrams/s2d.png Graphic file (type png)
 
 <use images/laneDiagrams/s2d.png>
 Package pdftex.def Info: images/laneDiagrams/s2d.png used on input line 46.
 (pdftex.def)             Requested size: 350.32463pt x 197.05038pt.
  [33 <./images/laneDiagrams/s2s.png>]
-<images/laneDiagrams/s2dExtended.png, id=669, 1284.8pt x 722.7pt>
+<images/laneDiagrams/s2dExtended.png, id=612, 1284.8pt x 722.7pt>
 File: images/laneDiagrams/s2dExtended.png Graphic file (type png)
 
 <use images/laneDiagrams/s2dExtended.png>
@@ -1262,14 +1417,14 @@ Package pdftex.def Info: images/laneDiagrams/s2dExtended.png used on input line
  59.
 (pdftex.def)             Requested size: 350.32463pt x 197.05038pt.
 
-<images/laneDiagrams/d2d.png, id=671, 1284.8pt x 722.7pt>
+<images/laneDiagrams/d2d.png, id=614, 1284.8pt x 722.7pt>
 File: images/laneDiagrams/d2d.png Graphic file (type png)
 
 <use images/laneDiagrams/d2d.png>
 Package pdftex.def Info: images/laneDiagrams/d2d.png used on input line 69.
 (pdftex.def)             Requested size: 350.32463pt x 197.05038pt.
 
-<images/laneDiagrams/d2dExtended.png, id=673, 1284.8pt x 722.7pt>
+<images/laneDiagrams/d2dExtended.png, id=616, 1284.8pt x 722.7pt>
 File: images/laneDiagrams/d2dExtended.png Graphic file (type png)
 
 <use images/laneDiagrams/d2dExtended.png>
@@ -1278,17 +1433,26 @@ Package pdftex.def Info: images/laneDiagrams/d2dExtended.png used on input line
 (pdftex.def)             Requested size: 350.32463pt x 197.05038pt.
  [34 <./images/laneDiagrams/s2sExtended.png>] [35 <./images/laneDiagrams/realLa
 neMerge.jpg>]
-<images/laneDiagrams/lane_blocker.png, id=684, 1284.8pt x 722.7pt>
+<images/laneDiagrams/lane_blocker.png, id=628, 1284.8pt x 722.7pt>
 File: images/laneDiagrams/lane_blocker.png Graphic file (type png)
 
 <use images/laneDiagrams/lane_blocker.png>
 Package pdftex.def Info: images/laneDiagrams/lane_blocker.png used on input lin
 e 94.
 (pdftex.def)             Requested size: 350.32463pt x 197.05038pt.
- [36 <./images/laneDiagrams/s2d.png>] [37 <./images/laneDiagrams/s2dExtended.pn
-g>] [38 <./images/laneDiagrams/d2d.png>] [39 <./images/laneDiagrams/d2dExtended
-.png>] [40 <./images/laneDiagrams/lane_blocker.png>]
-<images/laneDiagrams/s2sMarked.png, id=722, 1193.45876pt x 656.4525pt>
+ [36 <./images/laneDiagrams/s2d.png>]
+
+Package natbib Warning: Citation `Treiber2000' on page 37 undefined on input li
+ne 124.
+
+
+Package natbib Warning: Citation `Dresner2004' on page 37 undefined on input li
+ne 130.
+
+[37 <./images/laneDiagrams/s2dExtended.png>] [38 <./images/laneDiagrams/d2d.png
+>] [39 <./images/laneDiagrams/d2dExtended.png>] [40 <./images/laneDiagrams/lane
+_blocker.png>]
+<images/laneDiagrams/s2sMarked.png, id=664, 1193.45876pt x 656.4525pt>
 File: images/laneDiagrams/s2sMarked.png Graphic file (type png)
 
 <use images/laneDiagrams/s2sMarked.png>
@@ -1347,39 +1511,8 @@ Overfull \vbox (11.02118pt too high) detected at line 273
  []
 
 
-Underfull \hbox (badness 4967) in paragraph at lines 274--275
-[]|\T1/pplj/m/n/10.95 (+20) The sys-tem can use an
- []
-
-
-Underfull \hbox (badness 2269) in paragraph at lines 274--275
-\T1/pplj/m/n/10.95 (+20) ``Re-pla-cing the Stop Sign:
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 274--275
-\T1/pplj/m/n/10.95 (+20) Un-man-aged In-ter-sec-tion
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 274--275
-\T1/pplj/m/n/10.95 (+20) Con-trol for Autonom-ous
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 274--275
-\T1/pplj/m/n/10.95 (+20) Vehicles'' ``Re-pla-cing the
- []
-
-
-Underfull \hbox (badness 8170) in paragraph at lines 274--275
-\T1/pplj/m/n/10.95 (+20) Stop Sign: Un-man-aged
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 274--275
-\T1/pplj/m/n/10.95 (+20) In-ter-sec-tion Con-trol for
- []
+Package natbib Warning: Citation `VanMiddlesworth2008' on page 43 undefined on 
+input line 274.
 
 
 Underfull \hbox (badness 3954) in paragraph at lines 279--280
@@ -1430,7 +1563,7 @@ Overfull \hbox (25.19997pt too wide) in alignment at lines 317--332
 
  (./design.tex
 chapter 4.
-<images/designNotes/baseWidth.png, id=755, 1003.75pt x 689.57625pt>
+<images/designNotes/baseWidth.png, id=696, 1003.75pt x 689.57625pt>
 File: images/designNotes/baseWidth.png Graphic file (type png)
 
 <use images/designNotes/baseWidth.png>
@@ -1455,7 +1588,7 @@ m/m/it/10.95 width \OMS/zplm/m/n/10.95 ^^@ \OML/zplm/m/it/10.95 targetLeadOutDi
 stance$ [][][]  
  []
 
-<images/designNotes/adjustments.png, id=776, 291.0875pt x 336.25626pt>
+<images/designNotes/adjustments.png, id=717, 291.0875pt x 336.25626pt>
 File: images/designNotes/adjustments.png Graphic file (type png)
 
 <use images/designNotes/adjustments.png>
@@ -1463,7 +1596,7 @@ Package pdftex.def Info: images/designNotes/adjustments.png used on input line
 56.
 (pdftex.def)             Requested size: 350.32463pt x 404.71637pt.
 
-<images/designNotes/centreXAdjustment.png, id=781, 471.7625pt x 335.2525pt>
+<images/designNotes/centreXAdjustment.png, id=722, 471.7625pt x 335.2525pt>
 File: images/designNotes/centreXAdjustment.png Graphic file (type png)
 
 <use images/designNotes/centreXAdjustment.png>
@@ -1477,7 +1610,11 @@ es/centreXAdjustment.png>]
 
 (./implementation.tex
 chapter 5.
-<images/classDiagrams/classDiagramKey.png, id=805, 632.3625pt x 151.56625pt>
+
+Package natbib Warning: Citation `Milligan2017' on page 53 undefined on input l
+ine 16.
+
+<images/classDiagrams/classDiagramKey.png, id=746, 632.3625pt x 151.56625pt>
 File: images/classDiagrams/classDiagramKey.png Graphic file (type png)
 
 <use images/classDiagrams/classDiagramKey.png>
@@ -1488,8 +1625,13 @@ Package pdftex.def Info: images/classDiagrams/classDiagramKey.png used on input
 
 
 
- <./images/classDiagrams/classDiagramKey.png>] [54]
-<images/implementationDiagrams/turning.png, id=820, 1003.75pt x 249.93375pt>
+ <./images/classDiagrams/classDiagramKey.png>]
+
+Package natbib Warning: Citation `VanMiddlesworth2008' on page 54 undefined on 
+input line 36.
+
+[54]
+<images/implementationDiagrams/turning.png, id=759, 1003.75pt x 249.93375pt>
 File: images/implementationDiagrams/turning.png Graphic file (type png)
 
 <use images/implementationDiagrams/turning.png>
@@ -1505,14 +1647,19 @@ Overfull \hbox (10.745pt too wide) in paragraph at lines 107--126
 Underfull \vbox (badness 5446) has occurred while \output is active []
 
  [57]
-<images/screenshots/s2sSimulationScreen.png, id=837, 1444.64719pt x 782.925pt>
+<images/screenshots/s2sSimulationScreen.png, id=776, 1444.64719pt x 782.925pt>
 File: images/screenshots/s2sSimulationScreen.png Graphic file (type png)
 
 <use images/screenshots/s2sSimulationScreen.png>
 Package pdftex.def Info: images/screenshots/s2sSimulationScreen.png used on inp
 ut line 162.
 (pdftex.def)             Requested size: 350.32463pt x 189.8531pt.
- [58]) [59 <./images/screenshots/s2sSimulationScreen.png>]
+ [58]
+
+Package natbib Warning: Citation `MockitoWebsite' on page 59 undefined on input
+ line 182.
+
+) [59 <./images/screenshots/s2sSimulationScreen.png>]
 \openout2 = `results.aux'.
 
  (./results.tex
@@ -1535,7 +1682,7 @@ chapter 7.
 
  (./appendix.tex
 chapter A.
-<images/appendix/mergingZoneTriangle.png, id=864, 501.875pt x 294.09875pt>
+<images/appendix/mergingZoneTriangle.png, id=800, 501.875pt x 294.09875pt>
 File: images/appendix/mergingZoneTriangle.png Graphic file (type png)
 
 <use images/appendix/mergingZoneTriangle.png>
@@ -1547,7 +1694,7 @@ line 10.
 
 
  <./images/appendix/mergingZoneTriangle.png>]
-<images/appendix/mergeEntranceTriangles.png, id=872, 481.8pt x 463.7325pt>
+<images/appendix/mergeEntranceTriangles.png, id=808, 481.8pt x 463.7325pt>
 File: images/appendix/mergeEntranceTriangles.png Graphic file (type png)
 
 <use images/appendix/mergeEntranceTriangles.png>
@@ -1558,7 +1705,7 @@ ut line 24.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [63 <./images/appendix/mergeEntranceTriangles.png>]
-<images/appendix/baseWidthTriangle.png, id=882, 546.04pt x 303.1325pt>
+<images/appendix/baseWidthTriangle.png, id=818, 546.04pt x 303.1325pt>
 File: images/appendix/baseWidthTriangle.png Graphic file (type png)
 
 <use images/appendix/baseWidthTriangle.png>
@@ -1566,7 +1713,7 @@ Package pdftex.def Info: images/appendix/baseWidthTriangle.png used on input li
 ne 44.
 (pdftex.def)             Requested size: 350.32463pt x 194.48055pt.
  [64 <./images/appendix/baseWidthTriangle.png>]
-<images/appendix/toCentreTriangle.png, id=893, 1003.75pt x 689.57625pt>
+<images/appendix/toCentreTriangle.png, id=829, 1003.75pt x 689.57625pt>
 File: images/appendix/toCentreTriangle.png Graphic file (type png)
 
 <use images/appendix/toCentreTriangle.png>
@@ -1577,7 +1724,7 @@ e 56.
 Underfull \vbox (badness 6364) has occurred while \output is active []
 
  [65 <./images/appendix/toCentreTriangle.png>]
-<images/classDiagrams/driverBefore.png, id=901, 514.92375pt x 311.1625pt>
+<images/classDiagrams/driverBefore.png, id=838, 514.92375pt x 311.1625pt>
 File: images/classDiagrams/driverBefore.png Graphic file (type png)
 
 <use images/classDiagrams/driverBefore.png>
@@ -1585,7 +1732,7 @@ Package pdftex.def Info: images/classDiagrams/driverBefore.png used on input li
 ne 73.
 (pdftex.def)             Requested size: 350.32463pt x 211.70164pt.
 
-<images/classDiagrams/driverAfter.png, id=903, 920.43875pt x 471.7625pt>
+<images/classDiagrams/driverAfter.png, id=840, 920.43875pt x 471.7625pt>
 File: images/classDiagrams/driverAfter.png Graphic file (type png)
 
 <use images/classDiagrams/driverAfter.png>
@@ -1593,7 +1740,7 @@ Package pdftex.def Info: images/classDiagrams/driverAfter.png used on input lin
 e 83.
 (pdftex.def)             Requested size: 350.32463pt x 179.55954pt.
  [66 <./images/classDiagrams/driverBefore.png (PNG copy)>]
-<images/screenshots/originalAIMSetupLabeled.png, id=910, 903.375pt x 907.39pt>
+<images/screenshots/originalAIMSetupLabeled.png, id=847, 903.375pt x 907.39pt>
 File: images/screenshots/originalAIMSetupLabeled.png Graphic file (type png)
 
 <use images/screenshots/originalAIMSetupLabeled.png>
@@ -1601,7 +1748,7 @@ Package pdftex.def Info: images/screenshots/originalAIMSetupLabeled.png used on
  input line 95.
 (pdftex.def)             Requested size: 350.32463pt x 351.8869pt.
 
-<images/screenshots/newAIMSetupLabeled.png, id=911, 903.375pt x 907.39pt>
+<images/screenshots/newAIMSetupLabeled.png, id=848, 903.375pt x 907.39pt>
 File: images/screenshots/newAIMSetupLabeled.png Graphic file (type png)
 
 <use images/screenshots/newAIMSetupLabeled.png>
@@ -1609,7 +1756,7 @@ Package pdftex.def Info: images/screenshots/newAIMSetupLabeled.png used on inpu
 t line 101.
 (pdftex.def)             Requested size: 350.32463pt x 351.8869pt.
  [67 <./images/classDiagrams/driverAfter.png (PNG copy)>]
-<images/classDiagrams/simViewer.png, id=918, 295.1025pt x 230.8625pt>
+<images/classDiagrams/simViewer.png, id=855, 295.1025pt x 230.8625pt>
 File: images/classDiagrams/simViewer.png Graphic file (type png)
 
 <use images/classDiagrams/simViewer.png>
@@ -1617,7 +1764,7 @@ Package pdftex.def Info: images/classDiagrams/simViewer.png used on input line
 109.
 (pdftex.def)             Requested size: 350.32463pt x 274.0675pt.
 
-<images/classDiagrams/simScreen.png, id=920, 278.03876pt x 230.8625pt>
+<images/classDiagrams/simScreen.png, id=857, 278.03876pt x 230.8625pt>
 File: images/classDiagrams/simScreen.png Graphic file (type png)
 
 <use images/classDiagrams/simScreen.png>
@@ -1625,7 +1772,7 @@ Package pdftex.def Info: images/classDiagrams/simScreen.png used on input line
 117.
 (pdftex.def)             Requested size: 350.32463pt x 290.88828pt.
 
-<images/classDiagrams/simSetupPanel.png, id=922, 343.2825pt x 230.8625pt>
+<images/classDiagrams/simSetupPanel.png, id=859, 343.2825pt x 230.8625pt>
 File: images/classDiagrams/simSetupPanel.png Graphic file (type png)
 
 <use images/classDiagrams/simSetupPanel.png>
@@ -1633,7 +1780,7 @@ Package pdftex.def Info: images/classDiagrams/simSetupPanel.png used on input l
 ine 125.
 (pdftex.def)             Requested size: 350.32463pt x 235.59639pt.
 
-<images/classDiagrams/mapBefore.png, id=925, 137.51375pt x 225.84375pt>
+<images/classDiagrams/mapBefore.png, id=862, 137.51375pt x 225.84375pt>
 File: images/classDiagrams/mapBefore.png Graphic file (type png)
 
 <use images/classDiagrams/mapBefore.png>
@@ -1644,7 +1791,7 @@ Package pdftex.def Info: images/classDiagrams/mapBefore.png used on input line
 
 LaTeX Warning: Float too large for page by 61.68437pt on input line 140.
 
-<images/classDiagrams/mapAfter.png, id=926, 316.18124pt x 386.44376pt>
+<images/classDiagrams/mapAfter.png, id=863, 316.18124pt x 386.44376pt>
 File: images/classDiagrams/mapAfter.png Graphic file (type png)
 
 <use images/classDiagrams/mapAfter.png>
@@ -1655,7 +1802,7 @@ Package pdftex.def Info: images/classDiagrams/mapAfter.png used on input line 1
 Underfull \vbox (badness 8019) has occurred while \output is active []
 
  [68]
-<images/classDiagrams/simulatorBefore.png, id=933, 207.77625pt x 150.5625pt>
+<images/classDiagrams/simulatorBefore.png, id=870, 207.77625pt x 150.5625pt>
 File: images/classDiagrams/simulatorBefore.png Graphic file (type png)
 
 <use images/classDiagrams/simulatorBefore.png>
@@ -1663,7 +1810,7 @@ Package pdftex.def Info: images/classDiagrams/simulatorBefore.png used on input
  line 159.
 (pdftex.def)             Requested size: 350.32463pt x 253.88977pt.
 
-<images/classDiagrams/simulatorAfter.png, id=934, 372.39125pt x 230.8625pt>
+<images/classDiagrams/simulatorAfter.png, id=871, 372.39125pt x 230.8625pt>
 File: images/classDiagrams/simulatorAfter.png Graphic file (type png)
 
 <use images/classDiagrams/simulatorAfter.png>
@@ -1671,7 +1818,7 @@ Package pdftex.def Info: images/classDiagrams/simulatorAfter.png used on input
 line 165.
 (pdftex.def)             Requested size: 350.32463pt x 217.19041pt.
 
-<images/classDiagrams/simSetupBefore.png, id=937, 151.56625pt x 150.5625pt>
+<images/classDiagrams/simSetupBefore.png, id=874, 151.56625pt x 150.5625pt>
 File: images/classDiagrams/simSetupBefore.png Graphic file (type png)
 
 <use images/classDiagrams/simSetupBefore.png>
@@ -1679,7 +1826,7 @@ Package pdftex.def Info: images/classDiagrams/simSetupBefore.png used on input
 line 173.
 (pdftex.def)             Requested size: 350.32463pt x 348.01178pt.
 
-<images/classDiagrams/simSetupAfter.png, id=938, 288.07625pt x 230.8625pt>
+<images/classDiagrams/simSetupAfter.png, id=875, 288.07625pt x 230.8625pt>
 File: images/classDiagrams/simSetupAfter.png Graphic file (type png)
 
 <use images/classDiagrams/simSetupAfter.png>
@@ -1692,7 +1839,7 @@ Overfull \hbox (7.32536pt too wide) in paragraph at lines 186--187
 if-fer-ent vehicles used dur-ing sim-u-la-tions. Vehicles
  []
 
-<images/classDiagrams/vehicleBefore.png, id=942, 353.32pt x 311.1625pt>
+<images/classDiagrams/vehicleBefore.png, id=879, 353.32pt x 311.1625pt>
 File: images/classDiagrams/vehicleBefore.png Graphic file (type png)
 
 <use images/classDiagrams/vehicleBefore.png>
@@ -1700,7 +1847,7 @@ Package pdftex.def Info: images/classDiagrams/vehicleBefore.png used on input l
 ine 189.
 (pdftex.def)             Requested size: 350.32463pt x 308.52663pt.
 
-<images/classDiagrams/vehicleAfter.png, id=943, 1098.1025pt x 431.6125pt>
+<images/classDiagrams/vehicleAfter.png, id=880, 1098.1025pt x 431.6125pt>
 File: images/classDiagrams/vehicleAfter.png Graphic file (type png)
 
 <use images/classDiagrams/vehicleAfter.png>
@@ -1717,60 +1864,21 @@ agrams/simulatorAfter.png (PNG copy)>] [79 <./images/classDiagrams/simSetupBefo
 re.png (PNG copy)>] [80 <./images/classDiagrams/simSetupAfter.png (PNG copy)>] 
 [81 <./images/classDiagrams/vehicleBefore.png (PNG copy)> <./images/classDiagra
 ms/vehicleAfter.png (PNG copy)>]
-(output/fullReport.bbl
-** WARNING: IEEEtranN.bst: No hyphenation pattern has been
-** loaded for the language `English'. Using the pattern for
-** the default language instead.
+No file fullReport.bbl.
 
-Underfull \hbox (badness 2005) in paragraph at lines 27--32
-\T1/pplj/m/n/10.95 (+20) able: []$https : / / www . gov . uk / guidance / the-[
-]highway-[]code /
- []
+Package natbib Warning: There were undefined citations.
 
-
-Overfull \hbox (27.48245pt too wide) in paragraph at lines 27--32
-\T1/pplj/m/n/10.95 (-20) general-[]rules-[]techniques-[]and-[]advice-[]for-[]al
-l-[]drivers-[]and-[]riders-[]103-[]to-[]158$[] 
- []
-
-** WARNING: IEEEtranN.bst: No hyphenation pattern has been
-** loaded for the language `English'. Using the pattern for
-** the default language instead.
-** WARNING: IEEEtranN.bst: No hyphenation pattern has been
-** loaded for the language `English'. Using the pattern for
-** the default language instead.
-
-Overfull \hbox (21.64287pt too wide) in paragraph at lines 58--62
-\T1/pplj/m/n/10.95 (-20) tesla-[]car-[]drives-[]owner-[]to-[]hospital-[]after-[
-]he-[]su^^[ers-[]pulmonary-[]embolism$[] 
- []
-
-** WARNING: IEEEtranN.bst: No hyphenation pattern has been
-** loaded for the language `English'. Using the pattern for
-** the default language instead.
-** WARNING: IEEEtranN.bst: No hyphenation pattern has been
-** loaded for the language `English'. Using the pattern for
-** the default language instead.
-[82
-
-
-]
-** WARNING: IEEEtranN.bst: No hyphenation pattern has been
-** loaded for the language `English'. Using the pattern for
-** the default language instead.
-** WARNING: IEEEtranN.bst: No hyphenation pattern has been
-** loaded for the language `English'. Using the pattern for
-** the default language instead.
-[83]
-** WARNING: IEEEtranN.bst: No hyphenation pattern has been
-** loaded for the language `English'. Using the pattern for
-** the default language instead.
-) [84]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 58.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 58.
- (output/fullReport.aux (output/introduction.aux) (output/literature.aux) (outp
-ut/problem.aux) (output/design.aux) (output/implementation.aux)
-(output/results.aux) (output/conclusion.aux) (output/appendix.aux))
+(C:Users\callu\Documents\GitHub\AVLaneMergingReport\output/fullReport.aux
+(C:Users\callu\Documents\GitHub\AVLaneMergingReport\output/introduction.aux)
+(C:Users\callu\Documents\GitHub\AVLaneMergingReport\output/literature.aux)
+(C:Users\callu\Documents\GitHub\AVLaneMergingReport\output/problem.aux)
+(C:Users\callu\Documents\GitHub\AVLaneMergingReport\output/design.aux)
+(C:Users\callu\Documents\GitHub\AVLaneMergingReport\output/implementation.aux)
+(C:Users\callu\Documents\GitHub\AVLaneMergingReport\output/results.aux)
+(C:Users\callu\Documents\GitHub\AVLaneMergingReport\output/conclusion.aux)
+(C:Users\callu\Documents\GitHub\AVLaneMergingReport\output/appendix.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 58.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 58.
 Package rerunfilecheck Info: File `fullReport.out' has not changed.
@@ -1782,11 +1890,11 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 58.
  ) 
 Here is how much of TeX's memory you used:
- 24430 strings out of 493013
- 440635 string characters out of 6136994
- 644104 words of memory out of 5000000
- 26738 multiletter control sequences out of 15000+600000
- 87112 words of font info for 422 fonts, out of 8000000 for 9000
+ 24334 strings out of 493013
+ 441284 string characters out of 6136994
+ 643164 words of memory out of 5000000
+ 26682 multiletter control sequences out of 15000+600000
+ 86540 words of font info for 414 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,20n,68p,8854b,529s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2016/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2016/texm
@@ -1803,10 +1911,11 @@ hvr8a.pfb><c:/texlive/2016/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb><c:/t
 exlive/2016/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb><c:/texlive/2016/tex
 mf-dist/fonts/type1/urw/palatino/uplri8a.pfb><c:/texlive/2016/texmf-dist/fonts/
 type1/urw/zapfding/uzdr.pfb>
-Output written on output/fullReport.pdf (84 pages, 2365332 bytes).
+Output written on C:Users\callu\Documents\GitHub\AVLaneMergingReport\output/ful
+lReport.pdf (81 pages, 2355049 bytes).
 PDF statistics:
- 1153 PDF objects out of 1200 (max. 8388607)
- 974 compressed objects within 10 object streams
- 256 named destinations out of 1000 (max. 500000)
+ 1041 PDF objects out of 1200 (max. 8388607)
+ 869 compressed objects within 9 object streams
+ 228 named destinations out of 1000 (max. 500000)
  44195 words of extra memory for PDF output out of 51595 (max. 10000000)
 
