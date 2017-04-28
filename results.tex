@@ -1,12 +1,39 @@
 \chapter{Results}
 \label{cha:Results}
+The simulator was designed to allow for variance in merge angle, lead in distances, speed limits, and traffic levels. This means that we can experiment to see what effect each of these variables has on the effectiveness of the Queue protocol. We can also compare the Queue protocol to the AIM protocol, using the modified version of the AIM simulator described in \ref{sec:Merge Schemes}.
+
+\section{Experimental Procedure}
+\label{sec:Experimental Procedure}
+All experiments were done using pre-generated spawn schedules. In each experiment I used 8 pairs of schedules (1 per lane). Each experiment ran for over 1000 simulated seconds, with vehicles only spawning for up to 1000 simulated seconds.
+
+\section{Comparing AIM and Queue Protocols}
+\label{sec:Comparing AIM and Queue Protocols}
+By using the modified AIM simulator described in \ref{sec:Merge Schemes} we can get an apoximation for how well the AIM protocol handles merges. This can then be compared to the performance of the Queue protocol. 
+
+The AIM simulator merge has a lead in and lead out distance for each lane of 150 metres and is limited to 90\degree merges. These settings were duplicated for the Queue merge type. All of the lanes were set to have a speed limit of 40 metres per second. The results are compared by examining the maximum and average delay for each system, as well as the total throughput. The performance of the system was also compared as the traffic levels for each system increased. Each traffic level used a different set of spawn schedules.
+
+AIM mostly caused delays on the target lane. At 2000 some vehicles didn't spawn due to the no vehicle zone. 2500 both lanes hit the no vehicle zone.
+
+\section{The Effect of the Merge Angle}
+\label{sec:The Effect of the Merge Angle}
+1000 Traffic Level, 40m/s, 150 metres lead in
+
+20 degrees, _2 test failed due to issues with collisions not be detected correctly by AIM.
+
+\section{The Effect of Lead in Distances}
+\label{sec:The Effect of Lead in Distances}
+1000 Traffic Level, 40m/s, 45 degrees
+
+\section{The Effect of Differing Speed Limits}
+\label{sec:The Effect of Differing Speed Limits}
+1000 Traffic Level, 150 metres lead in, 45 degrees.
+
+Inherently not the same sets of spawns due to speed limit effect on the no vehicle zone.
+
+60/40 Had an error on the first set where a vehicle overtook another vehicle via merging.
 
 Lilian Notes:
 \begin{enumerate}
 \item It will be interesting to have a graph with |C| on the x-axis and throughput on y-axis. Similarly, a 3D graph where  |Ctl| on the x-axis, |Cml| on the y-axis, and throughput on z-axis.
 \end{enumerate}
 
-Callum Notes:
-\begin{enumerate}
-\item As a "things I'd do differently" or "changes to make" it would be cool to move to a Spring implementation. It might make it easier to add different simulator types.
-\end{enumerate}
