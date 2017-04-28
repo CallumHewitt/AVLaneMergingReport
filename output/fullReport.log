@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2017.4.4)  26 APR 2017 18:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2017.4.4)  26 APR 2017 22:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -885,7 +885,17 @@ File: upsy.fd 2001/06/04 font definitions for U/psy.
 
 LaTeX Warning: Label `cha:Results' multiply defined.
 
-) (output/appendix.aux))
+) (output/appendix.aux
+
+LaTeX Warning: Label `subsec:aim4.vehicle' multiply defined.
+
+
+LaTeX Warning: Label `fig:vehicleBefore' multiply defined.
+
+
+LaTeX Warning: Label `fig:vehicleAfter' multiply defined.
+
+))
 \openout1 = `fullReport.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 42.
@@ -1144,7 +1154,7 @@ Class scrreprt Warning: \float@addtolists detected!
 (scrreprt)              a package that still implements the
 (scrreprt)              deprecated \float@addtolist interface .
 
-<images/introduction/stoppingDistances.jpg, id=467, 845.0772pt x 287.3937pt>
+<images/introduction/stoppingDistances.jpg, id=489, 845.0772pt x 287.3937pt>
 File: images/introduction/stoppingDistances.jpg Graphic file (type jpg)
 
 <use images/introduction/stoppingDistances.jpg>
@@ -1177,7 +1187,7 @@ LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <12> not available
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 10.79993pt on input line 86.
 
-<images/litReview/aimOriginal.JPG, id=551, 499.11469pt x 688.82344pt>
+<images/litReview/aimOriginal.JPG, id=573, 499.11469pt x 688.82344pt>
 File: images/litReview/aimOriginal.JPG Graphic file (type jpg)
 
 <use images/litReview/aimOriginal.JPG>
@@ -1188,7 +1198,7 @@ Package pdftex.def Info: images/litReview/aimOriginal.JPG used on input line 10
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [22]
-<images/litReview/gipps1986Flowchart.png, id=594, 697.10437pt x 1300.1072pt>
+<images/litReview/gipps1986Flowchart.png, id=616, 697.10437pt x 1300.1072pt>
 File: images/litReview/gipps1986Flowchart.png Graphic file (type png)
 
 <use images/litReview/gipps1986Flowchart.png>
@@ -1200,7 +1210,7 @@ line 162.
 LaTeX Warning: Float too large for page by 139.64474pt on input line 165.
 
 [23] [24]
-<images/litReview/atagoziyevFlowchart.JPG, id=607, 752.8125pt x 444.15938pt>
+<images/litReview/atagoziyevFlowchart.JPG, id=629, 752.8125pt x 444.15938pt>
 File: images/litReview/atagoziyevFlowchart.JPG Graphic file (type jpg)
 
 <use images/litReview/atagoziyevFlowchart.JPG>
@@ -1220,7 +1230,7 @@ G>]
 
  (./problem.tex
 chapter 3.
-<images/laneDiagrams/s2s.png, id=649, 1284.8pt x 722.7pt>
+<images/laneDiagrams/s2s.png, id=671, 1284.8pt x 722.7pt>
 File: images/laneDiagrams/s2s.png Graphic file (type png)
 
 <use images/laneDiagrams/s2s.png>
@@ -1231,7 +1241,7 @@ Package pdftex.def Info: images/laneDiagrams/s2s.png used on input line 16.
 
 
 ]
-<images/laneDiagrams/s2sExtended.png, id=657, 1284.8pt x 722.7pt>
+<images/laneDiagrams/s2sExtended.png, id=679, 1284.8pt x 722.7pt>
 File: images/laneDiagrams/s2sExtended.png Graphic file (type png)
 
 <use images/laneDiagrams/s2sExtended.png>
@@ -1239,7 +1249,7 @@ Package pdftex.def Info: images/laneDiagrams/s2sExtended.png used on input line
  28.
 (pdftex.def)             Requested size: 350.32463pt x 197.05038pt.
 
-<images/laneDiagrams/realLaneMerge.jpg, id=658, 256.96pt x 192.72pt>
+<images/laneDiagrams/realLaneMerge.jpg, id=680, 256.96pt x 192.72pt>
 File: images/laneDiagrams/realLaneMerge.jpg Graphic file (type jpg)
 
 <use images/laneDiagrams/realLaneMerge.jpg>
@@ -1247,14 +1257,14 @@ Package pdftex.def Info: images/laneDiagrams/realLaneMerge.jpg used on input li
 ne 34.
 (pdftex.def)             Requested size: 350.32463pt x 262.76324pt.
 
-<images/laneDiagrams/s2d.png, id=662, 1284.8pt x 722.7pt>
+<images/laneDiagrams/s2d.png, id=684, 1284.8pt x 722.7pt>
 File: images/laneDiagrams/s2d.png Graphic file (type png)
 
 <use images/laneDiagrams/s2d.png>
 Package pdftex.def Info: images/laneDiagrams/s2d.png used on input line 46.
 (pdftex.def)             Requested size: 350.32463pt x 197.05038pt.
  [33 <./images/laneDiagrams/s2s.png>]
-<images/laneDiagrams/s2dExtended.png, id=669, 1284.8pt x 722.7pt>
+<images/laneDiagrams/s2dExtended.png, id=691, 1284.8pt x 722.7pt>
 File: images/laneDiagrams/s2dExtended.png Graphic file (type png)
 
 <use images/laneDiagrams/s2dExtended.png>
@@ -1262,14 +1272,14 @@ Package pdftex.def Info: images/laneDiagrams/s2dExtended.png used on input line
  59.
 (pdftex.def)             Requested size: 350.32463pt x 197.05038pt.
 
-<images/laneDiagrams/d2d.png, id=671, 1284.8pt x 722.7pt>
+<images/laneDiagrams/d2d.png, id=693, 1284.8pt x 722.7pt>
 File: images/laneDiagrams/d2d.png Graphic file (type png)
 
 <use images/laneDiagrams/d2d.png>
 Package pdftex.def Info: images/laneDiagrams/d2d.png used on input line 69.
 (pdftex.def)             Requested size: 350.32463pt x 197.05038pt.
 
-<images/laneDiagrams/d2dExtended.png, id=673, 1284.8pt x 722.7pt>
+<images/laneDiagrams/d2dExtended.png, id=695, 1284.8pt x 722.7pt>
 File: images/laneDiagrams/d2dExtended.png Graphic file (type png)
 
 <use images/laneDiagrams/d2dExtended.png>
@@ -1278,7 +1288,7 @@ Package pdftex.def Info: images/laneDiagrams/d2dExtended.png used on input line
 (pdftex.def)             Requested size: 350.32463pt x 197.05038pt.
  [34 <./images/laneDiagrams/s2sExtended.png>] [35 <./images/laneDiagrams/realLa
 neMerge.jpg>]
-<images/laneDiagrams/lane_blocker.png, id=684, 1284.8pt x 722.7pt>
+<images/laneDiagrams/lane_blocker.png, id=706, 1284.8pt x 722.7pt>
 File: images/laneDiagrams/lane_blocker.png Graphic file (type png)
 
 <use images/laneDiagrams/lane_blocker.png>
@@ -1288,7 +1298,7 @@ e 94.
  [36 <./images/laneDiagrams/s2d.png>] [37 <./images/laneDiagrams/s2dExtended.pn
 g>] [38 <./images/laneDiagrams/d2d.png>] [39 <./images/laneDiagrams/d2dExtended
 .png>] [40 <./images/laneDiagrams/lane_blocker.png>]
-<images/laneDiagrams/s2sMarked.png, id=722, 1193.45876pt x 656.4525pt>
+<images/laneDiagrams/s2sMarked.png, id=744, 1193.45876pt x 656.4525pt>
 File: images/laneDiagrams/s2sMarked.png Graphic file (type png)
 
 <use images/laneDiagrams/s2sMarked.png>
@@ -1430,7 +1440,7 @@ Overfull \hbox (25.19997pt too wide) in alignment at lines 317--332
 
  (./design.tex
 chapter 4.
-<images/designNotes/baseWidth.png, id=755, 1003.75pt x 689.57625pt>
+<images/designNotes/baseWidth.png, id=777, 1003.75pt x 689.57625pt>
 File: images/designNotes/baseWidth.png Graphic file (type png)
 
 <use images/designNotes/baseWidth.png>
@@ -1455,7 +1465,7 @@ m/m/it/10.95 width \OMS/zplm/m/n/10.95 ^^@ \OML/zplm/m/it/10.95 targetLeadOutDi
 stance$ [][][]  
  []
 
-<images/designNotes/adjustments.png, id=776, 291.0875pt x 336.25626pt>
+<images/designNotes/adjustments.png, id=798, 291.0875pt x 336.25626pt>
 File: images/designNotes/adjustments.png Graphic file (type png)
 
 <use images/designNotes/adjustments.png>
@@ -1463,7 +1473,7 @@ Package pdftex.def Info: images/designNotes/adjustments.png used on input line
 56.
 (pdftex.def)             Requested size: 350.32463pt x 404.71637pt.
 
-<images/designNotes/centreXAdjustment.png, id=781, 471.7625pt x 335.2525pt>
+<images/designNotes/centreXAdjustment.png, id=803, 471.7625pt x 335.2525pt>
 File: images/designNotes/centreXAdjustment.png Graphic file (type png)
 
 <use images/designNotes/centreXAdjustment.png>
@@ -1477,7 +1487,7 @@ es/centreXAdjustment.png>]
 
 (./implementation.tex
 chapter 5.
-<images/classDiagrams/classDiagramKey.png, id=805, 632.3625pt x 151.56625pt>
+<images/classDiagrams/classDiagramKey.png, id=827, 632.3625pt x 151.56625pt>
 File: images/classDiagrams/classDiagramKey.png Graphic file (type png)
 
 <use images/classDiagrams/classDiagramKey.png>
@@ -1488,36 +1498,54 @@ Package pdftex.def Info: images/classDiagrams/classDiagramKey.png used on input
 
 
 
- <./images/classDiagrams/classDiagramKey.png>] [54]
-<images/implementationDiagrams/turning.png, id=820, 1003.75pt x 249.93375pt>
+ <./images/classDiagrams/classDiagramKey.png>]
+Overfull \hbox (7.32536pt too wide) in paragraph at lines 28--29
+\T1/pplj/m/it/10.95 (-20) aim4.vehicle \T1/pplj/m/n/10.95 (-20) con-trols the d
+if-fer-ent vehicles used dur-ing sim-u-la-tions. Vehicles
+ []
+
+<images/classDiagrams/vehicleBefore.png, id=839, 353.32pt x 311.1625pt>
+File: images/classDiagrams/vehicleBefore.png Graphic file (type png)
+
+<use images/classDiagrams/vehicleBefore.png>
+Package pdftex.def Info: images/classDiagrams/vehicleBefore.png used on input l
+ine 31.
+(pdftex.def)             Requested size: 350.32463pt x 308.52663pt.
+
+<images/classDiagrams/vehicleAfter.png, id=840, 1098.1025pt x 431.6125pt>
+File: images/classDiagrams/vehicleAfter.png Graphic file (type png)
+
+<use images/classDiagrams/vehicleAfter.png>
+Package pdftex.def Info: images/classDiagrams/vehicleAfter.png used on input li
+ne 37.
+(pdftex.def)             Requested size: 350.32463pt x 137.69073pt.
+ [54 <./images/classDiagrams/vehicleBefore.png (PNG copy)>] [55 <./images/class
+Diagrams/vehicleAfter.png (PNG copy)>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [56]
+[57]
+<images/implementationDiagrams/turning.png, id=861, 1003.75pt x 249.93375pt>
 File: images/implementationDiagrams/turning.png Graphic file (type png)
 
 <use images/implementationDiagrams/turning.png>
 Package pdftex.def Info: images/implementationDiagrams/turning.png used on inpu
-t line 80.
+t line 97.
 (pdftex.def)             Requested size: 350.32463pt x 87.23022pt.
- [55 <./images/implementationDiagrams/turning.png>] [56]
-Overfull \hbox (10.745pt too wide) in paragraph at lines 107--126
-[] \T1/pplj/m/n/10.95 (-20) - Res-ults gen-er-a-tion to CSV file - Drivers,
- []
-
-
-Underfull \vbox (badness 5446) has occurred while \output is active []
-
- [57]
-<images/screenshots/s2sSimulationScreen.png, id=837, 1444.64719pt x 782.925pt>
+ [58 <./images/implementationDiagrams/turning.png>] [59] [60] [61]
+<images/screenshots/s2sSimulationScreen.png, id=883, 1444.64719pt x 782.925pt>
 File: images/screenshots/s2sSimulationScreen.png Graphic file (type png)
 
 <use images/screenshots/s2sSimulationScreen.png>
 Package pdftex.def Info: images/screenshots/s2sSimulationScreen.png used on inp
-ut line 162.
+ut line 209.
 (pdftex.def)             Requested size: 350.32463pt x 189.8531pt.
- [58]) [59 <./images/screenshots/s2sSimulationScreen.png>]
+ [62] [63 <./images/screenshots/s2sSimulationScreen.png>]) [64]
 \openout2 = `results.aux'.
 
  (./results.tex
 chapter 6.
-) [60
+) [65
 
 
 
@@ -1526,7 +1554,7 @@ chapter 6.
 
  (./conclusion.tex
 chapter 7.
-) [61
+) [66
 
 
 
@@ -1535,19 +1563,19 @@ chapter 7.
 
  (./appendix.tex
 chapter A.
-<images/appendix/mergingZoneTriangle.png, id=864, 501.875pt x 294.09875pt>
+<images/appendix/mergingZoneTriangle.png, id=913, 501.875pt x 294.09875pt>
 File: images/appendix/mergingZoneTriangle.png Graphic file (type png)
 
 <use images/appendix/mergingZoneTriangle.png>
 Package pdftex.def Info: images/appendix/mergingZoneTriangle.png used on input 
 line 10.
 (pdftex.def)             Requested size: 350.32463pt x 205.30228pt.
- [62
+ [67
 
 
 
  <./images/appendix/mergingZoneTriangle.png>]
-<images/appendix/mergeEntranceTriangles.png, id=872, 481.8pt x 463.7325pt>
+<images/appendix/mergeEntranceTriangles.png, id=922, 481.8pt x 463.7325pt>
 File: images/appendix/mergeEntranceTriangles.png Graphic file (type png)
 
 <use images/appendix/mergeEntranceTriangles.png>
@@ -1557,16 +1585,16 @@ ut line 24.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [63 <./images/appendix/mergeEntranceTriangles.png>]
-<images/appendix/baseWidthTriangle.png, id=882, 546.04pt x 303.1325pt>
+ [68 <./images/appendix/mergeEntranceTriangles.png>]
+<images/appendix/baseWidthTriangle.png, id=932, 546.04pt x 303.1325pt>
 File: images/appendix/baseWidthTriangle.png Graphic file (type png)
 
 <use images/appendix/baseWidthTriangle.png>
 Package pdftex.def Info: images/appendix/baseWidthTriangle.png used on input li
 ne 44.
 (pdftex.def)             Requested size: 350.32463pt x 194.48055pt.
- [64 <./images/appendix/baseWidthTriangle.png>]
-<images/appendix/toCentreTriangle.png, id=893, 1003.75pt x 689.57625pt>
+ [69 <./images/appendix/baseWidthTriangle.png>]
+<images/appendix/toCentreTriangle.png, id=943, 1003.75pt x 689.57625pt>
 File: images/appendix/toCentreTriangle.png Graphic file (type png)
 
 <use images/appendix/toCentreTriangle.png>
@@ -1576,8 +1604,8 @@ e 56.
 
 Underfull \vbox (badness 6364) has occurred while \output is active []
 
- [65 <./images/appendix/toCentreTriangle.png>]
-<images/classDiagrams/driverBefore.png, id=901, 514.92375pt x 311.1625pt>
+ [70 <./images/appendix/toCentreTriangle.png>]
+<images/classDiagrams/driverBefore.png, id=951, 514.92375pt x 311.1625pt>
 File: images/classDiagrams/driverBefore.png Graphic file (type png)
 
 <use images/classDiagrams/driverBefore.png>
@@ -1585,15 +1613,15 @@ Package pdftex.def Info: images/classDiagrams/driverBefore.png used on input li
 ne 73.
 (pdftex.def)             Requested size: 350.32463pt x 211.70164pt.
 
-<images/classDiagrams/driverAfter.png, id=903, 920.43875pt x 471.7625pt>
+<images/classDiagrams/driverAfter.png, id=953, 920.43875pt x 471.7625pt>
 File: images/classDiagrams/driverAfter.png Graphic file (type png)
 
 <use images/classDiagrams/driverAfter.png>
 Package pdftex.def Info: images/classDiagrams/driverAfter.png used on input lin
 e 83.
 (pdftex.def)             Requested size: 350.32463pt x 179.55954pt.
- [66 <./images/classDiagrams/driverBefore.png (PNG copy)>]
-<images/screenshots/originalAIMSetupLabeled.png, id=910, 903.375pt x 907.39pt>
+ [71 <./images/classDiagrams/driverBefore.png (PNG copy)>]
+<images/screenshots/originalAIMSetupLabeled.png, id=960, 903.375pt x 907.39pt>
 File: images/screenshots/originalAIMSetupLabeled.png Graphic file (type png)
 
 <use images/screenshots/originalAIMSetupLabeled.png>
@@ -1601,15 +1629,15 @@ Package pdftex.def Info: images/screenshots/originalAIMSetupLabeled.png used on
  input line 95.
 (pdftex.def)             Requested size: 350.32463pt x 351.8869pt.
 
-<images/screenshots/newAIMSetupLabeled.png, id=911, 903.375pt x 907.39pt>
+<images/screenshots/newAIMSetupLabeled.png, id=961, 903.375pt x 907.39pt>
 File: images/screenshots/newAIMSetupLabeled.png Graphic file (type png)
 
 <use images/screenshots/newAIMSetupLabeled.png>
 Package pdftex.def Info: images/screenshots/newAIMSetupLabeled.png used on inpu
 t line 101.
 (pdftex.def)             Requested size: 350.32463pt x 351.8869pt.
- [67 <./images/classDiagrams/driverAfter.png (PNG copy)>]
-<images/classDiagrams/simViewer.png, id=918, 295.1025pt x 230.8625pt>
+ [72 <./images/classDiagrams/driverAfter.png (PNG copy)>]
+<images/classDiagrams/simViewer.png, id=967, 295.1025pt x 230.8625pt>
 File: images/classDiagrams/simViewer.png Graphic file (type png)
 
 <use images/classDiagrams/simViewer.png>
@@ -1617,7 +1645,7 @@ Package pdftex.def Info: images/classDiagrams/simViewer.png used on input line
 109.
 (pdftex.def)             Requested size: 350.32463pt x 274.0675pt.
 
-<images/classDiagrams/simScreen.png, id=920, 278.03876pt x 230.8625pt>
+<images/classDiagrams/simScreen.png, id=969, 278.03876pt x 230.8625pt>
 File: images/classDiagrams/simScreen.png Graphic file (type png)
 
 <use images/classDiagrams/simScreen.png>
@@ -1625,7 +1653,7 @@ Package pdftex.def Info: images/classDiagrams/simScreen.png used on input line
 117.
 (pdftex.def)             Requested size: 350.32463pt x 290.88828pt.
 
-<images/classDiagrams/simSetupPanel.png, id=922, 343.2825pt x 230.8625pt>
+<images/classDiagrams/simSetupPanel.png, id=971, 343.2825pt x 230.8625pt>
 File: images/classDiagrams/simSetupPanel.png Graphic file (type png)
 
 <use images/classDiagrams/simSetupPanel.png>
@@ -1633,7 +1661,7 @@ Package pdftex.def Info: images/classDiagrams/simSetupPanel.png used on input l
 ine 125.
 (pdftex.def)             Requested size: 350.32463pt x 235.59639pt.
 
-<images/classDiagrams/mapBefore.png, id=925, 137.51375pt x 225.84375pt>
+<images/classDiagrams/mapBefore.png, id=974, 137.51375pt x 225.84375pt>
 File: images/classDiagrams/mapBefore.png Graphic file (type png)
 
 <use images/classDiagrams/mapBefore.png>
@@ -1644,7 +1672,7 @@ Package pdftex.def Info: images/classDiagrams/mapBefore.png used on input line
 
 LaTeX Warning: Float too large for page by 61.68437pt on input line 140.
 
-<images/classDiagrams/mapAfter.png, id=926, 316.18124pt x 386.44376pt>
+<images/classDiagrams/mapAfter.png, id=975, 316.18124pt x 386.44376pt>
 File: images/classDiagrams/mapAfter.png Graphic file (type png)
 
 <use images/classDiagrams/mapAfter.png>
@@ -1654,8 +1682,8 @@ Package pdftex.def Info: images/classDiagrams/mapAfter.png used on input line 1
 
 Underfull \vbox (badness 8019) has occurred while \output is active []
 
- [68]
-<images/classDiagrams/simulatorBefore.png, id=933, 207.77625pt x 150.5625pt>
+ [73]
+<images/classDiagrams/simulatorBefore.png, id=984, 207.77625pt x 150.5625pt>
 File: images/classDiagrams/simulatorBefore.png Graphic file (type png)
 
 <use images/classDiagrams/simulatorBefore.png>
@@ -1663,7 +1691,7 @@ Package pdftex.def Info: images/classDiagrams/simulatorBefore.png used on input
  line 159.
 (pdftex.def)             Requested size: 350.32463pt x 253.88977pt.
 
-<images/classDiagrams/simulatorAfter.png, id=934, 372.39125pt x 230.8625pt>
+<images/classDiagrams/simulatorAfter.png, id=985, 372.39125pt x 230.8625pt>
 File: images/classDiagrams/simulatorAfter.png Graphic file (type png)
 
 <use images/classDiagrams/simulatorAfter.png>
@@ -1671,7 +1699,7 @@ Package pdftex.def Info: images/classDiagrams/simulatorAfter.png used on input
 line 165.
 (pdftex.def)             Requested size: 350.32463pt x 217.19041pt.
 
-<images/classDiagrams/simSetupBefore.png, id=937, 151.56625pt x 150.5625pt>
+<images/classDiagrams/simSetupBefore.png, id=988, 151.56625pt x 150.5625pt>
 File: images/classDiagrams/simSetupBefore.png Graphic file (type png)
 
 <use images/classDiagrams/simSetupBefore.png>
@@ -1679,7 +1707,7 @@ Package pdftex.def Info: images/classDiagrams/simSetupBefore.png used on input
 line 173.
 (pdftex.def)             Requested size: 350.32463pt x 348.01178pt.
 
-<images/classDiagrams/simSetupAfter.png, id=938, 288.07625pt x 230.8625pt>
+<images/classDiagrams/simSetupAfter.png, id=989, 288.07625pt x 230.8625pt>
 File: images/classDiagrams/simSetupAfter.png Graphic file (type png)
 
 <use images/classDiagrams/simSetupAfter.png>
@@ -1692,32 +1720,26 @@ Overfull \hbox (7.32536pt too wide) in paragraph at lines 186--187
 if-fer-ent vehicles used dur-ing sim-u-la-tions. Vehicles
  []
 
-<images/classDiagrams/vehicleBefore.png, id=942, 353.32pt x 311.1625pt>
 File: images/classDiagrams/vehicleBefore.png Graphic file (type png)
-
 <use images/classDiagrams/vehicleBefore.png>
 Package pdftex.def Info: images/classDiagrams/vehicleBefore.png used on input l
 ine 189.
 (pdftex.def)             Requested size: 350.32463pt x 308.52663pt.
-
-<images/classDiagrams/vehicleAfter.png, id=943, 1098.1025pt x 431.6125pt>
 File: images/classDiagrams/vehicleAfter.png Graphic file (type png)
 
 <use images/classDiagrams/vehicleAfter.png>
 Package pdftex.def Info: images/classDiagrams/vehicleAfter.png used on input li
 ne 195.
 (pdftex.def)             Requested size: 350.32463pt x 137.69073pt.
- [69]) [70] [71 <./images/screenshots/originalAIMSetupLabeled.png>] [72 <./imag
-es/screenshots/newAIMSetupLabeled.png>] [73 <./images/classDiagrams/simViewer.p
-ng (PNG copy)>] [74 <./images/classDiagrams/simScreen.png (PNG copy)>] [75 <./i
-mages/classDiagrams/simSetupPanel.png (PNG copy)>] [76 <./images/classDiagrams/
-mapBefore.png (PNG copy)>] [77 <./images/classDiagrams/mapAfter.png (PNG copy)>
-] [78 <./images/classDiagrams/simulatorBefore.png (PNG copy)> <./images/classDi
-agrams/simulatorAfter.png (PNG copy)>] [79 <./images/classDiagrams/simSetupBefo
-re.png (PNG copy)>] [80 <./images/classDiagrams/simSetupAfter.png (PNG copy)>] 
-[81 <./images/classDiagrams/vehicleBefore.png (PNG copy)> <./images/classDiagra
-ms/vehicleAfter.png (PNG copy)>]
-(output/fullReport.bbl
+ [74]) [75] [76 <./images/screenshots/originalAIMSetupLabeled.png>] [77 <./imag
+es/screenshots/newAIMSetupLabeled.png>] [78 <./images/classDiagrams/simViewer.p
+ng (PNG copy)>] [79 <./images/classDiagrams/simScreen.png (PNG copy)>] [80 <./i
+mages/classDiagrams/simSetupPanel.png (PNG copy)>] [81 <./images/classDiagrams/
+mapBefore.png (PNG copy)>] [82 <./images/classDiagrams/mapAfter.png (PNG copy)>
+] [83 <./images/classDiagrams/simulatorBefore.png (PNG copy)> <./images/classDi
+agrams/simulatorAfter.png (PNG copy)>] [84 <./images/classDiagrams/simSetupBefo
+re.png (PNG copy)>] [85 <./images/classDiagrams/simSetupAfter.png (PNG copy)>] 
+[86] (output/fullReport.bbl
 ** WARNING: IEEEtranN.bst: No hyphenation pattern has been
 ** loaded for the language `English'. Using the pattern for
 ** the default language instead.
@@ -1751,7 +1773,7 @@ Overfull \hbox (21.64287pt too wide) in paragraph at lines 58--62
 ** WARNING: IEEEtranN.bst: No hyphenation pattern has been
 ** loaded for the language `English'. Using the pattern for
 ** the default language instead.
-[82
+[87
 
 
 ]
@@ -1761,11 +1783,11 @@ Overfull \hbox (21.64287pt too wide) in paragraph at lines 58--62
 ** WARNING: IEEEtranN.bst: No hyphenation pattern has been
 ** loaded for the language `English'. Using the pattern for
 ** the default language instead.
-[83]
+[88]
 ** WARNING: IEEEtranN.bst: No hyphenation pattern has been
 ** loaded for the language `English'. Using the pattern for
 ** the default language instead.
-) [84]
+) [89]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 58.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 58.
  (output/fullReport.aux (output/introduction.aux) (output/literature.aux) (outp
@@ -1774,7 +1796,7 @@ ut/problem.aux) (output/design.aux) (output/implementation.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 58.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 58.
 Package rerunfilecheck Info: File `fullReport.out' has not changed.
-(rerunfilecheck)             Checksum: 1B23FEBF05A50505FEB8A5D076052F70;3948.
+(rerunfilecheck)             Checksum: 506F4C4C4198A98DE754A6CE19D354D2;4181.
 
 
 LaTeX Warning: There were multiply-defined labels.
@@ -1782,10 +1804,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 58.
  ) 
 Here is how much of TeX's memory you used:
- 24430 strings out of 493013
- 440635 string characters out of 6136994
- 644104 words of memory out of 5000000
- 26738 multiletter control sequences out of 15000+600000
+ 24445 strings out of 493013
+ 440866 string characters out of 6136994
+ 645386 words of memory out of 5000000
+ 26743 multiletter control sequences out of 15000+600000
  87112 words of font info for 422 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,20n,68p,8854b,529s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1803,10 +1825,10 @@ hvr8a.pfb><c:/texlive/2016/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb><c:/t
 exlive/2016/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb><c:/texlive/2016/tex
 mf-dist/fonts/type1/urw/palatino/uplri8a.pfb><c:/texlive/2016/texmf-dist/fonts/
 type1/urw/zapfding/uzdr.pfb>
-Output written on output/fullReport.pdf (84 pages, 2365332 bytes).
+Output written on output/fullReport.pdf (89 pages, 2377325 bytes).
 PDF statistics:
- 1153 PDF objects out of 1200 (max. 8388607)
- 974 compressed objects within 10 object streams
- 256 named destinations out of 1000 (max. 500000)
- 44195 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 1204 PDF objects out of 1440 (max. 8388607)
+ 1019 compressed objects within 11 object streams
+ 266 named destinations out of 1000 (max. 500000)
+ 44219 words of extra memory for PDF output out of 51595 (max. 10000000)
 

@@ -21,7 +21,29 @@ The use of the AIM codebase was a project restriction imposed for research purpo
 \label{fig:classDiagramKey}
 \end{figure}
 
-\todo{Decide what to put here} Appendix \ref{sec:Generalising the Codebase Appendix} provides detailed coverage of both this change, and changes made to some of the other areas of the AIM codebase.
+For brevity, I will only cover how the Vehicle classes were generalised. Appendix \ref{sec:Generalising the Codebase Appendix} provides detailed coverage of both this change, and changes made to some of the other areas of the AIM codebase.
+
+\subsection{aim4.vehicle}
+\label{subsec:aim4.vehicle}
+\emph{aim4.vehicle} controls the different vehicles used during simulations. Vehicles are used by both \emph{Driver} and \emph{Simulator} instances. To allow them to do that the original simulator code used \emph{View} interfaces similar to those in \ref{subsec:aim4.driver}. Figure \ref{fig:vehicleBefore} shows how these interfaces link together. Extracting AIM behaviour was quite difficult because of how interconnected these interfaces were. The solution we came up with was to create AIM specific interfaces and link them together in a similar manner, inheriting from the generic ones if possible. Figure \ref{fig:vehicleAfter} shows how the new structure links together.
+
+\begin{figure}[htb]
+\includegraphics[width=\textwidth]{classDiagrams/vehicleBefore.png}
+\caption{The original class structure for \emph{aim4.vehicle}.}
+\label{fig:vehicleBefore}
+\end{figure}
+
+\begin{figure}[htb]
+\includegraphics[width=\textwidth]{classDiagrams/vehicleAfter.png}
+\caption{The new class structure for \emph{aim4.vehicle}.}
+\label{fig:vehicleAfter}
+\end{figure}
+
+The first change made to \emph{aim4.vehicle} was to rename all of the files ending in \emph{View} to end in \emph{Model} instead. We felt that \emph{View} could cause confusion with the GUI elements of the simulator; we instead chose to refer to these interfaces as \emph{Models}, because the accessors are effectively given a model of Driver and AutoDriver (beyond which they care very little) that they can use to access methods.
+
+\emph{AIMVehicleSimModel} and \emph{AIMAutoVehicleDriverModel} are at the top of the AIM interface tree. They both extend their generic counterparts. \emph{AIMAutoVehicleSimModel} extends these two interfaces along with \emph{AutoVehicleSimModel}. This matches up to the original inheritance structure. Any future vehicles will need to create their own version of these interfaces, as seen in \emph{MergeVehicleSimModel}, \emph{MergeAutoVehicleDriverModel} and \emph{MergeAutoVehicleSimModel}. 
+
+In terms of classes we made \emph{BasicAutoVehicle} abstract and extracted out AIM specific behaviour to \emph{AIMBasicAutoVehicle}. \emph{BasicAutoVehicle} had to be abstract because we wanted to force \emph{getDriver()} to be overridden in subclasses to retrieve the simulator specific \emph{AutoDriver} for that vehicle (for example \emph{AIMAutoDriver} in AIM simulators).
 
 \section{Merge Schemes}
 \label{sec:Merge Schemes}
@@ -33,22 +55,15 @@ FS.81 & \cellcolor{red} \xmark \\
 FS.91 & \cellcolor{red} \xmark \\
 \hline
 \end{tabular}
-The original plan was to implement two merge schemes, an AIM based centralised protocol and a dentralised approach based on \citetitle{VanMiddlesworth2008} \citep{VanMiddlesworth2008}. However, implementation proved to be very difficult. 
-
 The AIM protocol implementation was developed by examining the original AIM code and creating a modified version applicable to merges. Because the two systems are so similar, much of the code was duplicated. This could be refactored out a later date, but during development having full control over the actions taken by a vehicle without having to compromise to allow AIM to work correctly was very useful. In the end, despite this approach there were significant issues with the system. Despite using very similar approaches to AIM, almost identical in areas, vehicles would continue to arrive early to their reserved times and vehicles would also collide consistently at intersections.
 
 The system also suffered from some more fundamental problems. Reservations for merges are only taken by the lead vehicle in each lane, as vehicles behind them shouldn't be able to reserve ahead of the lead vehicle. This leads to slow downs at the merge zone as secondary vehicles won't be able to make reservations until the lead vehicle has entered the merge. If secondary vehicles also have to compete with vehicles on the other lane then it is likely that at least one of them will have to stop at the merge. This is fine for four-way stops, but for a merge where maintaining vehicle flow is the primary aim, this system will be far less effective.
 
 The AIM protocol also fails to ensure that one lane does not suffer for the benefit of the other. Reservations are granted on a first-come-first-serve basis (though this could be changed by implementing a different reservation policy) and this can lead to long periods of time where one lane fails to make reservations whilst the other passes vehicles through quickly. Again, this fails to maintain traffic flow, one of the key aims of a merging protocol.
 
-- Queue
-As a response to AIM, I developed an alternative centralised approach to the merge problem. Described in 
+As a response to AIM, I developed an alternative centralised approach to the merge problem. Described in section \ref{subsec:Decentralised Communication Merge Management System}, this system uses a queue, as opposed to a space-time reservation matrix. This system is far less space-time optimal than the AIM system, however, this system is far more straight forward and does not cause non-lead vehicles to stop at the entrance to a merge. To allow a direct comparison between this system and an AIM based alternative, I created a modified version of an AIM simulation, where only one road out of an intersection, and two roads leading into it are enabled. This allows for a comparison between a Queue system set up at 90\degree and the AIM system.
 
--- Response to AIM's failings
--- Describe how it was implemented
-
-- Decentralised
--- Never implemented due to time constraints.
+The original plan was to compare a centralised system with a decentralised solution, based on the work from VanMiddlesworth \citep{VanMiddlesworth2008}. However, this was never implemented due to time constraints.
 
 \section{Simulation}
 \label{sec:Simulation}
@@ -80,7 +95,7 @@ One of the main issues was the assumption that lanes and roads will always meet 
 
 \begin{figure}[htb]
 \includegraphics[width=\textwidth]{implementationDiagrams/turning.png}
-\caption{Key for the class diagrams in this report.}
+\caption{A diagram indicating how turning works through a merge. Red indicates the Merge Zone, Blue indicates a vehicle, Pink indicates the aiming distance and the point the vehicle is turning towards.}
 \label{fig:turning}
 \end{figure}
 
@@ -122,10 +137,41 @@ FS.6a & \cellcolor{red} \xmark \\
 NS.7 & \cellcolor{green} \cmark \\
 \hline
 \end{tabular}
-- Results generation to CSV file
-- Drivers, spawners and simulations adapted to provide the relevant export information
-- Setup in AIM as well
-- Whay wasn't max accell stored?
+
+In order to provide results Vehicle objects were provided with fields to store their
+
+\begin{itemize}
+\item Delay
+\item Final Velocity
+\item Maximum Velocity
+\item Minimum Velocity
+\item Final X Position
+\item Final Y Position
+\item Start Time
+\item Finish Time
+\item Starting Road
+\end{itemize}
+
+These fields were implemented in both AIM and Merge vehicles. This allows for a comparison between AIM and Queue protocols at 90\degree.
+
+To calculate the delay the simulator first simulates each vehicle specification for both the merge and target road. The completion times for each specification are recorded and then used to calculate the effect the merge protocol had on each vehicle. The start time and starting roads are initialised in each vehicle when they are created by their spawn point. The maximum and minimum velocities are dealt with after the move vehicles method in the simulator. The simulator compares the current velocity of the vehicle to its stored maximum and minimum velocity and updates as necessary. The finishing variables are dealt with when the simulator removes them from the simulation and adds them to the completed vehicle store. 
+
+Maximum acceleration and deceleration measurements were not implemented. AIMs current design uses the maximum deceleration for each vehicle as they approach the merge zone, braking at the last moment as agressively as the vehicle's specification allows. This obviously makes maximum acceleration and deceleration measurements pointless. In real life braking profiles like this won't provide the most comfortable ride to passengers, and it also means that vehicles cannot preemptively slow down to maintain momentum whilst other vehicles to move through the merge. Further work could be done to expand both the AIM and Queue protocols to allow for premptive acceleration profiles like these.
+
+The results can be saved to a CSV file containing the throughput, maximum delay, average delay \todo{Make sure this is implemented} and minimum delay of the system. There are also results for each vehicle. Each result contains the vehicle's
+\begin{itemize}
+\item VIN
+\item Starting Road
+\item Vehicle Specification Name
+\item Start Time
+\item Finish Time
+\item Delay
+\item Final Velocity
+\item Max Velocity
+\item Min Velocity
+\item Final X Position
+\item Final Y Position
+\end{itemize}
 
 \section{GUI}
 \label{sec:GUI}
@@ -159,15 +205,15 @@ NS.6 & \cellcolor{green} \cmark \\
 
 The GUI for the project was built using Java Swing, extending the existing AIM GUI. New simulator types are given a separate tab in the application with their own simulator setup and a display screen. The display screen can be modified for each simulation type, showing the relevant information for that simulation. We moved away from the AIM full illustrated canvas implementation to a 'StatScreen' implementation which shows information in text format instead. The S2S simulations display the current simulation time, number of completed vehicles and throughput. They also display two tables, one containing information about the vehicles currently in the simulation, and another for vehicles that have left the simulation. Figure \ref{fig:s2sSimScreen} shows the simulation screen for S2S merges.
 
--- Consistent testing upload 
-
 \begin{figure}[htb]
 \includegraphics[width=\textwidth]{screenshots/s2sSimulationScreen.png}
 \caption{The simulation screen for the S2S merge screen}
 \label{fig:s2sSimScreen}
 \end{figure}
 
-Functional requirements \emph{FS.82} and \emph{FS.92} were not fully implemented as the AIM-like simulations and Decentralised simulations were never implemented in a fully working form. \emph{FS.171} was also never implemented due to the removal of collision detection from simulations. All other GUI requirements were completed.
+Functional requirements \emph{FS.82} and \emph{FS.92} were not fully implemented as the AIM-like simulations and Decentralised simulations were never implemented in a fully working form. \emph{FS.171} was also never implemented due to the removal of collision detection from simulations. All other GUI requirements were completed. 
+
+In order to enable repeat experiments with the same vehicles spawning at the same time the GUI needed to support the uploading of merge schedule JSON files to the spawn points. This was implemented using \emph{JFileChooser}. I also added an extra feature to the merge setup panel which allows users to generate spawn schedule files for a specific time period at a specified traffic level. This enables users to generate schedules without having to use the codebase.
 
 \section{Maintainability and Testing}
 \label{sec:Testing}
@@ -180,10 +226,19 @@ NS.10 & \cellcolor{green} \cmark \\
 \hline
 \end{tabular}
 
+\subsection{Maintainability}
+\label{subsec:Maintainability}
+The separability imposed between AIM, Merge and Generalised classes allows developers to create new simulations quickly, without having concerns over the effect they'll have on existing work. In general, as long as the developers extend and modify certain key classes they can create without worry. For example, new developers will have to create a new \emph{SimSetupPanel} and \emph{SimViewer} panel in order for their simulation to appear in the GUI. The separability isn't perfect, there are some instances where AIM specific classes are used by Merge (mainly in the implementation of an AIM based reservation system), but in general most of the classes are broken out correctly. 
+
+In terms of maintaining existing code, in general the prospects are quite good. Once familiar with the codebase, it is relatively easy to find the files you are aiming to change. Some sections are quite complex however. Many AIM components are tightly coupled, particularly surrounding the I2V managers and reservation classes. These areas use callback interfaces that result in confusion over the role of each class. Refactoring this out would be hard, as there isn't really a perfect solution in this instance, but it could be done with further development time. The separability of the different simulators also comes at a cost in terms of class structure complexity. The changes made to the vehicle classes in section \ref{sec:Generalising the Codebase} should indicate how complex some of the class structures have become.
+
 \subsection{Unit Testing}
 \label{subsec:Unit Testing}
 Unit tests were mostly used to ensure getter and setter methods worked as expected. However, some unit tests were used to verify the behaviour of classes. To do this I used Mockito \citep{MockitoWebsite} to mock the behaviour of objects used by the test class so that I could prompt the test class into producing the expected results.
 
 \subsection{Integration Tests}
 \label{subsec:Integration Tests}
+Integration tests were the most useful tests I used. They allowed me to find and remove problems with the simulators by observing how the map, vehicles, drivers and simulator objects interacted together, as this was usually where most of the errors were occuring. These tests also allowed me to identify key errors with the AIM simulator's approach that were causing problems with the AIM based merge solution.
+
+
 

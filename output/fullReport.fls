@@ -489,6 +489,12 @@ INPUT implementation.tex
 INPUT images/classDiagrams/classDiagramKey.png
 INPUT ./images/classDiagrams/classDiagramKey.png
 INPUT ./images/classDiagrams/classDiagramKey.png
+INPUT images/classDiagrams/vehicleBefore.png
+INPUT ./images/classDiagrams/vehicleBefore.png
+INPUT ./images/classDiagrams/vehicleBefore.png
+INPUT images/classDiagrams/vehicleAfter.png
+INPUT ./images/classDiagrams/vehicleAfter.png
+INPUT ./images/classDiagrams/vehicleAfter.png
 INPUT images/implementationDiagrams/turning.png
 INPUT ./images/implementationDiagrams/turning.png
 INPUT ./images/implementationDiagrams/turning.png
@@ -557,9 +563,7 @@ INPUT ./images/classDiagrams/simSetupAfter.png
 INPUT ./images/classDiagrams/simSetupAfter.png
 INPUT images/classDiagrams/vehicleBefore.png
 INPUT ./images/classDiagrams/vehicleBefore.png
-INPUT ./images/classDiagrams/vehicleBefore.png
 INPUT images/classDiagrams/vehicleAfter.png
-INPUT ./images/classDiagrams/vehicleAfter.png
 INPUT ./images/classDiagrams/vehicleAfter.png
 INPUT output/fullReport.bbl
 INPUT output/fullReport.bbl
