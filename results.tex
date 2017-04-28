@@ -4,11 +4,12 @@ The simulator was designed to allow for variance in merge angle, lead in distanc
 
 \section{Experimental Procedure}
 \label{sec:Experimental Procedure}
-All experiments were done using pre-generated spawn schedules. In each experiment I used 8 pairs of schedules (1 per lane). Each experiment ran for over 1000 simulated seconds, with vehicles only spawning for up to 1000 simulated seconds.
+All experiments were done using pre-generated spawn schedules. In each experiment I used 5 pairs of schedules (1 schedule per lane). 
+Vehicles spawned for up to 1000 simulated seconds, and all vehicles were allowed to complete. The spawn schedules would only fail to spawn a vehicle if the spawning area is occupied by another vehicle. This can cause reduced numbers of completed vehicles if the merge becomes congested enough to cause queues up to the spawning area.
 
 \section{Comparing AIM and Queue Protocols}
 \label{sec:Comparing AIM and Queue Protocols}
-By using the modified AIM simulator described in \ref{sec:Merge Schemes} we can get an apoximation for how well the AIM protocol handles merges. This can then be compared to the performance of the Queue protocol. 
+By using the modified AIM simulator described in \ref{sec:Merge Schemes} I obtained some apoximations for how well the AIM protocol handles merges. The main judgement for the performance of 
 
 The AIM simulator merge has a lead in and lead out distance for each lane of 150 metres and is limited to 90\degree merges. These settings were duplicated for the Queue merge type. All of the lanes were set to have a speed limit of 40 metres per second. The results are compared by examining the maximum and average delay for each system, as well as the total throughput. The performance of the system was also compared as the traffic levels for each system increased. Each traffic level used a different set of spawn schedules.
 
