@@ -4,22 +4,57 @@ The simulator was designed to allow for variance in merge angle, lead in distanc
 
 \section{Experimental Procedure}
 \label{sec:Experimental Procedure}
-All experiments were done using pre-generated spawn schedules. In each experiment I used 5 pairs of schedules (1 schedule per lane). 
-Vehicles spawned for up to 1000 simulated seconds, and all vehicles were allowed to complete. The spawn schedules would only fail to spawn a vehicle if the spawning area is occupied by another vehicle. This can cause reduced numbers of completed vehicles if the merge becomes congested enough to cause queues up to the spawning area.
+All experiments were done using pre-generated spawn schedules. In each experiment I used 20 pairs of schedules (1 schedule per lane). Schedule pairs are identical for tests with the same speed limit and traffic density (or traffic rate). Vehicles spawned for 1000 simulated seconds, and all vehicles were allowed to complete. The spawn schedules would only fail to spawn a vehicle if the spawning area was occupied by another vehicle. This can cause reduced numbers of completed vehicles if the system becomes congested enough to cause queues up to the spawning area.
+
 
 \section{Comparing AIM and Queue Protocols}
 \label{sec:Comparing AIM and Queue Protocols}
-By using the modified AIM simulator described in \ref{sec:Merge Schemes} I obtained some apoximations for how well the AIM protocol handles merges. The main judgement for the performance of 
+By using the modified AIM simulator described in \ref{sec:Merge Schemes} I obtained approximations for how well the AIM protocol handles merges.
 
-The AIM simulator merge has a lead in and lead out distance for each lane of 150 metres and is limited to 90\degree merges. These settings were duplicated for the Queue merge type. All of the lanes were set to have a speed limit of 40 metres per second. The results are compared by examining the maximum and average delay for each system, as well as the total throughput. The performance of the system was also compared as the traffic levels for each system increased. Each traffic level used a different set of spawn schedules.
+The AIM simulator has a lead in and lead out distance for each lane of 150 metres and is limited to 90\degree merges. These settings were duplicated for the Queue merge type. All of the lanes were set to have a speed limit of 20 metres per second ($44.7\si{mph}$ or $72\si{kph}$). The traffic rate (vehicles/hour/lane) was altered to see how well the systems adjust to increasing levels of traffic.
 
-AIM mostly caused delays on the target lane. At 2000 some vehicles didn't spawn due to the no vehicle zone. 2500 both lanes hit the no vehicle zone.
+Average delay
+- AIM generally performed better
+- Queue performs terribly with extremely large traffic rates 45.78 average with std dev of 18.13 vs 5.43 with 6.25. 
+- Queue better for target lane at 500 and 1000. Average delay of 0.06 vs 0.37 at target lane (500). Std Dev 0.25 vs 0.79 -> Not just chance.
+
+Plot comparing average delay of both systems
+
+- For AIM merge performs slightly better until 1500, at which point merge starts to perform more poorly than target. 
+- Merge performs more poorly throughout Queue. 
+
+2 Plots comparing performance on each lane for AIM then Queue
+
+Throughput
+- Similar numbers of vehicles throughput until larger traffic rate, at which point AIM deals with the situation far better. At  2500 AIM deals with an extra 366 vehicles per hour.
+
+Plot showing throughput
+
+Reasons for performance
+- AIM makes better use of space-time
+- At higher traffic rates the more controlled access makes sense
+- Makes a good case for further research developing an AIM based merge system.
+	- Problem with current system is it hasn't been tested for shallower angles.
+	- Collision detection failure is still a problem. 
+	- Not a perfect representation to compare to. 
+
+Is Queue terrible?
+- It works well enough for lower traffic rates but fails abysmally at larger volumes.
 
 \section{The Effect of the Merge Angle}
 \label{sec:The Effect of the Merge Angle}
 1000 Traffic Level, 40m/s, 150 metres lead in
 
-20 degrees, _2 test failed due to issues with collisions not be detected correctly by AIM.
+Average Delay
+- Terrible at shallow angles, hitting 74.43 at 15 degrees with standard dev of 33.19
+- Performance is fairly consistent after that, though it does improve slowly as the angle hits 90 and the merge zone reaches it's shortest length.
+
+Throughput
+Very low merge throughput at shallow angles. 
+
+Reasons
+- At low angles the width of the merge zone becomes very large. At 5 degrees 45.9 metres with 4 width lane. These results are very unrealistic as such and the first 15 degrees of results are probably not particularly helpful. Shallow merges are normally dealt with using a slip road.
+- Low merge throughput at shallow angles likely due to traffic backing up to the no vehicle zone 
 
 \section{The Effect of Lead in Distances}
 \label{sec:The Effect of Lead in Distances}
@@ -28,10 +63,6 @@ AIM mostly caused delays on the target lane. At 2000 some vehicles didn't spawn 
 \section{The Effect of Differing Speed Limits}
 \label{sec:The Effect of Differing Speed Limits}
 1000 Traffic Level, 150 metres lead in, 45 degrees.
-
-Inherently not the same sets of spawns due to speed limit effect on the no vehicle zone.
-
-60/40 Had an error on the first set where a vehicle overtook another vehicle via merging.
 
 Lilian Notes:
 \begin{enumerate}

@@ -31,33 +31,37 @@
 \contentsline {subsection}{\numberline {4.1.1}Target Lane Coordinates}{47}{subsection.4.1.1}
 \contentsline {subsection}{\numberline {4.1.2}Merging Lane Coordinates}{49}{subsection.4.1.2}
 \contentsline {section}{\numberline {4.2}Autonomous Merge Management System}{50}{section.4.2}
-\contentsline {section}{\numberline {4.3}Queued Merge Management System}{50}{section.4.3}
-\contentsline {section}{\numberline {4.4}Decentralised Communication Merge Management System}{50}{section.4.4}
-\contentsline {section}{\numberline {4.5}Measuring Success}{50}{section.4.5}
-\contentsline {chapter}{\numberline {5}Implementation}{53}{chapter.5}
-\contentsline {section}{\numberline {5.1}Generalising the Codebase}{53}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}aim4.vehicle}{54}{subsection.5.1.1}
-\contentsline {section}{\numberline {5.2}Merge Schemes}{55}{section.5.2}
-\contentsline {section}{\numberline {5.3}Simulation}{57}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}Drivers}{57}{subsection.5.3.1}
-\contentsline {subsection}{\numberline {5.3.2}Merge Managers}{58}{subsection.5.3.2}
-\contentsline {subsection}{\numberline {5.3.3}Map}{59}{subsection.5.3.3}
-\contentsline {subsection}{\numberline {5.3.4}Simulation Control}{59}{subsection.5.3.4}
-\contentsline {section}{\numberline {5.4}Results Production}{60}{section.5.4}
-\contentsline {section}{\numberline {5.5}GUI}{62}{section.5.5}
-\contentsline {section}{\numberline {5.6}Maintainability and Testing}{63}{section.5.6}
-\contentsline {subsection}{\numberline {5.6.1}Maintainability}{63}{subsection.5.6.1}
-\contentsline {subsection}{\numberline {5.6.2}Unit Testing}{64}{subsection.5.6.2}
-\contentsline {subsection}{\numberline {5.6.3}Integration Tests}{64}{subsection.5.6.3}
-\contentsline {chapter}{\numberline {6}Results}{65}{chapter.6}
-\contentsline {chapter}{\numberline {7}Results}{66}{chapter.7}
-\contentsline {chapter}{\numberline {A}Appendix}{67}{Appendix.1.A}
-\contentsline {section}{\numberline {A.1}S2S Map Calculations}{67}{section.1.A.1}
-\contentsline {section}{\numberline {A.2}Generalising the Codebase}{71}{section.1.A.2}
-\contentsline {subsection}{\numberline {A.2.1}aim4.driver}{71}{subsection.1.A.2.1}
-\contentsline {subsection}{\numberline {A.2.2}aim4.gui}{72}{subsection.1.A.2.2}
-\contentsline {subsection}{\numberline {A.2.3}aim4.map}{73}{subsection.1.A.2.3}
-\contentsline {subsection}{\numberline {A.2.4}aim4.sim}{74}{subsection.1.A.2.4}
-\contentsline {subsection}{\numberline {A.2.5}aim4.vehicle}{74}{subsection.1.A.2.5}
-\contentsline {section}{\numberline {A.3}Maps}{75}{section.1.A.3}
-\contentsline {subsection}{\numberline {A.3.1}MergeMapUtil}{75}{subsection.1.A.3.1}
+\contentsline {section}{\numberline {4.3}Queue Merge Management System}{51}{section.4.3}
+\contentsline {section}{\numberline {4.4}Decentralised Merge Management System}{52}{section.4.4}
+\contentsline {chapter}{\numberline {5}Implementation}{56}{chapter.5}
+\contentsline {section}{\numberline {5.1}Generalising the Codebase}{56}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}aim4.vehicle}{57}{subsection.5.1.1}
+\contentsline {section}{\numberline {5.2}Merge Schemes}{58}{section.5.2}
+\contentsline {section}{\numberline {5.3}Simulation}{60}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Drivers}{60}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Merge Managers}{61}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.3}Map}{62}{subsection.5.3.3}
+\contentsline {subsection}{\numberline {5.3.4}Simulation Control}{62}{subsection.5.3.4}
+\contentsline {section}{\numberline {5.4}Results Production}{63}{section.5.4}
+\contentsline {section}{\numberline {5.5}GUI}{65}{section.5.5}
+\contentsline {section}{\numberline {5.6}Maintainability and Testing}{66}{section.5.6}
+\contentsline {subsection}{\numberline {5.6.1}Maintainability}{66}{subsection.5.6.1}
+\contentsline {subsection}{\numberline {5.6.2}Unit Testing}{67}{subsection.5.6.2}
+\contentsline {subsection}{\numberline {5.6.3}Integration Tests}{67}{subsection.5.6.3}
+\contentsline {chapter}{\numberline {6}Results}{68}{chapter.6}
+\contentsline {section}{\numberline {6.1}Experimental Procedure}{68}{section.6.1}
+\contentsline {section}{\numberline {6.2}Comparing AIM and Queue Protocols}{68}{section.6.2}
+\contentsline {section}{\numberline {6.3}The Effect of the Merge Angle}{69}{section.6.3}
+\contentsline {section}{\numberline {6.4}The Effect of Lead in Distances}{69}{section.6.4}
+\contentsline {section}{\numberline {6.5}The Effect of Differing Speed Limits}{70}{section.6.5}
+\contentsline {chapter}{\numberline {7}Conclusion}{71}{chapter.7}
+\contentsline {chapter}{\numberline {A}Appendix}{72}{Appendix.1.A}
+\contentsline {section}{\numberline {A.1}S2S Map Calculations}{72}{section.1.A.1}
+\contentsline {section}{\numberline {A.2}Generalising the Codebase}{76}{section.1.A.2}
+\contentsline {subsection}{\numberline {A.2.1}aim4.driver}{76}{subsection.1.A.2.1}
+\contentsline {subsection}{\numberline {A.2.2}aim4.gui}{77}{subsection.1.A.2.2}
+\contentsline {subsection}{\numberline {A.2.3}aim4.map}{78}{subsection.1.A.2.3}
+\contentsline {subsection}{\numberline {A.2.4}aim4.sim}{79}{subsection.1.A.2.4}
+\contentsline {subsection}{\numberline {A.2.5}aim4.vehicle}{79}{subsection.1.A.2.5}
+\contentsline {section}{\numberline {A.3}Maps}{80}{section.1.A.3}
+\contentsline {subsection}{\numberline {A.3.1}MergeMapUtil}{80}{subsection.1.A.3.1}
