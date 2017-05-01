@@ -28,66 +28,66 @@ colour2 = [0 0.7 0.7];
 
 clearvars pairIndex
 
-%% Create Average Delays Bar Charts
+%% Create Mean Delays Bar Charts
 % Create Figure
 figure
 
 % Get Data
-averageDelay = speedLimitResults(:,9);
-averageTargetDelay = speedLimitResults(:,10);
-averageMergeDelay = speedLimitResults(:,11);
+meanDelay = speedLimitResults(:,9);
+meanTargetDelay = speedLimitResults(:,10);
+meanMergeDelay = speedLimitResults(:,11);
 
 delayStd = speedLimitResults(:,12);
 targetDelayStd = speedLimitResults(:,13);
 mergeDelayStd = speedLimitResults(:,14);
 
-% Create Average Delay Plot
+% Create Mean Delay Plot
 ax1 = subplot(3,1,1);
 
 % Add bars
-bar(ax1, categorical(xAxis), averageDelay, 0.5, 'FaceColor',colour1);
+bar(ax1, categorical(xAxis), meanDelay, 0.5, 'FaceColor',colour1);
 hold on;
 bar(ax1, categorical(xAxis), delayStd, 0.25, 'FaceColor',colour2);
 hold off;
 
 % Add labels
 grid on;
-title(ax1,'Average Delay by Speed Limits');
+title(ax1,'Mean Delay by Speed Limits');
 xlabel('Speed Limit (Merge Lane / Target Lane) (Metres per second)');
 ylabel('Delay (seconds)');
-legend({'Average Delay','Standard Deviation Delay'});
+legend({'Mean Delay','Standard Deviation Delay'});
 
-% Create Average Target Delay Plot
+% Create Mean Target Delay Plot
 ax2 = subplot(3,1,2);
 
 % Add bars
-bar(ax2, categorical(xAxis), averageMergeDelay, 0.5, 'FaceColor',colour1);
+bar(ax2, categorical(xAxis), meanMergeDelay, 0.5, 'FaceColor',colour1);
 hold on;
 bar(ax2, categorical(xAxis), mergeDelayStd, 0.25, 'FaceColor',colour2);
 hold off;
 
 % Add labels
 grid on;
-title(ax2,'Average Delay for Merge Lane by Speed Limits');
+title(ax2,'Mean Delay for Merge Lane by Speed Limits');
 xlabel('Speed Limit (Merge Lane / Target Lane) (Metres per second)');
 ylabel('Delay (seconds)');
-legend({'Average Merge Lane Delay','Standard Deviation Merge Lane Delay'});
+legend({'Mean Merge Lane Delay','Standard Deviation Merge Lane Delay'});
 
-% Create Average Merge Delay Plot
+% Create Mean Merge Delay Plot
 ax3 = subplot(3,1,3);
 
 % Add bars
-bar(ax3, categorical(xAxis), averageTargetDelay, 0.5, 'FaceColor',colour1);
+bar(ax3, categorical(xAxis), meanTargetDelay, 0.5, 'FaceColor',colour1);
 hold on;
 bar(ax3, categorical(xAxis), targetDelayStd, 0.25, 'FaceColor',colour2);
 hold off;
 
 % Add labels
 grid on;
-title(ax3,'Average Delay for Target Lane by Speed Limits');
+title(ax3,'Mean Delay for Target Lane by Speed Limits');
 xlabel('Speed Limit (Merge Lane / Target Lane) (Metres per second)');
 ylabel('Delay (seconds)');
-legend({'Average Target Lane Delay','Standard Deviation Target Lane Delay'});
+legend({'Mean Target Lane Delay','Standard Deviation Target Lane Delay'});
 
 % Y limits
 ylim manual;
