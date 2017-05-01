@@ -27,68 +27,70 @@ clearvars filename delimiter startRow formatSpec fileID dataArray ans;
 % Crete X Axis
 trafficRates = queueResults(:,1);
 
-%% Average Delay Plot
+%% Mean Delay Plot
 % Create figure
 figure
 
 % Get Data
-averageDelayAIM = aimResults(:,8);
-averageTargetDelayAIM = aimResults(:,9);
-averageMergeDelayAIM = aimResults(:,10);
+meanDelayAIM = aimResults(:,8);
+meanTargetDelayAIM = aimResults(:,9);
+meanMergeDelayAIM = aimResults(:,10);
 
 delayStdAIM = aimResults(:,11);
 targetDelayStdAIM = aimResults(:,12);
 mergeDelayStdAIM = aimResults(:,13);
 
-averageDelayQueue = queueResults(:,8);
-averageTargetDelayQueue = queueResults(:,9);
-averageMergeDelayQueue = queueResults(:,10);
+meanDelayQueue = queueResults(:,8);
+meanTargetDelayQueue = queueResults(:,9);
+meanMergeDelayQueue = queueResults(:,10);
 
 delayStdQueue = queueResults(:,11);
 targetDelayStdQueue = queueResults(:,12);
 mergeDelayStdQueue = queueResults(:,13);
 
-% Create Average Delay Plot
-ax1 = subplot(3,1,1);
-plot(ax1, trafficRates, averageDelayAIM, '-b', trafficRates, delayStdAIM, '--b', trafficRates, averageDelayQueue, '-r', trafficRates, delayStdQueue, '--r');
+% Create Mean Delay Plot
+plot(trafficRates, meanDelayAIM, '-b', trafficRates, delayStdAIM, '--b', trafficRates, meanDelayQueue, '-r', trafficRates, delayStdQueue, '--r');
 
 % Add labels
 grid on;
-title(ax1,'Average Delay by Traffic Rate');
+title('Mean Delay by Traffic Rate');
 xlabel('Traffic Rate (vehicles/hour/lane)');
 ylabel('Delay (seconds)');
-legend({'AIM Average Delay','AIM Standard Deviation Delay','Queue Average Delay','Queue Standard Deviation Delay'});
+legend({'AIM Mean Delay','AIM Standard Deviation Delay','Queue Mean Delay','Queue Standard Deviation Delay'});
 
-% Create Average Delay Target Lane Plot
-ax2 = subplot(3,1,2);
-plot(ax2, trafficRates, averageTargetDelayAIM, '-b', trafficRates, targetDelayStdAIM, '--b', trafficRates, averageTargetDelayQueue, '-r', trafficRates, targetDelayStdQueue, '--r');
+%% Mean Delay Plots by Lane
+% Create figure
+figure
+
+% Create Mean Delay Target Lane Plot
+ax1 = subplot(2,1,1);
+plot(ax1, trafficRates, meanTargetDelayAIM, '-b', trafficRates, targetDelayStdAIM, '--b', trafficRates, meanMergeDelayAIM, '-r', trafficRates, mergeDelayStdAIM, '--r');
 
 % Add labels
 grid on;
-title(ax2,'Average Target Lane Delay by Traffic Rate');
+title(ax1,'Mean Delay by Lane for AIM');
 xlabel('Traffic Rate (vehicles/hour/lane)');
 ylabel('Delay (seconds)');
-legend({'AIM Average Target Lane Delay','AIM Standard Deviation Target Lane Delay','Queue Average Target Lane Delay','Queue Standard Deviation Target Lane Delay'});
+legend({'Mean Target Lane Delay','Standard Deviation Target Lane Delay','Mean Merge Lane Delay','Standard Deviation Merge Lane Delay'});
 
-% Create Average Delay Merge Lane Plot
-ax3 = subplot(3,1,3);
-plot(ax3, trafficRates, averageMergeDelayAIM, '-b', trafficRates, mergeDelayStdAIM, '--b', trafficRates, averageMergeDelayQueue, '-r', trafficRates, mergeDelayStdQueue, '--r');
+% Create Mean Delay Merge Lane Plot
+ax2 = subplot(2,1,2);
+plot(ax2, trafficRates, meanTargetDelayQueue, '-b', trafficRates, targetDelayStdQueue, '--b', trafficRates, meanMergeDelayQueue, '-r', trafficRates, mergeDelayStdQueue, '--r');
 
 % Add labels
 grid on;
-title(ax3,'Average Merge Lane Delay by Traffic Rate');
+title(ax2,'Mean Delay by Lane for Queue System');
 xlabel('Traffic Rate (vehicles/hour/lane)');
 ylabel('Delay (seconds)');
-legend({'AIM Average Merge Lane Delay','AIM Standard Deviation Merge Lane Delay','Queue Average Merge Lane Delay','Queue Standard Deviation Merge Lane Delay'});
+legend({'Mean Target Lane Delay','Standard Deviation Target Lane Delay','Mean Merge Lane Delay','Standard Deviation Merge Lane Delay'});
 
 % Y Limits
 ylim manual;
-maxVal = max(max(horzcat(ax1.YLim,ax2.YLim,ax3.YLim)));
-minVal = min(min(horzcat(ax1.YLim,ax2.YLim,ax3.YLim)));
+maxVal = max(max(horzcat(ax1.YLim,ax2.YLim)));
+minVal = min(min(horzcat(ax1.YLim,ax2.YLim)));
 
 ylim(ax1,[minVal maxVal]);
 ylim(ax2,[minVal maxVal]);
-ylim(ax3,[minVal maxVal]);
 
 clearvars -except trafficRates aimResults queueResults
 

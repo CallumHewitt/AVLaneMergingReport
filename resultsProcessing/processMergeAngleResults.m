@@ -16,40 +16,40 @@ clearvars filename delimiter startRow formatSpec fileID dataArray ans;
 % Create X Axis
 mergeAngles = mergeAngleResults(:,1);
 
-%% Average Delay Plot
+%% Mean Delay Plot
 % Create figure
 figure
 
 % Get Data
-averageDelay = mergeAngleResults(:,8);
-averageTargetDelay = mergeAngleResults(:,9);
-averageMergeDelay = mergeAngleResults(:,10);
+meanDelay = mergeAngleResults(:,8);
+meanTargetDelay = mergeAngleResults(:,9);
+meanMergeDelay = mergeAngleResults(:,10);
 
 delayStd = mergeAngleResults(:,11);
 targetDelayStd = mergeAngleResults(:,12);
 mergeDelayStd = mergeAngleResults(:,13);
 
-% Create Average Delay Plot
+% Create Mean Delay Plot
 ax1 = subplot(2,1,1);
-plot(ax1, mergeAngles, averageDelay, '-k', mergeAngles, delayStd, '--k');
+plot(ax1, mergeAngles, meanDelay, '-k', mergeAngles, delayStd, '--k');
 
 % Add labels
 grid on;
-title(ax1,'Average Delay by Merge Angle');
+title(ax1,'Mean Delay by Merge Angle');
 xlabel('Merging Angle (degrees)');
 ylabel('Delay (seconds)');
-legend({'Average Delay','Standard Deviation Delay'});
+legend({'Mean Delay','Standard Deviation Delay'});
 
-% Create Average Delay Plot by Lane
+% Create Mean Delay Plot by Lane
 ax2 = subplot(2,1,2);
-plot(ax2, mergeAngles, averageTargetDelay, '-b', mergeAngles, targetDelayStd, '--b', mergeAngles, averageMergeDelay, '-r', mergeAngles, mergeDelayStd, '--r');
+plot(ax2, mergeAngles, meanTargetDelay, '-b', mergeAngles, targetDelayStd, '--b', mergeAngles, meanMergeDelay, '-r', mergeAngles, mergeDelayStd, '--r');
 
 % Add labels
 grid on;
-title(ax2,'Average Delay by Merge Angle');
+title(ax2,'Mean Delay by Merge Angle');
 xlabel('Merging Angle (degrees)');
 ylabel('Delay (seconds)');
-legend({'Average Target Lane Delay','Standard Deviation Target Lane Delay','Average Merge Lane Delay','Standard Deviation Merge Lane Delay'});
+legend({'Mean Target Lane Delay','Standard Deviation Target Lane Delay','Mean Merge Lane Delay','Standard Deviation Merge Lane Delay'});
 
 % Y Limits
 ylim manual;
