@@ -1,14 +1,14 @@
 \chapter{Problem Analysis}
 \label{cha:Problem Analysis}
-Lane merging is not a straightforward problem with a single solution. There are many different types of lane merging scenarios as well as a number of factors which add even more variance. Analysing the different merging scenarios helps to better define the problem and better create solutions for the scenario (\ref{sec:Merge Types}). The factors that could alter the behaviour of a merge scenario should also be defined. This makes it easier to introduce controls in the final simulator which manipulate these factors (\ref{sec:Merge Variance Factors}).
+Lane merging is not a straightforward problem with a single solution. There are many different types of lane merging scenarios as well as a number of factors which add more variance to the problem. Section \ref{sec:Merge Types} analyses the different merging scenarios to better define the problem. Section \ref{sec:Measuring Success} indicates how success of a merge scheme can be measured and Section \ref{sec:Merge Variance Factors} defines some factors that could alter the behaviour of a merge scenario.
 
 \section{Merge Types}
 \label{sec:Merge Types}
-In this paper we focus on merges made at 'critical positions' such as junctions. This remains constant in all merge types. However, beyond this, there are many different kinds of merge scenarios that a vehicle might encounter.
+In this paper we focus on merges made at `critical positions' such as junctions. This is true for all of the merge scenarios analysed.
 
 \subsection{Single-to-Single Merge}
 \label{subsec:Single-to-Single Merge}
-A single-to-single merge (S2S merge) describes a situation where a vehicle moves from a single lane road into another single lane road, as seen in Figure \ref{fig:S2SMerge}. In this situation we label the lane that vehicles are moving from the 'current lane' (CL), and we label the lane that vehicles move to the 'target lane' (TL). We describe the vehicles that start on the CL as 'merging vehicles' (MV) and the vehicles that start on the TL as 'target vehicles' (TV). We have our critical position where the CL and TL connect. We call the area in which the vehicles in the two lanes merge together our 'merge zone'.
+A single-to-single merge (S2S merge) describes a situation where a vehicle moves from a single lane road into another single lane road, as seen in Figure \ref{fig:S2SMerge}. In this situation we label the lane that vehicles are moving from the `merge lane' (ML), and we label the lane that vehicles move to the `target lane' (TL). The vehicles on the TL generally tend to be faster moving. We describe the vehicles that start on the ML as `merging vehicles' (MV) and the vehicles that start on the TL as `target vehicles' (TV). We have our critical position where the ML and TL connect. We call the area in which the vehicles in the two lanes merge together our `merge zone'.
 
 The main issue with an S2S merge stems from the limited options available to vehicles arriving at the critical position. Target vehicles do not have the opportunity to move laterally out of the way of merging vehicles, and vehicles on both lanes could struggle to reduce their velocity without affecting their successors.
 
@@ -20,27 +20,19 @@ Many S2S merges are performed with an attached slip-road, as seen in Figure \ref
 \label{fig:realLaneMerge}
 \end{figure}
 
-The slip-road gives merging vehicles more time to travel parallel to the target lane before merging. This makes the merge easier for both MVs and TVs as MVs don't slow down in front of TVs in order to make the turn into the TL. The effectiveness of slip-roads should change with length: the longer the slip-road, the more time MVs have to merge. This should improve the effectiveness of the merge position.
+The slip-road gives merging vehicles more time to travel parallel to the TL before merging. This makes the merge easier for both MVs and TVs as MVs don't slow down in front of TVs in order to make the turn into the TL.
 
 \subsection{Single-to-Double Merge}
 \label{subsec:Single-to-Double Merge}
-A single-to-double merge (S2D merge) describes a situation where a vehicle moves from a single lane road into a double lane road, as seen in Figure \ref{fig:S2DMerge}. In this situation we have two target lanes. The upper lane which directly links to the merging lane is called 'target lane 1' (TL1) and the lower lane is called 'target lane 2' (TL2). We still have only one critical position where the merging lane meets TL1.
+A single-to-double merge (S2D merge) describes a situation where a vehicle moves from a single lane road into a double lane road, as seen in Figure \ref{fig:S2DMerge}. In this situation we have two TLs. The upper lane which directly links to the merging lane is called 'target lane 1' (TL1) and the lower lane is called 'target lane 2' (TL2). We still have only one critical position where the merging lane meets TL1.
 
-An S2D merge provides more options for vehicles on the targets lanes at the critical position. Target vehicles now have the opportunity to move laterally to avoid merging vehicles. Two lanes also allows for more vehicles on the target lane which should give vehicles greater freedom to adjust their velocity without affecting their successors, at least when compared to the same number of vehicles on a single lane.
+An S2D merge provides more options for vehicles on the targets lanes at the critical position. Target vehicles now have the opportunity to move laterally to avoid merging vehicles. Two lanes also allows for more vehicles on the TL which should give vehicles greater freedom to adjust their velocity without affecting their successors, at least when compared to the same number of vehicles on a single lane.
 
 S2D merges can also take advantage of a slip-road, as seen in Figure \ref{fig:S2DMergeExtended}.
 
-\subsection{Double-to-Double Merge}
-\label{subsec:Double-to-Double Merge}
-A double-to-double merge (D2D merge) describes a situation where a vehicle moves from a double lane road into another double lane road, as seen in Figure \ref{fig:D2DMerge}. We now have two merging lanes. The upper lane, 'merging lane 1' (ML1) merges into TL1 and the lower lane, 'merging lane 2' (ML2) merges into TL2.
-
-With a D2D merge we now have to consider the effect of merging vehicles from ML2 driving across TL1. In addition, target vehicles can no longer laterally move out of the way of merging vehicles as they did before. Combining these factors with the wider range of options available to MVs, we can see that a D2D merge is far more complex than an S2D merge. 
-
-D2D merges can also take advantage of a slip-road, as seen in Figure \ref{fig:D2DMergeExtended}. D2D merges with a slip-road work differently to other slip-road schemes. In this instance vehicles on ML1 and ML2 will both merge into TL1. However, ML2 merges into TL1 as vehicles on an S2D merge would. ML1 vehicles merge into TL1 as vehicles on an S2D merge would when there is a slip-road in play.
-
 \subsection{Lane Obstruction Merge}
 \label{subsec:Lane Obstruction Merge}
-A lane obstruction merge is where a vehicle needs to change lanes to avoid an obstacle in their way, as seen in Figure \ref{fig:LaneObstruction}. It is essentially an S2S merge although the vehicle will tend to move laterally to avoid the obstacle. In this situation the critical position is a point shortly before the obstruction on the CL. 
+A lane obstruction merge is where a vehicle needs to change lanes to avoid an obstacle in their way, as seen in Figure \ref{fig:LaneObstruction}. It is essentially an S2S merge although the vehicle will tend to move laterally to avoid the obstacle. In this situation the critical position is a point shortly before the obstruction. 
 
 The obstacle could be a broken down vehicle or some debris on the road. Because of the unexpected nature of the obstacle it may sometimes be difficult to have a centralised approach to the problem. Although, if the obstacle was a broken down vehicle, the vehicle might be able to act as the centralised system managing approaching vehicles.
 
@@ -69,19 +61,6 @@ The obstacle could be a broken down vehicle or some debris on the road. Because 
 \end{figure}
 
 \begin{figure}[htb]
-\includegraphics[width=\textwidth]{laneDiagrams/d2d.png}
-\caption{A road with a double-to-double lane merge (D2D)}
-\label{fig:D2DMerge}
-\end{figure}
-
-\label{subsec:Lane Diagrams}
-\begin{figure}[htb]
-\includegraphics[width=\textwidth]{laneDiagrams/d2dExtended.png}
-\caption{A road with a single-to-double lane merge and slip-lane (S2D)}
-\label{fig:D2DMergeExtended}
-\end{figure}
-
-\begin{figure}[htb]
 \includegraphics[width=\textwidth]{laneDiagrams/lane_blocker.png}
 \caption{A road with a lane obstruction}
 \label{fig:LaneObstruction}
@@ -91,7 +70,7 @@ The obstacle could be a broken down vehicle or some debris on the road. Because 
 \label{sec:Measuring Success}
 In order to evaluate the effectiveness of solutions to the problems we need to define measurements of success. 
 
-Solutions to the merging problems above have to satisfy the following conditions:
+Solutions to the merging problems above must satisfy the following conditions:
 
 \begin{enumerate}
 \item \textit{No collisions}
@@ -101,7 +80,7 @@ Vehicles should not suffer large delays to travel time due to the merge. This me
 \item \textit{Maximise throughput}
 By minimising delays and velocity loss we aim to maximise the throughput of the critical position.
 \item \textit{Minimise changes in velocity}
-Though not necessary, we should aim to minimises changes in vehicle velocity, for both passenger comfort and vehicle efficiency.
+Though not strictly a performance requirement, the system should minimise changes in vehicle velocity, for both passenger comfort and vehicle efficiency.
 \end{enumerate}
 
 We need to measure how well solutions meet these conditions. 
@@ -116,7 +95,7 @@ Any collisions that do happen should be reported immediately. The system should 
 
 \subsection{Delay}
 \label{subsec:Delay}
-Delay measures the effect that the critical position had on the overall journey of the vehicle. It is the primary metric considered in Dresner et al.'s 2004 paper \citep{Dresner2004} on AIM. We will measure delay in a similar manner, calculating both average delay and maximum delay.
+Delay measures the effect that the critical position had on the overall journey of the vehicle. It is the primary metric considered in Dresner et al.'s 2004 paper \citep{Dresner2004} on AIM.
 
 Dresner et al. provide the following equation for measuring average delay.
 
@@ -126,13 +105,7 @@ Dresner et al. provide the following equation for measuring average delay.
 
 $C$ is the set of vehicles that pass through a critical position within a set time frame. Assuming no other vehicles on the road, a vehicle $v_i$ would complete it's trip in time $t_0(i)$, otherwise $v_i$ would complete it's trip in time $t(i)$. We can represent this trip for vehicles in the simulator as the time difference between the vehicle spawning in and the vehicle being removed from the simulator.
 
-Dresner et al. also provide the following equation for measuring maximum worst case delay:
-
-\begin{equation}
-\max_{v_i\in{C}}\bigl({t(i)} - t_0(i)\bigr)
-\end{equation}
-
-Measuring maximum delay (and minimising it) is important, as we do not want to have a solution where some vehicles have extremely large delay times and others have very low delay times. This should help avoid a 'starvation' situation where some vehicles never get to complete their trips.
+To ensure fairness the mean delay will be measured across each lane.
 
 \subsection{Throughput}
 \label{subsec:Throughput}
@@ -142,13 +115,13 @@ By minimising delay we should also maximise throughput; the two are closely rela
 \text{Vehicle throughput} = \frac{|C|}{t}
 \end{equation}
 
-Here $t$ is the time it took for all of the vehicles in $C$ to pass through the critical position. If we want to measure the rate at which merging vehicles and target vehicles pass through the intersection separately we can change the definition of $C$ to reflect that.
+Here $t$ is the time it took for all of the vehicles in $C$ to pass through the critical position. We will also need throughput measurements for each lane separately.
 
 \subsection{Velocity Changes}
 \label{subsec:Velocity Changes}
-Vehicles should aim want to reduce velocity changes as much as possible, aiming especially to eliminate rapid changes. Ideally autonomous vehicles should have very smooth acceleration and braking profiles. This both increases passenger comfort and improves fuel efficiency.
+Vehicles should aim want to reduce velocity changes as much as possible, particularly rapid changes. Ideally autonomous vehicles should have very smooth acceleration and braking profiles. This both increases passenger comfort and improves fuel efficiency.
 
-To measure maximum acceleration and deceleration we can assume a constant acceleration/deceleration between the point at which a vehicle decides to start changing velocity and the point at which the vehicle has either reached it's target speed or made a new decision. We can use the time gap between those two points, and the change in the vehicle's velocity, to calculate it's acceleration or deceleration. We then take the maximum values of the acceleration of the vehicle and the deceleration of the vehicle.
+To measure maximum acceleration and deceleration we can take the acceleration and deceleration values using the simulator to calculate vehicle velocity.
 
 \section{Merge Variance Factors}
 \label{sec:Merge Variance Factors}
@@ -156,7 +129,7 @@ In each of the scenarios in section \ref{sec:Merge Types} the road layout is fix
 
 \begin{itemize}
 \item \textit{Traffic Level} 
-The traffic level changes the number of vehicles on the road at any one time. Effectively, it is used to measure traffic density.
+The traffic level changes the number of vehicles on the road at any one time. It is measured in vehicles per hour per lane (\si{vhl})
 \item \textit{Target lane speed limit}
 The maximum speed that vehicles on the target lane can travel.
 \item \textit{Merge lane speed limit}
@@ -181,13 +154,11 @@ The length of the slip-road in a merge that uses a slip-road.
 
 Traffic level has a fairly obvious effect on performance in a particular merge scenario. The more vehicles that try to merge together the more difficult it will be for the merge to happen. It will likely require vehicles to be moving much more slowly. Increased traffic density also increases the likelihood of traffic shocks, and vehicle manoeuvrability is impacted.
 
-Altering speed limits also affects performance. Higher speed limits allow vehicles to travel more quickly through the critical position and could improve performance. However, larger speed limits could also lead to larger deceleration and acceleration values. Problems could also arise if there are big differences between the speed limits of the merging lane and target lane. If the target lane speed limit is larger, merging vehicles will slow down target lane vehicles as they merge in. If the merging lane speed limit is larger then merging vehicles may have to declerate quickly to allow target vehicles to move through the merging zone.
+Altering speed limits could also affect performance. Higher speed limits could put pressure on systems that need to process the vehicles through. Other than high speed limits, differing speed limits for each lane could impact how easy a vehicle finds it to merge into another lane and adapt to its speed limit.
 
-Lead in distances change the amount of deliberation time vehicles have before they reach the junction. It also changes the distance they have to change their velocity in. This means that shorter distances could lead to larger acceleration and deceleration values as well as sub-optimal solutions to the merge.
+Lead in distances change the amount of deliberation time vehicles have before they reach the junction. It also changes the distance they have to change their velocity in. This means that shorter distances could lead to larger acceleration and deceleration values as well as sub-optimal solutions to the merge. 
 
-The lead out distance will mostly affect the result collected as the vehicle leaves the simulator. Longer lead out distances allow vehicles to return to their preferred speed. This should give more accurate results for a vehicle's maximum acceleration and deceleration. 
-
-The merging angle changes the length of the merge zone. Shallower angles will lead to longer merge zones due to the width of the merging lane. Shallower merging angles also reduce the turning angle for merging vehicles. This could lead to faster merges as merging vehicles have to make smaller changes to their heading.
+The merging angle changes both the length of the merge zone, but also the heading at which MVs arrive. This could impact how well the vehicles adjust to the new lane, as well as affect how long it takes a vehicle to traverse the merge zone.
 
 \section{Requirements}
 \label{sec:Requirements}
@@ -227,11 +198,11 @@ The functional requirements describe the functionality required within the simul
  &  & FS.22 & Merge simulations can have their run speed changed. \\ 
 \hline
 \multirow{2}{*}{FU.3} & \multirow{2}{*}{\parbox{\linewidth}{User can pause simulations.}}
- & FS.31 & The system has controls allowing running simulations to pause. \\
+ & FS.31 & The system has controls to pause simulations. \\
  &  & FS.32 & Merge simulations can be paused \\ 
 \hline
 \multirow{2}{*}{FU.4} & \multirow{2}{*}{\parbox{\linewidth}{User can end a simulation.}}
- & FS.41 & The system has controls ending simulations. \\
+ & FS.41 & The system has controls to end simulations. \\
  &  & FS.42 & Merge simulations can be ended. \\ 
 \hline
 FU.5 & User can view the activities of a simulation. & FS.51 & The system displays the current status of a simulation as it runs. \\
@@ -240,13 +211,17 @@ FU.5 & User can view the activities of a simulation. & FS.51 & The system displa
  & FS.61 & The system has controls for exporting results data. \\
  &  & FS.62 & The system can produce a file containing results data from the simulation. \\
  &  & FS.63 & The results file contains the total throughput of the simulation. \\
- &  & FS.64 & The results file contains the maximum delay of the simulation. \\
- &  & FS.65 & The results file contains the average delay of the simulation. \\
- &  & FS.66 & The results file contains the maximum acceleration of the simulation. \\
- &  & FS.67 & The results file contains the maximum deceleration of the simulation. \\
- &  & FS.68 & The results file contains the delay for each vehicle in the simulation. \\
- &  & FS.69 & The results file contains the maximum acceleration for each vehicle in the simulation. \\
- &  & FS.6a & The results file contains the maximum deceleration for each vehicle in the simulation. \\ 
+ &  & FS.64 & The results file contains the ML throughput of the simulation. \\
+ &  & FS.65 & The results file contains the TL throughput of the simulation. \\
+ &  & FS.66 & The results file contains the maximum delay of the simulation. \\
+ &  & FS.67 & The results file contains the average delay of the simulation. \\
+ &  & FS.68 & The results file contains the ML average delay of the simulation. \\
+ &  & FS.69 & The results file contains the TL average delay of the simulation. \\
+ &  & FS.6a & The results file contains the maximum acceleration of the simulation. \\
+ &  & FS.6b & The results file contains the maximum deceleration of the simulation. \\
+ &  & FS.6c & The results file contains the delay for each vehicle in the simulation. \\
+ &  & FS.6d & The results file contains the maximum acceleration for each vehicle in the simulation. \\
+ &  & FS.6e & The results file contains the maximum deceleration for each vehicle in the simulation. \\ 
 \hline
 \multirow{3}{*}{FU.7} & \multirow{3}{*}{\parbox{\linewidth}{Users can select and run an S2S merge simulation.}}
  & FS.71 & The system can produce S2S simulations. \\
@@ -258,7 +233,7 @@ FU.5 & User can view the activities of a simulation. & FS.51 & The system displa
  &  & FS.82 & The system has controls allowing users to select the merge scheme indicated in FS.81. \\ 
 \hline
 \multirow{2}{*}{FU.9} & \multirow{2}{*}{\parbox{\linewidth}{Users can select a decentralised merging scheme with S2S merge simulations.}}
- & FS.91 & The system can use an merge management scheme similar to that described in \citetitle{VanMiddlesworth2008} \citetitle{VanMiddlesworth2008}. \\
+ & FS.91 & The system can use an merge management scheme similar to that described in \citetitle{VanMiddlesworth2008} \citep{VanMiddlesworth2008}. \\
  &  & FS.92 & The system has controls allowing users to select the merge scheme indicated in FS.91. \\ 
 \hline
 FU.10 & Users can control the traffic level of an S2S simulation. & FS.101 & The system has controls for adjusting the traffic for an S2S simulation. \\ 
@@ -269,15 +244,13 @@ FU.12 & Users can control the merge lane speed limit of an S2S simulation. & FS.
 \hline
 FU.13 & Users can control the target lane lead in distance of an S2S simulation. & FS.131 & The system has controls for adjusting the target lane lead in distance for an S2S simulation. \\ 
 \hline
-FU.14 & Users can control the target lane lead out distance of an S2S simulation. & FS.141 & The system has controls for adjusting the target lane lead out distance for an S2S simulation. \\ 
+FU.14 & Users can control the merge lane lead in distance of an S2S simulation. & FS.141 & The system has controls for adjusting the merge lane lead in distance for an S2S simulation. \\ 
 \hline
-FU.15 & Users can control the merge lane lead in distance of an S2S simulation. & FS.151 & The system has controls for adjusting the merge lane lead in distance for an S2S simulation. \\ 
+FU.15 & Users can control the merge angle of an S2S simulation. & FS.151 & The system has controls for adjusting the merge angle for an S2S simulation. \\ 
 \hline
-FU.16 & Users can control the merge angle of an S2S simulation. & FS.161 & The system has controls for adjusting the merge angle for an S2S simulation. \\ 
-\hline
-\multirow{2}{*}{FU.17} & \multirow{2}{*}{\parbox{\linewidth}{Users should be alerted of any collisions during a simulation.}}
- & FS.171 & The system should be able to alert the user if a collision occurs. \\
- &  & FS.172 & The simulation should detect collisions. \\ 
+\multirow{2}{*}{FU.16} & \multirow{2}{*}{\parbox{\linewidth}{Users should be alerted of any collisions during a simulation.}}
+ & FS.161 & The system should be able to alert the user if a collision occurs. \\
+ &  & FS.162 & The simulation should detect collisions. \\ 
 \end{longtable}
 
 \subsection{Non-functional}
