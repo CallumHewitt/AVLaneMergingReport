@@ -30,11 +30,6 @@
   \url{https://www.gov.uk/guidance/the-highway-code/general-rules-techniques-and-advice-for-all-drivers-and-riders-103-to-158}
 \BIBentrySTDinterwordspacing
 
-\bibitem[Gipps(1986)]{Gipps1986}
-P.~Gipps, ``A model for the structure of lane-changing decisions,''
-  \emph{Transportation Research Part B: Methodological}, vol.~20, no.~5, pp.
-  403--414, October 1986.
-
 \bibitem[Sommerfeld(2017)]{realLaneMerge}
 \BIBentryALTinterwordspacing
 L.~Sommerfeld. (2017, Jan.) \BIBforeignlanguage{English}{Zipper merging may be
@@ -173,6 +168,15 @@ M.~VanMiddlesworth, K.~Dresner, and P.~Stone, ``Replacing the stop sign:
   Workshop on Agents in Traffic and Transportation}, Estoril, Portugal, May
   2008, pp. 94--101. [Online]. Available:
   \url{"http://www.cs.utexas.edu/users/ai-lab/?ATT08-vanmiddlesworth"}
+\BIBentrySTDinterwordspacing
+
+\bibitem[Atagoziyev et~al.(2016)Atagoziyev, Schmidt, and
+  Schmidt]{Atagoziyev2016}
+\BIBentryALTinterwordspacing
+M.~Atagoziyev, K.~W. Schmidt, and E.~G. Schmidt, ``Lane change scheduling for
+  autonomous vehicles,'' \emph{IFAC-PapersOnLine}, vol.~49, no.~3, pp. 61--66,
+  2016. [Online]. Available:
+  \url{http://dx.doi.org/10.1016/j.ifacol.2016.07.011}
 \BIBentrySTDinterwordspacing
 
 \bibitem[Milligan(2017)]{Milligan2017}
