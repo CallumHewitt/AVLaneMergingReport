@@ -461,12 +461,6 @@ INPUT ./images/laneDiagrams/s2d.png
 INPUT images/laneDiagrams/s2dExtended.png
 INPUT ./images/laneDiagrams/s2dExtended.png
 INPUT ./images/laneDiagrams/s2dExtended.png
-INPUT images/laneDiagrams/d2d.png
-INPUT ./images/laneDiagrams/d2d.png
-INPUT ./images/laneDiagrams/d2d.png
-INPUT images/laneDiagrams/d2dExtended.png
-INPUT ./images/laneDiagrams/d2dExtended.png
-INPUT ./images/laneDiagrams/d2dExtended.png
 INPUT images/laneDiagrams/lane_blocker.png
 INPUT ./images/laneDiagrams/lane_blocker.png
 INPUT ./images/laneDiagrams/lane_blocker.png
@@ -508,10 +502,6 @@ INPUT c:/texlive/2016/texmf-dist/fonts/tfm/adobe/helvetic/phvr8r.tfm
 INPUT images/implementationDiagrams/turning.png
 INPUT ./images/implementationDiagrams/turning.png
 INPUT ./images/implementationDiagrams/turning.png
-INPUT c:/texlive/2016/texmf-dist/fonts/vf/adobe/palatino/pplb9d.vf
-INPUT c:/texlive/2016/texmf-dist/fonts/tfm/adobe/palatino/pplb8r.tfm
-INPUT c:/texlive/2016/texmf-dist/fonts/tfm/public/mathpazo/fplmb.tfm
-INPUT c:/texlive/2016/texmf-dist/fonts/tfm/adobe/palatino/pplbj8r.tfm
 INPUT images/screenshots/s2sSimulationScreen.png
 INPUT ./images/screenshots/s2sSimulationScreen.png
 INPUT ./images/screenshots/s2sSimulationScreen.png

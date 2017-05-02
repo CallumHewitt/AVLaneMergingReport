@@ -70,7 +70,7 @@ The final implementation of a merge manager, the \emph{QueueV2IManager}, is desi
 
 \subsection{Map}
 \label{subsec:Map}
-The simulation map stores all of the spawn points, lanes and merge managers for the simulation. The calculations for lane positions and spawn points were created using the designs in Section \ref{sec:Map}. 
+The simulation map stores all of the spawn points, lanes and merge managers for the simulation.
 
 By using some of the generalised components for calculating distances, creating the map was relatively straightforward, however, there were some components that failed to work as intended. The original AIM system assumes that every road meets at 90\degree and as such some methods were inappropriate for when lanes meet at other angles. One example of this is the no vehicle zone at the beginning of each lane. This zone stops multiple vehicles from spawning on top of each other. The original implementation calculated a \emph{Rectangle2D} at the beginning of each lane, which works fine when lanes are at 90\degree. For my no vehicle zones, I had to define a path around the start of each merge lane and create a shape from that. This more complicated approach was necessary due to the angles at which the merge lane can meet the target lane. 
 
