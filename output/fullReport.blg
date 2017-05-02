@@ -32,45 +32,45 @@ while executing---line 2729 of file IEEEtranN.bst
 Warning--empty note in Milligan2017
 
 Done.
-You've used 24 entries,
+You've used 25 entries,
             4855 wiz_defined-function locations,
-            1120 strings with 12604 characters,
-and the built_in function-call counts, 17491 in all, are:
-= -- 1682
-> -- 350
-< -- 101
-+ -- 197
-- -- 78
-* -- 955
-:= -- 2903
-add.period$ -- 61
-call.type$ -- 24
-change.case$ -- 49
-chr.to.int$ -- 212
-cite$ -- 25
-duplicate$ -- 1167
-empty$ -- 1286
+            1122 strings with 12708 characters,
+and the built_in function-call counts, 17495 in all, are:
+= -- 1690
+> -- 337
+< -- 93
++ -- 192
+- -- 76
+* -- 950
+:= -- 2915
+add.period$ -- 65
+call.type$ -- 25
+change.case$ -- 51
+chr.to.int$ -- 195
+cite$ -- 26
+duplicate$ -- 1172
+empty$ -- 1307
 format.name$ -- 106
-if$ -- 3879
+if$ -- 3875
 int.to.chr$ -- 2
-int.to.str$ -- 25
-missing$ -- 192
-newline$ -- 132
+int.to.str$ -- 26
+missing$ -- 196
+newline$ -- 137
 num.names$ -- 57
-pop$ -- 474
+pop$ -- 498
 preamble$ -- 1
-purify$ -- 24
+purify$ -- 25
 quote$ -- 2
-skip$ -- 1310
+skip$ -- 1311
 stack$ -- 0
-substring$ -- 511
-swap$ -- 863
-text.length$ -- 25
-text.prefix$ -- 5
+substring$ -- 471
+swap$ -- 853
+text.length$ -- 22
+text.prefix$ -- 6
 top$ -- 6
-type$ -- 373
+type$ -- 387
 warning$ -- 1
-while$ -- 70
+while$ -- 66
 width$ -- 0
-write$ -- 343
+write$ -- 353
 (There were 3 error messages)

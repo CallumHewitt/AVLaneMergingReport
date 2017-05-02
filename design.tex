@@ -1,6 +1,5 @@
 \chapter{Design}
 \label{cha:Design}
-\newtext{All new text}
 For the initial development of the simulator I focused on creating a working prototype for S2S merges. The S2S merge is one of the most simple merge scenarios that an autonomous vehicle might encounter. The designs here can then be expanded at a later date to include some of the other scenarios in \ref{sec:Merge Types}.
 
 \section{Map}
@@ -12,48 +11,62 @@ In order to build the map using the user's parameters we will need to calculate 
 The target lane entrance will have a Y-coordinate equal to half of the lane width. In fact, every coordinate that target vehicles travel on will have a Y-coordinate equal to half the lane width. The entrance's X-coordinate will depend on whether the target lane, plus the merge zone length, is longer than the base width of the merging lane, that is, the horizontal distance the merging lane covers. You can see this distance indicated in Figure \ref{fig:baseWidth}.
 
 \begin{figure}[htb]
-\includegraphics[width=\textwidth]{designNotes/baseWidth.png}
+\centering
+\includegraphics[width=8cm]{designNotes/baseWidth.png}
 \caption{A diagram indicating the base width of the merging lane.}
 \label{fig:baseWidth}
 \end{figure}
 
 If the target lane is longer then the entrance X-coordinate will be $0$. If not then we have to do further calculations. The total width of the simulation is given by equation \ref{targetLongerWidth} if the target lane has $x=0$ and equation \ref{mergeLongerWidth} if not.
 
-\begin{multline}\label{targetLongerWidth}
-width = \\
-targetLeadInDistance + mergeZoneWidth + targetLeadOutDistance
-\end{multline}
+\begin{equation} \label{targetLongerWidth}
+	\begin{split}
+		width = & targetLeadInDistance \\
+			    & + mergeZoneWidth \\
+			    & +	targetLeadOutDistance
+	\end{split}
+\end{equation}
 
-\begin{multline}\label{mergeLongerWidth}
+\begin{equation} \label{mergeLongerWidth}
 width = mergeBaseWidth + targetLeadOutDistance
-\end{multline}
+\end{equation}
 
 So we can use equation \ref{targetLongerWidth} to calculate the target lane's entrance X-coordinate.
 
-\begin{multline}\label{targetLaneStartX}
-targetLaneStartX = width - \\
-(targetLeadInDistance + mergeZoneWidth + targetLeadOutDistance)
-\end{multline}
+\begin{equation}\label{targetLaneStartX}
+	\begin{split}
+targetLaneStartX = & width \\
+				   & - targetLeadInDistance \\
+				   & - mergeZoneWidth \\				
+				   & - targetLeadOutDistance	
+	\end{split}
+\end{equation}
 
 The target lane exit coordinates can be calculated similarly. The X-coordinate will be equal to the width of the simulator. With these coordinates calculated the simulator can place data collection lines and create spawn points for the target vehicles.
 
 Finally the X-coordinate indicating the entrance to the merge zone for target vehicles is given by equation \ref{targetLaneZoneEntranceX}. The exit X-coordinate is given by equation \ref{targetLaneZoneExitX}.
 
-\begin{multline}\label{targetLaneZoneEntranceX}
-targetLaneZoneEntranceX = width - \\
-(mergeZoneWidth + targetLeadOutDistance)
-\end{multline}
+\begin{equation}\label{targetLaneZoneEntranceX}
+	\begin{split}
+targetLaneZoneEntranceX = & width \\
+						  & - mergeZoneWidth \\
+						  & - targetLeadOutDistance
+	\end{split}
+\end{equation}
 
-\begin{multline}\label{targetLaneZoneExitX}
+\begin{equation}\label{targetLaneZoneExitX}
+	\begin{split}
 targetLaneZoneExitX = width - targetLeadOutDistance
-\end{multline}
+	\end{split}
+\end{equation}
 
 \subsection{Merging Lane Coordinates}
 \label{subsec:Merging Lane Coordinates}
 The merging lane entrance coordinates are more difficult to calculate. To get the X-coordinate we can calculate an x-adjustment from the far edge of the lane to the centre, as shown in Figure \ref{fig:adjustments}.
 
 \begin{figure}[htb]
-\includegraphics[width=\textwidth]{designNotes/adjustments.png}
+\centering
+\includegraphics[height=7cm]{designNotes/adjustments.png}
 \caption{A diagram indicating the x and y adjustments for the merging lane.}
 \label{fig:adjustments}
 \end{figure}
@@ -62,20 +75,28 @@ To get the Y-coordinate we can calculate the distance the coordinate is above th
 
 Merge vehicles will exit the merge zone in the same place as target vehicles (equation \ref{targetLaneZoneExitX}), however, they will enter the merge zone at the top. The Y-coordinate of this point is equal to the width of the target lane. The X-coordinate is given by equation \ref{mergeLaneZoneEntranceX}.
 
-\begin{multline}\label{mergeLaneZoneEntranceX}
-mergeLaneZoneEntranceX = width - \\
-targetLeadOutDistance - \frac{mergeZoneWidth}{2}
-\end{multline}
+\begin{equation}\label{mergeLaneZoneEntranceX}
+	\begin{split}
+mergeLaneZoneEntranceX = & width \\
+						 & - targetLeadOutDistance \\
+						 & - \frac{mergeZoneWidth}{2}
+	\end{split}
+\end{equation}
 
-After the merge vehicles enter the merge zone they will deviate from the lane, however the merge lane centre does continue until it reaches the centre of the target lane. We know this centre has a Y-coordinate equal to half of the lane width. The X-coordinate is more difficult to calculate. We need to find another X-adjustment, denoted as centreXAdjustment, along the target lane centre line. We can then use equation \ref{connectionPointX} to find the X-coordinate. Figure 
+After the merge vehicles enter the merge zone they will deviate from the lane, however the lane itself continues until it reaches the centre of the target lane. We know this centre has a Y-coordinate equal to half of the lane width. The X-coordinate is more difficult to calculate. We need to find another X-adjustment, denoted as centreXAdjustment, along the target lane centre line. We can then use equation \ref{connectionPointX} to find the X-coordinate. Figure \ref{fig:centreXAdjustment} indicates the position of centreXAdjustment.
 
-\begin{multline}\label{connectionPointX}
-connectionPointX = width - \\
-targetLeadOutDistance - \frac{mergeZoneWidth}{2} + centreXAdjustment
-\end{multline}
+\begin{equation}\label{connectionPointX}
+	\begin{split}
+connectionPointX = & width \\
+				   & - targetLeadOutDistance \\
+				   & - \frac{mergeZoneWidth}{2} \\
+				   & + centreXAdjustment \\
+	\end{split}
+\end{equation}
 
 \begin{figure}[htb]
-\includegraphics[width=\textwidth]{designNotes/centreXAdjustment.png}
+\centering
+\includegraphics[height=8cm]{designNotes/centreXAdjustment.png}
 \caption{A diagram indicating the X-adjustment used to find the point at which the two lanes connect.}
 \label{fig:centreXAdjustment}
 \end{figure}.

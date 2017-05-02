@@ -2,12 +2,77 @@
 \chapter{Appendix}
 \label{cha:Appendix}
 
+\section{Literature Review Further Content}
+\label{sec:Literature Review Further Content}
+
+\subsection{Gipps 1981 Equations}
+\label{subsec:Gipps 1981 Equations}
+Gipps' 1981 car-following model paper \citep{Gipps1981} defines two equations, which provide constraints on the speed of vehicle $n$ at time $t + \tau$. $t$ is the current time and $\tau$ is the apparent reaction time, a constant for all vehicles. The first equation defines the acceleration constraint of the vehicle. It was obtained using measurements from an instrumented car.
+
+\begin{equation}\label{Gipps1981Accel}
+v_n(t+\tau) \leqslant v_n(t) + 2.5a_n\tau\Biggl(\frac{1 - v_n(t)}{V_n}\Biggr)\Biggl(\frac{0.025 + v_n(t)}{V_n}\Biggr)^{1/2}
+\end{equation}
+
+$v_n(t)$ is the speed of vehicle $n$ at time $t$. $a_n$ is the maximum acceleration the driver of vehicle $n$ wishes to undertake. $V_n$ is the target speed for vehicle $n$. The equation shows that the driver accelerates until close to their target speed. Then, they reduce their acceleration until it reaches zero. At this point the vehicle should be travelling at it's target speed.
+
+The second constraint is the braking profile of the vehicle. This is given as
+
+\begin{equation}\label{Gipps1981Brake}
+\begin{split}
+&v_n(t+\tau) \leqslant \\
+&b_n\tau + \sqrt{\Biggl(b_n^2\tau^2 - b_n\biggl(2\Bigl[x_{n-1}(t) - s_{n-1} - x_n(t)\Bigr] - v_n(t)\tau - \frac{v_{n-1}(t)^2}{\hat{b}}\biggr)\Biggr)}
+\end{split}
+\end{equation}
+
+$b_n$ is the most severe braking the driver of vehicle $n$ wishes to undertake. It is always a negative value, and should be considered negative acceleration. $\hat{b}$ is the driver of vehicle $n$'s best guess at $b_{n-1}$ where $n-1$ is $n$'s predecessor. $x_n(t)$ is the location of the front of vehicle $n$ at time $t$. $s_n$ is the effective size of vehicle $n$. This is equal to the physical length of $n$, plus a margin $n$'s successor is not willing to enter, even when $n$ is at rest.
+
+Therefore, at time $t + \tau$, assuming the driver travels as fast as is safe, and within the limitations of the vehicle, their speed is given by the minimum of these two equations.
+
+\begin{equation}
+v_n(t) = \min{(\eqref{Gipps1981Accel},\eqref{Gipps1981Brake})}
+\end{equation}
+
+\subsection{The Intelligent Driver Model}
+\label{subsec:The Intelligent Driver Model}
+In 2000 Treiber et al. suggested the 'Intelligent Driver Model' (IDM) \citep{Treiber2000}. In the IDM, the acceleration of vehicle $\alpha$, $\dot{v_\alpha}$, is defined using a continuous function of its velocity, $v_\alpha$; the distance to the rear of its predecessor, $s_\alpha$; and the velocity difference of $\alpha$ and it's predecessor, also known as the approaching rate $\Delta v_\alpha$. The vehicle interactions are solely based on $\alpha$'s relative acceleration to its predecessor. The model only provides position information for a vehicle in relation to its predecessor, and it does not provide its velocity at a given time, as Gipps' model does. 
+
+The IDM is broken into two components. The first describes the behaviour of a vehicle on a free road.
+
+\begin{equation}
+\dot{v_\alpha} = a^{(\alpha)}\Biggl[1 - \biggl(\frac{v_\alpha}{v_0^{(\alpha)}}\biggr)^\delta\Biggr]
+\end{equation}
+
+Here $a^{(\alpha)}$ is the maximum acceleration of vehicle $\alpha$ and $v_0^{\alpha}$ is the desired velocity of $\alpha$. $\delta$ is the acceleration exponent, which is typically 4. 
+
+The second component describes the behaviour of a vehicle as it approaches its predecessor. 
+
+\begin{equation}
+\dot{v_\alpha} = - a^{(\alpha)}\biggl(\frac{s^*}{s_\alpha}\biggr)^2
+\end{equation}
+
+As the gap, $s_\alpha$, between $\alpha$ and it's predecessor, gets closer to the desired minimum gap $s^*$, $\alpha$ decelerates.
+
+Interpolating the two components gives us the IDM. 
+
+\begin{equation}
+\dot{v_\alpha} = a^{\alpha}\Biggl[1 - \biggl(\frac{v_\alpha}{v_0^\alpha}\biggr)^\delta - \biggl(\frac{s^*(v_\alpha,\Delta v_\alpha)}{s_\alpha}\biggr)^2\Biggr]
+\end{equation}
+
+The desired minimum gap in the IDM varies dynamically with velocity and approaching rate. It is given by the following function.
+
+\begin{equation}\label{IDMSpacingFunction}
+s^*(v,\Delta v) = s_0^{(\alpha)} + s_1^{(\alpha)}\sqrt{\frac{v}{v_0^{(\alpha)}}} + T^\alpha v + \frac{v\Delta v}{2\sqrt{a^{(\alpha)}b^{(\alpha)}}}
+\end{equation}
+
+The equation takes the bumper-to-bumper space $s_0^{(\alpha)}$, also known as the minimum jam distance, and adds the comfortable jam distance $s_1^{(\alpha)}$. The bumper-to-bumper space is the minimum gap between $\alpha$ and its predecessor in stationary traffic. The comfortable jam distance is an extra distance added on for comfort, and to allow for a slower driver reaction time. In the paper, this value is set to $0$. We can also consider it negligible for autonomous vehicles. $T$ is the safe time headway; it represents the time required for the vehicle to safely come to a stop. Finally $b^{(\alpha)}$ is the desired deceleration for $\alpha$.
+
 \section{S2S Map Calculations}
 \label{sec:S2SMapCalculations}
 To start with, we need to calculate the dimensions of the merging zone. The height of the merging zone will be the same as lane width of the target lane. The length can be calculated using the right-angled triangle in Figure \ref{fig:mergingZoneTriangle}. Using this triangle and some trigonometry we can calculate the length of the merge zone ($\text{mergingZoneLength}$ in Fig. \ref{fig:mergingZoneTriangle}) using equation \ref{hSin}.
 
 \begin{figure}[htb]
-\includegraphics[width=\textwidth]{appendix/mergingZoneTriangle.png}
+\centering
+\includegraphics[width=10cm]{appendix/mergingZoneTriangle.png}
 \caption{A right-angled triangle used to calculate the size of the merging zone.}
 \label{fig:mergingZoneTriangle}
 \end{figure}
@@ -21,7 +86,8 @@ We also need to know whether the horizontal width of the merge lane on the map, 
 Firstly we need to calculate the X and Y adjustments at the merge lane entrance. Because the vehicles drive in the centre of the lane and the merge lead in distance is defined by the middle line of the lane we still need to calculate how far the lane extends in the x and y directions due to it's width. To do this we can use the right-angled triangles shown in Figure \ref{fig:mergeEntranceTriangles}
 
 \begin{figure}[htb]
-\includegraphics[width=\textwidth]{appendix/mergeEntranceTriangles.png}
+\centering
+\includegraphics[width=10cm]{appendix/mergeEntranceTriangles.png}
 \caption{Two right-angled triangles used to calculate the x and y adjustments for the merge entrance.}
 \label{fig:mergeEntranceTriangles}
 \end{figure}
@@ -41,7 +107,8 @@ The X-adjustment for the merge entrance is the length of the adjacent side of on
 To calculate the 'base width' of the merge lane we will also need to calculate the adjacent side of the triangle in Figure \ref{fig:baseWidthTriangle}. In this triangle the hypotenuse has a length equal to the merge lead in distance. Therefore, we can use equation \ref{aCos} to calculate the length of the adjacent side. After obtaining the length of this side we simply add the merge entrance X-adjustment and half the length of the merge zone to find the merge base width.
 
 \begin{figure}[htb]
-\includegraphics[width=\textwidth]{appendix/baseWidthTriangle.png}
+\centering
+\includegraphics[width=10cm]{appendix/baseWidthTriangle.png}
 \caption{A right-angled triangle used to help calculate the base width of the merge lane, along with the X-adjustment and merge-zone length.}
 \label{fig:baseWidthTriangle}
 \end{figure}
@@ -53,7 +120,8 @@ mergingLaneCentreLineBase = mergeLeadInDistance \cos(\theta)
 We also need to find the point at which the merging lane's centre line crosses the target lane's centre line in the merge zone. We know the Y-coordinate for this point as it will be the same as the Y-coordinate of the target lane centre line. We also know the X-coordinate of the point at which the merge lane's centre line meets the target lane. We can use these two co-ordinates to create the triangle shown in Figure \ref{fig:toCentreTriangle}. We can then use equation \ref{aTan} to find the X-adjustment from the merge zone centre to the point where the two centre lines cross.
 
 \begin{figure}[htb]
-\includegraphics[width=\textwidth]{appendix/toCentreTriangle.png}
+\centering
+\includegraphics[width=10cm]{appendix/toCentreTriangle.png}
 \caption{A right-angled triangle used to calculate where the two centre lines meet. The centre lines are indicated in pink.}
 \label{fig:toCentreTriangle}
 \end{figure}
@@ -79,34 +147,24 @@ The first major change was renaming \emph{DriverSimView}, \emph{AutoDriverPilotV
 
 The next change was separating out all of the AIM specific code into its own classes and interfaces. You can see how this was done in Figure \ref{fig:driverAfter} with \emph{AIMDriverSimModel} and \emph{AIMDriver}. The merge specific code found in \emph{MergeDriverSimModel}, \emph{MergeDriver} and \emph{MergeAutoDriver} is structured in a very similar manner to its AIM counterpart, taking advantage of the generalised code.
 
-\begin{figure}[htb]
+\begin{sidewaysfigure}[p]
 \includegraphics[width=\textwidth]{classDiagrams/driverAfter.png}
 \caption{The new class structure for \emph{Driver}.}
 \label{fig:driverAfter}
-\end{figure}
+\end{sidewaysfigure}
 
 As a consequence of breaking out the code like this, a number of additional changes had to be made. Driver was changed into an interface and a new class \emph{BasicDriver}. \emph{Driver} is simply used as an interface for accessing Drivers in non-simulation contexts (such as \emph{BasicVehicle}). \emph{BasicDriver} contains the generalised functionality all \emph{Driver} objects should need, with AIM specific activities moved to \emph{AIMDriver}. Extending from \emph{Driver} is the \emph{AutoDriver} interface, which adds no new methods but is instead used to categorise autonomous drivers. \emph{AIMAutoDriver} contains almost exactly the same code as the original \emph{AutoDriver} class.
 
+\FloatBarrier
 \subsection{aim4.gui}
 \label{subsec:aim4.gui}
 \emph{aim4.gui} controls the GUI for the simulator. We had to adjust this to allow for non-AIM simulations to be run. We chose to use tabs to allow users to switch between simulators (these are greyed out when a simulation is running). To make adding new tabs and simulation screens easier we had to refactor \emph{Viewer} into smaller, separate components. You can see the structural changes in Figures \ref{fig:originalAIMSetupLabeled} and \ref{fig:newAIMSetupLabeled}.
 
-\begin{figure}[htb]
-\includegraphics[width=\textwidth]{screenshots/originalAIMSetupLabeled.png}
-\caption{Panel layout in the original simulator.}
-\label{fig:originalAIMSetupLabeled}
-\end{figure}
-
-\begin{figure}[htb]
-\includegraphics[width=\textwidth]{screenshots/newAIMSetupLabeled.png}
-\caption{Panel layout in the new simulator.}
-\label{fig:newAIMSetupLabeled}
-\end{figure}
-
 In the original simulator \emph{Viewer} displays the simulator set-up controls, \emph{SimSetupPanel}, and the simulation viewer \emph{Canvas} inside \emph{mainPanel}. \emph{mainPanel} is a \emph{JPanel} with a \emph{CardLayout} allowing the panel to switch between displaying the set-up controls and the viewer. In the new simulator we replaced \emph{mainPanel} with \emph{tabbedPane}, a \emph{JTabbedPane} object that allows users to switch between the different simulators using tabs. Each tab displays a \emph{SimViewer}, which behaves in a similar way to \emph{mainPanel} allowing users to switch between the set-up screen and the simulation screen using \emph{CardLayout}. Each simulator will have their own SimViewer type, as shown in Figure \ref{fig:simViewer}.
 
 \begin{figure}[htb]
-\includegraphics[width=\textwidth]{classDiagrams/simViewer.png}
+\centering
+\includegraphics[width=8cm]{classDiagrams/simViewer.png}
 \caption{The class diagram for \emph{SimViewer}.}
 \label{fig:simViewer}
 \end{figure}
@@ -114,7 +172,8 @@ In the original simulator \emph{Viewer} displays the simulator set-up controls, 
 We didn't want to force new simulators to use a full representation of vehicles on screen, as \emph{Canvas} does. To avoid this we created a new interface \emph{SimScreen} which \emph{SimViewer} uses to describe it's viewer card. Any class implementing \emph{SimScreen} can be used as the viewer for a simulation. Figure \ref{fig:simScreen} shows how \emph{MergeStatScreen} and \emph{Canvas} using \emph{SimScreen}.
 
 \begin{figure}[htb]
-\includegraphics[width=\textwidth]{classDiagrams/simScreen.png}
+\centering
+\includegraphics[width=8cm]{classDiagrams/simScreen.png}
 \caption{The class diagram for \emph{SimScreen}.}
 \label{fig:simScreen}
 \end{figure}
@@ -122,25 +181,45 @@ We didn't want to force new simulators to use a full representation of vehicles 
 We also generalised the \emph{SimSetupPanel} class to allow \emph{SimViewer} to display non-AIM set-up controls. Figure \ref{fig:simSetupPanel} shows the new class structure for \emph{SimSetupPanel}.
 
 \begin{figure}[htb]
-\includegraphics[width=\textwidth]{classDiagrams/simSetupPanel.png}
+\centering
+\includegraphics[width=8cm]{classDiagrams/simSetupPanel.png}
 \caption{The class diagram for \emph{SimSetupPanel}.}
 \label{fig:simSetupPanel}
 \end{figure}
 
 We also made a small adjustment to the behaviour of the reset option in the menu. Now the simulator must be paused in order for the reset button to be active. We did this because resetting the simulator without pausing was creating \emph{NullPointerException}s.
 
+\begin{figure}[p]
+\centerline{
+\includegraphics[width=15cm]{screenshots/originalAIMSetupLabeled.png}
+}
+\caption{Panel layout in the original simulator.}
+\label{fig:originalAIMSetupLabeled}
+\end{figure}
+
+\begin{figure}[p]
+\centerline{
+\includegraphics[width=15cm]{screenshots/newAIMSetupLabeled.png}
+}
+\caption{Panel layout in the new simulator.}
+\label{fig:newAIMSetupLabeled}
+\end{figure}
+
+\FloatBarrier
 \subsection{aim4.map}
 \label{subsec:aim4.map}
 \emph{aim4.map} is used to describe the environment vehicles are required to navigate. They also spawn vehicles that then drive through the map. Figures \ref{fig:mapBefore} and \ref{fig:mapAfter} show the original and new class structure for \emph{aim4.map}.
 
 \begin{figure}[htb]
-\includegraphics[width=\textwidth]{classDiagrams/mapBefore.png}
+\centering
+\includegraphics[height=6cm]{classDiagrams/mapBefore.png}
 \caption{The original class structure for \emph{BasicMap} and \emph{SpawnPoint}.}
 \label{fig:mapBefore}
 \end{figure}
 
 \begin{figure}[htb]
-\includegraphics[width=\textwidth]{classDiagrams/mapAfter.png}
+\centering
+\includegraphics[width=8cm]{classDiagrams/mapAfter.png}
 \caption{The new class structure for \emph{BasicMap} and \emph{SpawnPoint}.}
 \label{fig:mapAfter}
 \end{figure}
@@ -149,6 +228,7 @@ The changes made to \emph{aim4.map} were relatively straight-forward. The AIM sp
 
 \emph{SpawnPoint} was also broken out into general and AIM specific features. This had to be done because \emph{SpawnPoint} used to create \emph{SpawnSpec} objects with \emph{destination} fields. \emph{destination} is an AIM specific field relating to the intersection exit a vehicle plans to reach. By extracting this out new map types can spawn vehicles with \emph{SpawnSpec} instances specific to their map type.
 
+\FloatBarrier
 \subsection{aim4.sim}
 \label{subsec:aim4.sim}
 \emph{aim4.sim} contains the code responsible for constructing and running simulations. The original code was very focussed on AIM simulations and so we had to break the interfaces to allow for different types of simulators. 
@@ -156,13 +236,15 @@ The changes made to \emph{aim4.map} were relatively straight-forward. The AIM sp
 \emph{Simulator} is an interface that new simulators need to implement. We decided to extract out some of the AIM specific features into \emph{AIMSimulator}. We also added an override to \emph{getMap()}, forcing AIM simulators to use \emph{BasicIntersectionMap} maps. The class structure changes can be seen in Figures \ref{fig:simulatorBefore} and \ref{fig:simulatorAfter}.
 
 \begin{figure}[htb]
-\includegraphics[width=\textwidth]{classDiagrams/simulatorBefore.png}
+\centering
+\includegraphics[width=8cm]{classDiagrams/simulatorBefore.png}
 \caption{The original class structure for \emph{Simulator}.}
 \label{fig:simulatorBefore}
 \end{figure}
 
 \begin{figure}[htb]
-\includegraphics[width=\textwidth]{classDiagrams/simulatorAfter.png}
+\centering
+\includegraphics[width=12cm]{classDiagrams/simulatorAfter.png}
 \caption{The new class structure for \emph{Simulator}.}
 \label{fig:simulatorAfter}
 \end{figure}
@@ -170,32 +252,36 @@ The changes made to \emph{aim4.map} were relatively straight-forward. The AIM sp
 \emph{SimSetup} was also modified to separate AIM specific set-up options and simulator creation code from other simulators. Figures \ref{fig:simSetupBefore} and \ref{fig:simSetupAfter} show how these classes were altered.
 
 \begin{figure}[htb]
-\includegraphics[width=\textwidth]{classDiagrams/simSetupBefore.png}
+\centering
+\includegraphics[height=6cm]{classDiagrams/simSetupBefore.png}
 \caption{The original class structure for \emph{SimSetup}.}
 \label{fig:simSetupBefore}
 \end{figure}
 
 \begin{figure}[htb]
-\includegraphics[width=\textwidth]{classDiagrams/simSetupAfter.png}
+\centering
+\includegraphics[width=10cm]{classDiagrams/simSetupAfter.png}
 \caption{The new class structure for \emph{SimSetup}.}
 \label{fig:simSetupAfter}
 \end{figure}
 
+\FloatBarrier
 \subsection{aim4.vehicle}
 \label{subsec:aim4.vehicle}
 \emph{aim4.vehicle} controls the different vehicles used during simulations. Vehicles are used by both \emph{Driver} and \emph{Simulator} instances. To allow them to do that the original simulator code used \emph{View} interfaces similar to those in \ref{subsec:aim4.driver}. Figure \ref{fig:vehicleBefore} shows how these interfaces link together. Extracting AIM behaviour was quite difficult because of how interconnected these interfaces were. The solution we came up with was to create AIM specific interfaces and link them together in a similar manner, inheriting from the generic ones if possible. Figure \ref{fig:vehicleAfter} shows how the new structure links together.
 
 \begin{figure}[htb]
-\includegraphics[width=\textwidth]{classDiagrams/vehicleBefore.png}
+\centering
+\includegraphics[width=10cm]{classDiagrams/vehicleBefore.png}
 \caption{The original class structure for \emph{aim4.vehicle}.}
 \label{fig:vehicleBefore}
 \end{figure}
 
-\begin{figure}[htb]
+\begin{sidewaysfigure}[p]
 \includegraphics[width=\textwidth]{classDiagrams/vehicleAfter.png}
 \caption{The new class structure for \emph{aim4.vehicle}.}
 \label{fig:vehicleAfter}
-\end{figure}
+\end{sidewaysfigure}
 
 The first change made to \emph{aim4.vehicle} was to rename all of the files ending in \emph{View} to end in \emph{Model} instead. This matches the changes made to \emph{aim4.driver}.
 
@@ -203,6 +289,7 @@ The first change made to \emph{aim4.vehicle} was to rename all of the files endi
 
 In terms of classes we made \emph{BasicAutoVehicle} abstract and extracted out AIM specific behaviour to \emph{AIMBasicAutoVehicle}. \emph{BasicAutoVehicle} had to be abstract because we wanted to force \emph{getDriver()} to be overridden in subclasses to retrieve the simulator specific \emph{AutoDriver} for that vehicle (for example \emph{AIMAutoDriver} in AIM simulators). 
 
+\FloatBarrier
 \section{Maps}
 \label{sec:Maps}
 All maps testing Merge functionality implement \emph{BasicMap}. I created a generalised implementation called \emph{MergeMap} which satisfies the basic functionality of BasicMap as well as some protected accessors. All maps used during simulations extend \emph{MergeMap}.

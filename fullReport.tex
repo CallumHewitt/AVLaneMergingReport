@@ -2,16 +2,15 @@
 \title{Approaches to Autonomous Vehicle Merge Management}
 \author{Callum Hewitt}
 \supervisor{Lilian Blot}
-\date{2017 May 1}
+\date{2nd May 2017}
 \wordcount{0}
-\excludes{headers, equations or appendices.}
+\excludes{headers, equations or appendices}
 \BSc
 \abstract{
-Not completed
+In anticipation of a fully autonomous vehicle future, this project aims to develop and analyse systems that deal with lane merging. An existing autonomous vehicle simulator, used for vehicle intersections, was adapted and extended to develop merge simulations. The system itself proved unexpectedly difficult to work with, and further research will require the development of a more universal simulator. A merge management system based on a queue protocol was developed to manage incoming vehicles on a single lane to single lane merge. This was compared with an adaptation of the intersection management system. It was found that the intersection management system induced less delay on the vehicles than the queue system, particularly at high traffic levels. The queue protocol was tested further under different conditions. The angle at which the two lanes meet was found to have a substantial effect on the performance of the protocol. When the two lanes met at shallow angles, the queue system performed very poorly, but the performance improved rapidly as the angle approached 90\degree. The queue system was less effective at reducing delays on a lane when it had a higher speed limit than the lane it was merging with.The distance simulated before the vehicle reached the merge point was found to have no effect on the performance of the protocol when the distance was greater than 100\si{m}. It was concluded that an intersection protocol based system could perform better than the queue protocol if fully developed. The performance of the protocol at different angles, speed limits and simulated distances, provided insight into issues that merge systems will have to overcome in order to be integrated into real world infrastructure.
 }
-\dedication{Not completed}
 \acknowledgements{
-	Not completed
+Thanks to my supervisor Lilian for the advice given in shaping this project.
 }
 
 \usepackage{listings}
@@ -29,6 +28,9 @@ Not completed
 \usepackage{amssymb}
 \usepackage{pifont}
 \usepackage{siunitx}
+\usepackage{float}
+\usepackage{rotating}
+\usepackage[section]{placeins}
 
 \bibinput{bibliography}
 
@@ -53,8 +55,10 @@ Not completed
 \include{implementation}
 \include{results}
 \include{conclusion}
-\include{appendix}
 
 \bibliography{bibliography}
+\label{sec:Bibliography}
+
+\include{appendix}
 
 \end{document}
