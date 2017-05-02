@@ -66,6 +66,72 @@ s^*(v,\Delta v) = s_0^{(\alpha)} + s_1^{(\alpha)}\sqrt{\frac{v}{v_0^{(\alpha)}}}
 
 The equation takes the bumper-to-bumper space $s_0^{(\alpha)}$, also known as the minimum jam distance, and adds the comfortable jam distance $s_1^{(\alpha)}$. The bumper-to-bumper space is the minimum gap between $\alpha$ and its predecessor in stationary traffic. The comfortable jam distance is an extra distance added on for comfort, and to allow for a slower driver reaction time. In the paper, this value is set to $0$. We can also consider it negligible for autonomous vehicles. $T$ is the safe time headway; it represents the time required for the vehicle to safely come to a stop. Finally $b^{(\alpha)}$ is the desired deceleration for $\alpha$.
 
+\subsection{Atagoziyev's Model}
+\label{sec:Atagoziyev's Model}
+
+In the paper SV (subject vehicle) refers to the vehicle that wants to change lanes. CL (current lane) is the vehicle in front of the SV. TL (target lane) is the vehicle the SV wants to be behind in its target lane. LV (lag vehicle) is the vehicle that will be behind SV once it moves to its target  lane. Atagoziyev defines seven equations for manipulating vehicles between lanes. They are used in different contexts, each based on the relative positions of the surrounding vehicles. The contexts for each equation are given below, along with the behaviour from the equation during that context.
+
+\begin{enumerate}
+\item[Case 1] \textit{SV too close to CL in its current lane or TL if it changed lanes.}
+
+SV slows down until the gap is sufficiently large enough.
+\item[Case 2] \textit{SV has a large gap between itself and TL and CL, however, LV is too close to SV}
+
+SV can approach CL and TL as long as the gap remains large enough. LV needs to open up a sufficient gap behind SV.
+\item[Case 3] \textit{SV has the minimum allowable gap to TL and CL, but LV is too close}
+
+SV follows the closest leader and waits until LV creates the necessary gap.
+\item[Case 4] \textit{The gaps between SV and CL/TL/LV are sufficient. But CL/TL are not travelling at the 'nominal speed' established for all vehicles in this exchange}
+
+SV maintains a sufficient gap, waiting for CL/TL to travel at nominal speed again.
+\item[Case 5] \textit{SV and CL/TL/LV have sufficient gaps and CL/TL are travelling at nominal speed.}
+
+SV performs the lane change, maintaining nominal speed.
+\item[Case 6] \textit{SV obtains the minimum gap to CL/TL and LV maintains a sufficient gap. CL/TL are not travelling at nominal speed}
+
+SV maintains the minimum gap, waiting for CL/TL to travel at nominal speed again.
+\item[Case 7] \textit{SV obtains the minimum gap to CL/TL and LV maintains a sufficient gap. CL/TL are travelling at nominal speed}
+
+SV performs the lane change, maintaining nominal speed.
+\end{enumerate}
+
+These equations are the building blocks that lead to a lane change. The flowchart in Figure \ref{fig:AtogoziyevFlowchart} shows how they work together to enact a single lane change.
+
+\begin{figure}[htb]
+\includegraphics[width=\textwidth]{litReview/atagoziyevFlowchart.JPG}
+\caption{The flowchart for Atagoziyev's Lane Changing model equations}
+\label{fig:AtogoziyevFlowchart}
+\end{figure}
+
+Using this algorithm, we can move multiple vehicles into their correct lanes. LV always provides space to allow each changing vehicle into the correct lane. All of the vehicles are working with each other, such that they can all reach their goal.
+
+\subsection{The MOBIL Model}
+\label{subsec:The MOBIL Model}
+The `Minimising Overall Braking Induced by Lane Changes' model defines two criterion that vehicles must satisfy. The first criterion deals with safety, ensuring that the deceleration of a successor vehicle $\tilde{a}_n$ in the target lane doesn't exceed a safety limit $b_{safe}$.
+
+\begin{equation}
+\tilde{a}_n \geq -b_{safe}
+\end{equation}
+
+This criterion effectively puts a limit on the level of braking a vehicle changing lanes can cause another vehicle to undergo if it pulls out in front of it.
+
+The second criterion is the 'incentive criterion' which is what motivates a driver to change lanes. This criterion introduces a 'politeness factor' $p$ which expresses the extent to which nearby vehicles affect a driver's lane changing decision. 
+
+The paper discusses the differences between symmetric ('US') lane changing rules and asymmetric ('European') passing rules. The US rules give the incentive criterion:
+
+\begin{equation}
+\underbrace{\tilde{a}_c - a_c}_\text{driver} + p(\underbrace{\tilde{a}_n  - a_n}_\text{new follower} + \underbrace{\tilde{a}_o - a_o}_\text{old follower}) > \Delta a_{th}
+\end{equation}
+
+$\tilde{a}_x - a_x$ is the utility a driver x gets due to the lane change, where $\tilde{a}_x$ is the acceleration of vehicle x after the lane change and $a_x$ was their acceleration before the lane change. $c$ is the vehicle changing lanes, $n$ is the vehicle behind $c$ once it changes lanes, and $o$ is the vehicle following $c$ before the lane change. $\Delta a_{th}$ is the threshold at which the driver will change lanes. It is designed to model inertia. A driver won't change lanes unless they get above a specific utility gain. The politeness factor $p$ varies from $0$ to $1$, where $p = 0$ is the most selfish behaviour and $p = 1$ describe drivers who won't change lanes unless collectively all of the drivers gain a utility greater than the threshold. When $p > 1$ drivers won't change lanes at all if it negatively affects the surrounding traffic, drivers will even go so far as to execute lane changes which reduce their own utility. Likewise drivers with $p < 0$ will go out of their way to negatively affect other drivers, even reducing their own utility to do so.
+
+The idea of a MOBIL model means that drivers will only change when it increases the sum of all of the accelerations increases. This would be at $p = 1$ and $\Delta a_{th} = 0$. In this case the equation becomes 
+
+\begin{equation}
+\tilde{a}_c + \tilde{a}_n + \tilde{a}_o > a_c + a_n + a_o 
+\end{equation}
+
+
 \section{S2S Map Calculations}
 \label{sec:S2SMapCalculations}
 To start with, we need to calculate the dimensions of the merging zone. The height of the merging zone will be the same as lane width of the target lane. The length can be calculated using the right-angled triangle in Figure \ref{fig:mergingZoneTriangle}. Using this triangle and some trigonometry we can calculate the length of the merge zone ($\text{mergingZoneLength}$ in Fig. \ref{fig:mergingZoneTriangle}) using equation \ref{hSin}.

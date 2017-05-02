@@ -34,43 +34,43 @@ Warning--empty note in Milligan2017
 Done.
 You've used 25 entries,
             4855 wiz_defined-function locations,
-            1122 strings with 12708 characters,
-and the built_in function-call counts, 17495 in all, are:
-= -- 1690
-> -- 337
-< -- 93
-+ -- 192
-- -- 76
-* -- 950
-:= -- 2915
+            1124 strings with 12827 characters,
+and the built_in function-call counts, 17590 in all, are:
+= -- 1698
+> -- 352
+< -- 91
++ -- 196
+- -- 80
+* -- 969
+:= -- 2938
 add.period$ -- 65
 call.type$ -- 25
 change.case$ -- 51
-chr.to.int$ -- 195
+chr.to.int$ -- 192
 cite$ -- 26
-duplicate$ -- 1172
-empty$ -- 1307
-format.name$ -- 106
-if$ -- 3875
+duplicate$ -- 1173
+empty$ -- 1306
+format.name$ -- 111
+if$ -- 3888
 int.to.chr$ -- 2
 int.to.str$ -- 26
-missing$ -- 196
-newline$ -- 137
+missing$ -- 198
+newline$ -- 139
 num.names$ -- 57
-pop$ -- 498
+pop$ -- 505
 preamble$ -- 1
 purify$ -- 25
 quote$ -- 2
-skip$ -- 1311
+skip$ -- 1313
 stack$ -- 0
-substring$ -- 471
-swap$ -- 853
+substring$ -- 464
+swap$ -- 852
 text.length$ -- 22
 text.prefix$ -- 6
 top$ -- 6
 type$ -- 387
 warning$ -- 1
-while$ -- 66
+while$ -- 67
 width$ -- 0
-write$ -- 353
+write$ -- 356
 (There were 3 error messages)
