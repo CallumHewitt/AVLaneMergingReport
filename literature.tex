@@ -32,12 +32,6 @@ The Autonomous Intersection management system (AIM) described in \citep{Dresner2
 
 The intersection infrastructure simulates the journey of the vehicle through the intersection, noting the tiles occupied by the vehicle at each time interval. If any cell is reserved at the same time step the intersection rejects the request. The driver will start decelerating and continue making requests until it obtains a reservation. It will not enter the intersection without a reservation, even if that means coming to a stop at the intersection.
 
-\begin{figure}[htb]
-\includegraphics[width=\textwidth]{litReview/aimOriginal.JPG}
-\caption{Screenshot of the AIM Simulator}
-\label{fig:AIMOriginal}
-\end{figure}
-
 A grid-based reservation system works well in high traffic zones like intersections, because it forces all vehicles to communicate with a single entity. This entity has a global-view of activity at the junction, allowing the system to make vehicle management decisions more easily. A V2V solution would require more complex communication protocols involving large numbers of vehicles. The volume of messages required for each vehicle to obtain a global view of the intersection would be considerably larger, and as such, most vehicles will never get a complete understanding of the status of the intersection.
 
 This paper forms the foundation for the AMM protocol designed in Section \ref{sec:Autonomous Merge Management System}.
@@ -91,4 +85,4 @@ Work by Kesting et al. in 2007 \citep{Kesting2007} describes a decentralised mod
 
 The model uses two criterion that the vehicle must satisfy. The first gives the vehicle a maximum deceleration value. The second is the `incentive criterion', the motivation for a driver to change lanes. Whether a driver changes lanes or not is based on the relationship between the utility a driver gets by changing lanes, and the utility the vehicle behind the driver in the new lane loses by being pulled out in front of. How willing a driver is to sacrifice another driver's utility for their own is down to the driver's politeness factor $p$. With a $p$ value of 0, drivers act selfishly, with no regard for the utility of other drivers. With a $p$ value of 1, drivers act altruistically, only changing lanes when it has a net benefit to all drivers involved, at least above a set threshold. A $p$ value of 1 also caused the maximum lane changing rate to halve. Kesting also discovered that `altruistic' lane changing behaviour increased the mean speed of both lanes involved in the simulation, improving overall traffic performance.
 
-A modified version of MOBIL could be used to manage merges with slip lanes, with drivers only merging in front of another vehicle when it has the least impact on both drivers. The politeness factor would have to change as the vehicle came closer to the end of the slip lane however, as eventually the vehicle must merge, or suffer a collision. 
+MOBIL could be used to manage merges with slip lanes, with drivers only merging when it has the least impact. The politeness factor would have to change as the vehicle came closer to the end of the slip lane however, as eventually the vehicle must merge, or suffer a collision. 

@@ -55,7 +55,7 @@ At shallow angles QMM performed very poorly. Figure \ref{fig:meanDelayMergeAngle
 
 \begin{figure}[htb]
 \centering
-\includegraphics[width=10.5cm]{plots/mergeAngle/meanDelay.png}
+\includegraphics[width=10.0cm]{plots/mergeAngle/meanDelay.png}
 \caption{Plot showing mean delay by merge angle}
 \label{fig:meanDelayMergeAngle}
 \end{figure}
@@ -64,7 +64,7 @@ In general throughput increases dramatically with the merge angle until around 3
 
 \begin{figure}[htb]
 \centering
-\includegraphics[width=10.5cm]{plots/mergeAngle/throughput.png}
+\includegraphics[width=10.0cm]{plots/mergeAngle/throughput.png}
 \caption{Plot showing throughput by merge angle}
 \label{fig:throughputMergeAngle}
 \end{figure}
@@ -73,21 +73,7 @@ Shallow merge angles have such a drastic effect on performance because as the me
 
 \section{The Effect of Lead in Distances}
 \label{sec:The Effect of Lead in Distances}
-The lead in distance adjustments affect how long vehicles have to organise and communicate with QMM. Different lead in distance pairs were tested. The traffic rate was set to 1000\si{vhl}, the merge angle was set to 45\degree, and the speed limit was set to 20$\si{ms^{-1}}$ (44.7\si{mph} or 72\si{kph}).
-
-Due to the 150\si{m} distance limit on requests, lead ins at 100\si{m} were worse for the lane with the 100\si{m} lead in. The only exceptions were when both lanes had lead in distances of 100\si{m}.
-
-If one lane has a 100\si{m} lead, then the other lane also suffers a performance hit. This affect is most noticeable when the target lane has the 100\si{m} lead, but this effect is also seen with the merge lane. 
-
-Beyond 150\si{m} the lead in distance had very little effect on the performance of the system. Throughput remained relatively constant throughout. Figure \ref{fig:meanDelayLeadIn} shows how the mean delay relates to the lead in distance.
-
-\begin{figure}[p]
-\centerline{
-	\includegraphics[height=\textheight]{plots/leadIn/meanDelay.png}
-}
-\caption{Bar chart showing mean delay by lead in distance}
-\label{fig:meanDelayLeadIn}
-\end{figure}
+The lead in distance had very little effect on the overall success of the simulation. Below 100\si{m} there was some increase in delay due to the 150\si{m} distance limit before vehicles are added to the queue. Appendix \ref{sec:Lead in Distance Analysis} discusses these results in more detail.
 
 \section{The Effect of Differing Speed Limits}
 \label{sec:The Effect of Differing Speed Limits}
@@ -101,20 +87,20 @@ Switching the lane speeds shows that the merge lane also experiences larger dela
 
 It should be noted that when the speed gaps are smaller the effect on the lanes is reduced. Most of the speed limits containing a 40$\si{ms^{-1}}$ lane also performed poorly. The velocity causes vehicles to accumulate too quickly for the queue system to be able to sort them out effectively. Figure \ref{fig:meanDelaySpeedLimit} shows how the mean delay is affected by difference speed limit pairs.
 
-\begin{figure}[p]
-\centerline{
-	\includegraphics[height=\textheight]{plots/speedLimit/meanDelay.png}
-}
-\caption{Bar chart showing mean delay by speed limit pair}
-\label{fig:meanDelaySpeedLimit}
-\end{figure}
-
 The number of vehicles that complete for each lane is solely affected by the speed limit of the lane, the differences between the lanes has very little effect. The throughput is likewise only affected by the speed limits of each lane independently. Figure \ref{fig:throughputSpeedLimit} shows how the throughput is affected by the speed limits.
 
 \begin{figure}[htb]
 \includegraphics[width=\textwidth]{plots/speedLimit/throughput.png}
 \caption{Bar chart showing throughput by speed limit pair}
 \label{fig:throughputSpeedLimit}
+\end{figure}
+
+\begin{figure}[p]
+\centerline{
+	\includegraphics[height=\textheight]{plots/speedLimit/meanDelay.png}
+}
+\caption{Bar chart showing mean delay by speed limit pair}
+\label{fig:meanDelaySpeedLimit}
 \end{figure}
 
 These results show that QMM struggles to handle differences in velocity well, with the faster lane being impacted more heavily than the slower lane. This is because the faster lane is forced to slow down to accommodate the slower lane. There will always be delay on the faster lane due to this reason. The aim for a good merge system is to minimise the effect of the speed limit gap as much as possible.

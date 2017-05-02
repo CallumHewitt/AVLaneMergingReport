@@ -1,28 +1,12 @@
 \chapter{Implementation}
 \label{cha:Implementation}
-The final implementation was done in Java, and was built on top of the AIM simulator codebase. All class diagrams were created using the `IntelliJ IDEA 15.0.3' internal diagram tool. Figure \ref{fig:classDiagramKey} provides a key for understanding these diagrams.
-
-\begin{figure}[htb]
-\includegraphics[width=\textwidth]{classDiagrams/classDiagramKey.png}
-\caption{Key for the class diagrams in this report.}
-\label{fig:classDiagramKey}
-\end{figure}
+The final implementation was done in Java, and was built on top of the AIM simulator codebase.
 
 \section{Generalising the Codebase}
 \label{sec:Generalising the Codebase}
 The use of the AIM codebase was a project restriction imposed for research purposes. By working with the AIM simulator codebase I could learn how easy it is to work with, and analyse whether or not it would be a good codebase to continue expanding upon for future AV projects. Each simulator built for this project works alongside the AIM simulators, whilst being completely independent. The project: \citetitle{Milligan2017} \citep{Milligan2017}, was also required to be built using AIM. In addition both projects had to work alongside each other using the same codebase. To make sure that code coupling was reduced as much as possible, I worked closely with their project lead to generalise the codebase, breaking out useful shared features so that they could be accessed by all simulator types. The final code can be found at \url{https://github.com/CallumHewitt/AVSimulatorProject} \citep{Codebase}. Breaking out the code like this satisfied requirements \emph{NS.11} and \emph{NS.12}.
 
 Appendix \ref{sec:Generalising the Codebase Appendix} provides detailed coverage of the changes made to the AIM codebase.
-
-\begin{tabular}{|c|c|c|}
-\hline
-Requirement Code & Achieved? \\
-\hline
-NS.11 & \cellcolor{green} \cmark \\
-NS.12 & \cellcolor{green} \cmark \\ 
-\hline
-\end{tabular}
-
 \section{Merge Schemes}
 \label{sec:Merge Schemes}
 The AMM protocol implementation was developed by examining the original AIM code and creating a modified version applicable to merges. Because the two systems are so similar, much of the code was duplicated. This could be refactored out a later date, but during development having full control over the actions taken by a vehicle without having to compromise to allow AIM to work correctly was very useful. In the end, despite this approach there were significant issues with the system. Despite using very similar approaches to AIM, almost identical in areas, vehicles would continue to arrive early to their reserved times and vehicles would also collide consistently at intersections. The reasons for these errors are described in more detail in Section \ref{sec:Simulation}.
@@ -34,15 +18,6 @@ The QMM system was implemented as a replacement for a fully implemented AMM syst
 The QMM system was implemented with a distance limit of 150\si{m}. Vehicles further than this distance cannot be added to the queue.
 
 The original plan was to compare a centralised system with a decentralised solution, based on the work from VanMiddlesworth \citep{VanMiddlesworth2008}. However, this was never implemented due to time constraints. As such requirement \emph{FS.91} was not satisfied.
-
-\begin{tabular}{|c|c|c|}
-\hline
-Requirement Code & Achieved? \\
-\hline
-FS.81 & \cellcolor{red} \xmark \\
-FS.91 & \cellcolor{red} \xmark \\
-\hline
-\end{tabular}
 
 \section{Simulation}
 \label{sec:Simulation}
@@ -80,24 +55,6 @@ The map also controls the spawn points creating the vehicles. Most spawning beha
 \label{subsec:Simulation Control}
 The simulator itself is reponsible for triggering and monitoring the actions of each component of the simulation. It delivers messages between merge managers and vehicles and moves vehicles through the simulation according to their specified velocities and headings. The simulator controller satisfies requirements \emph{FS.12}, \emph{FS.13}, \emph{FS.22}, \emph{FS.32}, \emph{FS.42}, \emph{FS.71}, \emph{FS.73}, \emph{NS.3}, \emph{NS.4} and \emph{NS.8} by managing all of the component in the simulation and producing results.
 
-\begin{tabular}{|c|c|c|}
-\hline
-Requirement Code & Achieved? \\
-\hline
-FS.12 & \cellcolor{green} \cmark \\
-FS.13 & \cellcolor{green} \cmark \\
-FS.22 & \cellcolor{green} \cmark \\
-FS.32 & \cellcolor{green} \cmark \\
-FS.42 & \cellcolor{green} \cmark \\
-FS.71 & \cellcolor{green} \cmark \\
-FS.73 & \cellcolor{green} \cmark \\
-FS.162 & \cellcolor{red} \xmark \\
-NS.3 & \cellcolor{green} \cmark \\
-NS.4 & \cellcolor{green} \cmark \\
-NS.8 & \cellcolor{green} \cmark \\
-\hline
-\end{tabular}
-
 \section{Results Production}
 \label{sec:Results Production}
 In order to provide results Vehicle objects were provided with fields to store their statistics. These fields were:
@@ -128,67 +85,13 @@ The results can be saved to a CSV file containing the throughput, maximum delay,
 \item Vehicle Specification Name
 \end{itemize}
 
-\begin{tabular}{|c|c|c|}
-\hline
-Requirement Code & Achieved? \\
-\hline
-FS.62 & \cellcolor{green} \cmark \\
-FS.63 & \cellcolor{green} \cmark \\
-FS.64 & \cellcolor{green} \cmark \\
-FS.65 & \cellcolor{green} \cmark \\
-FS.66 & \cellcolor{green} \cmark \\
-FS.67 & \cellcolor{green} \cmark \\
-FS.68 & \cellcolor{green} \cmark \\
-FS.69 & \cellcolor{green} \cmark \\
-FS.6a & \cellcolor{red} \xmark \\
-FS.6b & \cellcolor{red} \xmark \\
-FS.6c & \cellcolor{green} \cmark \\
-FS.6d & \cellcolor{red} \xmark \\
-FS.6e & \cellcolor{red} \xmark \\
-NS.7 & \cellcolor{green} \cmark \\
-\hline
-\end{tabular}
-
 \section{GUI}
 \label{sec:GUI}
 The GUI for the project was built using Java Swing, extending the existing GUI. New simulator types are given a separate tab in the application with their own simulator setup and a display screen. The display screen can be modified for each simulation type, showing the relevant information for that simulation. We moved away from the AIM graphical implementation to a \emph{StatScreen} implementation which shows information in text format instead. The S2S simulations display the current simulation time, number of completed vehicles and throughput. They also display two tables, one containing information about the vehicles currently in the simulation, and another for vehicles that have left the simulation. Figure \ref{fig:s2sSimScreen} shows the simulation screen for S2S merges.
 
-\begin{sidewaysfigure}[p]
-\includegraphics[width=\textwidth]{screenshots/s2sSimulationScreen.png}
-\caption{The simulation screen for the S2S merge screen}
-\label{fig:s2sSimScreen}
-\end{sidewaysfigure}
-
 Functional requirements \emph{FS.82} and \emph{FS.92} were not fully implemented as the AIM-like simulations and Decentralised simulations were never implemented in a fully working form. \emph{FS.161} was also never implemented due to the removal of collision detection from simulations. All other GUI requirements were completed. All other requirements were completed.
 
 In order to enable repeat experiments with the same vehicles spawning at the same time, the GUI needed to support the uploading of merge schedule JSON files to the spawn points. This was implemented using \emph{JFileChooser}. I also added an extra feature to the merge setup panel which allows users to generate spawn schedule files for a specific time period at a specified traffic level. This enables users to generate schedules without having access to the codebase.
-
-\begin{tabular}{|c|c|c|}
-\hline
-Requirement Code & Achieved? \\
-\hline
-FS.11 & \cellcolor{green} \cmark \\
-FS.21 & \cellcolor{green} \cmark \\
-FS.31 & \cellcolor{green} \cmark \\
-FS.41 & \cellcolor{green} \cmark \\
-FS.51 & \cellcolor{green} \cmark \\
-FS.61 & \cellcolor{green} \cmark \\
-FS.72 & \cellcolor{green} \cmark \\
-FS.82 & \cellcolor{red} \xmark \\
-FS.92 & \cellcolor{red} \xmark \\
-FS.101 & \cellcolor{green} \cmark \\
-FS.111 & \cellcolor{green} \cmark \\
-FS.121 & \cellcolor{green} \cmark \\
-FS.131 & \cellcolor{green} \cmark \\
-FS.141 & \cellcolor{green} \cmark \\
-FS.151 & \cellcolor{green} \cmark \\
-FS.161 & \cellcolor{red} \xmark \\
-NS.1 & \cellcolor{green} \cmark \\
-NS.2 & \cellcolor{green} \cmark \\
-NS.5 & \cellcolor{green} \cmark \\
-NS.6 & \cellcolor{green} \cmark \\
-\hline
-\end{tabular}
 
 \section{Maintainability and Testing}
 \label{sec:Testing}
@@ -208,12 +111,3 @@ Unit tests were mostly used to ensure getter and setter methods worked as expect
 \subsection{Integration Tests}
 \label{subsec:Integration Tests}
 Integration tests were the most useful tests I used. They allowed me to find and remove problems with the simulators by observing how the map, vehicles, drivers and simulator objects interacted together, as this was usually where most of the errors were occuring. These tests also allowed me to identify key errors with the AIM simulator's approach that were causing problems with the AMM.
-
-\begin{tabular}{|c|c|c|}
-\hline
-Requirement Code & Achieved? \\
-\hline
-NS.9 & \cellcolor{green} \cmark \\
-NS.10 & \cellcolor{green} \cmark \\
-\hline
-\end{tabular}
