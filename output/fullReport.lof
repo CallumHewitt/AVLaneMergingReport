@@ -5,47 +5,45 @@
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Screenshot of the AIM Simulator}}{18}{figure.2.1}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces A real world single to triple lane merge with a slip-road. Source: \citep {realLaneMerge}}}{24}{figure.3.1}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces A road with a single-to-single lane merge (S2S)}}{26}{figure.3.2}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces A road with a single-to-single lane merge (S2S)}}{25}{figure.3.2}
 \contentsline {figure}{\numberline {3.3}{\ignorespaces A road with a single-to-single lane merge and slip-lane (S2S)}}{26}{figure.3.3}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces A road with a single-to-double lane merge (S2D)}}{27}{figure.3.4}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces A road with a single-to-double lane merge (S2D)}}{26}{figure.3.4}
 \contentsline {figure}{\numberline {3.5}{\ignorespaces A road with a single-to{}-double lane merge and slip-lane (S2D)}}{27}{figure.3.5}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces A road with a double-to-double lane merge (D2D)}}{28}{figure.3.6}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces A road with a single-to-double lane merge and slip-lane (S2D)}}{28}{figure.3.7}
-\contentsline {figure}{\numberline {3.8}{\ignorespaces A road with a lane obstruction}}{29}{figure.3.8}
-\contentsline {figure}{\numberline {3.9}{\ignorespaces An S2S merge marked with some of the variable factors}}{33}{figure.3.9}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces A road with a lane obstruction}}{27}{figure.3.6}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces An S2S merge marked with some of the variable factors}}{31}{figure.3.7}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Key for the class diagrams in this report.}}{42}{figure.5.1}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces A diagram indicating how turning works through a merge. Red indicates the Merge Zone, Blue indicates a vehicle, Pink indicates the aiming distance and the point the vehicle is turning towards.}}{45}{figure.5.2}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces The simulation screen for the S2S merge screen}}{50}{figure.5.3}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Key for the class diagrams in this report.}}{40}{figure.5.1}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces A diagram indicating how turning works through a merge. Red indicates the Merge Zone, Blue indicates a vehicle, Pink indicates the aiming distance and the point the vehicle is turning towards.}}{43}{figure.5.2}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces The simulation screen for the S2S merge screen}}{48}{figure.5.3}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Plot showing mean delay/traffic rate performance by merge management system.}}{54}{figure.6.1}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Plots showing mean delay by lane for both merge management systems}}{55}{figure.6.2}
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Plot showing throughput for both merge management systems}}{56}{figure.6.3}
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Plot showing mean delay by merge angle}}{58}{figure.6.4}
-\contentsline {figure}{\numberline {6.5}{\ignorespaces Plot showing throughput by merge angle}}{58}{figure.6.5}
-\contentsline {figure}{\numberline {6.6}{\ignorespaces Bar chart showing mean delay by lead in distance}}{60}{figure.6.6}
-\contentsline {figure}{\numberline {6.7}{\ignorespaces Bar chart showing mean delay by speed limit pair}}{62}{figure.6.7}
-\contentsline {figure}{\numberline {6.8}{\ignorespaces Bar chart showing throughput by speed limit pair}}{63}{figure.6.8}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Plot showing mean delay/traffic rate performance by merge management system.}}{52}{figure.6.1}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Plots showing mean delay by lane for both merge management systems}}{53}{figure.6.2}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Plot showing throughput for both merge management systems}}{54}{figure.6.3}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Plot showing mean delay by merge angle}}{56}{figure.6.4}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Plot showing throughput by merge angle}}{56}{figure.6.5}
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Bar chart showing mean delay by lead in distance}}{58}{figure.6.6}
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Bar chart showing mean delay by speed limit pair}}{60}{figure.6.7}
+\contentsline {figure}{\numberline {6.8}{\ignorespaces Bar chart showing throughput by speed limit pair}}{61}{figure.6.8}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {A.1}{\ignorespaces The flowchart for Atagoziyev's Lane Changing model equations}}{73}{figure.1.A.1}
-\contentsline {figure}{\numberline {A.2}{\ignorespaces A right-angled triangle used to calculate the size of the merging zone.}}{74}{figure.1.A.2}
-\contentsline {figure}{\numberline {A.3}{\ignorespaces Two right-angled triangles used to calculate the x and y adjustments for the merge entrance.}}{75}{figure.1.A.3}
-\contentsline {figure}{\numberline {A.4}{\ignorespaces A right-angled triangle used to help calculate the base width of the merge lane, along with the X-adjustment and merge-zone length.}}{76}{figure.1.A.4}
-\contentsline {figure}{\numberline {A.5}{\ignorespaces A right-angled triangle used to calculate where the two centre lines meet. The centre lines are indicated in pink.}}{77}{figure.1.A.5}
-\contentsline {figure}{\numberline {A.6}{\ignorespaces The original class structure for \emph {Driver}.}}{78}{figure.1.A.6}
-\contentsline {figure}{\numberline {A.7}{\ignorespaces The new class structure for \emph {Driver}.}}{79}{figure.1.A.7}
-\contentsline {figure}{\numberline {A.8}{\ignorespaces The class diagram for \emph {SimViewer}.}}{80}{figure.1.A.8}
-\contentsline {figure}{\numberline {A.9}{\ignorespaces The class diagram for \emph {SimScreen}.}}{81}{figure.1.A.9}
-\contentsline {figure}{\numberline {A.10}{\ignorespaces The class diagram for \emph {SimSetupPanel}.}}{81}{figure.1.A.10}
-\contentsline {figure}{\numberline {A.11}{\ignorespaces Panel layout in the original simulator.}}{82}{figure.1.A.11}
-\contentsline {figure}{\numberline {A.12}{\ignorespaces Panel layout in the new simulator.}}{83}{figure.1.A.12}
-\contentsline {figure}{\numberline {A.13}{\ignorespaces The original class structure for \emph {BasicMap} and \emph {SpawnPoint}.}}{84}{figure.1.A.13}
-\contentsline {figure}{\numberline {A.14}{\ignorespaces The new class structure for \emph {BasicMap} and \emph {SpawnPoint}.}}{85}{figure.1.A.14}
-\contentsline {figure}{\numberline {A.15}{\ignorespaces The original class structure for \emph {Simulator}.}}{86}{figure.1.A.15}
-\contentsline {figure}{\numberline {A.16}{\ignorespaces The new class structure for \emph {Simulator}.}}{86}{figure.1.A.16}
-\contentsline {figure}{\numberline {A.17}{\ignorespaces The original class structure for \emph {SimSetup}.}}{87}{figure.1.A.17}
-\contentsline {figure}{\numberline {A.18}{\ignorespaces The new class structure for \emph {SimSetup}.}}{87}{figure.1.A.18}
-\contentsline {figure}{\numberline {A.19}{\ignorespaces The original class structure for \emph {aim4.vehicle}.}}{88}{figure.1.A.19}
-\contentsline {figure}{\numberline {A.20}{\ignorespaces The new class structure for \emph {aim4.vehicle}.}}{89}{figure.1.A.20}
+\contentsline {figure}{\numberline {A.1}{\ignorespaces The flowchart for Atagoziyev's Lane Changing model equations}}{71}{figure.1.A.1}
+\contentsline {figure}{\numberline {A.2}{\ignorespaces A right-angled triangle used to calculate the size of the merging zone.}}{72}{figure.1.A.2}
+\contentsline {figure}{\numberline {A.3}{\ignorespaces Two right-angled triangles used to calculate the x and y adjustments for the merge entrance.}}{73}{figure.1.A.3}
+\contentsline {figure}{\numberline {A.4}{\ignorespaces A right-angled triangle used to help calculate the base width of the merge lane, along with the X-adjustment and merge-zone length.}}{74}{figure.1.A.4}
+\contentsline {figure}{\numberline {A.5}{\ignorespaces A right-angled triangle used to calculate where the two centre lines meet. The centre lines are indicated in pink.}}{75}{figure.1.A.5}
+\contentsline {figure}{\numberline {A.6}{\ignorespaces The original class structure for \emph {Driver}.}}{76}{figure.1.A.6}
+\contentsline {figure}{\numberline {A.7}{\ignorespaces The new class structure for \emph {Driver}.}}{77}{figure.1.A.7}
+\contentsline {figure}{\numberline {A.8}{\ignorespaces The class diagram for \emph {SimViewer}.}}{78}{figure.1.A.8}
+\contentsline {figure}{\numberline {A.9}{\ignorespaces The class diagram for \emph {SimScreen}.}}{79}{figure.1.A.9}
+\contentsline {figure}{\numberline {A.10}{\ignorespaces The class diagram for \emph {SimSetupPanel}.}}{79}{figure.1.A.10}
+\contentsline {figure}{\numberline {A.11}{\ignorespaces Panel layout in the original simulator.}}{80}{figure.1.A.11}
+\contentsline {figure}{\numberline {A.12}{\ignorespaces Panel layout in the new simulator.}}{81}{figure.1.A.12}
+\contentsline {figure}{\numberline {A.13}{\ignorespaces The original class structure for \emph {BasicMap} and \emph {SpawnPoint}.}}{82}{figure.1.A.13}
+\contentsline {figure}{\numberline {A.14}{\ignorespaces The new class structure for \emph {BasicMap} and \emph {SpawnPoint}.}}{83}{figure.1.A.14}
+\contentsline {figure}{\numberline {A.15}{\ignorespaces The original class structure for \emph {Simulator}.}}{84}{figure.1.A.15}
+\contentsline {figure}{\numberline {A.16}{\ignorespaces The new class structure for \emph {Simulator}.}}{84}{figure.1.A.16}
+\contentsline {figure}{\numberline {A.17}{\ignorespaces The original class structure for \emph {SimSetup}.}}{85}{figure.1.A.17}
+\contentsline {figure}{\numberline {A.18}{\ignorespaces The new class structure for \emph {SimSetup}.}}{85}{figure.1.A.18}
+\contentsline {figure}{\numberline {A.19}{\ignorespaces The original class structure for \emph {aim4.vehicle}.}}{86}{figure.1.A.19}
+\contentsline {figure}{\numberline {A.20}{\ignorespaces The new class structure for \emph {aim4.vehicle}.}}{87}{figure.1.A.20}
