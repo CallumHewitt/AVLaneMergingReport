@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2016.10.7)  2 MAY 2017 06:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2016.10.7)  2 MAY 2017 10:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -847,7 +847,7 @@ Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)
 \c@LT@chunks=\count150
 \LT@p@ftn=\toks41
 )
-Class scrreprt Info: longtable captions redefined on input line 27.
+Class scrreprt Info: longtable captions redefined on input line 23.
 
 (c:/texlive/2016/texmf-dist/tex/latex/appendix/appendix.sty
 Package: appendix 2009/09/02 v1.2b extra appendix facilities
@@ -1184,27 +1184,27 @@ Package: placeins 2005/04/18  v 2.2
 (output/appendix.aux))
 \openout1 = `fullReport.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 46.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 46.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 42.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 42.
  (c:/texlive/2016/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Info: Redefining \microtypecontext on input line 46.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Info: Redefining \microtypecontext on input line 42.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -1219,7 +1219,7 @@ Package microtype Info: No adjustment of character kerning.
 File: mt-ppl.cfg 2005/11/16 v1.6 microtype config. file: Palatino (RS)
 )
 \AtBeginShipoutBox=\box73
-Package hyperref Info: Link coloring OFF on input line 46.
+Package hyperref Info: Link coloring OFF on input line 42.
 
 (c:/texlive/2016/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -1229,9 +1229,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count267
 )
-LaTeX Info: Redefining \ref on input line 46.
-LaTeX Info: Redefining \pageref on input line 46.
-LaTeX Info: Redefining \nameref on input line 46.
+LaTeX Info: Redefining \ref on input line 42.
+LaTeX Info: Redefining \pageref on input line 42.
+LaTeX Info: Redefining \nameref on input line 42.
 
 (output/fullReport.out) (output/fullReport.out)
 \@outlinefile=\write4
@@ -1272,15 +1272,15 @@ e
 ABD: EveryShipout initializing macros
 \symgns@font=\mathgroup7
 LaTeX Font Info:    Overwriting symbol font `gns@font' in version `bold'
-(Font)                  TS1/pplj/m/n --> TS1/pplj/bx/n on input line 46.
-Package gensymb Info: Math companion symbols declared on input line 46.
-LaTeX Info: Redefining \degree on input line 46.
-LaTeX Info: Redefining \celsius on input line 46.
+(Font)                  TS1/pplj/m/n --> TS1/pplj/bx/n on input line 42.
+Package gensymb Info: Math companion symbols declared on input line 42.
+LaTeX Info: Redefining \degree on input line 42.
+LaTeX Info: Redefining \celsius on input line 42.
 Package gensymb Info: Using text companion symbols for \degree, \celsius and \p
-erthousand on input line 46.
-LaTeX Info: Redefining \ohm on input line 46.
-Package gensymb Info: Using \textohm for \ohm on input line 46.
-Package gensymb Info: Using \textmu for \micro on input line 46.
+erthousand on input line 42.
+LaTeX Info: Redefining \ohm on input line 42.
+Package gensymb Info: Using \textohm for \ohm on input line 42.
+Package gensymb Info: Using \textmu for \micro on input line 42.
 
 (c:/texlive/2016/texmf-dist/tex/latex/beamer/translator/dicts/translator-basic-
 dictionary/translator-basic-dictionary-English.dict
@@ -1290,30 +1290,30 @@ Dictionary: translator-basic-dictionary, Language: English
 File: siunitx-abbreviations.cfg 2016/09/02 v2.6s siunitx: Abbreviated units
 )
 \c__siunitx_mathsf_int=\count275
-LaTeX Font Info:    Try loading font information for OT1+ppl on input line 46.
+LaTeX Font Info:    Try loading font information for OT1+ppl on input line 42.
 
 (c:/texlive/2016/texmf-dist/tex/latex/psnfss/ot1ppl.fd
 File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
 )
-LaTeX Font Info:    Try loading font information for OML+zplm on input line 46.
+LaTeX Font Info:    Try loading font information for OML+zplm on input line 42.
 
 
 (c:/texlive/2016/texmf-dist/tex/latex/psnfss/omlzplm.fd
 File: omlzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OML/zplm.
 )
-LaTeX Font Info:    Try loading font information for OMS+zplm on input line 46.
+LaTeX Font Info:    Try loading font information for OMS+zplm on input line 42.
 
 
 (c:/texlive/2016/texmf-dist/tex/latex/psnfss/omszplm.fd
 File: omszplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMS/zplm.
 )
-LaTeX Font Info:    Try loading font information for OMX+zplm on input line 46.
+LaTeX Font Info:    Try loading font information for OMX+zplm on input line 42.
 
 
 (c:/texlive/2016/texmf-dist/tex/latex/psnfss/omxzplm.fd
 File: omxzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMX/zplm.
 )
-LaTeX Font Info:    Try loading font information for OT1+zplm on input line 46.
+LaTeX Font Info:    Try loading font information for OT1+zplm on input line 42.
 
 
 (c:/texlive/2016/texmf-dist/tex/latex/psnfss/ot1zplm.fd
@@ -1324,26 +1324,26 @@ Package microtype Info: Loading generic settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 11.40997pt on input line 46.
+(Font)              scaled to size 11.40997pt on input line 42.
 
 (c:/texlive/2016/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 8.33606pt on input line 46.
+(Font)              scaled to size 8.33606pt on input line 42.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 6.25204pt on input line 46.
+(Font)              scaled to size 6.25204pt on input line 42.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 11.40997pt on input line 46.
+(Font)              scaled to size 11.40997pt on input line 42.
 
 (c:/texlive/2016/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 8.33606pt on input line 46.
+(Font)              scaled to size 8.33606pt on input line 42.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 6.25204pt on input line 46.
-LaTeX Font Info:    Try loading font information for TS1+pplj on input line 46.
+(Font)              scaled to size 6.25204pt on input line 42.
+LaTeX Font Info:    Try loading font information for TS1+pplj on input line 42.
 
 
 (c:/texlive/2016/texmf-dist/tex/latex/psnfss/ts1pplj.fd
@@ -1359,86 +1359,72 @@ Package microtype Info: Loading generic settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `T1/pplj/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/pplj/b/n' tried instead on input line 47.
+(Font)              Font shape `T1/pplj/b/n' tried instead on input line 43.
 LaTeX Font Info:    Font shape `T1/pplj/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/pplj/b/n' tried instead on input line 47.
+(Font)              Font shape `T1/pplj/b/n' tried instead on input line 43.
 LaTeX Font Info:    Font shape `T1/pplj/bx/n' in size <12> not available
-(Font)              Font shape `T1/pplj/b/n' tried instead on input line 47.
-LaTeX Font Info:    Try loading font information for T1+phv on input line 47.
+(Font)              Font shape `T1/pplj/b/n' tried instead on input line 43.
+LaTeX Font Info:    Try loading font information for T1+phv on input line 43.
 
 (c:/texlive/2016/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 )
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 9.85492pt on input line 47.
+(Font)              scaled to size 9.85492pt on input line 43.
 Package microtype Info: Loading generic settings for font family
 (microtype)             `phv' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 47.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 43.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 9.85492pt on input line 47.
+(Font)              scaled to size 9.85492pt on input line 43.
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <20.74> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 47.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 43.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 18.66588pt on input line 47.
+(Font)              scaled to size 18.66588pt on input line 43.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 15.0049pt on input line 47.
+(Font)              scaled to size 15.0049pt on input line 43.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 10.42007pt on input line 47.
+(Font)              scaled to size 10.42007pt on input line 43.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 15.0049pt on input line 47.
+(Font)              scaled to size 15.0049pt on input line 43.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 10.42007pt on input line 47.
+(Font)              scaled to size 10.42007pt on input line 43.
  [1
-
 
 
 {c:/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2
 
-
-] [3] [4
-
-
-] [5] [6
-
-
 ]
-Package tocbasic Info: character protrusion at toc deactivated on input line 47
+Package tocbasic Info: character protrusion at toc deactivated on input line 43
 .
-
-(output/fullReport.toc [7
+ (output/fullReport.toc [3
 
 ])
 \tf@toc=\write5
 \openout5 = `fullReport.toc'.
 
 LaTeX Font Info:    Font shape `T1/pplj/m/sl' in size <10.95> not available
-(Font)              Font shape `T1/pplj/m/it' tried instead on input line 48.
- [8]
-Package tocbasic Info: character protrusion at lof deactivated on input line 48
+(Font)              Font shape `T1/pplj/m/it' tried instead on input line 44.
+
+[4]
+Package tocbasic Info: character protrusion at lof deactivated on input line 44
 .
- (output/fullReport.lof
-Overfull \hbox (2.2557pt too wide) in paragraph at lines 12--12
- [][] [][]\T1/pplj/m/n/10.95 (-20) Plot show-ing mean delay/traffic rate per-fo
-rm-ance by merge 
- []
-
-[9
-
-])
+ (output/fullReport.lof)
 \tf@lof=\write6
 \openout6 = `fullReport.lof'.
 
- [10]
-Package tocbasic Info: character protrusion at lot deactivated on input line 49
+ [5
+
+]
+Package tocbasic Info: character protrusion at lot deactivated on input line 45
 .
  (output/fullReport.lot)
 \tf@lot=\write7
 \openout7 = `fullReport.lot'.
 
- [11
+ [6
 
 ]
 \openout2 = `introduction.aux'.
@@ -1460,33 +1446,23 @@ Class scrreprt Warning: \float@addtolists detected!
 (scrreprt)              a package that still implements the
 (scrreprt)              deprecated \float@addtolist interface .
 
-<images/introduction/stoppingDistances.jpg, id=501, 845.0772pt x 287.3937pt>
+<images/introduction/stoppingDistances.jpg, id=416, 845.0772pt x 287.3937pt>
 File: images/introduction/stoppingDistances.jpg Graphic file (type jpg)
 
 <use images/introduction/stoppingDistances.jpg>
 Package pdftex.def Info: images/introduction/stoppingDistances.jpg used on inpu
 t line 13.
 (pdftex.def)             Requested size: 426.79134pt x 145.14363pt.
- [12
+ [7
 
 
-]
-Underfull \vbox (badness 1112) has occurred while \output is active []
-
- [13pdfTeX warning (ext4): destination with the same identifier (name{figure.1.
+] [8pdfTeX warning (ext4): destination with the same identifier (name{figure.1.
 1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.28 T
-      he motivation for the AIM system was to reduce congestion at intersect...
- <./images/introduction/stoppingDistances.jpg>])
-Overfull \hbox (6.05933pt too wide) in paragraph at lines 32--51
-\T1/pplj/m/n/10.95 (-20) and com-pares cent-ral-ised ap-proaches to de-cent-ral
--ised ap-proaches. Chapter
- []
-
-[14]
+l.29 
+      <./images/introduction/stoppingDistances.jpg>]) [9]
 \openout2 = `literature.aux'.
 
  (./literature.tex
@@ -1495,7 +1471,7 @@ LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <14.4> not available
 (Font)              Font shape `T1/phv/b/n' tried instead on input line 4.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 12.9599pt on input line 4.
-[15
+[10
 
 
 
@@ -1504,141 +1480,99 @@ LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <12> not available
 (Font)              Font shape `T1/phv/b/n' tried instead on input line 20.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 10.79993pt on input line 20.
- [16] [17] [18] [19]) [20]
+ [11] [12] [13] [14]) [15]
 \openout2 = `problem.aux'.
 
  (./problem.tex
 chapter 3.
-<images/laneDiagrams/realLaneMerge.jpg, id=610, 708.39656pt x 355.3275pt>
-File: images/laneDiagrams/realLaneMerge.jpg Graphic file (type jpg)
+<images/laneDiagrams/laneCollection.png, id=519, 1003.75pt x 249.93375pt>
+File: images/laneDiagrams/laneCollection.png Graphic file (type png)
 
-<use images/laneDiagrams/realLaneMerge.jpg>
-Package pdftex.def Info: images/laneDiagrams/realLaneMerge.jpg used on input li
-ne 18.
-(pdftex.def)             Requested size: 350.32463pt x 175.72227pt.
- [21
+<use images/laneDiagrams/laneCollection.png>
+Package pdftex.def Info: images/laneDiagrams/laneCollection.png used on input l
+ine 12.
+(pdftex.def)             Requested size: 398.33858pt x 99.18611pt.
+ [16
 
 
 
-]
-Underfull \vbox (badness 1077) has occurred while \output is active []
-
- [22pdfTeX warning (ext4): destination with the same identifier (name{figure.3.
-1}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{figure.3.1}) 
+has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.36 
-      <./images/laneDiagrams/realLaneMerge.jpg>] [23] [24]
-<images/laneDiagrams/s2sMarked.png, id=643, 1193.45876pt x 656.4525pt>
+l.20 
+      <./images/laneDiagrams/laneCollection.png>] [17] [18] [19]
+<images/laneDiagrams/s2sMarked.png, id=555, 1193.45876pt x 656.4525pt>
 File: images/laneDiagrams/s2sMarked.png Graphic file (type png)
 
 <use images/laneDiagrams/s2sMarked.png>
 Package pdftex.def Info: images/laneDiagrams/s2sMarked.png used on input line 1
-20.
+18.
 (pdftex.def)             Requested size: 350.32463pt x 192.6902pt.
- [25]
+ [20]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [26pdfTeX warning (ext4): destination with the same identifier (name{figure.3.
+ [21pdfTeX warning (ext4): destination with the same identifier (name{figure.3.
 2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.136 
+l.138 
        <./images/laneDiagrams/s2sMarked.png>]
-Overfull \hbox (49.99992pt too wide) in alignment at lines 141--147
+Overfull \hbox (49.99992pt too wide) in alignment at lines 139--145
  [] [] [] [] 
  []
 
 
-Overfull \hbox (49.99992pt too wide) in alignment at lines 147--152
+Overfull \hbox (49.99992pt too wide) in alignment at lines 145--150
  [] [] [] [] 
  []
 
 
-Overfull \hbox (49.99992pt too wide) in alignment at lines 152--155
+Overfull \hbox (49.99992pt too wide) in alignment at lines 150--153
  [] [] [] [] 
  []
 
 
-Overfull \hbox (49.99992pt too wide) in alignment at lines 155--158
+Overfull \hbox (49.99992pt too wide) in alignment at lines 153--156
  [] [] [] [] 
  []
 
 
-Underfull \hbox (badness 1048) in paragraph at lines 172--173
-[]|\T1/pplj/m/n/10.95 (+20) Merge sim-u-la-tions can be
- []
-
-
-Underfull \hbox (badness 1048) in paragraph at lines 176--177
-[]|\T1/pplj/m/n/10.95 (+20) Merge sim-u-la-tions can be
- []
-
-
-Overfull \hbox (49.99992pt too wide) in alignment at lines 158--191
+Overfull \hbox (49.99992pt too wide) in alignment at lines 156--175
  [] [] [] [] 
  []
 
 
-Underfull \hbox (badness 1715) in paragraph at lines 193--194
-\T1/pplj/m/n/10.95 (+20) max-imum ac-cel-er-a-tion for
- []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
-Overfull \vbox (11.02118pt too high) detected at line 201
- []
-
-
-Overfull \vbox (11.02118pt too high) detected at line 205
- []
-
-
-Underfull \hbox (badness 3954) in paragraph at lines 211--212
-\T1/pplj/m/n/10.95 (+20) ad-just-ing the tar-get lane
- []
-
-
-Underfull \hbox (badness 2689) in paragraph at lines 213--214
-\T1/pplj/m/n/10.95 (+20) ad-just-ing the merge lane
- []
-
-
-Overfull \vbox (8.15775pt too high) detected at line 221
- []
-
-
-Overfull \hbox (49.99992pt too wide) in alignment at lines 191--224
- [] [] [] [] 
- []
-
-[27] [28] [29]
-Overfull \hbox (25.19997pt too wide) in alignment at lines 230--236
+ [22]
+Overfull \hbox (25.19997pt too wide) in alignment at lines 181--187
  [] [] 
  []
 
 
-Overfull \hbox (25.19997pt too wide) in alignment at lines 236--241
+Overfull \hbox (25.19997pt too wide) in alignment at lines 187--192
  [] [] 
  []
 
 
-Overfull \hbox (25.19997pt too wide) in alignment at lines 241--244
+Overfull \hbox (25.19997pt too wide) in alignment at lines 192--195
  [] [] 
  []
 
 
-Overfull \hbox (25.19997pt too wide) in alignment at lines 244--247
+Overfull \hbox (25.19997pt too wide) in alignment at lines 195--198
  [] [] 
  []
 
 
-Overfull \hbox (25.19997pt too wide) in alignment at lines 247--262
+Overfull \hbox (25.19997pt too wide) in alignment at lines 198--207
  [] [] 
  []
 
-[30]) [31]
+) [23]
 \openout2 = `design.aux'.
 
  (./design.tex
@@ -1649,58 +1583,58 @@ Overfull \hbox (4.24786pt too wide) in paragraph at lines 9--10
  sim-u-lates the vehicle's
  []
 
-[32
+[24
 
 
 
-] [33] [34]) [35]
+] [25] [26]) [27]
 \openout2 = `implementation.aux'.
 
  (./implementation.tex
 chapter 5.
-[36
+[28
 
 
 
-] [37]
-<images/implementationDiagrams/turning.png, id=723, 1003.75pt x 249.93375pt>
+] [29]
+<images/implementationDiagrams/turning.png, id=622, 1003.75pt x 249.93375pt>
 File: images/implementationDiagrams/turning.png Graphic file (type png)
 
 <use images/implementationDiagrams/turning.png>
 Package pdftex.def Info: images/implementationDiagrams/turning.png used on inpu
 t line 33.
 (pdftex.def)             Requested size: 350.32463pt x 87.23022pt.
- [38pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
+ [30pdfTeX warning (ext4): destination with the same identifier (name{figure.5.
 1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.39 
-      <./images/implementationDiagrams/turning.png>] [39] [40] [41] [42])
-[43]
+      <./images/implementationDiagrams/turning.png>] [31] [32] [33] [34])
+[35]
 \openout2 = `results.aux'.
 
  (./results.tex
 chapter 6.
-[44
+[36
 
 
 
-] <images/plots/trafficRate/meanDelay.png, id=763, 421.575pt x 316.18124pt>
+] <images/plots/trafficRate/meanDelay.png, id=660, 421.575pt x 316.18124pt>
 File: images/plots/trafficRate/meanDelay.png Graphic file (type png)
 
 <use images/plots/trafficRate/meanDelay.png>
 Package pdftex.def Info: images/plots/trafficRate/meanDelay.png used on input l
 ine 18.
 (pdftex.def)             Requested size: 350.32463pt x 262.74878pt.
- [45pdfTeX warning (ext4): destination with the same identifier (name{figure.6.
+ [37pdfTeX warning (ext4): destination with the same identifier (name{figure.6.
 1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.26 
       <./images/plots/trafficRate/meanDelay.png (PNG copy)>]
-<images/plots/trafficRate/meanDelayByLane.png, id=769, 554.82281pt x 458.46281p
+<images/plots/trafficRate/meanDelayByLane.png, id=667, 554.82281pt x 458.46281p
 t>
 File: images/plots/trafficRate/meanDelayByLane.png Graphic file (type png)
  <use images/plots/trafficRate/meanDelayByLane.png>
@@ -1708,111 +1642,84 @@ Package pdftex.def Info: images/plots/trafficRate/meanDelayByLane.png used on i
 nput line 30.
 (pdftex.def)             Requested size: 426.79134pt x 352.66766pt.
 
-<images/plots/trafficRate/throughput.png, id=771, 421.575pt x 422.32782pt>
+<images/plots/trafficRate/throughput.png, id=669, 505.89pt x 236.38312pt>
 File: images/plots/trafficRate/throughput.png Graphic file (type png)
 
 <use images/plots/trafficRate/throughput.png>
 Package pdftex.def Info: images/plots/trafficRate/throughput.png used on input 
 line 39.
-(pdftex.def)             Requested size: 298.75394pt x 299.2942pt.
-
-Underfull \hbox (badness 1107) in paragraph at lines 40--40
-[][]\T1/pplj/m/n/10.95 (+20) Plot show-ing through-put for both merge man-age-m
-ent
- []
-
-[46pdfTeX warning (ext4): destination with the same identifier (name{figure.6.2
-}) has been already used, duplicate ignored
+(pdftex.def)             Requested size: 341.43306pt x 159.5409pt.
+ [38pdfTeX warning (ext4): destination with the same identifier (name{figure.6.
+2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.45 
-      <./images/plots/trafficRate/meanDelayByLane.png (PNG copy)>]
-Underfull \vbox (badness 3375) has occurred while \output is active []
-
- [47pdfTeX warning (ext4): destination with the same identifier (name{figure.6.
-3}) has been already used, duplicate ignored
+      <./images/plots/trafficRate/meanDelayByLane.png (PNG copy)>] [39pdfTeX wa
+rning (ext4): destination with the same identifier (name{figure.6.3}) has been 
+already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.48 \section
-             {The Effect of the Merge Angle} <./images/plots/trafficRate/throug
-hput.png (PNG copy)>]
-<images/plots/mergeAngle/meanDelay.png, id=782, 466.74374pt x 393.72093pt>
+l.55 
+      <./images/plots/trafficRate/throughput.png (PNG copy)>]
+<images/plots/mergeAngle/meanDelay.png, id=679, 542.025pt x 288.3272pt>
 File: images/plots/mergeAngle/meanDelay.png Graphic file (type png)
 
 <use images/plots/mergeAngle/meanDelay.png>
 Package pdftex.def Info: images/plots/mergeAngle/meanDelay.png used on input li
 ne 58.
-(pdftex.def)             Requested size: 284.52756pt x 240.01923pt.
+(pdftex.def)             Requested size: 341.43306pt x 181.62949pt.
 
-<images/plots/mergeAngle/throughput.png, id=784, 421.575pt x 316.18124pt>
+<images/plots/mergeAngle/throughput.png, id=681, 421.575pt x 316.18124pt>
 File: images/plots/mergeAngle/throughput.png Graphic file (type png)
 
 <use images/plots/mergeAngle/throughput.png>
 Package pdftex.def Info: images/plots/mergeAngle/throughput.png used on input l
 ine 67.
-(pdftex.def)             Requested size: 284.52756pt x 213.39865pt.
- [48] [49pdfTeX warning (ext4): destination with the same identifier (name{figu
-re.6.4}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.74 \section
-             {The Effect of Lead in Distances}pdfTeX warning (ext4): destinatio
-n with the same identifier (name{figure.6.5}) has been already used, duplicate 
-ignored
+(pdftex.def)             Requested size: 312.9803pt x 234.73755pt.
+ [40pdfTeX warning (ext4): destination with the same identifier (name{figure.6.
+4}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.74 \section
              {The Effect of Lead in Distances} <./images/plots/mergeAngle/meanD
-elay.png (PNG copy)> <./images/plots/mergeAngle/throughput.png (PNG copy)>]
-[50
+elay.png (PNG copy)>] [41pdfTeX warning (ext4): destination with the same ident
+ifier (name{figure.6.5}) has been already used, duplicate ignored
 
-] <images/plots/speedLimit/throughput.png, id=801, 421.575pt x 316.18124pt>
-File: images/plots/speedLimit/throughput.png Graphic file (type png)
-
-<use images/plots/speedLimit/throughput.png>
-Package pdftex.def Info: images/plots/speedLimit/throughput.png used on input l
-ine 93.
-(pdftex.def)             Requested size: 350.32463pt x 262.74878pt.
-
-<images/plots/speedLimit/meanDelay.png, id=802, 721.19438pt x 718.18312pt>
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.83 
+      <./images/plots/mergeAngle/throughput.png (PNG copy)>]
+<images/plots/speedLimit/meanDelay.png, id=692, 721.19438pt x 718.18312pt>
 File: images/plots/speedLimit/meanDelay.png Graphic file (type png)
 
 <use images/plots/speedLimit/meanDelay.png>
 Package pdftex.def Info: images/plots/speedLimit/meanDelay.png used on input li
-ne 101.
+ne 95.
 (pdftex.def)             Requested size: 543.71162pt x 541.40024pt.
 
 
-LaTeX Warning: Float too large for page by 27.68004pt on input line 104.
+LaTeX Warning: Float too large for page by 27.68004pt on input line 98.
 
-) [51pdfTeX warning (ext4): destination with the same identifier (name{figure.6
-.6}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.56 \include{results}
-                       <./images/plots/speedLimit/throughput.png (PNG copy)>]
-[52pdfTeX warning (ext4): destination with the same identifier (name{figure.6.7
-}) has been already used, duplicate ignored
+) [42] [43pdfTeX warning (ext4): destination with the same identifier (name{fig
+ure.6.6}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.56 \include{results}
+l.52 \include{results}
                        <./images/plots/speedLimit/meanDelay.png (PNG copy)>]
 \openout2 = `conclusion.aux'.
 
 
 (./conclusion.tex
 chapter 7.
-[53
+[44
 
 
 
-]) [54] (output/fullReport.bbl
+]) [45] (output/fullReport.bbl
 ** WARNING: IEEEtranN.bst: No hyphenation pattern has been
 ** loaded for the language `English'. Using the pattern for
 ** the default language instead.
@@ -1831,14 +1738,6 @@ l-[]drivers-[]and-[]riders-[]103-[]to-[]158$[]
 ** WARNING: IEEEtranN.bst: No hyphenation pattern has been
 ** loaded for the language `English'. Using the pattern for
 ** the default language instead.
-
-Underfull \hbox (badness 1137) in paragraph at lines 35--39
-\T1/pplj/m/n/10.95 (+20) be frus-trat-ing, but it works. On-line. Driv-ing.
- []
-
-** WARNING: IEEEtranN.bst: No hyphenation pattern has been
-** loaded for the language `English'. Using the pattern for
-** the default language instead.
 ** WARNING: IEEEtranN.bst: No hyphenation pattern has been
 ** loaded for the language `English'. Using the pattern for
 ** the default language instead.
@@ -1846,7 +1745,7 @@ Underfull \hbox (badness 1137) in paragraph at lines 35--39
 ** loaded for the language `English'. Using the pattern for
 ** the default language instead.
 
-Overfull \hbox (21.64287pt too wide) in paragraph at lines 60--64
+Overfull \hbox (21.64287pt too wide) in paragraph at lines 53--57
 \T1/pplj/m/n/10.95 (-20) tesla-[]car-[]drives-[]owner-[]to-[]hospital-[]after-[
 ]he-[]su^^[ers-[]pulmonary-[]embolism$[] 
  []
@@ -1854,7 +1753,10 @@ Overfull \hbox (21.64287pt too wide) in paragraph at lines 60--64
 ** WARNING: IEEEtranN.bst: No hyphenation pattern has been
 ** loaded for the language `English'. Using the pattern for
 ** the default language instead.
-[55
+** WARNING: IEEEtranN.bst: No hyphenation pattern has been
+** loaded for the language `English'. Using the pattern for
+** the default language instead.
+[46
 
 
 ]
@@ -1864,485 +1766,399 @@ Overfull \hbox (21.64287pt too wide) in paragraph at lines 60--64
 ** WARNING: IEEEtranN.bst: No hyphenation pattern has been
 ** loaded for the language `English'. Using the pattern for
 ** the default language instead.
+[47]
 ** WARNING: IEEEtranN.bst: No hyphenation pattern has been
 ** loaded for the language `English'. Using the pattern for
 ** the default language instead.
-[56]
-** WARNING: IEEEtranN.bst: No hyphenation pattern has been
-** loaded for the language `English'. Using the pattern for
-** the default language instead.
-) [57]
+) [48]
 \openout2 = `appendix.aux'.
 
  (./appendix.tex
 chapter A.
-[58
 
-
-] [59] [60]
-<images/litReview/atagoziyevFlowchart.JPG, id=905, 752.8125pt x 444.15938pt>
-File: images/litReview/atagoziyevFlowchart.JPG Graphic file (type jpg)
-
-<use images/litReview/atagoziyevFlowchart.JPG>
-Package pdftex.def Info: images/litReview/atagoziyevFlowchart.JPG used on input
- line 101.
-(pdftex.def)             Requested size: 350.32463pt x 206.69463pt.
-
-Underfull \hbox (badness 1112) in paragraph at lines 102--102
-[][]\T1/pplj/m/n/10.95 (+20) The flow-chart for Atagoz-i-yev's Lane Chan-ging m
-odel
+Overfull \hbox (49.99992pt too wide) in alignment at lines 10--16
+ [] [] [] [] 
  []
 
-[61] [62pdfTeX warning (ext4): destination with the same identifier (name{figur
-e.1.A.1}) has been already used, duplicate ignored
 
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.127 
-       <./images/litReview/atagoziyevFlowchart.JPG>]
-<images/laneDiagrams/s2s.png, id=918, 1284.8pt x 722.7pt>
-File: images/laneDiagrams/s2s.png Graphic file (type png)
+Overfull \hbox (49.99992pt too wide) in alignment at lines 16--21
+ [] [] [] [] 
+ []
 
-<use images/laneDiagrams/s2s.png>
-Package pdftex.def Info: images/laneDiagrams/s2s.png used on input line 137.
-(pdftex.def)             Requested size: 350.32463pt x 197.05038pt.
 
-<images/laneDiagrams/s2sExtended.png, id=919, 1284.8pt x 722.7pt>
-File: images/laneDiagrams/s2sExtended.png Graphic file (type png)
+Overfull \hbox (49.99992pt too wide) in alignment at lines 21--24
+ [] [] [] [] 
+ []
 
-<use images/laneDiagrams/s2sExtended.png>
-Package pdftex.def Info: images/laneDiagrams/s2sExtended.png used on input line
- 143.
-(pdftex.def)             Requested size: 350.32463pt x 197.05038pt.
 
-<images/laneDiagrams/s2d.png, id=920, 1284.8pt x 722.7pt>
-File: images/laneDiagrams/s2d.png Graphic file (type png)
+Overfull \hbox (49.99992pt too wide) in alignment at lines 24--27
+ [] [] [] [] 
+ []
 
-<use images/laneDiagrams/s2d.png>
-Package pdftex.def Info: images/laneDiagrams/s2d.png used on input line 149.
-(pdftex.def)             Requested size: 350.32463pt x 197.05038pt.
 
-<images/laneDiagrams/s2dExtended.png, id=921, 1284.8pt x 722.7pt>
-File: images/laneDiagrams/s2dExtended.png Graphic file (type png)
+Underfull \hbox (badness 1048) in paragraph at lines 41--42
+[]|\T1/pplj/m/n/10.95 (+20) Merge sim-u-la-tions can be
+ []
 
-<use images/laneDiagrams/s2dExtended.png>
-Package pdftex.def Info: images/laneDiagrams/s2dExtended.png used on input line
- 155.
-(pdftex.def)             Requested size: 350.32463pt x 197.05038pt.
 
-<images/laneDiagrams/lane_blocker.png, id=922, 1284.8pt x 722.7pt>
-File: images/laneDiagrams/lane_blocker.png Graphic file (type png)
+Underfull \hbox (badness 1048) in paragraph at lines 45--46
+[]|\T1/pplj/m/n/10.95 (+20) Merge sim-u-la-tions can be
+ []
 
-<use images/laneDiagrams/lane_blocker.png>
-Package pdftex.def Info: images/laneDiagrams/lane_blocker.png used on input lin
-e 161.
-(pdftex.def)             Requested size: 350.32463pt x 197.05038pt.
- [63pdfTeX warning (ext4): destination with the same identifier (name{figure.1.
-A.2}) has been already used, duplicate ignored
 
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.166 \section
-              {S2S Map Calculations} <./images/laneDiagrams/s2s.png>] [64pdfTeX
- warning (ext4): destination with the same identifier (name{figure.1.A.3}) has 
-been already used, duplicate ignored
+Overfull \hbox (49.99992pt too wide) in alignment at lines 27--60
+ [] [] [] [] 
+ []
 
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.166 \section
-              {S2S Map Calculations}pdfTeX warning (ext4): destination with the
- same identifier (name{figure.1.A.4}) has been already used, duplicate ignored
 
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.166 \section
-              {S2S Map Calculations} <./images/laneDiagrams/s2sExtended.png> <.
-/images/laneDiagrams/s2d.png>] [65pdfTeX warning (ext4): destination with the s
-ame identifier (name{figure.1.A.5}) has been already used, duplicate ignored
+Underfull \hbox (badness 1715) in paragraph at lines 62--63
+\T1/pplj/m/n/10.95 (+20) max-imum ac-cel-er-a-tion for
+ []
 
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.166 \section
-              {S2S Map Calculations}pdfTeX warning (ext4): destination with the
- same identifier (name{figure.1.A.6}) has been already used, duplicate ignored
 
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.166 \section
-              {S2S Map Calculations} <./images/laneDiagrams/s2dExtended.png> <.
-/images/laneDiagrams/lane_blocker.png>]
-<images/appendix/mergingZoneTriangle.png, id=945, 501.875pt x 294.09875pt>
+Overfull \vbox (11.02118pt too high) detected at line 70
+ []
+
+
+Overfull \vbox (11.02118pt too high) detected at line 74
+ []
+
+
+Underfull \hbox (badness 1454) in paragraph at lines 80--80
+[]|\T1/pplj/m/n/10.95 (+20) Users can con-trol the TL
+ []
+
+
+Overfull \vbox (8.15775pt too high) detected at line 90
+ []
+
+
+Overfull \hbox (49.99992pt too wide) in alignment at lines 60--93
+ [] [] [] [] 
+ []
+
+[49
+
+
+] [50] [51]
+Overfull \hbox (25.19997pt too wide) in alignment at lines 97--103
+ [] [] 
+ []
+
+
+Overfull \hbox (25.19997pt too wide) in alignment at lines 103--108
+ [] [] 
+ []
+
+
+Overfull \hbox (25.19997pt too wide) in alignment at lines 108--111
+ [] [] 
+ []
+
+
+Overfull \hbox (25.19997pt too wide) in alignment at lines 111--114
+ [] [] 
+ []
+
+
+Overfull \hbox (25.19997pt too wide) in alignment at lines 114--129
+ [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [52]
+<images/appendix/mergingZoneTriangle.png, id=783, 501.875pt x 294.09875pt>
 File: images/appendix/mergingZoneTriangle.png Graphic file (type png)
 
 <use images/appendix/mergingZoneTriangle.png>
 Package pdftex.def Info: images/appendix/mergingZoneTriangle.png used on input 
-line 172.
+line 137.
 (pdftex.def)             Requested size: 284.52756pt x 166.74051pt.
 
-<images/appendix/mergeEntranceTriangles.png, id=947, 481.8pt x 463.7325pt>
+<images/appendix/mergeEntranceTriangles.png, id=785, 481.8pt x 463.7325pt>
 File: images/appendix/mergeEntranceTriangles.png Graphic file (type png)
 
 <use images/appendix/mergeEntranceTriangles.png>
 Package pdftex.def Info: images/appendix/mergeEntranceTriangles.png used on inp
-ut line 187.
+ut line 152.
 (pdftex.def)             Requested size: 284.52756pt x 273.8616pt.
- [66
-
-pdfTeX warning (ext4): destination with the same identifier (name{figure.1.A.7}
-) has been already used, duplicate ignored
+ [53pdfTeX warning (ext4): destination with the same identifier (name{figure.1.
+A.1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.193 
-       <./images/appendix/mergingZoneTriangle.png>] [67pdfTeX warning (ext4): d
-estination with the same identifier (name{figure.1.A.8}) has been already used,
+l.158 
+       <./images/appendix/mergingZoneTriangle.png>] [54pdfTeX warning (ext4): d
+estination with the same identifier (name{figure.1.A.2}) has been already used,
  duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.205 
+l.170 
        <./images/appendix/mergeEntranceTriangles.png>]
-<images/appendix/baseWidthTriangle.png, id=966, 546.04pt x 303.1325pt>
+<images/appendix/baseWidthTriangle.png, id=804, 546.04pt x 303.1325pt>
 File: images/appendix/baseWidthTriangle.png Graphic file (type png)
 
 <use images/appendix/baseWidthTriangle.png>
 Package pdftex.def Info: images/appendix/baseWidthTriangle.png used on input li
-ne 208.
+ne 173.
 (pdftex.def)             Requested size: 284.52756pt x 157.95358pt.
 
-<images/appendix/toCentreTriangle.png, id=969, 1003.75pt x 689.57625pt>
+<images/appendix/toCentreTriangle.png, id=807, 1003.75pt x 689.57625pt>
 File: images/appendix/toCentreTriangle.png Graphic file (type png)
 
 <use images/appendix/toCentreTriangle.png>
 Package pdftex.def Info: images/appendix/toCentreTriangle.png used on input lin
-e 221.
+e 186.
 (pdftex.def)             Requested size: 284.52756pt x 195.46854pt.
- [68pdfTeX warning (ext4): destination with the same identifier (name{figure.1.
-A.9}) has been already used, duplicate ignored
+ [55pdfTeX warning (ext4): destination with the same identifier (name{figure.1.
+A.3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.230 \section
+l.195 \section
               {Generalising the Codebase} <./images/appendix/baseWidthTriangle.
 png>]
-<images/classDiagrams/classDiagramKey.png, id=978, 632.3625pt x 151.56625pt>
+<images/classDiagrams/classDiagramKey.png, id=817, 632.3625pt x 151.56625pt>
 File: images/classDiagrams/classDiagramKey.png Graphic file (type png)
 
 <use images/classDiagrams/classDiagramKey.png>
 Package pdftex.def Info: images/classDiagrams/classDiagramKey.png used on input
- line 235.
+ line 200.
 (pdftex.def)             Requested size: 350.32463pt x 83.96762pt.
 
-<images/classDiagrams/driverBefore.png, id=980, 514.92375pt x 311.1625pt>
+<images/classDiagrams/driverBefore.png, id=819, 514.92375pt x 311.1625pt>
 File: images/classDiagrams/driverBefore.png Graphic file (type png)
 
 <use images/classDiagrams/driverBefore.png>
 Package pdftex.def Info: images/classDiagrams/driverBefore.png used on input li
-ne 245.
+ne 210.
 (pdftex.def)             Requested size: 350.32463pt x 211.70164pt.
- [69pdfTeX warning (ext4): destination with the same identifier (name{figure.1.
-A.10}) has been already used, duplicate ignored
+ [56pdfTeX warning (ext4): destination with the same identifier (name{figure.1.
+A.4}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.248 \end{figure}
+l.213 \end{figure}
                   pdfTeX warning (ext4): destination with the same identifier (
-name{figure.1.A.11}) has been already used, duplicate ignored
+name{figure.1.A.5}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.248 \end{figure}
+l.213 \end{figure}
                    <./images/appendix/toCentreTriangle.png> <./images/classDiag
 rams/classDiagramKey.png>]
-<images/classDiagrams/driverAfter.png, id=988, 920.43875pt x 471.7625pt>
+<images/classDiagrams/driverAfter.png, id=827, 920.43875pt x 471.7625pt>
 File: images/classDiagrams/driverAfter.png Graphic file (type png)
 
 <use images/classDiagrams/driverAfter.png>
 Package pdftex.def Info: images/classDiagrams/driverAfter.png used on input lin
-e 255.
+e 220.
 (pdftex.def)             Requested size: 541.40024pt x 277.50243pt.
- [70pdfTeX warning (ext4): destination with the same identifier (name{figure.1.
-A.12}) has been already used, duplicate ignored
+ [57pdfTeX warning (ext4): destination with the same identifier (name{figure.1.
+A.6}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.261 
-       <./images/classDiagrams/driverBefore.png (PNG copy)>] [71pdfTeX warning 
-(ext4): destination with the same identifier (name{figure.1.A.13}) has been alr
-eady used, duplicate ignored
+l.226 
+       <./images/classDiagrams/driverBefore.png (PNG copy)>] [58pdfTeX warning 
+(ext4): destination with the same identifier (name{figure.1.A.7}) has been alre
+ady used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.261 
+l.226 
        <./images/classDiagrams/driverAfter.png (PNG copy)>]
-<images/classDiagrams/simViewer.png, id=1000, 295.1025pt x 230.8625pt>
+<images/classDiagrams/simViewer.png, id=837, 295.1025pt x 230.8625pt>
 File: images/classDiagrams/simViewer.png Graphic file (type png)
 
 <use images/classDiagrams/simViewer.png>
 Package pdftex.def Info: images/classDiagrams/simViewer.png used on input line 
-271.
+236.
 (pdftex.def)             Requested size: 227.62204pt x 178.07466pt.
+ [59pdfTeX warning (ext4): destination with the same identifier (name{figure.1.
+A.8}) has been already used, duplicate ignored
 
-<images/classDiagrams/simScreen.png, id=1002, 278.03876pt x 230.8625pt>
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.242 
+       <./images/classDiagrams/simViewer.png (PNG copy)>]
+<images/classDiagrams/simScreen.png, id=843, 278.03876pt x 230.8625pt>
 File: images/classDiagrams/simScreen.png Graphic file (type png)
 
 <use images/classDiagrams/simScreen.png>
 Package pdftex.def Info: images/classDiagrams/simScreen.png used on input line 
-280.
+245.
 (pdftex.def)             Requested size: 227.62204pt x 189.00198pt.
 
-<images/classDiagrams/simSetupPanel.png, id=1004, 343.2825pt x 230.8625pt>
+<images/classDiagrams/simSetupPanel.png, id=845, 343.2825pt x 230.8625pt>
 File: images/classDiagrams/simSetupPanel.png Graphic file (type png)
 
 <use images/classDiagrams/simSetupPanel.png>
 Package pdftex.def Info: images/classDiagrams/simSetupPanel.png used on input l
-ine 289.
+ine 254.
 (pdftex.def)             Requested size: 227.62204pt x 153.07776pt.
-
-<images/screenshots/originalAIMSetupLabeled.png, id=1005, 903.375pt x 907.39pt>
-File: images/screenshots/originalAIMSetupLabeled.png Graphic file (type png)
-<use images/screenshots/originalAIMSetupLabeled.png>
-Package pdftex.def Info: images/screenshots/originalAIMSetupLabeled.png used on
- input line 299.
-(pdftex.def)             Requested size: 426.79134pt x 428.68866pt.
-
-<images/screenshots/newAIMSetupLabeled.png, id=1006, 903.375pt x 907.39pt>
-File: images/screenshots/newAIMSetupLabeled.png Graphic file (type png)
-
-<use images/screenshots/newAIMSetupLabeled.png>
-Package pdftex.def Info: images/screenshots/newAIMSetupLabeled.png used on inpu
-t line 307.
-(pdftex.def)             Requested size: 426.79134pt x 428.68866pt.
- [72] [73pdfTeX warning (ext4): destination with the same identifier (name{figu
-re.1.A.14}) has been already used, duplicate ignored
+ [60pdfTeX warning (ext4): destination with the same identifier (name{figure.1.
+A.9}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.312 \FloatBarrier
-                   pdfTeX warning (ext4): destination with the same identifier 
-(name{figure.1.A.15}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.312 \FloatBarrier
-                    <./images/classDiagrams/simViewer.png (PNG copy)> <./images
-/classDiagrams/simScreen.png (PNG copy)>] [74pdfTeX warning (ext4): destination
- with the same identifier (name{figure.1.A.16}) has been already used, duplicat
-e ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.312 \FloatBarrier
-                    <./images/classDiagrams/simSetupPanel.png (PNG copy)>]
-[75pdfTeX warning (ext4): destination with the same identifier (name{figure.1.A
-.17}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.312 \FloatBarrier
-                    <./images/screenshots/originalAIMSetupLabeled.png>]
-[76pdfTeX warning (ext4): destination with the same identifier (name{figure.1.A
-.18}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.312 \FloatBarrier
-                    <./images/screenshots/newAIMSetupLabeled.png>]
-<images/classDiagrams/mapBefore.png, id=1032, 137.51375pt x 225.84375pt>
+l.261 \FloatBarrier
+                    <./images/classDiagrams/simScreen.png (PNG copy)>]
+<images/classDiagrams/mapBefore.png, id=852, 137.51375pt x 225.84375pt>
 File: images/classDiagrams/mapBefore.png Graphic file (type png)
 
 <use images/classDiagrams/mapBefore.png>
 Package pdftex.def Info: images/classDiagrams/mapBefore.png used on input line 
-319.
+268.
 (pdftex.def)             Requested size: 103.95338pt x 170.71652pt.
 
-<images/classDiagrams/mapAfter.png, id=1033, 316.18124pt x 386.44376pt>
+<images/classDiagrams/mapAfter.png, id=853, 316.18124pt x 386.44376pt>
 File: images/classDiagrams/mapAfter.png Graphic file (type png)
 
 <use images/classDiagrams/mapAfter.png>
-Package pdftex.def Info: images/classDiagrams/mapAfter.png used on input line 3
-26.
+Package pdftex.def Info: images/classDiagrams/mapAfter.png used on input line 2
+75.
 (pdftex.def)             Requested size: 227.62204pt x 278.20981pt.
- [77
-
-pdfTeX warning (ext4): destination with the same identifier (name{figure.1.A.19
-}) has been already used, duplicate ignored
+ [61pdfTeX warning (ext4): destination with the same identifier (name{figure.1.
+A.10}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.335 \FloatBarrier
-                    <./images/classDiagrams/mapBefore.png (PNG copy)>]
-<images/classDiagrams/simulatorBefore.png, id=1040, 207.77625pt x 150.5625pt>
+l.281 
+      pdfTeX warning (ext4): destination with the same identifier (name{figure.
+1.A.11}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.281 
+       <./images/classDiagrams/simSetupPanel.png (PNG copy)> <./images/classDia
+grams/mapBefore.png (PNG copy)>] [62pdfTeX warning (ext4): destination with the
+ same identifier (name{figure.1.A.12}) has been already used, duplicate ignored
+
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.290 
+       <./images/classDiagrams/mapAfter.png (PNG copy)>]
+<images/classDiagrams/simulatorBefore.png, id=865, 207.77625pt x 150.5625pt>
 File: images/classDiagrams/simulatorBefore.png Graphic file (type png)
 
 <use images/classDiagrams/simulatorBefore.png>
 Package pdftex.def Info: images/classDiagrams/simulatorBefore.png used on input
- line 344.
+ line 293.
 (pdftex.def)             Requested size: 227.62204pt x 164.9507pt.
 
-<images/classDiagrams/simulatorAfter.png, id=1041, 372.39125pt x 230.8625pt>
+<images/classDiagrams/simulatorAfter.png, id=866, 372.39125pt x 230.8625pt>
 File: images/classDiagrams/simulatorAfter.png Graphic file (type png)
 
 <use images/classDiagrams/simulatorAfter.png>
 Package pdftex.def Info: images/classDiagrams/simulatorAfter.png used on input 
-line 351.
+line 300.
 (pdftex.def)             Requested size: 341.43306pt x 211.67743pt.
-
-<images/classDiagrams/simSetupBefore.png, id=1044, 151.56625pt x 150.5625pt>
-File: images/classDiagrams/simSetupBefore.png Graphic file (type png)
-
-<use images/classDiagrams/simSetupBefore.png>
-Package pdftex.def Info: images/classDiagrams/simSetupBefore.png used on input 
-line 360.
-(pdftex.def)             Requested size: 171.87148pt x 170.71652pt.
-
-<images/classDiagrams/simSetupAfter.png, id=1045, 288.07625pt x 230.8625pt>
-File: images/classDiagrams/simSetupAfter.png Graphic file (type png)
-
-<use images/classDiagrams/simSetupAfter.png>
-Package pdftex.def Info: images/classDiagrams/simSetupAfter.png used on input l
-ine 367.
-(pdftex.def)             Requested size: 284.52756pt x 228.02617pt.
- [78pdfTeX warning (ext4): destination with the same identifier (name{figure.1.
-A.20}) has been already used, duplicate ignored
+ [63pdfTeX warning (ext4): destination with the same identifier (name{figure.1.
+A.13}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.372 \FloatBarrier
-                    <./images/classDiagrams/mapAfter.png (PNG copy)>] [79pdfTeX
- warning (ext4): destination with the same identifier (name{figure.1.A.21}) has
- been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.372 \FloatBarrier
-                   pdfTeX warning (ext4): destination with the same identifier 
-(name{figure.1.A.22}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.372 \FloatBarrier
-                    <./images/classDiagrams/simulatorBefore.png (PNG copy)> <./
-images/classDiagrams/simulatorAfter.png (PNG copy)>] [80pdfTeX warning (ext4): 
-destination with the same identifier (name{figure.1.A.23}) has been already use
-d, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.372 \FloatBarrier
-                   pdfTeX warning (ext4): destination with the same identifier 
-(name{figure.1.A.24}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.372 \FloatBarrier
-                    <./images/classDiagrams/simSetupBefore.png (PNG copy)> <./i
-mages/classDiagrams/simSetupAfter.png (PNG copy)>]
-Overfull \hbox (7.32536pt too wide) in paragraph at lines 375--376
+l.307 \FloatBarrier
+                    <./images/classDiagrams/simulatorBefore.png (PNG copy)>]
+Overfull \hbox (7.32536pt too wide) in paragraph at lines 310--311
 \T1/pplj/m/it/10.95 (-20) aim4.vehicle \T1/pplj/m/n/10.95 (-20) con-trols the d
 if-fer-ent vehicles used dur-ing sim-u-la-tions. Vehicles
  []
 
-<images/classDiagrams/vehicleBefore.png, id=1063, 353.32pt x 311.1625pt>
+<images/classDiagrams/vehicleBefore.png, id=874, 353.32pt x 311.1625pt>
 File: images/classDiagrams/vehicleBefore.png Graphic file (type png)
 
 <use images/classDiagrams/vehicleBefore.png>
 Package pdftex.def Info: images/classDiagrams/vehicleBefore.png used on input l
-ine 379.
+ine 314.
 (pdftex.def)             Requested size: 284.52756pt x 250.58263pt.
 
-<images/classDiagrams/vehicleAfter.png, id=1064, 1098.1025pt x 431.6125pt>
+<images/classDiagrams/vehicleAfter.png, id=875, 1098.1025pt x 431.6125pt>
 File: images/classDiagrams/vehicleAfter.png Graphic file (type png)
 
 <use images/classDiagrams/vehicleAfter.png>
 Package pdftex.def Info: images/classDiagrams/vehicleAfter.png used on input li
-ne 385.
+ne 320.
 (pdftex.def)             Requested size: 541.40024pt x 212.80255pt.
- [81
-
-pdfTeX warning (ext4): destination with the same identifier (name{figure.1.A.25
-}) has been already used, duplicate ignored
+ [64pdfTeX warning (ext4): destination with the same identifier (name{figure.1.
+A.14}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.393 
-       <./images/classDiagrams/vehicleBefore.png (PNG copy)>] [82pdfTeX warning
- (ext4): destination with the same identifier (name{figure.1.A.26}) has been al
-ready used, duplicate ignored
+l.330 
+       <./images/classDiagrams/simulatorAfter.png (PNG copy)>] [65pdfTeX warnin
+g (ext4): destination with the same identifier (name{figure.1.A.15}) has been a
+lready used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.393 
-       <./images/classDiagrams/vehicleAfter.png (PNG copy)>]
-<images/screenshots/s2sSimulationScreen.png, id=1073, 1444.64719pt x 782.925pt>
-File: images/screenshots/s2sSimulationScreen.png Graphic file (type png)
-<use images/screenshots/s2sSimulationScreen.png>
-Package pdftex.def Info: images/screenshots/s2sSimulationScreen.png used on inp
-ut line 408.
-(pdftex.def)             Requested size: 541.40024pt x 293.40501pt.
- [83] [84pdfTeX warning (ext4): destination with the same identifier (name{figu
-re.1.A.27}) has been already used, duplicate ignored
+l.331 \FloatBarrier
+                    <./images/classDiagrams/vehicleBefore.png (PNG copy)>]
+[66pdfTeX warning (ext4): destination with the same identifier (name{figure.1.A
+.16}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.413 \section
-              {Lead in Distance Analysis} <./images/screenshots/s2sSimulationSc
-reen.png>]
-<images/plots/leadIn/meanDelay.png, id=1084, 721.19438pt x 718.18312pt>
+l.331 \FloatBarrier
+                    <./images/classDiagrams/vehicleAfter.png (PNG copy)>]
+<images/plots/leadIn/meanDelay.png, id=889, 721.19438pt x 718.18312pt>
 File: images/plots/leadIn/meanDelay.png Graphic file (type png)
 
 <use images/plots/leadIn/meanDelay.png>
-Package pdftex.def Info: images/plots/leadIn/meanDelay.png used on input line 4
-26.
+Package pdftex.def Info: images/plots/leadIn/meanDelay.png used on input line 3
+45.
 (pdftex.def)             Requested size: 543.71162pt x 541.40024pt.
 
 
-LaTeX Warning: Float too large for page by 27.68004pt on input line 429.
+LaTeX Warning: Float too large for page by 27.68004pt on input line 348.
 
-) [85] [86pdfTeX warning (ext4): destination with the same identifier (name{fig
-ure.1.A.28}) has been already used, duplicate ignored
+) [67] [68pdfTeX warning (ext4): destination with the same identifier (name{fig
+ure.1.A.17}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.62 \include{appendix}
+l.58 \include{appendix}
                         <./images/plots/leadIn/meanDelay.png (PNG copy)>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 64.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 64.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 60.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 60.
 
 (output/fullReport.aux (output/introduction.aux) (output/literature.aux)
 (output/problem.aux) (output/design.aux) (output/implementation.aux)
 (output/results.aux) (output/conclusion.aux) (output/appendix.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 64.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 64.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 60.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 60.
 Package rerunfilecheck Info: File `fullReport.out' has not changed.
-(rerunfilecheck)             Checksum: DD1D26B6E1496E768C39D9CF6CAB0612;4515.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 64.
+(rerunfilecheck)             Checksum: 3A37A7A5907351F849AFDB43FFFE5AFF;4082.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 60.
  ) 
 Here is how much of TeX's memory you used:
- 33965 strings out of 493013
- 656797 string characters out of 6136993
- 805612 words of memory out of 5000000
- 36207 multiletter control sequences out of 15000+600000
- 91296 words of font info for 442 fonts, out of 8000000 for 9000
+ 33839 strings out of 493013
+ 653608 string characters out of 6136993
+ 803712 words of memory out of 5000000
+ 36132 multiletter control sequences out of 15000+600000
+ 90772 words of font info for 449 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 64i,20n,68p,10381b,921s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 64i,13n,68p,10381b,948s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2016/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2016/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2016/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2016/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmr10.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmsy10.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/mathpazo/fp
-lmr.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb><c:/
-texlive/2016/texmf-dist/fonts/type1/public/fpl/fplrc8a.pfb><c:/texlive/2016/tex
-mf-dist/fonts/type1/public/fpl/fplrij8a.pfb><c:/texlive/2016/texmf-dist/fonts/t
-ype1/public/amsfonts/symbols/msam10.pfb><c:/texlive/2016/texmf-dist/fonts/type1
-/urw/helvetic/uhvb8a.pfb><c:/texlive/2016/texmf-dist/fonts/type1/urw/helvetic/u
-hvr8a.pfb><c:/texlive/2016/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb><c:/t
-exlive/2016/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb><c:/texlive/2016/tex
-mf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on output/fullReport.pdf (86 pages, 2284638 bytes).
+nts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2016/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmsy10.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/ma
+thpazo/fplmr.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/mathpazo/fplmri
+.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/fpl/fplrc8a.pfb><c:/texlive
+/2016/texmf-dist/fonts/type1/public/fpl/fplrij8a.pfb><c:/texlive/2016/texmf-dis
+t/fonts/type1/urw/helvetic/uhvb8a.pfb><c:/texlive/2016/texmf-dist/fonts/type1/u
+rw/helvetic/uhvr8a.pfb><c:/texlive/2016/texmf-dist/fonts/type1/urw/palatino/upl
+b8a.pfb><c:/texlive/2016/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb><c:/tex
+live/2016/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
+Output written on output/fullReport.pdf (68 pages, 1735492 bytes).
 PDF statistics:
- 1202 PDF objects out of 1440 (max. 8388607)
- 1027 compressed objects within 11 object streams
- 262 named destinations out of 1000 (max. 500000)
- 50400 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 992 PDF objects out of 1000 (max. 8388607)
+ 865 compressed objects within 9 object streams
+ 217 named destinations out of 1000 (max. 500000)
+ 50292 words of extra memory for PDF output out of 51595 (max. 10000000)
 

@@ -118,8 +118,8 @@ throughputTargetHourQueue = throughputTargetQueue * transformNumber;
 throughputMergeHourQueue = throughputMergeQueue * transformNumber;
 
 % Create Throughput Subplot
-ax1 = subplot(2,1,1);
-plot(ax1, trafficRates, throughputHourAIM, '-b', trafficRates, throughputHourQueue, '-r');
+%ax1 = subplot(2,1,1);
+plot(trafficRates, throughputHourAIM, '-b', trafficRates, throughputHourQueue, '-r');
 
 % Add labels
 grid on;
@@ -129,23 +129,23 @@ ylabel('Throughput (Vehicles per Hour)');
 legend({'AIM Total Throughput','Queue Total Throughput'});
 
 % Create Throughput By Lane Subplot
-ax2 = subplot(2,1,2);
-plot(ax2, trafficRates, throughputTargetHourAIM, '-b', trafficRates, throughputMergeHourAIM, '--b', trafficRates, throughputTargetHourQueue, '-r', trafficRates, throughputMergeHourQueue, '--r');
+%ax2 = subplot(2,1,2);
+%plot(ax2, trafficRates, throughputTargetHourAIM, '-b', trafficRates, throughputMergeHourAIM, '--b', trafficRates, throughputTargetHourQueue, '-r', trafficRates, throughputMergeHourQueue, '--r');
 
 % Add labels
-grid on;
-title('Throughput per Lane by Traffic Rate');
-xlabel('Traffic Rate (vehicles/hour/lane)');
-ylabel('Throughput (Vehicles per Hour)');
-legend({'AIM Target Lane Throughput','AIM Merge Lane Throughput','Queue Target Lane Throughput','Queue Merge Lane Throughput'});
+%grid on;
+%title('Throughput per Lane by Traffic Rate');
+%xlabel('Traffic Rate (vehicles/hour/lane)');
+%ylabel('Throughput (Vehicles per Hour)');
+%legend({'AIM Target Lane Throughput','AIM Merge Lane Throughput','Queue Target Lane Throughput','Queue Merge Lane Throughput'});
 
 % Y Limits
-ylim manual;
-maxVal = max(max(horzcat(ax1.YLim,ax2.YLim)));
-minVal = min(min(horzcat(ax1.YLim,ax2.YLim)));
+%ylim manual;
+%maxVal = max(max(horzcat(ax1.YLim,ax2.YLim)));
+%minVal = min(min(horzcat(ax1.YLim,ax2.YLim)));
 
-ylim(ax1,[minVal maxVal]);
-ylim(ax2,[minVal maxVal]);
+%ylim(ax1,[minVal maxVal]);
+%ylim(ax2,[minVal maxVal]);
 
 clearvars -except trafficRates aimResults queueResults
 

@@ -117,7 +117,7 @@
                {wordcount not set}
                {Declare the word count in the preamble using \protect\wordcount{Numeral}.} %
   \else
-    Number of words = \UoYCSP@wordcount, as counted using TeXcount.
+    Number of words = \UoYCSP@wordcount, as counted by TeXcount.
   \fi
 
   This includes the body of the report%
@@ -133,7 +133,7 @@
              }%
              .%
 }
-
+\let\cleardoublepage\clearpage
 \let\old@abstract\abstract
 \let\endold@abstract\endabstract
 \renewcommand{\abstract}[1]{\newcommand{\UoYCSP@abstract}{#1}}
@@ -181,33 +181,33 @@
     \end{old@abstract}%
   \fi%
   % dedication & acknowledgements
-  \ifthenelse%
-  {\equal{\UoYCSP@dedication}{\@empty}
-         \and\equal{\UoYCSP@acknowledgements}{\@empty}}
-  {}{
-    \cleardoublepage%
-    \thispagestyle{empty}
-    \vspace*{\fill}%
-    %
-    \ifthenelse{\equal{\UoYCSP@dedication}{\@empty}}%
-    {}%
-    { \begin{center}%
-        \large\UoYCSP@dedication%
-      \end{center}%
-    }%
-    %
-    \ifacknowledgements%
-    { \vfill%
-      \normalsize%
-      \begin{center}%
-        \large\bfseries Acknowledgements%
-      \end{center}%
-      \UoYCSP@acknowledgements%
-    }%
-    \fi%
-    \vspace*{\fill}%
-  }%
-  \cleardoublepage%
+  %\ifthenelse%
+  %{\equal{\UoYCSP@dedication}{\@empty}
+  %       \and\equal{\UoYCSP@acknowledgements}{\@empty}}
+  %{}{
+  %  \cleardoublepage%
+  %  \thispagestyle{empty}
+  %  \vspace*{\fill}%
+  %  %
+  %  \ifthenelse{\equal{\UoYCSP@dedication}{\@empty}}%
+  %  {}%
+  %  { \begin{center}%
+  %      \large\UoYCSP@dedication%
+  %    \end{center}%
+  %  }%
+  %  %
+  %  \ifacknowledgements%
+  %  { \vfill%
+  %    \normalsize%
+  %    \begin{center}%
+  %      \large\bfseries Acknowledgements%
+  %    \end{center}%
+  %    \UoYCSP@acknowledgements%
+  %  }%
+  %  \fi%
+  %  %\vspace*{\fill}%
+  %}%
+  %\cleardoublepage%
   \microtypesetup{protrusion=false}%
   \tableofcontents%  
   \microtypesetup{protrusion=true}%
