@@ -1,0 +1,11 @@
+PWD D:/Documents/GitHub/AVLaneMergingReport
+INPUT c:/texlive/2016/texmf.cnf
+INPUT c:/texlive/2016/texmf-dist/web2c/texmf.cnf
+INPUT c:/texlive/2016/texmf-var/web2c/pdftex/pdflatex.fmt
+INPUT ./appendix.tex
+OUTPUT output/appendix.log
+INPUT c:/texlive/2016/texmf-dist/fonts/map/fontname/texfonts.map
+INPUT c:/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
+OUTPUT output/appendix.pdf
+INPUT c:/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map
+INPUT c:/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
