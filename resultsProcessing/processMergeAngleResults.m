@@ -30,34 +30,34 @@ targetDelayStd = mergeAngleResults(:,12);
 mergeDelayStd = mergeAngleResults(:,13);
 
 % Create Mean Delay Plot
-ax1 = subplot(2,1,1);
-plot(ax1, mergeAngles, meanDelay, '-k', mergeAngles, delayStd, '--k');
+%ax1 = subplot(2,1,1);
+%plot(ax1, mergeAngles, meanDelay, '-k', mergeAngles, delayStd, '--k');
 
 % Add labels
-grid on;
-title(ax1,'Mean Delay by Merge Angle');
-xlabel('Merging Angle (degrees)');
-ylabel('Delay (seconds)');
-legend({'Mean Delay','Standard Deviation Delay'});
+%grid on;
+%title(ax1,'Mean Delay by Merge Angle');
+%xlabel('Merging Angle (degrees)');
+%ylabel('Delay (seconds)');
+%legend({'Mean Delay','Standard Deviation Delay'});
 
 % Create Mean Delay Plot by Lane
-ax2 = subplot(2,1,2);
-plot(ax2, mergeAngles, meanTargetDelay, '-b', mergeAngles, targetDelayStd, '--b', mergeAngles, meanMergeDelay, '-r', mergeAngles, mergeDelayStd, '--r');
+%ax2 = subplot(2,1,2);
+plot(mergeAngles, meanTargetDelay, '-b', mergeAngles, targetDelayStd, '--b', mergeAngles, meanMergeDelay, '-r', mergeAngles, mergeDelayStd, '--r');
 
 % Add labels
 grid on;
-title(ax2,'Mean Delay by Merge Angle');
+title('Mean Delay by Merge Angle');
 xlabel('Merging Angle (degrees)');
 ylabel('Delay (seconds)');
 legend({'Mean Target Lane Delay','Standard Deviation Target Lane Delay','Mean Merge Lane Delay','Standard Deviation Merge Lane Delay'});
 
 % Y Limits
-ylim manual;
-maxVal = max(max(horzcat(ax1.YLim,ax2.YLim)));
-minVal = min(min(horzcat(ax1.YLim,ax2.YLim)));
+%ylim manual;
+%maxVal = max(max(horzcat(ax1.YLim,ax2.YLim)));
+%minVal = min(min(horzcat(ax1.YLim,ax2.YLim)));
 
-ylim(ax1,[minVal maxVal]);
-ylim(ax2,[minVal maxVal]);
+%ylim(ax1,[minVal maxVal]);
+%ylim(ax2,[minVal maxVal]);
 
 clearvars -except mergeAngles mergeAngleResults
 
