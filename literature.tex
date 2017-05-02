@@ -3,89 +3,23 @@
 
 \section{Car Following Models}
 \label{sec:Car Following Models}
-Any autonomous-vehicle system will be based on a 'car-following model', which defines actions for a vehicle based on the behaviour of its predecessors (the vehicles in front of it). One early car-following model was defined in 1981 by P.G. Gipps \citep{Gipps1981}. It was designed to mimic real-world driver behaviour, calculating a safe traveling speed for a vehicle based on the speed of its predecessor. A safe travel speed is defined as a speed at which the driver can safely stop if the preceding driver stops.
+Any autonomous-vehicle system will implement a `car-following model', which defines actions for a vehicle based on the behaviour of its predecessors (the vehicles in front of it). One early car-following model was defined in 1981 by P.G. Gipps \citep{Gipps1981}. It was designed to mimic real-world driver behaviour, calculating a safe travelling speed for a vehicle based on the speed of its predecessor. A safe travel speed is defined as a speed at which the driver can safely stop if the preceding driver stops.
 
-Gipps' paper defines two equations, which provide constraints on the speed of vehicle $n$ at time $t + \tau$. $t$ is the current time and $\tau$ is the apparent reaction time, a constant for all vehicles. The first equation defines the acceleration constraint of the vehicle. It was obtained using measurements from an instrumented car.
+Gipps defined two equations applying constraints on the acceleration and braking profiles of the vehicles. Appendix \ref{subsec:Gipps 1981 Equations} details these equations. Gipps' model worked well at describing the behaviour of traffic. However, translating this work to autonomous vehicles poses a number of problems. Firstly, the work is based on the behaviour of real-world drivers in instrumented vehicles. This introduces human driver variables into the equations. Gipps' modelled reaction time, which will be far smaller for autonomous vehicles. The gaps between successive vehicles are also larger than necessary. Autonomous vehicles are more precise than human drivers and can drive closer to their predecessors. Gipp's model also focuses solely on single-lane drivers.
 
-\begin{equation}\label{Gipps1981Accel}
-v_n(t+\tau) \leqslant v_n(t) + 2.5a_n\tau\Biggl(\frac{1 - v_n(t)}{V_n}\Biggr)\Biggl(\frac{0.025 + v_n(t)}{V_n}\Biggr)^{1/2}
-\end{equation}
+In 2000 Treiber et al. suggested the `Intelligent Driver Model' (IDM) \citep{Treiber2000}. This model, detailed further in Appendix \ref{subsec:The Intelligent Driver Model}, defines an acceleration profile for a vehicle as a continuous function. This function is based on the vehicle's current velocity, its desired velocity and the distance from the vehicle to its successor.
 
-$v_n(t)$ is the speed of vehicle $n$ at time $t$. $a_n$ is the maximum acceleration the driver of vehicle $n$ wishes to undertake. $V_n$ is the target speed for vehicle $n$. The equation shows that the driver accelerates until close to their target speed. Then, they reduce their acceleration until it reaches zero. At this point the vehicle should be travelling at it's target speed.
+The IDM does not attempt to directly mimic human behaviour in traffic situations. It models a general acceleration and braking profile for a given vehicle. As such, it is well suited for adaptation by autonomous vehicle models, as seen in Kesting's work \citep{Kesting2007} in Section \ref{subsec:Lane Changing to improve overall velocity}. However, similarly to Gipps' model, it solely focuses on single-lane drivers.
 
-The second constraint is the braking profile of the vehicle. This is given as
-
-\begin{equation}\label{Gipps1981Brake}
-\begin{split}
-&v_n(t+\tau) \leqslant \\
-&b_n\tau + \sqrt{\Biggl(b_n^2\tau^2 - b_n\biggl(2\Bigl[x_{n-1}(t) - s_{n-1} - x_n(t)\Bigr] - v_n(t)\tau - \frac{v_{n-1}(t)^2}{\hat{b}}\biggr)\Biggr)}
-\end{split}
-\end{equation}
-
-$b_n$ is the most severe braking the driver of vehicle $n$ wishes to undertake. It is always a negative value, and should be considered negative acceleration. $\hat{b}$ is the driver of vehicle $n$'s best guess at $b_{n-1}$ where $n-1$ is $n$'s predecessor. $x_n(t)$ is the location of the front of vehicle $n$ at time $t$. $s_n$ is the effective size of vehicle $n$. This is equal to the physical length of $n$, plus a margin $n$'s successor is not willing to enter, even when $n$ is at rest.
-
-Therefore, at time $t + \tau$, assuming the driver travels as fast as is safe, and within the limitations of the vehicle, their speed is given by the minimum of these two equations.
-
-\begin{equation}
-v_n(t) = \min{(\eqref{Gipps1981Accel},\eqref{Gipps1981Brake})}
-\end{equation}
-
-This model works well at describing the behaviour of traffic. However, translating this work to autonomous vehicles poses a number of problems. Firstly, the work is based on the behaviour of real-world drivers in instrumented vehicles. This introduces human driver variables into the equations. An autonomous vehicle with perfect sensors would have an almost negligible $\tau$, as the vehicles would have a very minimal reaction time. $s_n$ would also need to be adjusted. The margin added can be much less, as autonomous vehicles are more precise than human drivers and can drive closer to their predecessors. 
-
-The model also ignores inter-vehicle communication. Autonomous vehicles could communicate their intentions to nearby vehicles, allowing them to act before they do. This could greatly reduce the following distance of successor vehicles, it would also allow vehicles to accelerate and move as a unit, or a 'platoon'. It would also allow autonomous vehicles to gain accurate values for $\hat{b}$.
-
-In 2000 Treiber et al. suggested the 'Intelligent Driver Model' (IDM) \citep{Treiber2000}. In the IDM, the acceleration of vehicle $\alpha$, $\dot{v_\alpha}$, is defined using a continuous function of its velocity, $v_\alpha$; the distance to the rear of its predecessor, $s_\alpha$; and the velocity difference of $\alpha$ and it's predecessor, also known as the approaching rate $\Delta v_\alpha$. The vehicle interactions are solely based on $\alpha$'s relative acceleration to its predecessor. The model only provides position information for a vehicle in relation to its predecessor, and it does not provide its velocity at a given time, as Gipps' model does. 
-
-The IDM is broken into two components. The first describes the behaviour of a vehicle on a free road.
-
-\begin{equation}
-\dot{v_\alpha} = a^{(\alpha)}\Biggl[1 - \biggl(\frac{v_\alpha}{v_0^{(\alpha)}}\biggr)^\delta\Biggr]
-\end{equation}
-
-Here $a^{(\alpha)}$ is the maximum acceleration of vehicle $\alpha$ and $v_0^{\alpha}$ is the desired velocity of $\alpha$. $\delta$ is the acceleration exponent, which is typically 4. 
-
-The second component describes the behaviour of a vehicle as it approaches its predecessor. 
-
-\begin{equation}
-\dot{v_\alpha} = - a^{(\alpha)}\biggl(\frac{s^*}{s_\alpha}\biggr)^2
-\end{equation}
-
-As the gap, $s_\alpha$, between $\alpha$ and it's predecessor, gets closer to the desired minimum gap $s^*$, $\alpha$ decelerates.
-
-Interpolating the two components gives us the IDM. 
-
-\begin{equation}
-\dot{v_\alpha} = a^{\alpha}\Biggl[1 - \biggl(\frac{v_\alpha}{v_0^\alpha}\biggr)^\delta - \biggl(\frac{s^*(v_\alpha,\Delta v_\alpha)}{s_\alpha}\biggr)^2\Biggr]
-\end{equation}
-
-The desired minimum gap in the IDM varies dynamically with velocity and approaching rate. It is given by the following function.
-
-\begin{equation}\label{IDMSpacingFunction}
-s^*(v,\Delta v) = s_0^{(\alpha)} + s_1^{(\alpha)}\sqrt{\frac{v}{v_0^{(\alpha)}}} + T^\alpha v + \frac{v\Delta v}{2\sqrt{a^{(\alpha)}b^{(\alpha)}}}
-\end{equation}
-
-The equation takes the bumper-to-bumper space $s_0^{(\alpha)}$, also known as the minimum jam distance, and adds the comfortable jam distance $s_1^{(\alpha)}$. The bumper-to-bumper space is the minimum gap between $\alpha$ and its predecessor in stationary traffic. The comfortable jam distance is an extra distance added on for comfort, and to allow for a slower driver reaction time. In the paper, this value is set to $0$. We can also consider it negligible for autonomous vehicles. $T$ is the safe time headway; it represents the time required for the vehicle to safely come to a stop. Finally $b^{(\alpha)}$ is the desired deceleration for $\alpha$.
-
-The IDM does not attempt to directly mimic human behaviour in traffic situations. It models a general acceleration and braking profile for a given vehicle. As such, it is well suited for adaptation by autonomous vehicle models, as seen in \citep{Kesting2007}. However, similarly to Gipps' model, the standard IDM only applies to single lane traffic. It also ignores inter-vehicle communication and platooning opportunities. 
-
-In vehicle platoons, such as those analysed by Kamali in 2016 \citep{Kamali2016}, each vehicle autonomously follow it's predecessor, with the lead vehicle controlling the overall pace of the platoon. Platoons make heavy use of vehicle-to-vehicle (V2V) communication to allow vehicles to join and leave, as well as to continuously control vehicle spacing and velocity.
-
-Kamali developed a model for an automated platoon, defining procedures for vehicles joining and leaving. 
-
-A joining vehicle can integrate at either the back or the middle of the platoon. The vehicle first sends a join request to the platoon leader. If the vehicle is at the back of the platoon the leader sends an agreement and the vehicle follows its predecessor. If the vehicle requests to join in front of another platoon vehicle, the leader first asks the platoon vehicle to increase space; once the space is large enough for the joining vehicle, the leader sends an agreement. The joining vehicle then manoeuvres into the space and follows the preceding vehicle. Having now joined the platoon, the vehicle sends a confirmation to the leader. The leader then requests that the vehicle that gave way for the joining vehicle decreases their spacing back to normal.
-
-A leaving vehicle sends a request to the leader. When it receives permission to leave the vehicle increases its spacing from its predecessor; once the vehicle is at its maximum distance from its predecessor the vehicle can change lanes. Once out of the convoy the vehicle sends an acknowledgement to the leader.
-
-This model isn't very strict, acting as more of a set of requirements than a true model. The paper sets the requirements using pre-defined gaps, and has no strict calculations guiding following characteristics. It could be implemented using spacing rules from both the IDM and Gipps' model, however, by using V2V communication, the lead vehicle can control the actions of all vehicles in its platoon. Instead of using IDM or Gipps' model, the lead vehicle can control the gaps between vehicles so that they all increase and decrease simultaneously. The gaps could be based on the platoon's velocity, perhaps using \eqref{IDMSpacingFunction} from the IDM. By centralising control in this way, vehicle platoons can avoid the traffic shock effect \citep{Daganzo1994}.
+Gipps' model and the IDM also both fail to recognise, and incorporate, the use of vehicle-to-vehicle communication in their models. Autonomous vehicles could communicate with each other to help reduce overall travel time and improve efficiency. In vehicle platoons, such as those analysed by Kamali in 2016 \citep{Kamali2016}, each vehicle autonomously follows it's predecessor, with the lead vehicle controlling the overall pace of the platoon. Platoons make heavy use of vehicle-to-vehicle (V2V) communication to allow vehicles to join and leave, as well as to continuously control vehicle spacing and velocity. The advantage of a platoon is that all vehicles can accelerate and decelerate simultaneously reducing the effect of traffic shocks \citep{Daganzo1994}.
 
 \section{Centralised and Decentralised}
 \label{sec:Centralised and Decentralised}
-
 We can divide approaches to autonomous vehicles into centralised and decentralised solutions. Centralised solutions rely on an external agent to manage vehicles. Vehicles use vehicle-to-infrastructure (V2I) communication channels to send information and receive instructions from the external agent. Decentralised solutions use vehicle-to-vehicle (V2V) communication to let other vehicles know their state, their intentions and to arrange any complex actions that might affect surrounding vehicles.
 
 \subsection{Centralised Systems}
 \label{subsec:Centralised Systems}
-The Autonomous Vehicle Intersection management system (AIM) described in \citep{Dresner2004} is an example of a centralised V2I system. The system works by dividing the intersection into a grid of $n \times n$ reservation tiles. Drivers 'call ahead' to the intersection sending information packets containing
+The Autonomous Intersection management system (AIM) described in \citep{Dresner2004} is an example of a centralised V2I system. The system works by dividing the intersection into a grid of $n \times n$ reservation tiles. Drivers `call ahead' to the intersection sending information packets containing
 
 \begin{enumerate}
 \item The time the vehicle will arrive.
@@ -106,27 +40,22 @@ The intersection infrastructure simulates the journey of the vehicle through the
 
 A grid-based reservation system works well in high traffic zones like intersections, because it forces all vehicles to communicate with a single entity. This entity has a global-view of activity at the junction, allowing the system to make vehicle management decisions more easily. A V2V solution would require more complex communication protocols involving large numbers of vehicles. The volume of messages required for each vehicle to obtain a global view of the intersection would be considerably larger, and as such, most vehicles will never get a complete understanding of the status of the intersection.
 
-A centralised system for lane changing was described in a paper by Atagoziyev et al. in 2016 \citep{Atagoziyev2016}. This system uses roadside infrastructure to help groups of vehicles change lanes before they reach a 'critical-position', such as a motorway exit or intersection. The vehicles send their position and velocity information to the roadside infrastructure; the system then sends a number of orders to the vehicles such that they safely rearrange themselves into the correct lanes.  Because the distance travelled by the vehicles involved can be large, particularly at high speeds, the system would struggle to use a reservation tile based system as AIM did, instead Atagoziyev's system manages the gaps between vehicles to safely relocate vehicles into the correct position. A more comprehensive overview is given in \ref{subsec:Lane Changing to hit a target lane}.
+This paper forms the foundation for the AMM protocol designed in Section \ref{sec:Autonomous Merge Management System}.
 
-Atagoziyev's system would only need to be applied during the approach to critical-positions. Vehicles could be managed using platoons or another vehicle following model until that point. A centralised system provides a single communication point which manages all of the vehicles that want to change lanes. This helps to reduce the volume of communications required and creates an entity with a global view of the vehicles' positions and goals. A V2V solution would most likely require more communications and may never obtain a complete picture of the situation, possibly leading to sub-optimal lane changing orders.
-
-Note that Atagoziyev's system could be adapted, such that all of the vehicles communicate with the platoon leader instead of roadside infrastructure. Though this could be called a V2V communication solution, the effective solution is still considered centralised, as all decisions are made by one entity.
-
+\FloatBarrier
 \subsection{Decentralised Systems}
 \label{subsec:Decentralised Systems}
-The main arguments against centralised systems generally tend to stem from concerns over feasibility and fault tolerance. A centralised V2I solution relies on one system always being available to manage vehicles. The original implementation of the AIM system works well, but if the system were to fail and no longer provide reservations then approaching vehicles will simply halt at the intersection. In a worst case scenario, the system would still give reservations, but fail to compare them to reservations already in place, causing major car crashes in the intersection. Having, a single point of failure (SPOF) like this is a major concern, particularly when lives are on the line.
+The main arguments against centralised systems generally tend to stem from concerns over feasibility and fault tolerance. A centralised V2I solution relies on one system always being available to manage vehicles. The original implementation of the AIM system works well, but if the system were to fail and no longer provide reservations, then approaching vehicles will simply halt at the intersection. In a worst case scenario, the system would still give reservations, but fail to compare them to reservations already in place, causing major car crashes in the intersection. Having, a single point of failure like this is a major concern, particularly when lives are on the line.
 
-A paper by Van Middlesworth et al. in 2008 \citep{VanMiddlesworth2008} defined a decentralised version of the AIM model using V2V communication protocols. 
-
-In Van Middlesworth model each vehicle can broadcast two different types of message. These messages are broadcast repeatedly with a specified period.
+A paper by VanMiddlesworth et al. in 2008 \citep{VanMiddlesworth2008} defined a decentralised version of the AIM model using V2V communication protocols. In VanMiddlesworth's model each vehicle can broadcast two different types of message. These messages are broadcast repeatedly with a specified period.
 \begin{enumerate}
-\item CLAIM
-This is a message indicating the vehicle's intention to traverse the intersection. It provides the vehicle's VIN, arrival lane, turning direction, arrival time and exit time. It also provides a message id, which increments when a new message is broadcast. Finally, the CLAIM message contains a boolean indicating whether the vehicle has stopped at the intersection.
-\item CANCEL
-This message releases any currently held reservation, it contains the vehicle's VIN and a message id, which acts the same as the message id in CLAIM.
+\item \emph{Claim}
+This is a message indicating the vehicle's intention to traverse the intersection. It provides the vehicle's VIN, arrival lane, turning direction, arrival time and exit time. It also provides a message id, which increments when a new message is broadcast. Finally, the \emph{Claim} message contains a boolean indicating whether the vehicle has stopped at the intersection.
+\item \emph{Cancel}
+This message releases any currently held reservation, it contains the vehicle's VIN and a message id, which acts the same as the message id in \emph{Claim}.
 \end{enumerate}
 
-Two CLAIM messages are in conflict if their paths, as determined by their lane and turn parameters, are incompatible and their time intervals, as determined by their arrival and exit times, overlap. To resolve the conflict Van Middlesworth defines a priority ordering over claim messages using the following rules:
+Two \emph{Claim} messages are in conflict if their paths, as determined by their lane and turn parameters, are incompatible and their time intervals, as determined by their arrival and exit times, overlap. To resolve the conflict VanMiddlesworth's model determines which Claim has dominance. A claim $C_1$ dominates another claim $C_2$ if $C_1$'s vehicle is stopped at the intersection, and $C_2$'s vehicle is not. If $C_1$ and $C_2$ both have the same value for the stopped at intersection boolean the claim has priority dominates. Priority is indicated by the following rules, in order of evaluation:
 \begin{enumerate}
 \item If neither vehicle is stopped at the intersection, the claim with the earliest exit time has priority.
 \item If both vehicles are stopped, the vehicle whose lane is 'on the right' has priority. This is defined similarly to current US 4-way stop rules.
@@ -136,15 +65,11 @@ Two CLAIM messages are in conflict if their paths, as determined by their lane a
 
 The protocol starts with approaching vehicles receiving messages from existing pending vehicles. An approaching vehicle may not start broadcasting it's own messages until it is within 'lurk distance' of the intersection. 
 
-Once within lurk distance the vehicle tries to make a reservation using a CLAIM message. The vehicle will continue generating CLAIM messages, searching for an available time block, increasing and decreasing its velocity as necessary, until it finds one that allows it to traverse the intersection without any other CLAIM having priority over it.
+Once within lurk distance the vehicle generates a \emph{Claim} message for the earliest possible time the vehicle might arrive at the intersection. Once the vehicle has a \emph{Claim} broadcasting it may need to change it if it's looking like the vehicle might be late to the intersection or if a competing \emph{Claim} dominates it. A vehicle might also change its \emph{Claim} to take advantage of a newly available time slot. In this situation the vehicle must then send a \emph{Cancel} message and a new \emph{Claim}. The \emph{Cancel} message is sent repeatedly with the same period as the \emph{Claim} message. Once the vehicle reaches the intersection it must traverse according to its current \emph{Claim}, broadcasting its \emph{Claim} throughout the traversal. At this point, the vehicle's claim cannot be dominated.
 
-Once the vehicle has a CLAIM broadcasting it may need to change it if it's looking like the vehicle might be late to the intersection or if a competing CLAIM arrives with a higher priority. A vehicle might also change its CLAIM to take advantage of a newly available time slot. In this situation the vehicle must then send a CANCEL message and a new CLAIM. Once the vehicle reaches the intersection it must traverse according to its current CLAIM, broadcasting its CLAIM throughout the traversal. At this point, the vehicle has the highest priority CLAIM and cannot be interrupted.
+The main drive behind the unmanaged AIM intersection was to reduce cost. Adding in new infrastructure to an intersection costs money, and it might not be considered worthwhile for small intersections with only one or two lanes on each side. An unmanaged, decentralised system like that described by VanMiddlesworth would drastically reduce the cost to the state in creating automated road networks.
 
-The main drive behind the unmanaged AIM intersection was to reduce cost. Adding in new infrastructure to an intersection costs money, and it might not be considered worthwhile for small intersections with only one or two lanes on each side. An unmanaged, decentralised system like that described by Van Middlesworth would drastically reduce the cost to the state in creating automated road networks.
-
-Cost also becomes a major issue for centralised systems when you consider fast moving situations such as lane changing on a motorway. To implement Atagoziyev's model, vehicles must remain in range of the roadside infrastructure. This would mean that the infrastructure will have to continue on for a long distance, which could become very expensive, especially given the number of critical-positions on a motorway. Decentralised solutions reduce these costs massively.
-
-Two examples of decentralised lane changing models are Gipps' 1986 driver decision model \citep{Gipps1986} and the MOBIL model developed by Kesting et al. in 2007 \citep{Kesting2007}. These models are decentralised and as such do not have to rely on roadside infrastructure in order to change lanes. This greatly reduces the cost of both implementations and allows the vehicles to be more flexible as to when they change lanes, no longer having to wait until they reach the lead up to a critical-position supported by roadside infrastructure. This flexibility means that vehicles could change lanes to increase their average velocity rather than just changing lanes in order to make a turn or leave the motorway at a critical-position. It also allows vehicles to deal with unexpected situations far from any roadside infrastructure. For example, a broken down car blocking a lane can be evaded. There is more information on Gipps' 1986 model and MOBIL in \ref{sec:Making lane changing decisions}.
+This paper forms the foundation for the decentralised protocol designed in Section \ref{sec:Decentralised Merge Management System}.
 
 \section{Making lane changing decisions}
 \label{sec:Making lane changing decisions}

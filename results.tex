@@ -1,6 +1,6 @@
 \chapter{Results}
 \label{cha:Results}
-The simulator was designed to allow for variance in merge angle, lead in distances, speed limits, and traffic levels. This means that we can experiment to see what effect each of these variables has on the effectiveness of the Queue protocol. We can also compare the Queue protocol to the AIM protocol, using the modified version of the AIM simulator described in \ref{sec:Merge Schemes}.
+The simulator was designed to allow for variance in merge angle, lead in distances, speed limits, and traffic levels. This means that we can experiment to see what effect each of these variables has on the effectiveness of the Queue protocol. We can also compare the Queue protocol to the AIM protocol, using the modified version of the AIM simulator described in section \ref{sec:Merge Schemes}.
 
 \section{Experimental Procedure}
 \label{sec:Experimental Procedure}
@@ -8,7 +8,7 @@ All experiments were done using pre-generated spawn schedules. In each experimen
 
 \section{Comparing AIM and Queue Protocols}
 \label{sec:Comparing AIM and Queue Protocols}
-By using the modified AIM simulator described in \ref{sec:Merge Schemes} I obtained approximations for how well the AIM protocol handles merges.
+By using the modified AIM simulator described in section \ref{sec:Merge Schemes}, I obtained approximations for how well the AIM protocol handles merges.
 
 The AIM simulator has a lead in and lead out distance for each lane of 150 metres and is limited to 90\degree merges. These settings were duplicated for the queue merge type. All of the lanes were set to have a speed limit of 20$\si{ms^{-1}}$ (44.7\si{mph} or 72\si{kph}). The traffic rate (vehicles/hour/lane (\si{vhl})) was altered to see how well the systems adjust to increasing levels of traffic.
 
@@ -33,7 +33,8 @@ At higher traffic rates the gap between the AIM lanes increases. At 2500\si{vhl}
 Both system manage to maintain similar throughputs until the traffic rate increases past 1500\si{vhl}. By 2500\si{vhl}, AIM can deal with an extra 366 vehicles per hour compared to the queue system. Figure \ref{fig:throughputTrafficRate} shows the throughputs for each system.
 
 \begin{figure}[htb]
-\includegraphics[width=\textwidth]{plots/trafficRate/throughput.png}
+\centering
+\includegraphics[width=10.5cm]{plots/trafficRate/throughput.png}
 \caption{Plot showing throughput for both merge management systems}
 \label{fig:throughputTrafficRate}
 \end{figure}
@@ -51,7 +52,8 @@ For each test, the speed limit for both lanes was 20$\si{ms^{-1}}$ (44.7\si{mph}
 At shallow angles the queue system performed very poorly. At the shallowest angle tested, 5\degree, the system had a mean delay of 138.98\si{s} with a standard deviation of 46.96\si{s}. After the merge angle increases to around 30\degree, performance has improved greatly with the mean delay reaching 13.12\si{s} with a standard deviation of 9.35\si{s}. By the time the merge zone has reached it's minimum length, the mean delay has decreased to 1.24\si{s} with a standard deviation of 1.55\si{s}. The delay is actually smaller at 85\degree at 1.23\si{s} but this is well with range of the standard deviation for 90\degree. The delay of both the target lane and merge lane follow very similar trends. Figure \ref{fig:meanDelayMergeAngle} shows how the delay decreases as the angle increases.
 
 \begin{figure}[htb]
-\includegraphics[width=\textwidth]{plots/mergeAngle/meanDelay.png}
+\centering
+\includegraphics[width=10.5cm]{plots/mergeAngle/meanDelay.png}
 \caption{Plot showing mean delay by merge angle}
 \label{fig:meanDelayMergeAngle}
 \end{figure}
@@ -59,7 +61,8 @@ At shallow angles the queue system performed very poorly. At the shallowest angl
 In general throughput increases dramatically with the merge angle until around 35\degree where levels off dramatically. The data does show a dip in the merge lane throughput measurements from 40\degree to 60\degree. Investigation showed that this was an error with vehicle spawn system which dropped vehicles after detecting that there was still another vehicle in the spawn area. These were false detections due to the change in angle. A solution to the problem would have required separate spawn schedules for each angle which reduces the validity of the results. These results are considered to be outliers. Figure \ref{fig:throughputMergeAngle} shows how the throughput improves as the angle increases.
 
 \begin{figure}[htb]
-\includegraphics[width=\textwidth]{plots/mergeAngle/throughput.png}
+\centering
+\includegraphics[width=10.5cm]{plots/mergeAngle/throughput.png}
 \caption{Plot showing throughput by merge angle}
 \label{fig:throughputMergeAngle}
 \end{figure}
@@ -74,8 +77,10 @@ Due to 150\si{m} distance limit on requests, lead ins at 100\si{m} were worse fo
 
 If one lane has a 100\si{m} lead, then the other lane also suffers a performance hit. This affect is most noticeable when the target lane has the 100\si{m} lead, but this effect is also seen with the merge lane. Figure \ref{fig:meanDelayLeadIn} shows how the delay relates to the lead in distance.
 
-\begin{figure}[htb]
-\includegraphics[width=\textwidth]{plots/leadIn/meanDelay.png}
+\begin{figure}[p]
+\centerline{
+	\includegraphics[height=\textheight]{plots/leadIn/meanDelay.png}
+}
 \caption{Bar chart showing mean delay by lead in distance}
 \label{fig:meanDelayLeadIn}
 \end{figure}
@@ -94,12 +99,6 @@ Switching the lane speeds shows that the merge lane also experiences larger dela
 
 It should be noted that when the speed gaps are smaller the effect on the lanes is reduced. When the merge lane speed was 30$\si{ms^{-1}}$ and the target lane speed was 20$\si{ms^{-1}}$ the system performed about as well as when both lanes have a speed limit of 30$\si{ms^{-1}}$, at least on the target lane. It should also be noted that most of the speed limits containing a 40$\si{ms^{-1}}$ lane performed poorly. The velocity causes vehicles to accumulate too quickly for the queue system to be able to sort them out effectively. Figure \ref{fig:meanDelaySpeedLimit} shows how the mean delay is affected by difference speed limit pairs.
 
-\begin{figure}[htb]
-\includegraphics[width=\textwidth]{plots/speedLimit/meanDelay.png}
-\caption{Bar chart showing mean delay by speed limit pair}
-\label{fig:meanDelaySpeedLimit}
-\end{figure}
-
 The number of vehicles that complete for each lane is solely affected by the speed limit of the lane, the differences between the lanes has very little effect. The throughput is likewise only affected by the speed limits of each lane independently. Figure \ref{fig:throughputSpeedLimit} shows how the throughput is affected by the speed limits.
 
 \begin{figure}[htb]
@@ -110,4 +109,10 @@ The number of vehicles that complete for each lane is solely affected by the spe
 
 These results show that the queue system struggles to handle differences in velocity well, with the faster lane being impacted more heavily than the slower lane. This is because the faster lane is forced to slow down to accommodate the slower lane. In an ideal world a system should be able to slow down vehicles more gradually to allow vehicles in, before speeding up again. As it stands both the AIM and queue systems slow vehicles down at their maximum deceleration.
 
-
+\begin{figure}[p]
+\centerline{
+	\includegraphics[height=\textheight]{plots/speedLimit/meanDelay.png}
+}
+\caption{Bar chart showing mean delay by speed limit pair}
+\label{fig:meanDelaySpeedLimit}
+\end{figure}
