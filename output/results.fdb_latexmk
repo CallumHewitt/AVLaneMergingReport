@@ -1,0 +1,12 @@
+# Fdb version 3
+["pdflatex"] 1493718518 "results.tex" "output/results.pdf" "results" 1493718519
+  "c:/texlive/2016/texmf-dist/fonts/map/fontname/texfonts.map" 1475836714 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
+  "c:/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm" 1475834734 1328 c834bbb027764024c09d3d2bf908b5f0 ""
+  "c:/texlive/2016/texmf-dist/web2c/texmf.cnf" 1475837366 31958 926ad82bc47ee89401cf24be7d2cbf7d ""
+  "c:/texlive/2016/texmf-var/web2c/pdftex/pdflatex.fmt" 1475840303 3870027 dc09aad76030662df792f29038bc31aa ""
+  "c:/texlive/2016/texmf.cnf" 1475840246 673 4ae7b2f49cee444c5343a45b5d0f169c ""
+  "output/results.aux" 1493718467 3492 0f626a45aa7c2e0c27b811e178343815 ""
+  "results.tex" 1493718516 11553 da78cd0ae07fb962a497dd003a52f0a0 ""
+  (generated)
+  "output/results.log"
+  "output/results.pdf"

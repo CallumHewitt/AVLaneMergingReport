@@ -1,45 +1,43 @@
-\documentclass{UoYCSproject}{}
-\title{Undecided Title}
+\documentclass{UoYCSproject}
+\title{Approaches to Autonomous Vehicle Merge Management}
 \author{Callum Hewitt}
 \supervisor{Lilian Blot}
-\date{2016 Oct 12}
-\wordcount{2}
-\BSc
+\date{2nd May 2017}
+\wordcount{11566}
+\excludes{equations or appendices}
+\BEng
 \abstract{
-Not completed
+In anticipation of a fully autonomous vehicle future, this project aims to develop and analyse systems that deal with lane merging. An existing autonomous vehicle simulator, used for vehicle intersections, was adapted and extended to develop merge simulations. The system itself proved unexpectedly difficult to work with, and further research will require the development of a more universal simulator. A merge management system based on a queue protocol was developed to manage incoming vehicles on a single lane to single lane merge. This was compared with an adaptation of the intersection management system. It was found that the intersection management system induced less delay on the vehicles than the queue system, particularly at high traffic levels. The queue protocol was tested further under different conditions. The angle at which the two lanes meet was found to have a substantial effect on the performance of the protocol. When the two lanes met at shallow angles, the queue system performed very poorly, but the performance improved rapidly as the angle approached 90\degree. The queue system was less effective at reducing delays on a lane when it had a higher speed limit than the lane it was merging with.The distance simulated before the vehicle reached the merge point was found to have no effect on the performance of the protocol when the distance was greater than 150\si{m}. It was concluded that an intersection protocol based system could perform better than the queue protocol if fully developed. The performance of the protocol at different angles, speed limits and simulated distances, provided insight into issues that merge systems will have to overcome in order to be integrated into real world infrastructure.
 }
-\dedication{Not completed}
-\acknowledgements{
-	Not completed
-}
-
 \usepackage{listings}
 \usepackage{graphicx}
-\usepackage{xcolor}
+\usepackage[table]{xcolor}
 \usepackage{usebib}
 \usepackage{tikz}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{gensymb}
+\usepackage{color,soul}
+\usepackage{multirow}
+\usepackage{longtable}
+\usepackage{appendix}
+\usepackage{amssymb}
+\usepackage{pifont}
+\usepackage{siunitx}
+\usepackage{float}
+\usepackage{rotating}
+\usepackage[section]{placeins}
 
 \bibinput{bibliography}
-{}
+
 \newcommand\todo[1]{\emph{{\textcolor{red}{TODO: #1}}}}
 \newcommand\newtext[1]{\emph{{\textcolor{blue}{#1}}}}
-\newcommand\citetitle[1]{\usebibentry{#1}{title}}
+\newcommand\revisit[1]{\hl{#1}}
+\newcommand\citetitle[1]{``\usebibentry{#1}{title}''}
+\newcommand{\cmark}{\ding{51}}
+\newcommand{\xmark}{\ding{55}}
 
 \graphicspath{{images/}}
-
-\usetikzlibrary{shapes,arrows,positioning}
-\tikzset{
-  font={\fontsize{6pt}{6}\selectfont}
-  }
-\tikzstyle{startstop} = [rectangle, rounded corners, text centered, draw=black, fill=red!15,text width=2cm]
-\tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=110, text centered, draw=black, fill=blue!15,text width=2cm]
-\tikzstyle{process} = [rectangle, text centered, draw=black, fill=orange!15,text width=3cm]
-\tikzstyle{decision} = [diamond, aspect=2, text centered, draw=black, fill=green!15,text width=2cm]
-\tikzstyle{bigdecision} = [regular polygon, regular polygon sides=6, xscale=3, text centered, draw=black, fill=green!15, text width=5cm]
-\tikzstyle{arrow} = [thick,->,>=stealth]
-
 
 \begin{document}
 \maketitle
@@ -52,7 +50,11 @@ Not completed
 \include{design}
 \include{implementation}
 \include{results}
+\include{conclusion}
 
 \bibliography{bibliography}
+\label{sec:Bibliography}
+
+\include{appendix}
 
 \end{document}

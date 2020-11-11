@@ -1,0 +1,1 @@
+perl texcount.pl -v -html -inc fullReport.tex > textCountReport.html

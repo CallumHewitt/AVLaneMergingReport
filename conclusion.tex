@@ -1,0 +1,22 @@
+\chapter{Conclusion}
+\label{cha:Conclusion}
+This project had three main aims.
+\begin{enumerate}
+\item Design and simulate different AV approaches to a merge scenario, particularly surrounding centralised and decentralised approaches, and analyse their effectiveness.
+\item Examine how the performance of merge management systems is affected by changing the conditions surrounding the merge.
+\item Determine how well suited the AIM simulator codebase is for simulating other AV problems.
+\end{enumerate}
+
+I successfully implemented a centralised approach to an S2S merge scenario using the QMM system. I also adapted the AIM system to emulate the expected behaviour of the AMM system at 90\degree. The results showed that the AIM system was more effective than the QMM system, particularly at high traffic rates when the QMM system failed to process vehicles efficiently. AIM's efficient use of space-time makes it much better suited for such high volume scenarios. This project has helped to show that developing an AMM system fully is worth investing research time into. A decentralised approach to the merge scenario could not be implemented due to time constraints, but a design based on the work of \citep{VanMiddlesworth2008} was defined in Section \ref{sec:Decentralised Merge Management System}.
+
+The QMM system also tested under various merge conditions. The merge angle was found to have a very significant effect on the delay and throughput of the QMM system. At shallow angles the system performed extremely poorly to the large merge zone length. The differences in speed limit also had a large effect, impacting the faster lane's delay time quite heavily. The lead in distances had an almost negligible effect beyond very short distances. Even though the QMM system may not be developed further as a solution to the S2S merge problem, it did help to identify some of the issues that AV merge approaches will need to resolve.
+
+Development with the AIM simulator codebase proved to be more difficult that initially anticipated. Implementation originally seemed to be straightforward after breaking out the project into generalised and specific classes. The system had already provided a number of useful functions for driver and vehicle agents. However, as some of these proved to be ineffectual or not applicable to my project, many of them had to be rewritten or adapted. The ineffective collision prevention AIM provided and the assumption of 90\degree roads caused numerous issues making it difficult to develop simulators as rapidly as originally anticipated. My recommendation would be to either strip back the AIM system and reimplement the core methods, with a focus on creating a more general system, or alternatively, create a new system aimed at performing as a universal core for AV simulations.
+
+Overall I feel that the research I've conducted should act as a starting point for further AV simulations. The next stage of development would be to see how effective a fully implemented AMM system would be at dealing with different merge angles, and with different speed limits on each lane. Once implemented, the AMM system could be adapted to other merge scenarios from Section \ref{sec:Merge Types}, such as the S2D merge.
+
+The Decentralised Merge Management system designed in Section \ref{sec:Decentralised Merge Management System} should also be developed into a fully working simulation and compared to the AMM system. The lack of infrastructure costs make decentralised solutions to the merge problem very desirable.
+
+Other merge systems could also be implemented, helping to eliminate some of the foibles of the AIM, QMM and Decentralised systems. Systems developed with smoother braking profiles could help improve fuel efficiency and passenger comfort, and a system that deals with slip roads will have to be developed if road vehicles are ever going to become completely autonomous.
+
+There are multiple areas of research to be investigated surrounding AV merging, not to mention the countless research possibilities in the AV field as a whole. My hope is that this project has helped to identify some of the key areas of development required to produce an effective merging system. If vehicles are to move to a fully autonomous future, then all of these research areas will need to be investigated to make sure that we are developing safe, efficient and effective solutions.

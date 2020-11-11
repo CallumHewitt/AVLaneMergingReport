@@ -1,0 +1,121 @@
+\section{Map}
+\label{sec:Map}
+In order to build the map using the user's parameters I needed to calculate the relative positions of the lane entrances and exits as well as the locations of the spawn points. A detailed analysis of the mathematics used to calculate these positions can be found in Appendix \ref{sec:S2SMapCalculations}.
+
+\subsection{Target Lane Coordinates}
+\label{subsec:Target Lane Coordinates}
+The target lane entrance has a Y-coordinate equal to half of the lane width. In fact, every coordinate that target vehicles travel on will have a Y-coordinate equal to half the lane width. The entrance's X-coordinate will depend on whether the target lane, plus the merge zone length, is longer than the base width of the merging lane, that is, the horizontal distance the merging lane covers. You can see this distance indicated in Figure \ref{fig:baseWidth}.
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=8cm]{designNotes/baseWidth.png}
+\caption{A diagram indicating the base width of the merging lane.}
+\label{fig:baseWidth}
+\end{figure}
+
+If the target lane is longer than the base width, the entrance X-coordinate will be $0$. If not then we have to do further calculations. The total width of the simulation is given by equation \ref{targetLongerWidth} if the target lane has $x=0$ and equation \ref{mergeLongerWidth} if not.
+
+\begin{equation} \label{targetLongerWidth}
+	\begin{split}
+		width = & targetLeadInDistance \\
+			    & + mergeZoneWidth \\
+			    & +	targetLeadOutDistance
+	\end{split}
+\end{equation}
+
+\begin{equation} \label{mergeLongerWidth}
+width = mergeBaseWidth + targetLeadOutDistance
+\end{equation}
+
+Now we can use width to calculate the target lane's entrance X-coordinate.
+
+\begin{equation}\label{targetLaneStartX}
+	\begin{split}
+targetLaneStartX = & width \\
+				   & - targetLeadInDistance \\
+				   & - mergeZoneWidth \\				
+				   & - targetLeadOutDistance	
+	\end{split}
+\end{equation}
+
+The target lane exit coordinates can be calculated similarly. The X-coordinate will be equal to the width of the simulator. With these coordinates calculated the simulator can place data collection lines and create spawn points for the target vehicles.
+
+Finally the X-coordinate indicating the entrance to the merge zone for target vehicles is given by equation \ref{targetLaneZoneEntranceX}. The exit X-coordinate is given by equation \ref{targetLaneZoneExitX}.
+
+\begin{equation}\label{targetLaneZoneEntranceX}
+	\begin{split}
+targetLaneZoneEntranceX = & width \\
+						  & - mergeZoneWidth \\
+						  & - targetLeadOutDistance
+	\end{split}
+\end{equation}
+
+\begin{equation}\label{targetLaneZoneExitX}
+	\begin{split}
+targetLaneZoneExitX = width - targetLeadOutDistance
+	\end{split}
+\end{equation}
+
+\subsection{Merging Lane Coordinates}
+\label{subsec:Merging Lane Coordinates}
+The merging lane entrance coordinates are more difficult to calculate. To get the X-coordinate we can calculate an x-adjustment from the far edge of the lane to the centre, as shown in Figure \ref{fig:adjustments}.
+
+\begin{figure}[htb]
+\centering
+\includegraphics[height=7cm]{designNotes/adjustments.png}
+\caption{A diagram indicating the x and y adjustments for the merging lane.}
+\label{fig:adjustments}
+\end{figure}
+
+Using this adjustment we get equation \ref{mergeLaneEntranceX}.
+
+\begin{equation}\label{mergeLaneEntranceX}
+	\begin{split}
+mergeLaneEntranceX = & width \\
+					 & - targetLeadOutDistance \\
+					 & - baseWidth \\
+					 & + x-adjustment
+	\end{split}
+\end{equation}{}
+
+To get the Y-coordinate we can calculate the distance the coordinate is above the target lane, and then add the width of the target lane to that, as shown in equation \ref{mergeLaneEntranceY}. We can also use this length to calculate the height of the whole simulator. However, to do that we will also need to add a y-adjustment, also shown in Figure \ref{fig:adjustments} and equation \ref{height}. 
+
+\begin{equation}\label{mergeLaneEntranceY}
+	\begin{split}
+mergeLaneEntranceY = targetLaneWidth + mergeEntranceHeight
+	\end{split}
+\end{equation}
+
+\begin{equation}\label{height}
+	\begin{split}
+height = mergeLaneEntranceY + y-adjustment
+	\end{split}
+\end{equation}
+
+Merge vehicles will exit the merge zone in the same place as target vehicles (equation \ref{targetLaneZoneExitX}), however, they will enter the merge zone at the top. The Y-coordinate of this point is equal to the width of the target lane. The X-coordinate is given by equation \ref{mergeLaneZoneEntranceX}.
+
+\begin{equation}\label{mergeLaneZoneEntranceX}
+	\begin{split}
+mergeLaneZoneEntranceX = & width \\
+						 & - targetLeadOutDistance \\
+						 & - \frac{mergeZoneWidth}{2}
+	\end{split}
+\end{equation}
+
+After the merge vehicles enter the merge zone they will deviate from the merge lane, however the lane itself continues until it reaches the centre of the target lane. We know this centre has a Y-coordinate equal to half of the lane width. The X-coordinate is more difficult to calculate. We need to find another X-adjustment, denoted as centreXAdjustment, along the target lane centre line. We can then use equation \ref{connectionPointX} to find the X-coordinate. Figure \ref{fig:centreXAdjustment} indicates the position of centreXAdjustment.
+
+\begin{equation}\label{connectionPointX}
+	\begin{split}
+connectionPointX = & width \\
+				   & - targetLeadOutDistance \\
+				   & - \frac{mergeZoneWidth}{2} \\
+				   & + centreXAdjustment \\
+	\end{split}
+\end{equation}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[height=8cm]{designNotes/centreXAdjustment.png}
+\caption{A diagram indicating the X-adjustment used to find the point at which the two lanes connect.}
+\label{fig:centreXAdjustment}
+\end{figure}.
